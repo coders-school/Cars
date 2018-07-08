@@ -9,8 +9,12 @@ public:
         : engine_(engine)
     {}
     ~ElectricCar() {}
+    void refill()
+    {
+        charge();
+    }
+private:
     void charge() {}
-
     ElectricEngine* engine_;
 };
 

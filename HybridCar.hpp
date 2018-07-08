@@ -14,5 +14,6 @@ public:
     void accelerate(int speed) {
         PetrolCar::accelerate(speed);
     }
+    void refill() {}
 };
 

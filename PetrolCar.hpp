@@ -9,8 +9,12 @@ public:
         : engine_(engine)
     {}
     ~PetrolCar() {}
+    void refill()
+    {
+        refuel();
+    }
+private:
     void refuel() {}
-
     PetrolEngine* engine_;
 };
 

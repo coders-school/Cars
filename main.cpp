@@ -4,19 +4,23 @@
 
 int main()
 {
-    PetrolCar opel(new PetrolEngine(120, 1800, 6));
-    opel.accelerate(50);
-    opel.brake();
-    opel.refuel();
-
     ElectricCar nissan(new ElectricEngine(130, 650));
-    nissan.charge();
-    nissan.accelerate(80);
-    nissan.turnLeft();
-
+    PetrolCar opel(new PetrolEngine(120, 1800, 6));
     HybridCar toyota(new PetrolEngine(80, 1400, 5), new ElectricEngine(100, 540));
+
+    Car* car = &opel;
+    car->accelerate(50);
+    car->brake();
+    car->refill();
+    //opel.refuel();
+
+    car = &nissan;
+    car->refill();
+    car->accelerate(80);
+    car->turnLeft();
+
     toyota.accelerate(100);
     toyota.ElectricCar::brake();
-    toyota.charge();
-    toyota.refuel();
+    //toyota.charge();
+    //toyota.refuel();
 }
