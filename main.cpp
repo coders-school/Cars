@@ -16,7 +16,7 @@ int main()
 
     HybridCar toyota(new PetrolEngine(80, 1400, 5), new ElectricEngine(100, 540));
     toyota.accelerate(100);
-    toyota.brake();
+    toyota.ElectricCar::brake();
     toyota.charge();
     toyota.refuel();
 }
