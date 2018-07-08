@@ -3,6 +3,7 @@
 
 class InvalidGear : public std::invalid_argument
 {
+public:
     InvalidGear() 
         : invalid_argument("not proper gear selected")
     {}
