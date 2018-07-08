@@ -15,5 +15,9 @@ PetrolEngine::PetrolEngine(int power,
 void PetrolEngine::changeGear(int gear)
 {
     std::cout << __FUNCTION__ << std::endl;
+    if (gear > 6)
+    {
+        throw InvalidGear();
+    }
     currentGear_ = gear;
 }

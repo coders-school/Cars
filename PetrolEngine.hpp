@@ -1,4 +1,12 @@
 #pragma once
+#include <stdexcept>
+
+class InvalidGear : public std::invalid_argument
+{
+    InvalidGear() 
+        : invalid_argument("not proper gear selected")
+    {}
+};
 
 class PetrolEngine
 {
