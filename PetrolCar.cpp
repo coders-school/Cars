@@ -7,12 +7,7 @@ PetrolCar::PetrolCar(PetrolEngine* petrolEng)
     std::cout << __FUNCTION__ << std::endl;
 }
 
-void PetrolCar::turnLeft()
-{
-    std::cout << __FUNCTION__ << std::endl;
-}
-
-void PetrolCar::turnRight()
+PetrolCar::~PetrolCar()
 {
     std::cout << __FUNCTION__ << std::endl;
 }
@@ -30,5 +25,10 @@ void PetrolCar::accelerate(int speed)
 void PetrolCar::refuel()
 {
     std::cout << __FUNCTION__ << std::endl;
+}
+
+void PetrolCar::topUp()
+{
+    refuel();
 }
 

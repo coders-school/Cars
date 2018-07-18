@@ -1,19 +1,15 @@
 #include "ElectricEngine.hpp"
 #include "PetrolEngine.hpp"
+#include "ElectricCar.hpp"
+#include "PetrolCar.hpp"
 
-class HybridCar
+class HybridCar : virtual public ElectricCar, virtual public PetrolCar
 {
 public:
     HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng);
     ~HybridCar();
-    void turnLeft();
-    void turnRight();
-    void brake();
-    void accelerate(int speed);
-    void charge();
-    void refuel();
-
-    PetrolEngine* petrolEngine_;
-    ElectricEngine* electricEngine_;
+    void brake() override;
+    void accelerate(int speed) override;
+    void topUp() override;
 };
 

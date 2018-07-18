@@ -1,34 +1,33 @@
-#include "PetrolCar.hpp"
+#include "ElectricCar.hpp"
 #include <iostream>
 
-PetrolCar::PetrolCar(PetrolEngine* petrolEng)
-    : petrolEngine_(petrolEng)
+ElectricCar::ElectricCar(ElectricEngine* electricEng)
+    : engine_(electricEng)
 {
     std::cout << __FUNCTION__ << std::endl;
 }
 
-void PetrolCar::turnLeft()
+ElectricCar::~ElectricCar()
 {
     std::cout << __FUNCTION__ << std::endl;
 }
 
-void PetrolCar::turnRight()
+void ElectricCar::brake()
 {
     std::cout << __FUNCTION__ << std::endl;
 }
 
-void PetrolCar::brake()
+void ElectricCar::accelerate(int speed)
 {
     std::cout << __FUNCTION__ << std::endl;
 }
 
-void PetrolCar::accelerate(int speed)
+void ElectricCar::charge()
 {
     std::cout << __FUNCTION__ << std::endl;
 }
 
-void PetrolCar::refuel()
+void ElectricCar::topUp()
 {
-    std::cout << __FUNCTION__ << std::endl;
+    charge();
 }
-

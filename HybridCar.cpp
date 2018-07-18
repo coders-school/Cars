@@ -2,18 +2,13 @@
 #include <iostream>
 
 HybridCar::HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng)
-    : petrolEngine_(petrolEng)
-    , electricEngine_(electricEng)
+    : ElectricCar(electricEng)
+    , PetrolCar(petrolEng)
 {
     std::cout << __FUNCTION__ << std::endl;
 }
 
-void HybridCar::turnLeft()
-{
-    std::cout << __FUNCTION__ << std::endl;
-}
-
-void HybridCar::turnRight()
+HybridCar::~HybridCar()
 {
     std::cout << __FUNCTION__ << std::endl;
 }
@@ -28,13 +23,8 @@ void HybridCar::accelerate(int speed)
     std::cout << __FUNCTION__ << std::endl;
 }
 
-void HybridCar::charge()
+void HybridCar::topUp()
 {
-    std::cout << __FUNCTION__ << std::endl;
-}
-
-void HybridCar::refuel()
-{
-    std::cout << __FUNCTION__ << std::endl;
+    ElectricCar::topUp();
 }
 
