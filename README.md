@@ -1,6 +1,7 @@
 1. Zdefiniuj prawidłową abstrakcję (interfejsy)
 1. Zastosuj dziedziczenie
 1. Napraw enkapsulację (hermetyzację)
+
 1. Napraw problem diamentowy
 1. W main.cpp użyj polimorfizmu, aby za pomocą jednego obiektu można było reprezentować każdy samochód
 1. Napisz wyjątek InvalidGear, który będzie rzucany gdy ktoś spróbuje zmienić bieg na wsteczny przy jeździe do przodu lub gdy ktoś spróbuje wrzucić 6 bieg, a samochód posiada ich 5. Wybierz odpowiedni wyjątek z biblioteki standardowej jako klasę bazową. Gdzie ten wyjątek powinien być złapany?
