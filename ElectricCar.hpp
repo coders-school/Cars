@@ -1,16 +1,16 @@
-#include "PetrolEngine.hpp"
+#include "ElectricEngine.hpp"
 
-class PetrolCar
+class ElectricCar
 {
 public:
-    PetrolCar(PetrolEngine* engine);
-    ~PetrolCar();
+    ElectricCar(ElectricEngine* engine);
+    ~ElectricCar();
     void turnLeft();
     void turnRight();
     void brake();
     void accelerate(int speed);
     void charge();
 
-    PetrolEngine* engine_;
+    ElectricEngine* engine_;
 };
 
