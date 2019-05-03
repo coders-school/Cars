@@ -11,4 +11,3 @@ public:
     int gears_;
     int currentGear_;
 };
-
