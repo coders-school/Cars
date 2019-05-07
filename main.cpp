@@ -6,7 +6,7 @@
 int main()
 {
     Car* car;
-    PetrolEngine* eng = new PetrolEngine(120, 1800, 6)
+    PetrolEngine* eng = new PetrolEngine(120, 1800, 6);
     std::cout << std::endl << "OPEL" << std::endl;
     PetrolCar opel(eng);
     car = &opel;
