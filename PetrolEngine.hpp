@@ -1,6 +1,8 @@
 #pragma once
 
-class PetrolEngine
+#include "Engine.h"
+
+class PetrolEngine : public Engine
 {
 public:
     PetrolEngine(int power, float capacity, int gears);
