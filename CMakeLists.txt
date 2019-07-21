@@ -3,7 +3,8 @@ cmake_minimum_required(VERSION 3.2)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-project(Cars)
+set(PROJECT_NAME Cars)
+project(${PROJECT_NAME})
 
 set(SRC_LIST
     Car.hpp
@@ -22,4 +23,21 @@ set(SRC_LIST
 )
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})
-add_compile_options(${PROJECT_NAME} -Wall -Werror -Wpedantic -Wextra)
+add_compile_options(${PROJECT_NAME} -Wall -Werror -Wpedantic -Wextra -Wconversion)
+
+message(${CMAKE_CURRENT_SOURCE_DIR})
+
+add_subdirectory(${PROJECT_SOURCE_DIR}/googletest)
+
+enable_testing()
+
+include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
+
+include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
+
+file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
+
+add_executable(runUnitTests ${TEST_SRC_FILES})
+
+target_link_libraries(runUnitTests gtest gtest_main)
+
