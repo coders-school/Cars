@@ -21,5 +21,5 @@ void PetrolEngine::changeGear(int gear)
 
 int PetrolEngine::getGear()
 {
-    return currentGear;
+    return currentGear_;
 }
