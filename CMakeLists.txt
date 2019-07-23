@@ -13,6 +13,8 @@ set(SRC_LIST
     ElectricCar.hpp
     ElectricEngine.cpp
     ElectricEngine.hpp
+    Engine.cpp
+    Engine.hpp
     HybridCar.cpp
     HybridCar.hpp
     main.cpp
@@ -23,21 +25,21 @@ set(SRC_LIST
 )
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})
-add_compile_options(${PROJECT_NAME} -Wall -Werror -Wpedantic -Wextra -Wconversion)
-
-message(${CMAKE_CURRENT_SOURCE_DIR})
+target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Werror -Wpedantic -Wextra -Wconversion)
 
 add_subdirectory(${PROJECT_SOURCE_DIR}/googletest)
 
 enable_testing()
 
-include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
-
-include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
+include_directories(
+        ${gtest_SOURCE_DIR}/include
+        ${gtest_SOURCE_DIR}
+        ${gmock_SOURCE_DIR}/include
+        ${gmock_SOURCE_DIR})
 
 file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
 
 add_executable(runUnitTests ${TEST_SRC_FILES})
 
-target_link_libraries(runUnitTests gtest gtest_main)
+target_link_libraries(runUnitTests gtest gtest_main gmock gmock_main)
 
