@@ -10,6 +10,8 @@ public:
     ~PetrolCar();
     void refuel();
 
+    PetrolEngine * changeEngine (int ,float ,int );
+protected:
     PetrolEngine* engine_;
 };
 

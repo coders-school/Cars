@@ -10,7 +10,7 @@ ElectricCar::ElectricCar(ElectricEngine* engine)
 ElectricCar::~ElectricCar()       { std::cout << __FUNCTION__ << std::endl; }
 void ElectricCar::charge()        { std::cout << __FUNCTION__ << std::endl; }
 
-ElectricEngine* ElectricCar::changeElectricEngine (int power, int batteryCapacity)
+ElectricEngine* ElectricCar::changeEngine (int power, int batteryCapacity)
 {
     if (velocity!=0)
     {
@@ -24,7 +24,4 @@ ElectricEngine* ElectricCar::changeElectricEngine (int power, int batteryCapacit
         std::cout << "Power: "<<this->engine_->power_<<" Battery: "<<this->engine_->batteryCapacity_<< std::endl;
         return this->engine_;
     }
-
-
-
 }
