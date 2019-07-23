@@ -8,7 +8,8 @@ public:
     ElectricCar(ElectricEngine* engine);
     ~ElectricCar();
     void charge();
-
+    ElectricEngine* changeElectricEngine (int, int);
+protected:
     ElectricEngine* engine_;
 };
 

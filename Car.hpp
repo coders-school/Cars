@@ -8,5 +8,5 @@ public:
     void brake();
     void accelerate(int speed);
 protected:
-   
+  int velocity; 
 };

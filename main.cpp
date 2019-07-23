@@ -17,7 +17,8 @@ int main()
     ElectricCar nissan(new ElectricEngine(130, 650));
     nissan.charge();
     nissan.accelerate(80);
-    nissan.engine_ = new ElectricEngine(150, 700);  // Changing an engine during driving is not safe
+    nissan.changeElectricEngine(100,100);
+    //nissan.engine_ = new ElectricEngine(150, 700);  // Changing an engine during driving is not safe
     nissan.turnLeft();
 
     std::cout << std::endl << "TOYOTA" << std::endl;
