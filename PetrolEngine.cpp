@@ -23,3 +23,8 @@ int PetrolEngine::getGear()
 {
     return currentGear_;
 }
+
+bool PetrolEngine::isGearValid()
+{
+    return (currentGear_ <= gears_ && currentGear_ >= -1) ? true : false;
+}
