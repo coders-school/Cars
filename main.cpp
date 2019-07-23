@@ -1,6 +1,7 @@
 #include "PetrolCar.hpp"
 #include "ElectricCar.hpp"
 #include "HybridCar.hpp"
+#include "Car.hpp"
 #include <iostream>
 
 int main()

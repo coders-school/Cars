@@ -6,6 +6,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 project(Cars)
 
 set(SRC_LIST
+    Car.hpp
+    Car.cpp
     ElectricCar.cpp
     ElectricCar.hpp
     ElectricEngine.cpp
