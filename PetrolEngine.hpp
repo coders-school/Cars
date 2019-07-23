@@ -1,9 +1,12 @@
 #pragma once
 
-class PetrolEngine
+#include "Engine.hpp"
+
+class PetrolEngine  : public virtual Engine
 {
 public:
     PetrolEngine(int power, float capacity, int gears);
+    ~PetrolEngine();
     void changeGear(int gear);
 
     int power_;         // in HP

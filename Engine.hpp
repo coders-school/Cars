@@ -1,14 +1,9 @@
-//
-// Created by adi on 23.07.19.
-//
+#pragma once
 
-#ifndef CARS_ENGINE_H
-#define CARS_ENGINE_H
-
-
-class Engine {
+class Engine
+{
+protected:
+    virtual ~Engine();
 
 };
 
-
-#endif //CARS_ENGINE_H
