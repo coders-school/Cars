@@ -7,6 +7,9 @@ ElectricCar::ElectricCar(ElectricEngine* engine)
     std::cout << __FUNCTION__ << std::endl;
 }
 
-ElectricCar::~ElectricCar()       { std::cout << __FUNCTION__ << std::endl; }
+ElectricCar::~ElectricCar()       {
+    delete(engine_);
+    engine_ = nullptr;
+    std::cout << __FUNCTION__ << std::endl; }
 void ElectricCar::charge()        { std::cout << __FUNCTION__ << std::endl; }
 void ElectricCar::feed()          { charge(); }
