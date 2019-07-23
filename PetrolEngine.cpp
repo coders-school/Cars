@@ -15,8 +15,15 @@ void PetrolEngine::changeGear(int gear)
     // TODO: Add checking if gear is between -1 and gears_
     // -1 is for REAR
     // 0 is for NEUTRAL
-    currentGear_ = gear;
-    std::cout << __FUNCTION__ << std::endl;
+    if (isGearValid(gear))
+    {
+    	currentGear_ = gear;
+    	std::cout << __FUNCTION__ << std::endl;
+    }
+    else
+    {
+	std::cout<<"This gear is not valid." <<std::endl;
+    }
 }
 
 int PetrolEngine::getGear()
@@ -24,7 +31,7 @@ int PetrolEngine::getGear()
     return currentGear_;
 }
 
-bool PetrolEngine::isGearValid()
+bool PetrolEngine::isGearValid(nt& gear)
 {
-    return (currentGear_ <= gears_ && currentGear_ >= -1) ? true : false;
+    return (gear <= gears_ && gear >= -1) ? true : false;
 }
