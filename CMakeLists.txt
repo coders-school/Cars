@@ -19,6 +19,8 @@ set(SRC_LIST
     PetrolCar.hpp
     PetrolEngine.cpp
     PetrolEngine.hpp
+    InvalidGear.cpp
+    InvalidGear.hpp
 )
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})
