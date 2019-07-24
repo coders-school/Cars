@@ -19,4 +19,11 @@ void ElectricCar::charge()
     else
         std::cout << "You can't charge Your car while driving!" << std::endl;
 }
+void ElectricCar::changeElectricEngine(ElectricEngine* engine)
+{
+    if(velocity!=0)
+        std::cout<<"You can't change engine while driving!"<<std::endl;
+    else
+        engine_ = engine;
+}
 void ElectricCar::feed()          { charge(); }

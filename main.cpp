@@ -14,6 +14,8 @@ int main()
     car->brake(1);
     car->accelerate(-900);
     car->feed();
+    car->brake(20);
+    opel.changePetrolEngine(new PetrolEngine(210,2000,6));
 
     std::cout << std::endl << "NISSAN" << std::endl;
     ElectricCar nissan(new ElectricEngine(130, 650));
@@ -21,7 +23,7 @@ int main()
     car->feed();
     car->Vmax = 240;
     car->accelerate(80);
-    nissan.engine_ = new ElectricEngine(150, 700);  // Changing an engine during driving is not safe
+    nissan.changeElectricEngine(new ElectricEngine(200, 850));
     car->turnLeft();
 
     std::cout << std::endl << "TOYOTA" << std::endl;
@@ -33,4 +35,6 @@ int main()
     car->brake(1);
     car->feed();
     pe->changeGear(1);
+    toyota.changeElectricEngine(new ElectricEngine(200, 340));
+    toyota.changePetrolEngine(new PetrolEngine(400,4500,7));
 }

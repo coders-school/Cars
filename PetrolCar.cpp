@@ -19,4 +19,11 @@ if(Car::velocity == 0)
 else
     std::cout << "You can't refuel Your car while driving!" << std::endl;
 }
+void PetrolCar::changePetrolEngine(PetrolEngine* engine)
+{
+    if(velocity!=0)
+        std::cout<<"You can't change engine while driving!"<<std::endl;
+    else
+        engine_ = engine;
+}
 void PetrolCar::feed()          { refuel(); }
