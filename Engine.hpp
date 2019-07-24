@@ -2,8 +2,8 @@
 
 class Engine
 {
-protected:
-    virtual ~Engine();
 
+public:
+    virtual ~Engine();
 };
 

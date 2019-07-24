@@ -6,8 +6,10 @@ class Car
 {
 protected:
     int velocity = 0;
+    Engine* engine_;
 public:
-    virtual ~Car() = default;
+    Car(Engine*);
+    ~Car();
     void turnLeft();
     void turnRight();
     void brake();
