@@ -37,7 +37,7 @@ void PetrolEngine::changeGear(int gear)
 	}
 	catch (InvalidGear& e)
 	{
-	    std::cout << "Exception present, gear didn't changed." << std::endl;
+	    std::cout << e.what() << std::endl;
 	}
 	catch (std::exception& e)
 	{
