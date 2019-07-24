@@ -6,7 +6,8 @@ class ElectricCar : virtual public Car
 {
 public:
     ElectricCar(ElectricEngine* engine);
-    ~ElectricCar();
+    virtual ~ElectricCar();
+
     void charge();
     ElectricEngine* changeEngine (int, int);
 protected:

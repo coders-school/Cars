@@ -7,7 +7,8 @@ class PetrolCar : virtual public Car
 {
 public:
     PetrolCar(PetrolEngine* engine);
-    ~PetrolCar();
+    virtual ~PetrolCar();
+
     void refuel();
 
     PetrolEngine * changeEngine (int ,float ,int );
