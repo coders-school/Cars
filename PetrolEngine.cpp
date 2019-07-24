@@ -1,4 +1,5 @@
 #include "PetrolEngine.hpp"
+#include "InvalidGear.hpp"
 #include <iostream>
 
 PetrolEngine::PetrolEngine(int power, float capacity, int gears=6)
