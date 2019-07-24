@@ -2,7 +2,8 @@
 #include"Exceptions.hpp"
 #include <iostream>
 
-Car::Car()		  { std::cout << __FUNCTION__ << std::endl; }
+Car::Car()		  { std::cout << __FUNCTION__ << std::endl;
+                            velocity=0; }
 Car::~Car()		  { std::cout << __FUNCTION__ << std::endl; }
 
 void Car::turnLeft()      { std::cout << __FUNCTION__ << std::endl; }

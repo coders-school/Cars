@@ -9,7 +9,9 @@ int main()
 {
     std::cout << std::endl << "OPEL" << std::endl;
     PetrolCar opel(new PetrolEngine(120, 1800, 6));
+    opel.getSpeed();
     opel.accelerate(50);
+    opel.getSpeed();
     opel.brake();
     opel.changeEngine(150,1000,5);
     opel.accelerate(-900);
