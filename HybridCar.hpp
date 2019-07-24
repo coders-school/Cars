@@ -1,19 +1,32 @@
 #include "ElectricEngine.hpp"
 #include "PetrolEngine.hpp"
+#include "ElectricCar.hpp"
+#include "PetrolCar.hpp"
 
-class HybridCar
+class HybridCar : public ElectricCar, public PetrolCar
 {
 public:
-    HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng);
+    HybridCar(PetrolEngine *petrolEng, ElectricEngine *electricEng);
     ~HybridCar();
-    void turnLeft();
-    void turnRight();
-    void brake();
-    void accelerate(int speed);
-    void charge();
-    void refuel();
 
-    PetrolEngine* petrolEngine_;
-    ElectricEngine* electricEngine_;
+    void addEnergy();
+    /*zamiast dziedziczenia wirtualnego
+    using importuje do danej klasy nazwę
+    using PetrolCar::accelerate;
+    using PetrolCar::brake;
+
+    lub
+
+    void accelerate(int value){
+        PetrolCar::accelerate(value);
+    }
+
+    void brake(){
+
+    }
+
+    */
+
+ //   PetrolEngine *petrolEngine_;
+ //   ElectricEngine *electricEngine_;
 };
-

@@ -5,12 +5,16 @@
 
 int main()
 {
+    Car* car = nullptr;
     std::cout << std::endl << "OPEL" << std::endl;
     PetrolCar opel(new PetrolEngine(120, 1800, 6));
-    opel.accelerate(50);
-    opel.brake();
-    opel.accelerate(-900);
-    opel.refuel();
+    car = &opel;
+    car -> accelerate(50);
+    car ->brake();
+    car ->accelerate(-900);
+    auto hc = dynamic_cast<PetrolCar*>(car);
+    if(hc)
+        hc ->refuel();
 
     std::cout << std::endl << "NISSAN" << std::endl;
     ElectricCar nissan(new ElectricEngine(130, 650));

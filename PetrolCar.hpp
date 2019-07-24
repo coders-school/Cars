@@ -1,16 +1,16 @@
+#pragma once
 #include "PetrolEngine.hpp"
+#include "Car.hpp"
 
-class PetrolCar
+class PetrolCar : virtual public Car
 {
 public:
-    PetrolCar(PetrolEngine* engine);
+    PetrolCar(PetrolEngine *engine);
+    PetrolCar()= default;
     ~PetrolCar();
-    void turnLeft();
-    void turnRight();
-    void brake();
-    void accelerate(int speed);
+    void addEnergy();
     void refuel();
 
-    PetrolEngine* engine_;
+    int petrolCondition;
+    PetrolEngine *engine_;
 };
-
