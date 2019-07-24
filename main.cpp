@@ -6,9 +6,10 @@
 int main()
 {
     PetrolCar FordMustang(new PetrolEngine(450, 5000, 6));
+    FordMustang.accelerate(240);
     FordMustang.accelerate(10);
-    FordMustang.accelerate(30);
-    
+    FordMustang.accelerate(10);
+ 
     // Car* car = nullptr;
     // std::cout << std::endl << "OPEL" << std::endl;
     // PetrolCar opel(new PetrolEngine(120, 1800, 6));
