@@ -23,7 +23,26 @@ void PetrolEngine::changeGear(int gear)
     // 0 is for NEUTRAL
     if (isGearValid(gear))
     {
-    	currentGear_ = gear;
+	try
+	{
+	    if (currentGear_ > 0 && gear == -1)
+	    {
+		throw InvalidGear();
+	    }
+	    else
+	    {
+		currentGear_ = gear;
+	    }
+
+	}
+	catch (InvalidGear& e)
+	{
+	    std::cout << "Exception present, gear didn't changed." << std::endl;
+	}
+	catch (std::exception& e)
+	{
+	    std::cout << "Other exception." <<std::endl;
+	}
     	std::cout << __FUNCTION__ << std::endl;
     }
     else
