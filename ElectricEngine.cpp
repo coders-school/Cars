@@ -5,6 +5,7 @@ ElectricEngine::ElectricEngine(int power, int batteryCapacity)
     : power_(power)
     , batteryCapacity_(batteryCapacity)
     , gears_(1)
+    , currentGear_(0)
 {
     std::cout << __FUNCTION__ << std::endl;
 }
