@@ -4,10 +4,12 @@
 
 class PetrolCar : virtual public Car
 {
+protected:
+    void refuel();
 public:
     PetrolCar(PetrolEngine* engine);
     ~PetrolCar();
-    void refuel();
+    void feed() override;
 
     PetrolEngine* engine_;
 };
