@@ -1,5 +1,6 @@
 #include "ElectricEngine.hpp"
 #include "Car.hpp"
+#include"Exceptions.hpp"
 #pragma once
 
 class ElectricCar : virtual public Car

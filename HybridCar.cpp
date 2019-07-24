@@ -1,4 +1,5 @@
 #include "HybridCar.hpp"
+#include"Exceptions.hpp"
 #include <iostream>
 
 HybridCar::HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng)

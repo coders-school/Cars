@@ -1,4 +1,5 @@
 #include "ElectricCar.hpp"
+#include"Exceptions.hpp"
 #include <iostream>
 
 ElectricCar::ElectricCar(ElectricEngine* engine)
@@ -12,16 +13,17 @@ void ElectricCar::charge()        { std::cout << __FUNCTION__ << std::endl; }
 
 ElectricEngine* ElectricCar::changeEngine (int power, int batteryCapacity)
 {
-    if (velocity!=0)
+    try
     {
-        std::cout<< "Imposible"<<std::endl;
-        return this->engine_;
-    }
-    else
+        if(velocity!=0)  throw ExceptionChangeEngine();
+            std::cout << __FUNCTION__ << std::endl;
+            this->engine_ = new ElectricEngine(power,batteryCapacity);
+            std::cout << "Power: "<<this->engine_->power_<<" Battery: "<<this->engine_->batteryCapacity_<< std::endl;
+            return this->engine_;
+
+   }
+    catch (ExceptionChangeEngine Ex)
     {
-        std::cout << __FUNCTION__ << std::endl;
-        this->engine_ = new ElectricEngine(power,batteryCapacity);
-        std::cout << "Power: "<<this->engine_->power_<<" Battery: "<<this->engine_->batteryCapacity_<< std::endl;
-        return this->engine_;
+        Ex.getException();
     }
 }
