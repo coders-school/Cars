@@ -9,4 +9,3 @@ ElectricCar::ElectricCar(ElectricEngine* engine)
 
 ElectricCar::~ElectricCar()       { std::cout << __FUNCTION__ << std::endl; }
 void ElectricCar::charge()        { std::cout << __FUNCTION__ << std::endl; }
-void ElectricCar::feed()          { charge(); }
