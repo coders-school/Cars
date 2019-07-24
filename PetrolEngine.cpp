@@ -1,11 +1,17 @@
 #include "PetrolEngine.hpp"
+#include "InvalidGear.hpp"
 #include <iostream>
 
-PetrolEngine::PetrolEngine(int power, float capacity, int gears)
+PetrolEngine::PetrolEngine(int power, float capacity, int gears=6)
     : power_(power)
     , capacity_(capacity)
     , gears_(gears)
     , currentGear_(0)
+{
+    std::cout << __FUNCTION__ << std::endl;
+}
+
+PetrolEngine::~PetrolEngine()
 {
     std::cout << __FUNCTION__ << std::endl;
 }

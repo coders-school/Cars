@@ -8,8 +8,16 @@ ElectricCar::ElectricCar(ElectricEngine* engine)
     std::cout << __FUNCTION__ << std::endl;
 }
 
-ElectricCar::~ElectricCar()       { std::cout << __FUNCTION__ << std::endl; }
-void ElectricCar::charge()        { std::cout << __FUNCTION__ << std::endl; }
+ElectricCar::~ElectricCar()
+{ 
+    delete engine_;
+    std::cout << __FUNCTION__ << std::endl; 
+}
+
+void ElectricCar::charge()
+{ 
+    std::cout << __FUNCTION__ << std::endl; 
+}
 
 ElectricEngine* ElectricCar::changeEngine (int power, int batteryCapacity)
 {
@@ -24,6 +32,14 @@ ElectricEngine* ElectricCar::changeEngine (int power, int batteryCapacity)
    }
     catch (ExceptionChangeEngine Ex)
     {
+<<<<<<< HEAD
         Ex.getException();
+=======
+        std::cout << __FUNCTION__ << std::endl;
+	delete engine_;
+        this->engine_ = new ElectricEngine(power,batteryCapacity);
+        std::cout << "Power: "<<this->engine_->power_<<" Battery: "<<this->engine_->batteryCapacity_<< std::endl;
+        return this->engine_;
+>>>>>>> 0aa3c19229b971bcb555edc087f65687024d9a48
     }
 }
