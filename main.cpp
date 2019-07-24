@@ -13,6 +13,7 @@ int main()
     opel.brake();
     opel.changeEngine(150,1000,5);
     opel.accelerate(-900);
+    opel.accelerate(500);
     opel.refuel();
 
     std::cout << std::endl << "NISSAN" << std::endl;

@@ -11,6 +11,8 @@ public:
     void brake();
     void accelerate(int speed);
     void changeEngine(int, int);
+    void getSpeed();
+    int setSpeed(int);
 protected:
     int velocity; 
 };

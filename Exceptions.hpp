@@ -9,3 +9,13 @@ class Exception
  public:
      void getException();
 };
+class ExcepptionMaxSpeed :public Exception
+{
+public:
+    void getException();
+};
+class ExcepptionRSpeed :public Exception
+{
+public:
+    void getException();
+};
