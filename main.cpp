@@ -32,4 +32,5 @@ int main()
     car->accelerate(300);
     car->brake(1);
     car->feed();
+    pe->changeGear(1);
 }
