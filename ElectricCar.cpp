@@ -6,7 +6,20 @@ ElectricCar::ElectricCar(ElectricEngine* engine)
 {
     std::cout << __FUNCTION__ << std::endl;
 }
-
-ElectricCar::~ElectricCar()       { std::cout << __FUNCTION__ << std::endl; }
+ElectricCar::~ElectricCar()       { 
+    std::cout << __FUNCTION__ << std::endl; 
+     delete engine_ ;
+    }
 void ElectricCar::charge()        { std::cout << __FUNCTION__ << std::endl; }
-void ElectricCar::feed()          { charge(); }
+void ElectricCar::feed()          {charge();}
+
+void ElectricCar::ElectricEngineChange(int power, int batteryCapacity)
+{
+   if (this->carSpeed == 0)
+    {
+        delete this->engine_ ;
+        this->engine_ = new ElectricEngine(power, batteryCapacity);
+        std::cout<< "Engine was changed properly."<<std::endl;
+    }
+    else std::cout<< "Changing an electric engine during driving is not safe."<<std::endl;
+}

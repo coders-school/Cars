@@ -2,15 +2,19 @@
 #include "ElectricEngine.hpp"
 #include "Car.hpp"
 
-class ElectricCar : public virtual Car
+class ElectricCar : virtual public Car
 {
 protected:
     void charge();
+    ElectricEngine* engine_;
+
+
 public:
     ElectricCar(ElectricEngine* engine);
     ~ElectricCar();
     void feed() override;
-
-    ElectricEngine* engine_;
+    void ElectricEngineChange(int, int);
 };
+
+
 
