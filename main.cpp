@@ -60,4 +60,6 @@ int main()
     toyota.refuel();
     toyota.changeEngine(100,100);
     toyota.changeEngine(100,100,100);
+
+    delete Pointer;
 }
