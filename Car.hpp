@@ -9,6 +9,9 @@ protected:
     Engine* engine_;
 public:
     explicit Car(Engine*);
+
+    Car() = default;
+
     ~Car();
     static void turnLeft();
     static void turnRight();

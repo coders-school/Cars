@@ -23,4 +23,3 @@ Car::~Car() {
     delete engine_;
     engine_ = nullptr;
 }
-

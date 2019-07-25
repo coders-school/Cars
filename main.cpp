@@ -15,17 +15,16 @@ int main()
     car->feed();
 
     std::cout << std::endl << "NISSAN" << std::endl;
-    ElectricCar nissan();
+    ElectricCar nissan(new ElectricEngine(130, 650));
     car = &nissan;
     car->feed();
     car->accelerate(80);
     car->brake();
-    nissan.changeEngine(new ElectricEngine(150, 700));  // Changing an engine during driving is not safe # TODO
+    nissan.changeEngine(new ElectricEngine(150, 700));  // Changing an engine during driving is not safe # DONE
     car->turnLeft();
 
     std::cout << std::endl << "TOYOTA" << std::endl;
-    auto* pe = new PetrolEngine(80, 1400, 5);
-    HybridCar toyota(nullptr, pe, new ElectricEngine(100, 540));
+    HybridCar toyota(new ElectricEngine(100, 540), new PetrolEngine(80, 1400, 5));
     car = &toyota;
     car->accelerate(100);
     car->brake();
