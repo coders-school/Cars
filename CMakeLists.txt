@@ -8,6 +8,7 @@ project(Cars)
 set(SRC_LIST
     Car.hpp
     Car.cpp
+    InvalidGear.hpp
     ElectricCar.cpp
     ElectricCar.hpp
     ElectricEngine.cpp

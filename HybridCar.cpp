@@ -10,10 +10,7 @@ HybridCar::HybridCar(PetrolEngine *petrolEng, ElectricEngine *electricEng)
 HybridCar::~HybridCar() { std::cout << __FUNCTION__ << std::endl; }
 
 void HybridCar:: addEnergy() {
-    if(PetrolCar::petrolCondition < 20){
-        PetrolCar::addEnergy();
-    }else if(ElectricCar::electricCondition < 20){
-        ElectricCar::addEnergy();
-    }
+        charge();
+        refuel();
 }
 

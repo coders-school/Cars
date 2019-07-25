@@ -4,14 +4,18 @@
 
 class ElectricCar : virtual public Car
 {
+protected:
+     void charge();
 public:
-    ElectricCar(ElectricEngine *engine, int electricCondition=50);
+    ElectricCar(ElectricEngine *engine);
     ElectricCar()= default;
     ~ElectricCar();
 
-    int electricCondition;
-    void addEnergy();
-    void charge();
+    
+    void accelerate(int moreSpeed);
+    void brake();
+    void addEnergy() override;
+   
 
     ElectricEngine *engine_;
 };

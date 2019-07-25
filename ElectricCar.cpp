@@ -1,12 +1,18 @@
 #include "ElectricCar.hpp"
 #include <iostream>
 
-ElectricCar::ElectricCar(ElectricEngine *engine, int electricCondition)
+ElectricCar::ElectricCar(ElectricEngine *engine)
     : engine_(engine)
 {
     std::cout << __FUNCTION__ << std::endl;
 }
 ElectricCar::~ElectricCar() { std::cout << __FUNCTION__ << std::endl; }
 
-void ElectricCar::addEnergy(){ std::cout << __FUNCTION__ << std::endl; }
-//void ElectricCar::charge() { std::cout << __FUNCTION__ << std::endl; }
+void ElectricCar::addEnergy() { charge(); }
+void ElectricCar::accelerate(int moreSpeed)
+{
+    velocity += moreSpeed;
+    std::cout << "Current velocity " << velocity << std::endl;
+}
+void ElectricCar::brake() { velocity = 0; }
+void ElectricCar::charge() { std::cout << __FUNCTION__ << std::endl; }
