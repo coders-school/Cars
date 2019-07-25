@@ -38,3 +38,4 @@ int Car::setSpeed(int value)
         Ex.getException();
     }
 }
+void Car::gettypeCar(){}

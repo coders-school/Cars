@@ -11,6 +11,7 @@ public:
 
     void charge();
     ElectricEngine* changeEngine (int, int);
+    void gettypeCar();
 protected:
     ElectricEngine* engine_;
 };

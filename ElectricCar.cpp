@@ -36,3 +36,7 @@ ElectricEngine* ElectricCar::changeEngine (int power, int batteryCapacity)
         Ex.getException();
     }
 }
+void ElectricCar::gettypeCar()
+{
+    std::cout<<"This is electric car"<<std::endl;
+}

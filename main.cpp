@@ -4,12 +4,34 @@
 #include "Car.hpp"
 #include"Exceptions.hpp"
 #include <iostream>
+#include <assert.h>
 
+void checkPoint(Car* point)
+{
+    assert(point!=NULL);
+    std::cout<<"Pointer is ok"<<std::endl;
+}
+void checkPoint(Car* point,Car &NewAdress, Car &OldAdress)
+{
+    point->gettypeCar();
+    point = &NewAdress;
+    assert(point!=(&OldAdress));
+    std::cout<<"Pointer has new adress"<<std::endl;
+    point->gettypeCar();
+}
 int main()
 {
-    std::cout << std::endl << "OPEL" << std::endl;
     PetrolCar opel(new PetrolEngine(120, 1800, 6));
-    opel.getSpeed();
+    ElectricCar nissan(new ElectricEngine(130, 650));
+    HybridCar toyota(new PetrolEngine(80, 1400, 5), new ElectricEngine(100, 540));
+    Car *  Pointer;
+
+    Pointer = &opel;
+    checkPoint(Pointer);
+    checkPoint(Pointer,nissan,opel);
+
+    std::cout << std::endl << "OPEL" << std::endl;
+    Pointer->getSpeed();
     opel.accelerate(50);
     opel.getSpeed();
     opel.brake();
@@ -19,7 +41,7 @@ int main()
     opel.refuel();
 
     std::cout << std::endl << "NISSAN" << std::endl;
-    ElectricCar nissan(new ElectricEngine(130, 650));
+
     nissan.charge();
     nissan.accelerate(80);
     nissan.changeEngine(100,100);
@@ -27,7 +49,7 @@ int main()
     nissan.turnLeft();
 
     std::cout << std::endl << "TOYOTA" << std::endl;
-    HybridCar toyota(new PetrolEngine(80, 1400, 5), new ElectricEngine(100, 540));
+  //  HybridCar toyota(new PetrolEngine(80, 1400, 5), new ElectricEngine(100, 540));
     toyota.accelerate(100);
     toyota.brake();
     toyota.charge();

@@ -37,3 +37,7 @@ PetrolEngine * PetrolCar::changeEngine(int power,float capacity,int gears)
 
 
 }
+void PetrolCar::gettypeCar()
+{
+    std::cout<<"This is PetroCar"<<std::endl;
+}

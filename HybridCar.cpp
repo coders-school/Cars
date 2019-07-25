@@ -23,3 +23,7 @@ ElectricEngine * HybridCar::changeEngine(int power, int battery)
 {
     ElectricCar::changeEngine(power, battery);
 }
+void HybridCar::gettypeCar()
+{
+    std::cout<<"This is HybridCar"<<std::endl;
+}

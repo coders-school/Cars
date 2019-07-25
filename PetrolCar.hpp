@@ -12,6 +12,7 @@ public:
     void refuel();
 
     PetrolEngine * changeEngine (int ,float ,int );
+    void gettypeCar();
 protected:
     PetrolEngine* engine_;
 };

@@ -12,6 +12,7 @@ public:
     void accelerate(int speed);
     void changeEngine(int, int);
     void getSpeed();
+    virtual void gettypeCar();
     int setSpeed(int);
 protected:
     int velocity; 

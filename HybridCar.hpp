@@ -11,5 +11,6 @@ public:
 
     PetrolEngine * changeEngine (int,float, int);
     ElectricEngine * changeEngine(int,int);
+    void gettypeCar();
 };
 
