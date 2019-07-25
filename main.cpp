@@ -15,7 +15,7 @@ int main()
     car->feed();
 
     std::cout << std::endl << "NISSAN" << std::endl;
-    ElectricCar nissan(new ElectricEngine(130, 650));
+    ElectricCar nissan();
     car = &nissan;
     car->feed();
     car->accelerate(80);
@@ -25,7 +25,7 @@ int main()
 
     std::cout << std::endl << "TOYOTA" << std::endl;
     auto* pe = new PetrolEngine(80, 1400, 5);
-    HybridCar toyota(pe, new ElectricEngine(100, 540));
+    HybridCar toyota(nullptr, pe, new ElectricEngine(100, 540));
     car = &toyota;
     car->accelerate(100);
     car->brake();

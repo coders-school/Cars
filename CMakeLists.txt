@@ -13,7 +13,6 @@ set(SRC_LIST
     ElectricCar.hpp
     ElectricEngine.cpp
     ElectricEngine.hpp
-    Engine.cpp
     Engine.hpp
     HybridCar.cpp
     HybridCar.hpp

@@ -6,7 +6,7 @@ class PetrolEngine  : public virtual Engine
 {
 public:
     PetrolEngine(int power, float capacity, int gears);
-    ~PetrolEngine();
+    ~PetrolEngine() override = default;
     void changeGear(int gear);
 
     int power_;         // in HP

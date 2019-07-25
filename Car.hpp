@@ -8,10 +8,10 @@ protected:
     int velocity = 0;
     Engine* engine_;
 public:
-    Car(Engine*);
+    explicit Car(Engine*);
     ~Car();
-    void turnLeft();
-    void turnRight();
+    static void turnLeft();
+    static void turnRight();
     void brake();
     void accelerate(int speed);
     virtual void feed()=0;

@@ -5,11 +5,9 @@
 class ElectricCar : public virtual Car
 {
 protected:
-    void charge();
-    ElectricEngine* engine_;
+    static void charge();
 public:
-    ElectricCar(ElectricEngine* engine);
-    ~ElectricCar() override;
+    explicit ElectricCar(Engine *engine);
 
     void feed() override;
     void changeEngine(Engine* engine) override;

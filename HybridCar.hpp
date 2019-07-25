@@ -3,10 +3,12 @@
 #include "ElectricCar.hpp"
 #include "PetrolCar.hpp"
 
-class HybridCar : public PetrolCar, public ElectricCar
+class HybridCar : public ElectricCar
 {
+private:
+    PetrolEngine* engine_;
 public:
-    HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng);
+    HybridCar(Engine*, PetrolEngine*);
     ~HybridCar();
     void feed() override;
     void changeEngine(Engine* engine) override;

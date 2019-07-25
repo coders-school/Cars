@@ -2,14 +2,13 @@
 #include "PetrolEngine.hpp"
 #include "Car.hpp"
 
-class PetrolCar : virtual public Car
+class PetrolCar : public virtual Car
 {
 protected:
-    void refuel();
-    PetrolEngine* engine_;
+    static void refuel();
 public:
-    PetrolCar(PetrolEngine* engine);
-    ~PetrolCar() override;
+    explicit PetrolCar(Engine* engine);
+    ~PetrolCar();
 
     void feed() override;
     void changeEngine(Engine* engine) override;

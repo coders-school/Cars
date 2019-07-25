@@ -1,16 +1,13 @@
 #include "HybridCar.hpp"
 #include <iostream>
 
-HybridCar::HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng)
-    : PetrolCar(petrolEng)
-    , ElectricCar(electricEng)
-{
+HybridCar::HybridCar(Engine* elEngine, PetrolEngine* petrolEng)
+    : ElectricCar(elEngine), engine_(petrolEng) {
     std::cout << __FUNCTION__ << std::endl;
 }
 
 HybridCar::~HybridCar()       {std::cout << __FUNCTION__ << std::endl; }
 void HybridCar::feed() {
-    PetrolCar::feed();
     ElectricCar::feed();
  }
 
@@ -19,13 +16,14 @@ void HybridCar::changeEngine(Engine *engine) {
     if (velocity != 0)
         throw std::logic_error( "Car is moving now! Engine exchange impossible ");
     
-    ElectricEngine* engineE;
-    engineE = dynamic_cast<ElectricEngine*>(engine);
-    if (engineE != nullptr)
+    auto* engineE = dynamic_cast<ElectricEngine*>(engine);
+    if (engineE != nullptr) {
         ElectricCar::changeEngine(engine);
+        delete (engineE);
+    }
 
-    PetrolEngine* engineP;
-    engineP = dynamic_cast<PetrolEngine*>(engine);
-    if (engineP != nullptr)
-        PetrolCar::changeEngine(engine);
+    auto* engineP = dynamic_cast<PetrolEngine*>(engine);
+    if (engineP != nullptr) {
+        throw std::runtime_error("Change of petrol engine failed");
+    }
 }

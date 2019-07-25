@@ -8,6 +8,3 @@ ElectricEngine::ElectricEngine(int power, int batteryCapacity)
     std::cout << __FUNCTION__ << std::endl;
 }
 
-ElectricEngine::~ElectricEngine(){
-
-}

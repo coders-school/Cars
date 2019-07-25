@@ -4,6 +4,6 @@ class Engine
 {
 
 public:
-    virtual ~Engine();
+    virtual ~Engine() = default;
 };
 
