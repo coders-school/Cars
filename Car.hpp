@@ -2,12 +2,18 @@
 
 class Car
 {
+    protected:
+    int slow;
+    int speed;
+    float velocity;
 public:
-    virtual ~Car() = default;
+    Car();
+    virtual ~Car();
     void turnLeft();
     void turnRight();
-    void brake();
-    void accelerate(int speed);
+    void Brake(int);
+    void Accelerate(int);
     virtual void feed()=0;
+    void Velocity(float);
 };
 
