@@ -39,9 +39,9 @@ void PetrolEngine::changeGear(int gear)
 	{
 	    std::cout << e.what() << std::endl;
 	}
-	catch (std::exception& e)
+	catch (std::bad_function_call& e)
 	{
-	    std::cout << "Other exception." <<std::endl;
+	    std::cout << "Bad function exception." <<std::endl;
 	}
     	std::cout << __FUNCTION__ << std::endl;
     }

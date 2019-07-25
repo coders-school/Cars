@@ -1,11 +1,8 @@
 #pragma once
-#include <exception>
+#include <functional>
 
-class InvalidGear : public std::exception
+class InvalidGear : public std::bad_function_call
 {
 public:
-    InvalidGear();
-    ~InvalidGear();
-
     const char* what() const throw();
 };
