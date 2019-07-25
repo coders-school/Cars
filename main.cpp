@@ -32,6 +32,9 @@ int main()
 
     std::cout << std::endl << "OPEL" << std::endl;
     Pointer->getSpeed();
+    std::cout<< "Current gear is: " << opel.getCurrentGear() << std::endl;
+    opel.setGear(2);
+    std::cout<< "Current gear after change is: " << opel.getCurrentGear() << std::endl;
     opel.accelerate(50);
     opel.getSpeed();
     opel.brake();

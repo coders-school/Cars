@@ -32,6 +32,7 @@ void PetrolEngine::changeGear(int gear)
 	    else
 	    {
 		currentGear_ = gear;
+		std::cout << "Gear has been changed to: " << currentGear_ << std::endl;
 	    }
 
 	}

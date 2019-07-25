@@ -33,11 +33,19 @@ PetrolEngine * PetrolCar::changeEngine(int power,float capacity,int gears)
                   <<" Gears: "   <<this->engine_->gears_ <<std::endl;
         return this->engine_;
     }
-
-
-
 }
+
 void PetrolCar::gettypeCar()
 {
     std::cout<<"This is PetroCar"<<std::endl;
+}
+
+int PetrolCar::getCurrentGear()
+{
+	return this->engine_->getGear();
+}
+
+void PetrolCar::setGear(int gear)
+{
+    this->engine_->changeGear(gear);
 }
