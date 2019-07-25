@@ -5,10 +5,14 @@
 
 int main()
 {
-    PetrolCar FordMustang(new PetrolEngine(450, 5000, 6));
-    FordMustang.accelerate(240);
-    FordMustang.accelerate(10);
-    FordMustang.accelerate(10);
+    HybridCar rav4(new PetrolEngine(180, 1800,6), new ElectricEngine(120, 5000));
+    
+    // PetrolCar FordMustang(new PetrolEngine(450, 5000, 6));
+    // FordMustang.accelerate(120);
+    // FordMustang.accelerate(10);
+    // FordMustang.accelerate(10);
+    // FordMustang.feed();
+    // FordMustang.feed();
  
     // Car* car = nullptr;
     // std::cout << std::endl << "OPEL" << std::endl;

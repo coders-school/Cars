@@ -1,7 +1,7 @@
 #include "PetrolEngine.hpp"
 #include <iostream>
 
-PetrolEngine::PetrolEngine(int power, float capacity, int gears)
+PetrolEngine::PetrolEngine(unsigned power, float capacity, int gears)
     : power_(power)
     , capacity_(capacity)
     , gears_(gears)
@@ -17,4 +17,9 @@ void PetrolEngine::changeGear(int gear)
     // 0 is for NEUTRAL
     currentGear_ = gear;
     std::cout << __FUNCTION__ << std::endl;
+}
+
+unsigned PetrolEngine::getEnginePower() const
+{
+    return power_;
 }
