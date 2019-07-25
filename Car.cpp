@@ -1,8 +1,20 @@
 #include "Car.hpp"
 #include <iostream>
 
-void Car::turnLeft()      { std::cout << __FUNCTION__ << std::endl; }
-void Car::turnRight()     { std::cout << __FUNCTION__ << std::endl; }
+void Car::turnLeft()
+{
+    if(velocity!=0)
+        std::cout << __FUNCTION__ << std::endl;
+    else
+        std::cout << "You must move to turn!" << std::endl;
+}
+void Car::turnRight()
+{
+    if(velocity!=0)
+        std::cout << __FUNCTION__ << std::endl;
+    else
+        std::cout << "You must move to turn!" << std::endl;
+}
 void Car::accelerate(int speed)
 { 
     std::cout << __FUNCTION__ << std::endl;
