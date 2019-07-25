@@ -36,7 +36,7 @@ void PetrolEngine::changeGear(int gear)
 	    }
 
 	}
-	catch (std::bad_function_call& e)
+	catch (const InvalidGear& e)
 	{
 	    std::cout << "Bad function call." << e.what() << std::endl;
 	}
