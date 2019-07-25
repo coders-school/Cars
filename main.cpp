@@ -6,6 +6,8 @@
 int main()
 {
     HybridCar rav4(new PetrolEngine(180, 1800,6), new ElectricEngine(120, 5000));
+    rav4.accelerate(200);
+    rav4.accelerate(70);
     
     // PetrolCar FordMustang(new PetrolEngine(450, 5000, 6));
     // FordMustang.accelerate(120);

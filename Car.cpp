@@ -4,12 +4,18 @@
 void Car::turnLeft()      { std::cout << __FUNCTION__ << std::endl; }
 void Car::turnRight()     { std::cout << __FUNCTION__ << std::endl; }
 void Car::brake()         { std::cout << __FUNCTION__ << std::endl; }
-void Car::accelerate(int amount) 
+void Car::accelerate(unsigned amount) 
 { 
-    if(velocity+amount>250) std::cout << "Hold your horses, Pal!" << std::endl;
-    if(amount > 0 && velocity+amount<=250) 
+    if(velocity+amount>maxSpeed) 
     {
-        velocity += amount;
-        std::cout << "Your car has accelerated. Current velocity is: " << velocity << std::endl;
+        velocity = maxSpeed;
+        std::cout << "Hold your horses, Pal! ";
+    
     }
+    else
+    {
+        velocity += amount;  
+        std::cout << "Your car has accelerated. ";
+    }
+    std::cout << "Current velocity is: " << velocity << std::endl;
 }
