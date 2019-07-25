@@ -7,17 +7,13 @@ project(Cars)
 
 set(SRC_LIST
     ElectricCar.cpp
-    ElectricCar.hpp
     ElectricEngine.cpp
-    ElectricEngine.hpp
     HybridCar.cpp
-    HybridCar.hpp
     main.cpp
     PetrolCar.cpp
-    PetrolCar.hpp
     PetrolEngine.cpp
-    PetrolEngine.hpp
 )
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})
-add_compile_options(${PROJECT_NAME} -Wall -Werror -Wpedantic -Wextra)
+target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Werror -Wpedantic -Wextra)
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR})
