@@ -25,3 +25,11 @@ void PetrolCar::PetrolEngineChange(int power, float capacity, int gears)
     }
     else std::cout<< "Changing an petrol engine during driving is not safe."<<std::endl;
 }
+void PetrolCar::getGear()
+{
+    std::cout<<"Current gear: "<<this->engine_->getCurrentGear()<<std::endl;
+}
+void PetrolCar::setGear(int gear)
+{
+    this->engine_->changeGear(gear);
+}

@@ -12,6 +12,8 @@ public:
     ~PetrolCar();
     void feed() override;
     void PetrolEngineChange(int, float, int);
-       
+    void getGear(); 
+    void setGear(int);
+  
 };
 

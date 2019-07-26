@@ -15,6 +15,10 @@ int main()
     car->accelerate(-900);
     opel.PetrolEngineChange(119, 1700, 5);
     car->feed();
+    opel.setGear(4);
+    opel.getGear();
+    opel.setGear(7);
+    
 
     std::cout << std::endl<< std::endl<< "NISSAN" << std::endl;
     ElectricCar nissan(new ElectricEngine(130, 650));
@@ -34,7 +38,6 @@ int main()
     toyota.ElectricEngineChange(100, 540);
     car->feed();
     std::cout<<" "<<std::endl;
-  
-  delete car;
+ 
 }
 
