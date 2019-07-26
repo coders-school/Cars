@@ -17,13 +17,16 @@ void HybridCar::changeEngine(Engine *engine) {
         throw std::logic_error( "Car is moving now! Engine exchange impossible ");
     
     auto* engineE = dynamic_cast<ElectricEngine*>(engine);
-    if (engineE != nullptr) {
+    if (engineE) {
         ElectricCar::changeEngine(engine);
-        delete (engineE);
+        delete engineE;
     }
 
     auto* engineP = dynamic_cast<PetrolEngine*>(engine);
-    if (engineP != nullptr) {
+    if (engineP) {
+        delete engine_;
+        engine_ = engineP;
+    } else {
         throw std::runtime_error("Change of petrol engine failed");
     }
 }
