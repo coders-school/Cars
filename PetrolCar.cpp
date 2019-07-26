@@ -15,6 +15,6 @@ PetrolCar::~PetrolCar()
 void PetrolCar::refuel()        { std::cout << __FUNCTION__ << std::endl; }
 void PetrolCar::feed()          
 {
+    refuel();
     std::cout << "Thanks bro! All my " << engine_->getEnginePower() << " horses are happy now!"<<std::endl;
-    refuel(); 
 }

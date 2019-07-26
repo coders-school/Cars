@@ -8,7 +8,7 @@ public:
     unsigned getEnginePower() const;
 
 private:
-    unsigned power_;         // in HP
+    unsigned power_;    // in HP
     float capacity_;    // in ccm
     int gears_;
     int currentGear_;

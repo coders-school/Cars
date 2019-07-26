@@ -2,13 +2,18 @@
 #include "ElectricCar.hpp"
 #include "HybridCar.hpp"
 #include <iostream>
+#include <cassert>
 
 int main()
 {
     HybridCar rav4(new PetrolEngine(180, 1800,6), new ElectricEngine(120, 5000));
     rav4.accelerate(200);
-    rav4.accelerate(70);
-    
+    rav4.accelerate(50);
+    rav4.accelerate(50);
+    rav4.feed();
+    // assert(250 == rav4.velocity);
+    // assert(300 == rav4.velocity);
+
     // PetrolCar FordMustang(new PetrolEngine(450, 5000, 6));
     // FordMustang.accelerate(120);
     // FordMustang.accelerate(10);

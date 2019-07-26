@@ -10,7 +10,6 @@ void Car::accelerate(unsigned amount)
     {
         velocity = maxSpeed;
         std::cout << "Hold your horses, Pal! ";
-    
     }
     else
     {

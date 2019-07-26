@@ -4,12 +4,12 @@
 
 class ElectricCar : public virtual Car
 {
-protected:
-    void charge();
 public:
     ElectricCar(ElectricEngine* engine);
     ~ElectricCar();
     void feed() override;
+protected:
+    void charge();
 private:
     ElectricEngine* engine_;
 };
