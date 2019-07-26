@@ -9,8 +9,12 @@ ElectricCar::ElectricCar(ElectricEngine* engine)
 
 ElectricCar::~ElectricCar()  
 {
-    delete this;    
-    std::cout << __FUNCTION__ << std::endl; 
+    std::cout << __FUNCTION__ << std::endl;
+	if(engine_)
+	{
+		delete engine_;
+	}
 }
+
 void ElectricCar::charge()        { std::cout << __FUNCTION__ << std::endl; }
 void ElectricCar::feed()          { charge(); }

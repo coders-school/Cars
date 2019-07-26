@@ -21,5 +21,5 @@ void PetrolEngine::changeGear(int gear)
 
 PetrolEngine::~PetrolEngine()
 {
-    delete this;
+    std::cout << __FUNCTION__ << std::endl;
 }
