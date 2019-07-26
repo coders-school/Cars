@@ -4,11 +4,12 @@ class Car
 {
 public:
     virtual ~Car() = default;
+    unsigned getVelocity();
+    void printVelocity();
     void turnLeft();
     void turnRight();
-    void brake();
+    void brake(unsigned amount);
     void accelerate(unsigned amount);
-    unsigned getVelocity();
     virtual void feed()=0;
 private:
     unsigned velocity=0;
