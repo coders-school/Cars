@@ -2,8 +2,7 @@
 #include "ElectricCar.hpp"
 #include "HybridCar.hpp"
 #include <iostream>
-// YOO
-//siema
+
 int main()
 {
     Car* car = nullptr;
@@ -29,6 +28,5 @@ int main()
     car->accelerate(100);
     car->brake();
     car->feed();
-    
-    
+    return 0;
 }
