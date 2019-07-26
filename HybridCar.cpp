@@ -13,7 +13,14 @@ HybridCar::~HybridCar()
     std::cout << __FUNCTION__ << std::endl;
 }
 
-void HybridCar::feed() {
+void HybridCar::feed() 
+{
     PetrolCar::feed();
     ElectricCar::feed();
- }
+}
+
+void HybridCar::changeBothEngines(PetrolEngine* NewPEngine, ElectricEngine* newEEngine)
+{
+    PetrolCar::changePetrolEngine(NewPEngine);
+    ElectricCar::changeElectricEngine(newEEngine);
+}

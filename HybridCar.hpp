@@ -9,5 +9,6 @@ public:
     HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng);
     ~HybridCar();
     void feed() override;
+    void changeBothEngines(PetrolEngine* NewPEngine, ElectricEngine* newEEngine);
 };
 
