@@ -13,8 +13,8 @@ public:
     Car() = default;
 
     ~Car();
-    static void turnLeft();
-    static void turnRight();
+    void turnLeft();
+    void turnRight();
     void brake();
     void accelerate(int speed);
     virtual void feed()=0;

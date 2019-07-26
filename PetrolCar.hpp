@@ -5,7 +5,7 @@
 class PetrolCar : public virtual Car
 {
 protected:
-    static void refuel();
+    void refuel();
 public:
     explicit PetrolCar(Engine* engine);
     ~PetrolCar();
