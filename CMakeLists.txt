@@ -38,7 +38,10 @@ include_directories(
 
 file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
 
-add_executable(runUnitTests ${TEST_SRC_FILES})
+file(GLOB LIB_FILES ${PROJECT_SOURCE_DIR}/*.cpp)
+list(REMOVE_ITEM LIB_FILES ${PROJECT_SOURCE_DIR}/main.cpp)
+
+add_executable(runUnitTests ${TEST_SRC_FILES} ${LIB_FILES})
 
 target_link_libraries(runUnitTests gtest gtest_main gmock gmock_main)
 
