@@ -5,6 +5,8 @@
 class Car
 {
 public:
+    virtual ~Car() = default;
+    int velocity = 0;
     void turnLeft();
     void turnRight();
     void brake();

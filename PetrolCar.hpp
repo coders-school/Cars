@@ -6,10 +6,12 @@ class PetrolCar : virtual public Car
 {
 public:
     PetrolCar(PetrolEngine *engine);
-    PetrolCar()= default;
+    PetrolCar() = default;
     ~PetrolCar();
-    void addEnergy();
-	PetrolEngine* changeEngine(int, float, int);
+    void addEnergy() override;
+    PetrolEngine *changeEngine(int, float, int);
+    int getGear();
+    void setGear(int value);
 
 protected:
     PetrolEngine *petrolEngine_;
