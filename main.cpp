@@ -6,11 +6,14 @@
 
 int main()
 {
-    HybridCar rav4(new PetrolEngine(180, 1800,6), new ElectricEngine(120, 5000));
-    rav4.accelerate(200);
-    rav4.accelerate(50);
-    rav4.accelerate(50);
-    rav4.feed();
+    PetrolCar fordMustang(new PetrolEngine(450,500,6));
+    fordMustang.changePetrolEngine(new PetrolEngine(110, 1000, 6));
+
+    // HybridCar rav4(new PetrolEngine(180, 1800,6), new ElectricEngine(120, 5000));
+    // rav4.accelerate(200);
+    // rav4.accelerate(50);
+    // rav4.accelerate(50);
+    // rav4.feed();
     // assert(250 == rav4.velocity);
     // assert(300 == rav4.velocity);
 
