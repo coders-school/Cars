@@ -7,10 +7,12 @@ int main()
 {
     Car* car = nullptr;
     std::cout << std::endl << "OPEL" << std::endl;
-    PetrolCar opel(new PetrolEngine(120, 1800, 6));
+    auto* PE = new PetrolEngine(120, 1800, 6);
+    PetrolCar opel(PE);
     car = &opel;
     car->Vmax = 200;
     car->accelerate(50);
+    PE->changeGear(6);
     car->brake(1);
     car->accelerate(-900);
     car->feed();

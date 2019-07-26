@@ -24,6 +24,9 @@ void ElectricCar::changeElectricEngine(ElectricEngine* engine)
     if(velocity!=0)
         std::cout<<"You can't change engine while driving!"<<std::endl;
     else
+    {
+        delete engine_;
         engine_ = engine;
+    }
 }
 void ElectricCar::feed()          { charge(); }

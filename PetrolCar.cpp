@@ -14,16 +14,19 @@ PetrolCar::~PetrolCar()
 }
 void PetrolCar::refuel()
 {
-if(Car::velocity == 0)
-    std::cout << __FUNCTION__ << std::endl;
-else
-    std::cout << "You can't refuel Your car while driving!" << std::endl;
+    if(Car::velocity == 0)
+        std::cout << __FUNCTION__ << std::endl;
+    else
+        std::cout << "You can't refuel Your car while driving!" << std::endl;
 }
 void PetrolCar::changePetrolEngine(PetrolEngine* engine)
 {
     if(velocity!=0)
         std::cout<<"You can't change engine while driving!"<<std::endl;
     else
+    {
+        delete engine_;
         engine_ = engine;
+    }
 }
 void PetrolCar::feed()          { refuel(); }
