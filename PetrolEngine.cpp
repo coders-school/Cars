@@ -2,7 +2,7 @@
 #include "InvalidGear.hpp"
 #include <iostream>
 
-PetrolEngine::PetrolEngine(int power, float capacity, int gears=6)
+PetrolEngine::PetrolEngine(int power, float capacity, int gears)
     : power_(power)
     , capacity_(capacity)
     , gears_(gears)
@@ -44,7 +44,7 @@ void PetrolEngine::changeGear(int gear)
     }
     else
     {
-	std::cout<<"This gear is not valid." <<std::endl;
+	std::cout<<"This gear is not valid and hasn't changed." <<std::endl;
     }
 }
 
@@ -53,7 +53,7 @@ int PetrolEngine::getGear()
     return currentGear_;
 }
 
-bool PetrolEngine::isGearValid(int& gear)
+bool PetrolEngine::isGearValid(int gear)
 {
     return (gear <= gears_ && gear >= -1) ? true : false;
 }
