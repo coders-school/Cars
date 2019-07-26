@@ -13,7 +13,6 @@ int main()
     car->accelerate(50);
     car->brake(60);
     car->accelerate(-900);
-    //opel.engine_ = new PetrolEngine(119, 1700, 5);
     opel.PetrolEngineChange(119, 1700, 5);
     car->feed();
 
@@ -23,7 +22,6 @@ int main()
     car->feed();
     car->accelerate(80);
     nissan.ElectricEngineChange(150,700);
-    // nissan.engine_ = new ElectricEngine(150, 700);  // Changing an engine during driving is not safe
     car->turnLeft();
 
 
@@ -37,5 +35,6 @@ int main()
     car->feed();
     std::cout<<" "<<std::endl;
   
+  delete car;
 }
 

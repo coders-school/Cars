@@ -3,7 +3,6 @@
 class Car
 {
 protected:
-    //int carSpeed;
     int velocity;
 
 public:
@@ -12,9 +11,8 @@ public:
     void turnRight();
     void brake(int speed);
     void accelerate (int speed);
-    virtual void feed()=0;
-   // void velocity (int carSpeed);
     void getSpeed ();
     void setSpeed(int);
+    virtual void feed()=0;
 };
 
