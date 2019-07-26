@@ -18,39 +18,45 @@ void Car::turnRight()
 }
 void Car::accelerate(int speed)
 { 
-    std::cout << __FUNCTION__ << std::endl;
-    if (Car::velocity += speed < -30)
-        Car::velocity = -30;
-    else if(speed<Car::Vmax)
-        Car::velocity += speed;
-    else 
-        Car::velocity = Car::Vmax;
+    int SpeedLimitR = -30;
 
-    assert(Car::velocity>=-30 && Car::velocity<=Car::Vmax);
+    std::cout << __FUNCTION__ << std::endl;
+    if (velocity += speed < SpeedLimitR)
+        velocity = SpeedLimitR;
+    else if(velocity += speed > Vmax)
+        velocity = Vmax;
+    else 
+        velocity += speed;
+
+    assert(velocity >= SpeedLimitR && velocity <= Vmax);
     std::cout << "Execution continues past accelerate test\n";
-    std::cout << "Current speed:" << Car::velocity << std::endl;
+    std::cout << "Current speed:" << velocity << std::endl;
 
 }
-void Car::brake(int b)
+void Car::brake(int breakTime)
 {
+    int SpdReducePerSec = 15;
+    int SpeedLimitR = -30;
+
     std::cout << __FUNCTION__ << std::endl;
-    if(b>0)
+
+    if(breakTime > 0)
     {
-        if(Car::velocity - b*15 <0)
-            Car::velocity = 0;
+        if(velocity - breakTime*SpdReducePerSec < 0)
+            velocity = 0;
         else
-            Car::velocity = Car::velocity - b*15;
+            velocity = velocity - breakTime*SpdReducePerSec;
     }
     else 
     {
-        b=0;
+        breakTime = 0;
         std::cout<<"This is not a DeLorean, you can't time travel\n";
     }
-    assert(b >= 0);
+    assert(breakTime >= 0);
     std::cout << "Execution continues past break time test\n";
-    assert(Car::velocity>=-30 && Car::velocity<=Vmax);
+    assert(velocity >= SpeedLimitR && velocity <= Vmax);
     std::cout << "Execution continues past break test\n";
  
-     std::cout << "Current speed:" << Car::velocity << std::endl;
+     std::cout << "Current speed:" << velocity << std::endl;
 }
  
