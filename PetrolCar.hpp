@@ -10,7 +10,6 @@ public:
     PetrolCar(PetrolEngine* engine);
     ~PetrolCar();
     void feed() override;
-
+private:
     PetrolEngine* engine_;
 };
-
