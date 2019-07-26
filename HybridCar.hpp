@@ -9,24 +9,7 @@ public:
     HybridCar(PetrolEngine *petrolEng, ElectricEngine *electricEng);
     ~HybridCar();
 
+	void changeEngine(int, int);
+	void changeEngine(int, float, int);
     void addEnergy();
-    /*zamiast dziedziczenia wirtualnego
-    using importuje do danej klasy nazwę
-    using PetrolCar::accelerate;
-    using PetrolCar::brake;
-
-    lub
-
-    void accelerate(int value){
-        PetrolCar::accelerate(value);
-    }
-
-    void brake(){
-
-    }
-
-    */
-
- //   PetrolEngine *petrolEngine_;
- //   ElectricEngine *electricEngine_;
 };

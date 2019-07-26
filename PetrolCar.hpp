@@ -4,17 +4,14 @@
 
 class PetrolCar : virtual public Car
 {
-protected:
-     void refuel();
- 
 public:
     PetrolCar(PetrolEngine *engine);
     PetrolCar()= default;
     ~PetrolCar();
-    void addEnergy() override;
-   
-   int getGear();
-   void setGear(int value);
+    void addEnergy();
+	PetrolEngine* changeEngine(int, float, int);
 
-    PetrolEngine *engine_;
+protected:
+    PetrolEngine *petrolEngine_;
+    void refuel();
 };

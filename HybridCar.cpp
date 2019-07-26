@@ -7,10 +7,14 @@ HybridCar::HybridCar(PetrolEngine *petrolEng, ElectricEngine *electricEng)
     std::cout << __FUNCTION__ << std::endl;
 }
 
-HybridCar::~HybridCar() { std::cout << __FUNCTION__ << std::endl; }
+HybridCar::~HybridCar() {std::cout << __FUNCTION__ << std::endl; }
 
-void HybridCar:: addEnergy() {
-        charge();
-        refuel();
+void HybridCar::addEnergy() {refuel(), charge();}
+void HybridCar::changeEngine(int pow, float cap, int g)
+{
+	PetrolCar::changeEngine(pow, cap, g);
 }
-
+void HybridCar::changeEngine(int pow, int bat)
+{
+	ElectricCar::changeEngine(pow, bat);
+}
