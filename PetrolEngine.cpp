@@ -13,10 +13,12 @@ PetrolEngine::PetrolEngine(int power, float capacity, int gears)
 void PetrolEngine::changeGear(int gear)
 {
     if(-1 <= gear && gear <= PetrolEngine::gears_)
+    {
         currentGear_ = gear;
-    else if(gear < -1)
-        currentGear_ = -1;
-    else
-        currentGear_ = PetrolEngine::gears_;
-    std::cout << __FUNCTION__ <<" to: "<<currentGear_<< std::endl;
+        std::cout << __FUNCTION__ <<" to: "<<currentGear_<< std::endl;
+    }
+    else if(gear < -1 || gears_ < gear)
+        throw std::out_of_range ("Invalid gear!");
+    else if(gear == -1 && currentGear_ > 1)
+        throw std::out_of_range ("Invalid gear! You can change to R only from 1 or N");
 }
