@@ -7,6 +7,7 @@ class ElectricCar : public virtual Car
 public:
     ElectricCar(ElectricEngine* engine);
     ~ElectricCar();
+    void changeElectricEngine(ElectricEngine* newEngine);
     void feed() override;
 protected:
     void charge();
