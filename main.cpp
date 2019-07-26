@@ -3,6 +3,7 @@
 #include "HybridCar.hpp"
 #include <iostream>
 
+
 int main()
 {
     Car* car = nullptr;
@@ -26,7 +27,7 @@ int main()
     car->Vmax = 240;
     car->accelerate(80);
     nissan.changeElectricEngine(new ElectricEngine(200, 850));
-    car->brake(30);
+    car->brake(-2);
     car->turnLeft();
 
     std::cout << std::endl << "TOYOTA" << std::endl;
