@@ -8,7 +8,7 @@ protected:
     void charge();
     ElectricEngine* engine_;
 public:
-    ElectricCar(ElectricEngine* engine);
+    ElectricCar(ElectricEngine* engine, int vmax);
     ~ElectricCar();
     void feed() override;
     void changeElectricEngine(ElectricEngine* engine);

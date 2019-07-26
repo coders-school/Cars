@@ -1,9 +1,10 @@
 #include "ElectricCar.hpp"
 #include <iostream>
 
-ElectricCar::ElectricCar(ElectricEngine* engine)
+ElectricCar::ElectricCar(ElectricEngine* engine, int vmax)
     : engine_(engine)
 {
+    Car::Vmax = vmax;
     std::cout << __FUNCTION__ << std::endl;
 }
 

@@ -2,9 +2,10 @@
 
 class Car
 {
+protected:
+    int Vmax;
 public:
     int velocity =0;
-    int Vmax;
     virtual ~Car() = default;
     void turnLeft();
     void turnRight();

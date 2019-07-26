@@ -6,7 +6,7 @@
 class HybridCar : public PetrolCar, public ElectricCar
 {
 public:
-    HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng);
+    HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng, int vmax);
     ~HybridCar();
     void feed() override;
 };

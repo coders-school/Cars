@@ -8,7 +8,7 @@ protected:
     void refuel();
     PetrolEngine* engine_;
 public:
-    PetrolCar(PetrolEngine* engine);
+    PetrolCar(PetrolEngine* engine, int vmax);
     ~PetrolCar();
     void feed() override;
     void changePetrolEngine(PetrolEngine* engine);

@@ -1,9 +1,10 @@
 #include "PetrolCar.hpp"
 #include <iostream>
  
-PetrolCar::PetrolCar(PetrolEngine* engine)
+PetrolCar::PetrolCar(PetrolEngine* engine, int vmax)
     : engine_(engine)
 {
+    Car::Vmax = vmax;
     std::cout << __FUNCTION__ << std::endl;
 }
 
