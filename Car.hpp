@@ -4,15 +4,15 @@ class Car
 {
 public:
     virtual ~Car() = default;
-    unsigned getVelocity();
+    int getVelocity();
     void printVelocity();
     void turnLeft();
     void turnRight();
-    void brake(unsigned amount);
-    void accelerate(unsigned amount);
+    void brake(int amount);
+    void accelerate(int amount);
     virtual void feed()=0;
 private:
-    unsigned velocity=0;
+    int velocity=0;
     const unsigned maxSpeed=250;
 };
 
