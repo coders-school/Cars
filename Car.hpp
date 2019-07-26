@@ -8,6 +8,7 @@ public:
     void turnRight();
     void brake();
     void accelerate(unsigned amount);
+    unsigned getVelocity();
     virtual void feed()=0;
 private:
     unsigned velocity=0;

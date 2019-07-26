@@ -18,3 +18,7 @@ void Car::accelerate(unsigned amount)
     }
     std::cout << "Current velocity is: " << velocity << std::endl;
 }
+unsigned Car::getVelocity()
+{
+    return velocity;
+}
