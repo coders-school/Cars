@@ -16,7 +16,7 @@ void PetrolCar::refuel()        { std::cout << __FUNCTION__ << std::endl; }
 void PetrolCar::feed()          { refuel();};
 
 void PetrolCar::PetrolEngineChange(int power, float capacity, int gears){
-    if (this->carSpeed == 0)
+    if (this->velocity == 0)
     {
         delete this->engine_ ;
         this->engine_ = new PetrolEngine(power, capacity, gears);

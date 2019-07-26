@@ -11,7 +11,7 @@ int main()
     PetrolCar opel(new PetrolEngine(120, 1800, 6));
     car = &opel;
     car->accelerate(50);
-    car->brake(10);
+    car->brake(60);
     car->accelerate(-900);
     //opel.engine_ = new PetrolEngine(119, 1700, 5);
     opel.PetrolEngineChange(119, 1700, 5);

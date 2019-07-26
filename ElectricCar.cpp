@@ -15,7 +15,7 @@ void ElectricCar::feed()          {charge();}
 
 void ElectricCar::ElectricEngineChange(int power, int batteryCapacity)
 {
-   if (this->carSpeed == 0)
+   if (this->velocity == 0)
     {
         delete this->engine_ ;
         this->engine_ = new ElectricEngine(power, batteryCapacity);
