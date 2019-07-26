@@ -5,6 +5,7 @@
 
 int main()
 {
+    //test commit
     Car* car = nullptr;
     std::cout << std::endl << "OPEL" << std::endl;
     PetrolCar opel(new PetrolEngine(120, 1800, 6));
