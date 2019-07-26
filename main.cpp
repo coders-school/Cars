@@ -10,6 +10,7 @@ void test();
 
 int main()
 {
+    test();
     Car* car = nullptr;
     std::cout << std::endl << "OPEL" << std::endl;
     PetrolCar opel(new PetrolEngine(120, 1800, 6));
@@ -43,17 +44,17 @@ int main()
 }
 
 void test(){
-Car *car;
+Car *car = nullptr;
 PetrolCar opel(new PetrolEngine(120, 1800, 6));
 car = &opel;
-
 car -> accelerate(150);
 assert(car->velocity == 150);
 car -> accelerate(100);
-assert(car->velocity == 10);
+assert(car->velocity == 150);
 car -> accelerate(-100);
 assert(car->velocity == 0);
 car->brake();
 assert(car->velocity == 0);
+
 
 }
