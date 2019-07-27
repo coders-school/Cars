@@ -12,7 +12,7 @@ public:
     ~PetrolCar();
     void feed() override;
     void PetrolEngineChange(int, float, int);
-    void getGear(); 
+    int getGear() const; 
     void setGear(int);
   
 };

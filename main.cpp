@@ -16,7 +16,7 @@ int main()
     opel.PetrolEngineChange(119, 1700, 5);
     car->feed();
     opel.setGear(4);
-    opel.getGear();
+    opel.setGear(-1);
     opel.setGear(7);
     
 
