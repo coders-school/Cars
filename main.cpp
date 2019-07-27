@@ -20,7 +20,6 @@ int main()
     car = &nissan;
     car->feed();
     car->accelerate(80);
-   
     delete nissan.engine_;
     nissan.engine_ = new ElectricEngine(150, 700);  // Changing an engine during driving is not safe
     car->turnLeft();
