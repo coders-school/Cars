@@ -1,5 +1,6 @@
 #include "PetrolEngine.hpp"
 #include <iostream>
+#include <stdexcept>
 
 PetrolEngine::PetrolEngine(unsigned power, float capacity, int gears)
     : power_(power)
@@ -22,21 +23,34 @@ int PetrolEngine::getCurrentGear() const
 
 void PetrolEngine::changeGear(int gear)
 {
-    // TODO: Add checking if gear is between -1 and gears_
-    // -1 is for REAR
-    // 0 is for NEUTRAL
-
     if(gear <= gears_ && gear >= -1) 
     {
-        if( (currentGear_ > 0 && gear == -1) || (currentGear_ == -1 && gear > 0) )
+        try
         {
-            std::cout << "Invalid gear!\n";
+            if( (currentGear_ > 0 && gear == -1) || (currentGear_ == -1 && gear > 0) )
+            {
+                throw std::logic_error("Forbidden gear change!");
+            }
+            else
+            {
+                currentGear_ = gear;
+                std::cout << "You've changed gear to " << currentGear_ << std::endl;
+            }
         }
-        else
+        catch(std::logic_error &ex1)
         {
-            currentGear_ = gear;
-            std::cout << "You've changed gear to " << currentGear_ << std::endl;
+            std::cout << ex1.what() << std::endl;
         }
     }
-    else std::cout << "Not a valid gear!\n";
+    else
+    {
+        try
+        {
+            throw std::out_of_range("Chosen gear is out of range!");
+        }
+        catch(std::out_of_range &ex2)
+        {
+            std::cout << ex2.what() << std::endl;
+        }
+    }
 }

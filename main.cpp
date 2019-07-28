@@ -1,25 +1,33 @@
 #include "PetrolCar.hpp"
 #include "ElectricCar.hpp"
 #include "HybridCar.hpp"
+#include "test.hpp"
 #include <iostream>
 #include <cassert>
 
 int main()
 {
     PetrolCar fordMustang(new PetrolEngine(450,500,6));
-    fordMustang.changePetrolEngine(new PetrolEngine(110, 1000, 6));
- 
-    ElectricCar nissan(new ElectricEngine(120, 4000));
-    nissan.changeElectricEngine(new ElectricEngine(130, 5000));
-  
-    HybridCar rav4(new PetrolEngine(180, 1800,6), new ElectricEngine(120, 5000));
-    rav4.changePetrolEngine(new PetrolEngine(110, 1000, 6));
-    rav4.changeElectricEngine(new ElectricEngine(130, 5000));
-    
-    rav4.accelerate(60);
-    rav4.changePetrolEngine(new PetrolEngine(180, 1800, 6));
-    rav4.changeElectricEngine(new ElectricEngine(140, 5500));
+    velocityTest(fordMustang);
 
+    fordMustang.setGear(1);
+    fordMustang.setGear(-1);
+    fordMustang.setGear(0);
+    fordMustang.setGear(-1);
+    fordMustang.setGear(1);
+    fordMustang.setGear(7);
+     
+    // ElectricCar nissan(new ElectricEngine(120, 4000));
+    // nissan.changeElectricEngine(new ElectricEngine(130, 5000));
+  
+    // HybridCar rav4(new PetrolEngine(180, 1800,6), new ElectricEngine(120, 5000));
+    // rav4.changePetrolEngine(new PetrolEngine(110, 1000, 6));
+    // rav4.changeElectricEngine(new ElectricEngine(130, 5000));
+    
+    // rav4.accelerate(60);
+    // rav4.changePetrolEngine(new PetrolEngine(180, 1800, 6));
+    // rav4.changeElectricEngine(new ElectricEngine(140, 5500));
+    
     // rav4.accelerate(200);
     // rav4.accelerate(50);
     // rav4.accelerate(50);
