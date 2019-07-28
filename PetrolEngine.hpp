@@ -4,8 +4,9 @@ class PetrolEngine
 {
 public:
     PetrolEngine(unsigned power, float capacity, int gears);
-    void changeGear(int gear);
     unsigned getEnginePower() const;
+    void changeGear(int gear);
+    int getCurrentGear() const;
 
 private:
     unsigned power_;    // in HP

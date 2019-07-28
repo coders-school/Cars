@@ -9,6 +9,8 @@ public:
     ~PetrolCar();
     void feed() override;
     void changePetrolEngine(PetrolEngine* newEngine);
+    int getGear() const;
+    void setGear(int value);
 protected:
     void refuel();
 private:

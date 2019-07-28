@@ -33,3 +33,13 @@ void PetrolCar::changePetrolEngine(PetrolEngine* newEngine)
         std::cout << "You've changed your PetrolEngine!\n";
     }
 }
+
+int PetrolCar::getGear() const
+{
+    return engine_->getCurrentGear();
+}
+
+void PetrolCar::setGear(int value)
+{
+   engine_->changeGear(value); 
+}
