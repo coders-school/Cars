@@ -11,6 +11,11 @@ void Car::printVelocity()
     std::cout << "Current velocity is: " << velocity << std::endl;
 }
 
+unsigned Car::getMaxSpeed()
+{
+    return maxSpeed;
+}
+
 void Car::turnLeft()      { std::cout << __FUNCTION__ << std::endl; }
 void Car::turnRight()     { std::cout << __FUNCTION__ << std::endl; }
 void Car::accelerate(unsigned amount) 

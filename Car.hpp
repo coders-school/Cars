@@ -4,6 +4,7 @@ class Car
 {
 public:
     virtual ~Car() = default;
+    unsigned getMaxSpeed();
     unsigned getVelocity();
     void printVelocity();
     void turnLeft();
