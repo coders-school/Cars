@@ -1,7 +1,7 @@
 #include "Car.hpp"
 #include <iostream>
 
-int Car::getVelocity()
+unsigned Car::getVelocity()
 {
     return velocity;
 }
@@ -13,7 +13,7 @@ void Car::printVelocity()
 
 void Car::turnLeft()      { std::cout << __FUNCTION__ << std::endl; }
 void Car::turnRight()     { std::cout << __FUNCTION__ << std::endl; }
-void Car::accelerate(int amount) 
+void Car::accelerate(unsigned amount) 
 { 
     if(amount<=0) return;           
     if(velocity+amount>maxSpeed) 
@@ -29,7 +29,7 @@ void Car::accelerate(int amount)
     printVelocity();
 }
 
-void Car::brake(int amount) 
+void Car::brake(unsigned amount) 
 { 
     std::cout << __FUNCTION__ << std::endl;
     if(amount<=0) return;
