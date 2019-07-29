@@ -1,16 +1,24 @@
+#ifndef ELECTRICCAR_H
+#define ELECTRICCAR_H
+
 #include "ElectricEngine.hpp"
+#include "Car.hpp"
 
-class ElectricCar
+class ElectricCar : virtual public Car
 {
-public:
-    ElectricCar(ElectricEngine* engine);
-    ~ElectricCar();
-    void turnLeft();
-    void turnRight();
-    void brake();
-    void accelerate(int speed);
-    void charge();
-
     ElectricEngine* engine_;
+
+public:
+    // Constructor
+    ElectricCar(ElectricEngine* engine);
+    
+    // Destrctor
+    ~ElectricCar();
+    
+    void fill() override;
+
+
+    ElectricEngine getElectricEngine() const;
 };
 
+#endif // !ELECTRICCAR_H

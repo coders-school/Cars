@@ -1,4 +1,6 @@
 #include "PetrolCar.hpp"
+#include "Exceptions.hpp"
+
 #include <iostream>
  
 PetrolCar::PetrolCar(PetrolEngine* engine)
@@ -7,10 +9,27 @@ PetrolCar::PetrolCar(PetrolEngine* engine)
     std::cout << __FUNCTION__ << std::endl;
 }
 
-PetrolCar::~PetrolCar()         { std::cout << __FUNCTION__ << std::endl; }
-void PetrolCar::turnLeft()      { std::cout << __FUNCTION__ << std::endl; }
-void PetrolCar::turnRight()     { std::cout << __FUNCTION__ << std::endl; }
-void PetrolCar::brake()         { std::cout << __FUNCTION__ << std::endl; }
-void PetrolCar::accelerate(int) { std::cout << __FUNCTION__ << std::endl; }
-void PetrolCar::refuel()        { std::cout << __FUNCTION__ << std::endl; }
+PetrolCar::~PetrolCar() { 
+    delete engine_; 
+    std::cout << __FUNCTION__ << std::endl;
+}
 
+void PetrolCar::fill()
+{ 
+    std::cout << "from PetrolCar: " << __FUNCTION__ << std::endl; 
+}
+
+
+PetrolEngine PetrolCar::GetPetrolEngine() const
+{ 
+    return *engine_;
+}
+
+void PetrolCar::ChangePetrolEngine(PetrolEngine* engine)
+{
+    if(getCurrentVelocity() > 0) {
+        new SpeedIsNotZero();
+    }
+    delete engine_;
+    engine_ = engine;
+}

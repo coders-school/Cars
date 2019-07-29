@@ -1,16 +1,22 @@
-#include "PetrolEngine.hpp"
+#ifndef PETROLCAR_H
+#define PETROLCAR_H
 
-class PetrolCar
+#include "PetrolEngine.hpp"
+#include "Car.hpp"
+
+
+class PetrolCar : virtual public Car
 {
+    PetrolEngine* engine_;
 public:
     PetrolCar(PetrolEngine* engine);
     ~PetrolCar();
-    void turnLeft();
-    void turnRight();
-    void brake();
-    void accelerate(int speed);
-    void refuel();
 
-    PetrolEngine* engine_;
+    void fill() override;
+
+    PetrolEngine GetPetrolEngine() const;
+
+    void ChangePetrolEngine(PetrolEngine* engine);
 };
 
+#endif // !PETROLCAR_H 
