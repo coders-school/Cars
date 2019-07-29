@@ -5,6 +5,7 @@ ElectricCar::ElectricCar(ElectricEngine* engine)
     : engine_(engine)
 {
     std::cout << __FUNCTION__ << std::endl;
+    this -> velocity = 0;
 }
 ElectricCar::~ElectricCar()       
 { 

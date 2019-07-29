@@ -6,6 +6,7 @@ HybridCar::HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng)
     , ElectricCar(electricEng)
 {
     std::cout << __FUNCTION__ << std::endl;
+    this-> velocity = 0;
 }
 
 HybridCar::~HybridCar()       { std::cout << __FUNCTION__ << std::endl; }

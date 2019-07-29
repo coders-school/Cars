@@ -11,7 +11,7 @@ public:
     void turnRight();
     void brake(int speed);
     void accelerate (int speed);
-    void getSpeed () const;
+    int getSpeed () const;
     void setSpeed(int);
     virtual void feed()=0;
 };
