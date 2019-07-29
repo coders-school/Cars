@@ -10,7 +10,7 @@ int main()
     PetrolCar opel(new PetrolEngine(120, 1800, 6));
     car = &opel;
     car->accelerate(50);
-    car->brake(10);
+    car->brake(42);
     car->accelerate(-900);
     car->feed();
 
