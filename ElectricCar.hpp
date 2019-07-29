@@ -11,6 +11,6 @@ public:
     ~ElectricCar();
     void feed() override;
 
-    ElectricEngine* engine_;
+private:
+	ElectricEngine* engine_;
 };
-
