@@ -12,7 +12,7 @@ public:
     
     int getPower() const;
 
-    int getCapacity() const;
+	float getCapacity() const;
 
     int getMaxGear() const;
 

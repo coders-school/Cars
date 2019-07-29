@@ -14,11 +14,10 @@ PetrolEngine::PetrolEngine(int power, float capacity, int gears)
         throw std::invalid_argument("Power can't be lower than 1");
     }
     if(capacity_ < 1) {
-
         throw std::invalid_argument("Capacity can't be lower than 1");
     }
     if(gears_ < 1) {
-        throw std::invalid_argument("gears need to be grater than 1");
+        throw std::invalid_argument("Gears need to be grater than 1");
     }
 
     std::cout << __FUNCTION__ << std::endl;
@@ -26,28 +25,28 @@ PetrolEngine::PetrolEngine(int power, float capacity, int gears)
 
 int PetrolEngine::getPower() const
 { 
-    std::cout << __FUNCTION__ << " Your power is: " << power_ << std::endl;
+    std::cout << __FUNCTION__ << std::endl;
     return power_; 
     
 }
 
-int PetrolEngine::getCapacity() const
+float PetrolEngine::getCapacity() const
 { 
-    std::cout << __FUNCTION__ << " Your capacity is: " << capacity_ << std::endl;
+	std::cout << __FUNCTION__ << std::endl;
     return capacity_;
     
 }
 
 int PetrolEngine::getMaxGear() const 
 {
-    std::cout << __FUNCTION__ << " Your top Gear is: " << gears_ << std::endl;
+	std::cout << __FUNCTION__ << std::endl;
     return gears_;
     
 }
 
 int PetrolEngine::getCurrentGear() const
 {
-    std::cout << __FUNCTION__ << " Your gear is: " << currentGear_ << std::endl;
+	std::cout << __FUNCTION__ << std::endl;
     return currentGear_;
     
 }
@@ -66,7 +65,6 @@ void PetrolEngine::changeGear(int gear)
     }
     
     currentGear_ = gear;
-    oos << " Your current gear is: " << currentGear_;
     
-    std::cout << __FUNCTION__ << ": " << oos.str() << std::endl;
+	std::cout << __FUNCTION__ << std::endl;
 }

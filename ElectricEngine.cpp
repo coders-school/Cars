@@ -17,10 +17,12 @@ ElectricEngine::ElectricEngine(int power, int batteryCapacity)
 
 int ElectricEngine::getElectricPower() const
 {
+	std::cout << __FUNCTION__ << std::endl;
     return power_;
 }
 
 int ElectricEngine::getBatteryCapacity() const
 {
+	std::cout << __FUNCTION__ << std::endl;
     return batteryCapacity_;
 }

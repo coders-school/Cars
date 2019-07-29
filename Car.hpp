@@ -3,8 +3,8 @@
 
 class Car
 {
-    int m_CurrentVelocity = 0;
-    int m_MaxVelocity = 200;
+    int currentSpeed_ = 0;
+	int maxSpeed_ = 200;
 
 public:
     // Constructor
@@ -19,11 +19,14 @@ public:
 
     void brake(int Deaccelerate);
 
-    void accelerate(int velocity); // throw Incorrect Balacity
+	// throw IncorrectVelocity if parameters are incorrect
+    void accelerate(int speed);
 
     virtual void fill() = 0;
 
-    int getCurrentVelocity() const;
+    int getCurrentSpeed() const;
+
+	int getMaxSpeed() const;
 };
 
 

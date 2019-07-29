@@ -11,24 +11,29 @@ void Car::turnRight()
     std::cout << __FUNCTION__ << std::endl; 
 }
 
-void Car::brake(int deaccelerate)
+void Car::brake(int speed)
 {
 
     std::ostringstream oos;
-    if(deaccelerate < -m_MaxVelocity - m_CurrentVelocity || deaccelerate > 0) {
-        oos << "Incorrect Deacceleration. Decceleration should be between: " << 0 << " and " << m_MaxVelocity;
-        //throw IncorrectVelocity(oos.str());
+	if (speed > 0)
+	{
+		oos << "Incorrect value. Decceleration speed need to be negative: ";
+		throw IncorrectVelocity(oos.str());
+	}
+    if(speed < - currentSpeed_)
+	{
+        oos << "Incorrect value. Decceleration should be between: " << 0 << " and " <<  - currentSpeed_;
+        throw IncorrectVelocity(oos.str());
     }
 
-    if(m_CurrentVelocity + deaccelerate < 0 ) {
-        m_CurrentVelocity = 0;
-        oos << "You had stoped";
+    if(currentSpeed_ + speed < 0 ) {
+		currentSpeed_ = 0;
     }
     else {
-        m_CurrentVelocity += deaccelerate;
-        oos << "Your current speed is: " << m_CurrentVelocity;
+		currentSpeed_ += speed;
     }
-    std::cout << oos.str() << std::endl;
+
+	std::cout << __FUNCTION__ << std::endl;
 }
 
 void Car::turnLeft()
@@ -36,26 +41,36 @@ void Car::turnLeft()
     std::cout << __FUNCTION__ << std::endl; 
 }
 
-void Car::accelerate(int accelerate) // throw IncorrectVelocity if parameters are incorrect
+void Car::accelerate(int speed)
 {
     std::ostringstream oos;
-    if(accelerate <= 0 || accelerate > m_MaxVelocity) {
-        oos << "Incorrect acceleration. Acceleration should be between: " << 0 << " and " << m_MaxVelocity;
-        throw new IncorrectVelocity(oos.str());
+	if (speed < 0) {
+		oos << "Acceleration can't be negative";
+		throw IncorrectVelocity(oos.str());
+	}
+    else if(speed > (maxSpeed_ - currentSpeed_) ) {
+        oos << "Acceleration can't be grater than: " << (maxSpeed_ - currentSpeed_);
+        throw IncorrectVelocity(oos.str());
     }
 
-    if(m_CurrentVelocity + accelerate > m_MaxVelocity) {
-        m_CurrentVelocity = m_MaxVelocity;
-        oos << "You can't go faster than: " << m_MaxVelocity;
+    if(currentSpeed_ + speed > maxSpeed_) {
+		currentSpeed_ = maxSpeed_;
     }
     else {
-        m_CurrentVelocity += accelerate;
-        oos << "Your current speed is: " << m_CurrentVelocity;
+		currentSpeed_ += speed;
     }
-    std::cout << oos.str() << std::endl;
+
+	std::cout << __FUNCTION__ << std::endl;
 }
 
-int Car::getCurrentVelocity() const
-{ 
-    return m_CurrentVelocity;
+int Car::getCurrentSpeed() const
+{
+	std::cout << __FUNCTION__ << std::endl;
+    return currentSpeed_;
+}
+
+int Car::getMaxSpeed() const
+{
+	std::cout << __FUNCTION__ << std::endl;
+	return maxSpeed_;
 }

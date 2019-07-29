@@ -16,20 +16,24 @@ PetrolCar::~PetrolCar() {
 
 void PetrolCar::fill()
 { 
-    std::cout << "from PetrolCar: " << __FUNCTION__ << std::endl; 
+    std::cout << __FUNCTION__ << std::endl; 
 }
 
 
-PetrolEngine PetrolCar::GetPetrolEngine() const
-{ 
-    return *engine_;
+const PetrolEngine* PetrolCar::GetPetrolEngine() const
+{
+	std::cout << __FUNCTION__ << std::endl;
+    return engine_;
 }
 
 void PetrolCar::ChangePetrolEngine(PetrolEngine* engine)
 {
-    if(getCurrentVelocity() > 0) {
+
+    if(getCurrentSpeed() > 0) {
         new SpeedIsNotZero();
     }
     delete engine_;
     engine_ = engine;
+
+	std::cout << __FUNCTION__ << std::endl;
 }

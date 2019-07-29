@@ -15,10 +15,11 @@ ElectricCar::ElectricCar(ElectricEngine* engine)
 
 void ElectricCar::fill()
 {
-    std::cout << "from ElectricCar: " << __FUNCTION__ << std::endl;
+    std::cout << __FUNCTION__ << std::endl;
 }
 
 ElectricEngine ElectricCar::getElectricEngine() const
 {
+	std::cout << __FUNCTION__ << std::endl;
     return *engine_;
 }

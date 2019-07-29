@@ -17,6 +17,7 @@ HybridCar::~HybridCar()
  
 void HybridCar::fill()
 {
+	std::cout << __FUNCTION__ << std::endl;
     PetrolCar::fill();
     ElectricCar::fill();
 }

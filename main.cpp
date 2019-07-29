@@ -18,18 +18,7 @@
 
 int main()
 {
-    try
-    {
-        Tests();
-    }
-    catch(const std::logic_error& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    
-
-
-    
+	Tests();
 
     Car* car = nullptr;
 
@@ -41,7 +30,7 @@ int main()
         car = &opel;
         
         car->accelerate(50);
-        car->brake(-200);
+        car->brake(-40);
         car->accelerate(100);
         car->fill();
     } catch(const IncorrectVelocity&  er) {
@@ -85,4 +74,6 @@ int main()
     } catch(const std::runtime_error&  er) {
         std::cerr << er.what() << std::endl;
     }
+
+	return 0;
 }

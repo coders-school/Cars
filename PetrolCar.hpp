@@ -14,7 +14,7 @@ public:
 
     void fill() override;
 
-    PetrolEngine GetPetrolEngine() const;
+    const PetrolEngine* GetPetrolEngine() const;
 
     void ChangePetrolEngine(PetrolEngine* engine);
 };
