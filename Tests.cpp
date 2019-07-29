@@ -9,12 +9,12 @@
 #include <cassert>
 #include <iostream>
 
-void PetrolEngine_Power_Test()
+void PetrolEngine_invalid_argument_Test()
 {
-
+    std::cout << "\tStart Test: PetrolEngine_invalid_argument_Test" << std::endl;
 
     PetrolEngine* engine = nullptr;
- /*    try
+    try
     {
         engine = new PetrolEngine(0, 2, 3);
     }
@@ -22,96 +22,110 @@ void PetrolEngine_Power_Test()
     {
         std::cerr << e.what() << '\n';
     }
-*/
-    try
-    {
-        engine = new PetrolEngine(1, 2, 3);
-        bool result = engine->getPower() == 1;
-        assert(result && "value is Ok");
-    }
-    catch(const std::runtime_error& e)
-    {
-        std::cerr << e.what() << '\n';
-        
-    }
-    delete engine;
 
-} 
-/*
-void PetrolEngine_Capacity_Test()
-{
-    PetrolEngine* engine = nullptr;
+
+    if(engine) { 
+        delete engine;
+    }
+
     try
     {
         engine = new PetrolEngine(20, 0, 3);
     }
-    catch(const std::runtime_error& e)
+    catch(const std::invalid_argument& e)
     {
-        assert(engine->getCapacity() >= 1);
         std::cerr << e.what() << '\n';
     }
-    delete engine;
+
+    if(engine) { 
+        delete engine;
+    }
 
     try
     {
-        engine = new PetrolEngine(20, 1, 3);
+        engine = new PetrolEngine(20, 1, 0);
     }
-    catch(const std::runtime_error& e)
+    catch(const std::invalid_argument& e)
     {
-        assert(engine->getCapacity() >= 1);
         std::cerr << e.what() << '\n';
+        
     }
-    delete engine;
-}   
+    if(engine) { 
+        delete engine;
+    }
 
-void PetrolEngine_MaxGear_Test()
+    std::cout << "\tEnd Test: PetrolEngine_invalid_argument_Test" << std::endl << std::endl;
+} 
+
+void PetrolEngine_valid_argument_Test()
 {
+    std::cout << "\tStart Test: PetrolEngine_valid_argument_Test" << std::endl;
     PetrolEngine* engine = nullptr;
     try
     {
-        engine = new PetrolEngine(20, 2, 0);
+        engine = new PetrolEngine(1, 1, 1);
+
+        assert(engine->getPower() == 1);
+
+        assert(engine->getCapacity() == 1);
+
+        assert(engine->getMaxGear() == 1);
+
+        assert(engine->getCurrentGear() == 0);
+
     }
-    catch(const std::runtime_error& e)
+    catch(const std::invalid_argument& e)
     {
-        assert(engine->getMaxGear() >= 1);
+
         std::cerr << e.what() << '\n';
     }
-    delete engine;
+
+    if(engine) { 
+        delete engine;
+    }
+    std::cout << "\tEnd Test: PetrolEngine_valid_argument_Test" << std::endl << std::endl;
+}
+    
+void PetrolEngine_changeGear_Test()
+{
+    std::cout << "\tStart Test: PetrolEngine_changeGear_Test" << std::endl;
+
+    PetrolEngine* engine = nullptr;
+    engine = new PetrolEngine(120, 1800, 6);
+    assert(engine->getCurrentGear() == 0);
+    engine->changeGear(-1);
+    assert(engine->getCurrentGear() == -1);
+    engine->changeGear(3);
+    assert(engine->getCurrentGear() == 3);
+    
 
     try
     {
-        engine = new PetrolEngine(20, 2, 1);
+        engine->changeGear(7);
+        assert(engine->getCurrentGear() == 3);
     }
-    catch(const std::runtime_error& e)
+    catch(const InvalidGear& e)
     {
-        assert(engine->getMaxGear() >= 1);
         std::cerr << e.what() << '\n';
     }
-    delete engine;
-}   
-    
-    
 
-void PetrolEngine_changeGear_Test()
-{
-    //PetrolEngine* engine = nullptr;
-    //engine = new PetrolEngine(120, 1800, 6);
-    //assert(engine->getCurrentGear() == 0);
-    //engine->changeGear(-1);
-    //assert(engine->getCurrentGear() == -1);
-    //engine->changeGear(-3);
-    //assert(engine->getCurrentGear() == -1);
-    //engine->changeGear(3);
-    //assert(engine->getCurrentGear() == 3);
-    //engine->changeGear(7);
-    //assert(engine->getCurrentGear() == 3);
+    try
+    {
+        engine->changeGear(-3);
+        assert(engine->getCurrentGear() == 3);
+    }
+    catch(const InvalidGear& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+
+    std::cout << "\tEnd Test: PetrolEngine_valid_argument_Test" << std::endl << std::endl;
 }
 
+ /*
 void ElectricEngine_Test()
 {
-*/
 
- /*
  
     ElectricEngine* engine = nullptr;
     engine = new ElectricEngine(0, 0);
@@ -124,20 +138,27 @@ void ElectricEngine_Test()
     assert(engine->getElectricPower() >= 1);
     assert(engine->getBatteryCapacity() >= 1);
     delete engine;
+    
 
 }
-*/
+
 void PetrolCar_Test()
 {
 
 }
+*/
+
 
 void Tests()
 {
-    PetrolEngine_Power_Test();
-    //PetrolEngine_Capacity_Test();
-    //PetrolEngine_MaxGear_Test();
+    std::cout << "Tests started" << std::endl;
+
+    PetrolEngine_invalid_argument_Test();
+    PetrolEngine_valid_argument_Test();
+    PetrolEngine_changeGear_Test();
 
     //PetrolEngine_changeGear_Test();
     //ElectricEngine_Test();
+
+    std::cout << "Tests ended" << std::endl;
 }

@@ -26,28 +26,28 @@ PetrolEngine::PetrolEngine(int power, float capacity, int gears)
 
 int PetrolEngine::getPower() const
 { 
-    std::cout << __FUNCTION__ << std::endl;
+    std::cout << __FUNCTION__ << " Your power is: " << power_ << std::endl;
     return power_; 
     
 }
 
 int PetrolEngine::getCapacity() const
 { 
-    std::cout << __FUNCTION__ << std::endl;
+    std::cout << __FUNCTION__ << " Your capacity is: " << capacity_ << std::endl;
     return capacity_;
     
 }
 
 int PetrolEngine::getMaxGear() const 
 {
-    std::cout << __FUNCTION__ << std::endl;
+    std::cout << __FUNCTION__ << " Your top Gear is: " << gears_ << std::endl;
     return gears_;
     
 }
 
 int PetrolEngine::getCurrentGear() const
 {
-    std::cout << __FUNCTION__ << std::endl;
+    std::cout << __FUNCTION__ << " Your gear is: " << currentGear_ << std::endl;
     return currentGear_;
     
 }
@@ -60,13 +60,13 @@ void PetrolEngine::changeGear(int gear)
     // 0 is for NEUTRAL
 
     std::ostringstream oos;
-    if(gear > gears_ && gear < -1 ) {
-        oos << "This Care have gear -1, 0 ... to" << gears_;
-        throw new InvalidGear(oos.str());
+     if(gear > gears_ || gear < -1 ) {
+        oos << "This Care have gear -1, 0 ... to " << gears_;
+        throw InvalidGear(oos.str());
     }
     
     currentGear_ = gear;
-    oos << "Your current gear is: " << currentGear_;
+    oos << " Your current gear is: " << currentGear_;
     
-    std::cout << __FUNCTION__ << " " << oos.str() << std::endl;
+    std::cout << __FUNCTION__ << ": " << oos.str() << std::endl;
 }
