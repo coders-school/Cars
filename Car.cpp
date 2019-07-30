@@ -1,6 +1,7 @@
 #include "Car.hpp"
 #include "ElectricEngine.hpp"
 #include "PetrolEngine.hpp"
+#include "Errors.hpp"
 #include <iostream>
 
 void Car::turnLeft()      { std::cout << __FUNCTION__ << std::endl; }
@@ -29,7 +30,7 @@ void Car::changeGear(int gear) {
         throw std::runtime_error("Wrong gear definition");
     }
     if (currentGear == "R" and gear != 0) {
-        throw std::runtime_error("Potential gearbox damage");
+        throw InvalidGear();
     }
     else {
         currentGear = std::to_string(gear);
@@ -41,7 +42,7 @@ void Car::changeGear(std::string gear) {
         throw std::runtime_error("Wrong gear definition");
     }
     if (currentGear != "0" and gear == "R") {
-        throw std::runtime_error("Potential gearbox damage");
+        throw InvalidGear();
     }
     else {
         currentGear = gear;

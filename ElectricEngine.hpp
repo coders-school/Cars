@@ -2,7 +2,7 @@
 
 #include "Engine.hpp"
 
-class ElectricEngine : public virtual Engine
+class ElectricEngine : public Engine
 {
 public:
     ElectricEngine(int power, int batteryCapacity);

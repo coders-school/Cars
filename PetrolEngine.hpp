@@ -2,7 +2,7 @@
 
 #include "Engine.hpp"
 
-class PetrolEngine  : public virtual Engine
+class PetrolEngine  : public Engine
 {
 public:
     PetrolEngine(int power, float capacity, int gears);
