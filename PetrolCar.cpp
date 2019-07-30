@@ -10,3 +10,4 @@ PetrolCar::PetrolCar(PetrolEngine* engine)
 PetrolCar::~PetrolCar()         { std::cout << "czyszczę po: " << __FUNCTION__ << std::endl; delete engine_; }
 void PetrolCar::refuel()        { std::cout << __FUNCTION__ << std::endl; }
 void PetrolCar::feed()          { refuel(); }
+void PetrolCar::changeGear()    { std::cout << __FUNCTION__ << std::endl; }

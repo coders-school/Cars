@@ -4,6 +4,7 @@ class Car
 {
     protected:
     int velocity;
+    int currentGear;
 public:
     Car();
     virtual ~Car();
@@ -12,5 +13,8 @@ public:
     void brake(int);
     void accelerate(int);
     virtual void feed()=0;
+    void changeGear(int);
 };
 
+struct GearChangeFailure
+{};

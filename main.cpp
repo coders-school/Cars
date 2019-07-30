@@ -13,6 +13,27 @@ int main()
     car->brake(42);
     car->accelerate(-900);
     car->feed();
+    try
+    {
+        car->changeGear(7);
+    }
+    catch(GearChangeFailure FirstFailure)
+    {
+        std::cout << "No such gear! Available gears: from -1 to 5" << std::endl;
+    }
+    try
+    {
+        car->changeGear(1);
+        car->changeGear(2);
+        car->changeGear(3);
+        car->changeGear(4);
+        car->changeGear(5);
+        car->changeGear(-1);
+    }
+    catch(GearChangeFailure InvalidGear)
+    {
+        std::cout << "Can't change gear 5 to reverse!" << std::endl;
+    }  
 
     std::cout << std::endl << "NISSAN" << std::endl;
     ElectricCar nissan(new ElectricEngine(130, 650));

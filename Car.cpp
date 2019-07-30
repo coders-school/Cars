@@ -4,6 +4,7 @@
 Car::Car()
 {
 	velocity = 0;
+	currentGear = 0;
 }
 Car::~Car() {}
 void Car::turnLeft()      { std::cout << __FUNCTION__ << std::endl; }
@@ -31,5 +32,36 @@ void Car::accelerate(int speed)
 	std::cout << "Current speed: " << velocity << std::endl;
 	}
 }
+void Car::changeGear(int gear)
+{
+	if(gear<-1 || gear>5)
+	{
+		std::cout << __FUNCTION__ << std::endl;
+		std::cout << "Exception!" << std::endl;
+		GearChangeFailure FirstFailure;
+		throw FirstFailure;
+	}
+	if(gear>(currentGear+1) || gear<(currentGear-1))
+	{
+		std::cout << __FUNCTION__ << std::endl;
+		std::cout << "Exception!" << std::endl;
+		GearChangeFailure SecondFailure;
+		throw SecondFailure;
+	}
+	else 
+	{
+		std::cout << __FUNCTION__ << std::endl;
+		std::cout << "Changing gear from " << currentGear << " to " << gear << std::endl;
+		currentGear = gear;
+	}	
+	if(currentGear == 5 && gear == -1)
+	{
+		std::cout << __FUNCTION__ << std::endl;
+		std::cout << "Exception!" << std::endl;
+		GearChangeFailure InvalidGear;
+		throw InvalidGear;
+	}
+}
+
 
 

@@ -11,7 +11,7 @@ public:
     PetrolCar(PetrolEngine* engine);
     ~PetrolCar();
     void feed() override;
-
+    void changeGear();
 
 };
 
