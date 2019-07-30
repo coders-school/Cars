@@ -6,15 +6,12 @@ class Car
 {
 public:
     virtual ~Car() = default;
-    int velocity = 0;
     void turnLeft();
     void turnRight();
     void brake();
-    void accelerate(int) ;
+    void accelerate(int s) ;
     virtual void addEnergy()=0;
-	void setSpeed(int);
+    virtual int getVelocity();
 protected:
-	int speed_;
-	ElectricEngine *electricEngine_;
-	PetrolEngine *petrolEngine_;
+	int velocity = 0;
 };

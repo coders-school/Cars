@@ -7,14 +7,23 @@ HybridCar::HybridCar(PetrolEngine *petrolEng, ElectricEngine *electricEng)
     std::cout << __FUNCTION__ << std::endl;
 }
 
-HybridCar::~HybridCar() {std::cout << __FUNCTION__ << std::endl; }
+HybridCar::~HybridCar() { std::cout << __FUNCTION__ << std::endl; }
 
-void HybridCar::addEnergy() {refuel(), charge();}
-void HybridCar::changeEngine(int pow, float cap, int g)
+void HybridCar::addEnergy() { refuel(), charge(); }
+void HybridCar::changeEngine(PetrolEngine *petrolEngine, ElectricEngine *electricEngine)
 {
-	PetrolCar::changeEngine(pow, cap, g);
+    if (velocity == 0)
+    {
+        delete this->petrolEngine_;
+        delete this->electricEngine_;
+
+        this->electricEngine_ = electricEngine;
+        this->petrolEngine_ = petrolEngine;
+        std::cout<<"Engine change"<< std::endl;
+    }
+    else
+    {
+        std::cout << "You cannot do this during the ride!" << std::endl;
+    }
 }
-void HybridCar::changeEngine(int pow, int bat)
-{
-	ElectricCar::changeEngine(pow, bat);
-}
+

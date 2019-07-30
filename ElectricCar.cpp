@@ -16,19 +16,12 @@ void ElectricCar::addEnergy() { charge(); }
 void ElectricCar::charge() { std::cout << __FUNCTION__ << std::endl; }
 ElectricEngine *ElectricCar::changeEngine(int pow, int bat)
 {
-	if (speed_ == 0)
+	if (velocity == 0)
 	{
 		delete this->electricEngine_;
 		this->electricEngine_ = new ElectricEngine(pow, bat);
 		return this->electricEngine_;
 	}
 	else
-		std::cout << "Operacja niemozliwa" << std::endl;
+		std::cout << "You cannot do this during the ride!" << std::endl;
 }
-
-void ElectricCar::accelerate(int moreSpeed)
-{
-	velocity += moreSpeed;
-	std::cout << "Current velocity " << velocity << std::endl;
-}
-void ElectricCar::brake() { velocity = 0; }

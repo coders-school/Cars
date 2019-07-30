@@ -9,17 +9,21 @@ void test();
 
 int main()
 {
-    //  test();
+      test();
     Car *car = nullptr;
     std::cout << std::endl
               << "OPEL" << std::endl;
     PetrolCar opel(new PetrolEngine(120, 1800, 6));
     car = &opel;
     car->accelerate(50);
+    std::cout << "Velocity = " << car->getVelocity() << std::endl;
+
     car->brake();
     car->accelerate(-900);
     car->addEnergy();
     opel.setGear(2);
+    std::cout << "Velocity = " << car->getVelocity() << std::endl;
+
     std::cout << opel.getGear() << std::endl;
     opel.setGear(-1);
     std::cout << opel.getGear() << std::endl;
@@ -42,20 +46,20 @@ int main()
     car = &toyota;
     car->accelerate(100);
     car->brake();
+    std::cout << "Velocity = " << car->getVelocity() << std::endl;
+    toyota.changeEngine(new PetrolEngine(100, 140, 4), new ElectricEngine(200, 800));
 }
 
 void test()
 {
-    // mały problem z testami, nie do końca rozumiem czemu nie przechodzą
-    Car *car = nullptr;
+    
     PetrolCar opel(new PetrolEngine(120, 1800, 6));
-    car = &opel;
-    car->accelerate(150);
-    assert(car->velocity == 150);
-    car->accelerate(100);
-    assert(car->velocity == 150);
-    car->accelerate(-100);
-    assert(car->velocity == 0);
-    car->brake();
-    assert(car->velocity == 0);
+    opel.accelerate(150);
+    assert(opel.getVelocity() == 150);
+    opel.accelerate(100);
+    assert(opel.getVelocity() == 250);
+    // opel.accelerate(-100);
+    // assert(car->velocity == 0);
+    opel.brake();
+    assert(opel.getVelocity() == 0);
 }

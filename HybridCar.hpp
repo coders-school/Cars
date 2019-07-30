@@ -9,7 +9,6 @@ public:
     HybridCar(PetrolEngine *petrolEng, ElectricEngine *electricEng);
     ~HybridCar();
 
-	void changeEngine(int, int);
-	void changeEngine(int, float, int);
+	void changeEngine(PetrolEngine *petrolEng, ElectricEngine *electricEng);
     void addEnergy();
 };
