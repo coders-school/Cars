@@ -22,9 +22,14 @@ void Car::brake(int speed)
 }
 void Car::accelerate(int speed)
 {
+	if (speed < 0) std::cout << "Cannot brake with vegative value!" << std::endl;
+	else if (speed == 0) std::cout << "Maintaining current speed" << std::endl;
+	else if (speed > 0)
+	{
 	velocity += speed;
 	std::cout << __FUNCTION__ << std::endl;
 	std::cout << "Current speed: " << velocity << std::endl;
+	}
 }
 
 
