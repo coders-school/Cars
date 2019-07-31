@@ -2,13 +2,14 @@
 
 class Car
 {
+private:
+	int velocity();
 public:
     virtual ~Car() = default;
     void turnLeft();
     void turnRight();
-    void velocity();
     void brake();
-    void accelerate(int speed);
+    void accelerate(int velocityGrow);
     virtual void feed()=0;
 };
 
