@@ -3,7 +3,7 @@
 class Car
 {
 private:
-	int velocity();
+	int velocity;
 public:
     virtual ~Car() = default;
     void turnLeft();
