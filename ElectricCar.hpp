@@ -12,5 +12,6 @@ public:
     void feed() override;
 
     ElectricEngine* engine_;
+    void set_electric_engine(int, int);
 };
 

@@ -10,3 +10,13 @@ ElectricCar::ElectricCar(ElectricEngine* engine)
 ElectricCar::~ElectricCar()       { std::cout << __FUNCTION__ << std::endl; }
 void ElectricCar::charge()        { std::cout << __FUNCTION__ << std::endl; }
 void ElectricCar::feed()          { charge(); }
+void ElectricCar::set_electric_engine(int power, int batteryCapacity)
+{
+    if  (this->velocity !=0)
+         std::cout<<"Engine change imppossible, stop the car!"<<std::endl;
+    else {
+        delete this->engine_;
+        this->engine_=new ElectricEngine(power, batteryCapacity);
+        std::cout<<"New engine!"<<std::endl;
+         }
+}

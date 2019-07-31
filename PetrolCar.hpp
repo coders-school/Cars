@@ -12,5 +12,6 @@ public:
     void feed() override;
 
     PetrolEngine* engine_;
+    void set_petrol_engine(int, float ,int);
 };
 
