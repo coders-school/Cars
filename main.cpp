@@ -2,8 +2,7 @@
 #include "ElectricCar.hpp"
 #include "HybridCar.hpp"
 #include <iostream>
-// YOO
-//siema
+
 int main()
 {
     Car* car = nullptr;
@@ -20,9 +19,8 @@ int main()
     car = &nissan;
     car->feed();
     car->accelerate(80);
-    nissan.engine_ = new ElectricEngine(150, 700);  // Changing an engine during driving is not safe
     car->turnLeft();
-
+    
     std::cout << std::endl << "TOYOTA" << std::endl;
     auto* pe = new PetrolEngine(80, 1400, 5);
     HybridCar toyota(pe, new ElectricEngine(100, 540));
@@ -30,4 +28,5 @@ int main()
     car->accelerate(100);
     car->brake();
     car->feed();
+    return 0;
 }
