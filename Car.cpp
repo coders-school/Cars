@@ -7,9 +7,12 @@ void Car::brake()                    { std::cout << __FUNCTION__ << std::endl; }
 void Car::accelerateErr()            { std::cout << __FUNCTION__ << std::endl; }
 void Car::accelerate(int speed)
 { 
-    if (speed <= 0)
+    if (speed < 0)
         accelerateErr();
     else    
-         std::cout << __FUNCTION__ << std::endl; 
+    {
+        std::cout << __FUNCTION__ << std::endl; 
+        velocity += speed;
+    }
 }
 
