@@ -10,7 +10,8 @@ public:
     ElectricCar(ElectricEngine* engine);
     ~ElectricCar();
     void feed() override;
-
+private:
     ElectricEngine* engine_;
+    
 };
 
