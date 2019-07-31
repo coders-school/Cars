@@ -15,4 +15,3 @@ void Car::accelerate(int speed)
         velocity += speed;
     }
 }
-

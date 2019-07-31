@@ -22,4 +22,4 @@ set(SRC_LIST
 )
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})
-add_compile_options(${PROJECT_NAME} -g -O0)
+add_compile_options(${PROJECT_NAME} -g -O0 -Wall -Werror -Wpedantic -Wextra)
