@@ -9,7 +9,9 @@ int main()
     std::cout << std::endl << "OPEL" << std::endl;
     PetrolCar opel(new PetrolEngine(120, 1800, 6));
     car = &opel;
+    car->changeGear(4);
     car->accelerate(50);
+    car->changeGear(-1);
     car->brake();
     car->accelerate(-900);
     car->feed();
