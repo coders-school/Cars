@@ -5,8 +5,6 @@
 #include <iostream>
 #include <cassert>
 
-
-
 void safeGearSet(PetrolCar& car, int gear)
 {
     try
@@ -31,10 +29,10 @@ int main()
         safeGearSet(fordMustang,1);
         safeGearSet(fordMustang,7);
         safeGearSet(fordMustang,3);
+
+        accelerateTest(fordMustang);
+        brakeTest(fordMustang);
     
-
-
-
     // ElectricCar nissan(new ElectricEngine(120, 4000));
     // nissan.changeElectricEngine(new ElectricEngine(130, 5000));
   
