@@ -36,7 +36,6 @@ void Car::accelerate(unsigned amount)
 
 void Car::brake(unsigned amount) 
 { 
-    std::cout << __FUNCTION__ << std::endl;
     if(velocity>0 && amount>0)
     {
         if(amount>=velocity) velocity=0;
