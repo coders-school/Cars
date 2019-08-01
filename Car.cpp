@@ -4,6 +4,7 @@
 void Car::turnLeft()      { std::cout << __FUNCTION__ << std::endl; }
 void Car::turnRight()     { std::cout << __FUNCTION__ << std::endl; }
 void Car::brake(int speed)      { velocity-=speed; std::cout <<"Slowing down to: "<<velocity<<std::endl;}
+
 void Car::accelerate(int speed)
 {
     if (speed<0)
@@ -16,3 +17,9 @@ void Car::accelerate(int speed)
  }
 void Car::set_speed(int speed)  { velocity=speed;  std::cout << __FUNCTION__ << std::endl; }
 int Car::get_speed()const       { std::cout<<"Speed = "<<velocity<<std::endl; return velocity; }
+
+void Car::feed() 
+{   
+    if (velocity == 0) {std::cout << "Charging correctly! " << std::endl;}
+    else {std::cout << "Error while charging! "  << std::endl; }
+}

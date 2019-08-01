@@ -10,7 +10,8 @@ private:
     int currentGear_;
 
 public:
-    PetrolEngine(int power, float capacity, int gears);
+    PetrolEngine(int power=80, float capacity=1100, int gears=5);
     void changeGear(int gear);
+    int returnGear();
 
 };

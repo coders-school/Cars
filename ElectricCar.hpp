@@ -9,7 +9,7 @@ protected:
 public:
     ElectricCar(ElectricEngine* engine);
     ~ElectricCar();
-    void feed() override;
+    void feed();
 
     ElectricEngine* engine_;
     void set_electric_engine(int, int);

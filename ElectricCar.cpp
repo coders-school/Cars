@@ -7,9 +7,17 @@ ElectricCar::ElectricCar(ElectricEngine* engine)
     std::cout << __FUNCTION__ << std::endl;
 }
 
-ElectricCar::~ElectricCar()       { std::cout << __FUNCTION__ << std::endl; }
+ElectricCar::~ElectricCar()       
+{ 
+    delete engine_;
+    std::cout << __FUNCTION__ << std::endl; 
+}
+
 void ElectricCar::charge()        { std::cout << __FUNCTION__ << std::endl; }
-void ElectricCar::feed()          { charge(); }
+void ElectricCar::feed()
+{
+    if (velocity == 0) charge(); 
+}
 void ElectricCar::set_electric_engine(int power, int batteryCapacity)
 {
     if  (this->velocity !=0)

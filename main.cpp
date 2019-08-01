@@ -12,6 +12,11 @@ int main()
     car = &opel;
     car->accelerate(50);
     opel.set_petrol_engine(100,1500,5);
+    opel.showGear();
+    opel.setGear(-1);
+    opel.showGear();
+    opel.setGear(5);
+    opel.showGear();
     car->brake(50);
     opel.set_petrol_engine(100,1500,5);
     car->accelerate(-900);
@@ -20,9 +25,9 @@ int main()
     std::cout << std::endl << "NISSAN" << std::endl;
     ElectricCar nissan(new ElectricEngine(130, 650));
     car = &nissan;
-    car->feed();
     car->accelerate(80);
     car->get_speed();
+    car->feed();
     car->brake(80);
     car->get_speed();
     nissan.set_electric_engine(150,700);
