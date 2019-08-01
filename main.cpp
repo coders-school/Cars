@@ -5,18 +5,36 @@
 #include <iostream>
 #include <cassert>
 
+
+
+void safeGearSet(PetrolCar& car, int gear)
+{
+    try
+    {
+        car.setGear(gear);
+    }
+    catch(std::logic_error &ex)
+    {
+       std::cout << ex.what() << std::endl;
+    }
+}
+
+
 int main()
 {
     PetrolCar fordMustang(new PetrolEngine(450,500,6));
-    velocityTest(fordMustang);
-
-    fordMustang.setGear(1);
-    fordMustang.setGear(-1);
-    fordMustang.setGear(0);
-    fordMustang.setGear(-1);
-    fordMustang.setGear(1);
-    fordMustang.setGear(7);
      
+        safeGearSet(fordMustang,1);
+        safeGearSet(fordMustang,-1);
+        safeGearSet(fordMustang,0);
+        safeGearSet(fordMustang,-1);
+        safeGearSet(fordMustang,1);
+        safeGearSet(fordMustang,7);
+        safeGearSet(fordMustang,3);
+    
+
+
+
     // ElectricCar nissan(new ElectricEngine(120, 4000));
     // nissan.changeElectricEngine(new ElectricEngine(130, 5000));
   

@@ -9,6 +9,11 @@ public:
     int getCurrentGear() const;
 
 private:
+    bool isGearInRange(int gear);
+    bool doesGearChangeImmediatelyFromForwardToReverse(int gear);
+    bool doesGearChangeImmediatelyFromReverseToForward(int gear);
+    void checkIfChangingIsAllowed(int gear);
+    
     unsigned power_;    // in HP
     float capacity_;    // in ccm
     int gears_;

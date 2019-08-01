@@ -21,36 +21,37 @@ int PetrolEngine::getCurrentGear() const
     return currentGear_;
 }
 
+bool PetrolEngine::isGearInRange(int gear)
+{
+    return gear <= gears_ && gear >= -1;
+}
+
+bool PetrolEngine::doesGearChangeImmediatelyFromForwardToReverse(int gear)
+{
+    return currentGear_ > 0 && gear == -1; 
+}
+
+bool PetrolEngine::doesGearChangeImmediatelyFromReverseToForward(int gear)
+{
+    return currentGear_ == -1 && gear > 0; 
+}
+
+void PetrolEngine::checkIfChangingIsAllowed(int gear)
+{
+    if(not isGearInRange(gear)) 
+    {
+        throw std::out_of_range("Chosen gear is out of range!");
+    }
+
+    if(doesGearChangeImmediatelyFromForwardToReverse(gear) or doesGearChangeImmediatelyFromReverseToForward(gear))
+    {
+        throw std::logic_error("Forbidden gear change!");
+    }
+}
+
 void PetrolEngine::changeGear(int gear)
 {
-    if(gear <= gears_ && gear >= -1) 
-    {
-        try
-        {
-            if( (currentGear_ > 0 && gear == -1) || (currentGear_ == -1 && gear > 0) )
-            {
-                throw std::logic_error("Forbidden gear change!");
-            }
-            else
-            {
-                currentGear_ = gear;
-                std::cout << "You've changed gear to " << currentGear_ << std::endl;
-            }
-        }
-        catch(std::logic_error &ex1)
-        {
-            std::cout << ex1.what() << std::endl;
-        }
-    }
-    else
-    {
-        try
-        {
-            throw std::out_of_range("Chosen gear is out of range!");
-        }
-        catch(std::out_of_range &ex2)
-        {
-            std::cout << ex2.what() << std::endl;
-        }
-    }
+    checkIfChangingIsAllowed(gear);   
+    currentGear_ = gear;
+    std::cout << "You've changed gear to " << currentGear_ << std::endl;
 }
