@@ -1,7 +1,8 @@
 #include "Car.hpp"
 #include <iostream>
 #include "Exceptions.hpp"
-//#include <stdexcept>
+
+
 void Car::turnLeft()         { std::cout << __FUNCTION__ << std::endl; }
 void Car::turnRight()  	     { std::cout << __FUNCTION__ << std::endl; }
 void Car::brake()           
@@ -22,6 +23,11 @@ void Car::accelerate(int speed)
 }
 void Car::changeGear(int gear)
 {
+    if(currentGear == gear)
+    {
+        return;
+    }
+    
     try
     {
         if( currentGear > 0 && gear == -1 )
@@ -31,7 +37,6 @@ void Car::changeGear(int gear)
     }
     catch (InvalidGear &error)
     {
-        std::cout << "Invalid Gear!" << std::endl;
         std::cout << error.what() << std::endl;
     }
 
