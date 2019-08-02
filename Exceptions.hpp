@@ -1,9 +1,9 @@
 #include <stdexcept>
 
-class InvalidGear : public std::runtime_error
+class InvalidGear : public std::logic_error
 {
 
     public:
-        InvalidGear() : std::runtime_error("You can not change the current gear to R. Slow down!")
+        InvalidGear() : std::logic_error("You can not change the current gear to R. Slow down!")
                       {};
 };
