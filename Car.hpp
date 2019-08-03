@@ -1,19 +1,22 @@
 #pragma once
+
+#include "Gear.hpp"
+
 class Car
 {
-private:
-	int velocity;
-    int currentGear;
 public:
-    enum Gears {R = -1, N = 0};
     virtual ~Car() = default;
     void turnLeft();
     void turnRight();
     void brake();
-    void checkAccelerate(int speed);
-    void accelerateErr();
-    void accelerate(int speed);
-    void changeGear(int gear);
+    void accelerate(int acceleration);
+    void changeGear(Gear gear);
     virtual void feed()=0;
-};
 
+    Gear getGear() const;
+    int getVelocity() const;
+
+private:
+    int velocity {};
+    Gear currentGear {Gear::_N};
+};

@@ -1,6 +1,7 @@
 #include "PetrolCar.hpp"
 #include "ElectricCar.hpp"
 #include "HybridCar.hpp"
+#include "Gear.hpp"
 #include <iostream>
 
 int main()
@@ -9,9 +10,9 @@ int main()
     std::cout << std::endl << "OPEL" << std::endl;
     PetrolCar opel(new PetrolEngine(120, 1800, 6));
     car = &opel;
-    car->changeGear(4);
+    car->changeGear(Gear::_4);
     car->accelerate(50);
-    car->changeGear(Car::R);
+    car->changeGear(Gear::_R);
     car->brake();
     car->accelerate(-900);
     car->feed();
