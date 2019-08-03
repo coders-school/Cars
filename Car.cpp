@@ -6,21 +6,28 @@
 void Car::turnLeft()         { std::cout << __FUNCTION__ << std::endl; }
 void Car::turnRight()  	     { std::cout << __FUNCTION__ << std::endl; }
 void Car::brake()           
-{ 
-    std::cout << __FUNCTION__ << std::endl; 
+{
     velocity = 0;
-} 
-void Car::accelerateErr()            { std::cout << __FUNCTION__ << std::endl; }
-void Car::accelerate(int speed)
+}
+
+void Car::accelerate(int acceleration)
 { 
-    if (speed < 0)
-        accelerateErr();
+    if(acceleration == 0)
+    {
+        return;
+    }
+
+    if(acceleration < 0)
+    {        
+        throw InvalidAccelerationValue(
+            std::to_string(acceleration));
+    }
     else    
     {
-        std::cout << __FUNCTION__ << std::endl; 
-        velocity += speed;
+        velocity += acceleration;
     }
 }
+
 void Car::changeGear(Gear gear)
 {
     if(currentGear == gear)
@@ -28,16 +35,20 @@ void Car::changeGear(Gear gear)
         return;
     }
     
-    try
+    if(currentGear > Gear::_N 
+        && gear == Gear::_R)
     {
-        if(currentGear > Gear::_N && gear == Gear::_R)
-            throw InvalidGear();
-        currentGear = gear;
-        std::cout << "Current gear: " << gear::toString(currentGear) << std::endl;
+        throw InvalidGear();
     }
-    catch (InvalidGear &error)
-    {
-        std::cout << error.what() << std::endl;
-    }
+    currentGear = gear;
+}
 
+Gear Car::getGear() const
+{
+    return currentGear;
+}
+
+int Car::getVelocity() const
+{
+    return velocity;
 }
