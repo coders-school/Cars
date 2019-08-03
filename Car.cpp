@@ -2,7 +2,6 @@
 #include <iostream>
 #include "Exceptions.hpp"
 
-
 void Car::turnLeft()         { std::cout << __FUNCTION__ << std::endl; }
 void Car::turnRight()  	     { std::cout << __FUNCTION__ << std::endl; }
 void Car::brake()           
@@ -30,7 +29,7 @@ void Car::changeGear(int gear)
     
     try
     {
-        if( currentGear > 0 && gear == -1 )
+        if( currentGear > 0 && gear == R)
             throw InvalidGear();
         currentGear = gear;
         std::cout << "Current gear: " << currentGear << std::endl;

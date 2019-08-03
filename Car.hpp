@@ -1,11 +1,11 @@
 #pragma once
-
 class Car
 {
 private:
 	int velocity;
     int currentGear;
 public:
+    enum Gears {R = -1, N = 0};
     virtual ~Car() = default;
     void turnLeft();
     void turnRight();
