@@ -9,11 +9,12 @@ int main()
     std::cout << std::endl << "OPEL" << std::endl;
     PetrolCar opel(new PetrolEngine(120, 1800, 6));
     car = &opel;
+    car->changeGear(4);
     car->accelerate(50);
+    car->changeGear(Car::R);
     car->brake();
     car->accelerate(-900);
     car->feed();
-
     std::cout << std::endl << "NISSAN" << std::endl;
     ElectricCar nissan(new ElectricEngine(130, 650));
     car = &nissan;
