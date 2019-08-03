@@ -11,7 +11,7 @@ TEST(PetrolCarTests,
 	ASSERT_EQ(pc.getVelocity(), 0);
 }
 
-TEST(PetrolCarTests, shouldHaveNeutralGearAfterCreation)
+TEST(PetrolCarTests, ShouldHaveNeutralGearAfterCreation)
 {
 	PetrolCar pc(nullptr);
 	ASSERT_EQ(pc.getGear(), Gear::_N);
