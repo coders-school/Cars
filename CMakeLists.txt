@@ -9,6 +9,7 @@ set(SRC_LIST
     Car.cpp
     ElectricCar.cpp
     ElectricEngine.cpp
+    ExceptionCar.cpp
     HybridCar.cpp
     main.cpp
     PetrolCar.cpp

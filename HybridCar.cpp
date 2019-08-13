@@ -1,9 +1,9 @@
 #include "HybridCar.hpp"
 #include <iostream>
 
-HybridCar::HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng)
-    : PetrolCar(petrolEng)
-    , ElectricCar(electricEng)
+HybridCar::HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng, int maxSpeed)
+    : PetrolCar(petrolEng, maxSpeed)
+    , ElectricCar(electricEng, maxSpeed)
 {
     std::cout << __FUNCTION__ << std::endl;
 }
