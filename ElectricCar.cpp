@@ -18,7 +18,7 @@ void ElectricCar::feed()
 {
     if (velocity == 0) charge(); 
 }
-void ElectricCar::set_electric_engine(int power, int batteryCapacity)
+void ElectricCar::setElectricEngine(int power, int batteryCapacity)
 {
     if  (this->velocity !=0)
          std::cout<<"Engine change imppossible, stop the car!"<<std::endl;

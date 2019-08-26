@@ -5,13 +5,12 @@
 class ElectricCar : public virtual Car
 {
 protected:
+    ElectricEngine* engine_;
     void charge();
 public:
     ElectricCar(ElectricEngine* engine);
     ~ElectricCar();
     void feed();
-
-    ElectricEngine* engine_;
-    void set_electric_engine(int, int);
+    void setElectricEngine(int, int);
 };
 

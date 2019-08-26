@@ -15,9 +15,9 @@ void Car::accelerate(int speed)
             velocity+=speed;
             std::cout <<"Accelerate to: " <<velocity<<std::endl;}
  }
-void Car::set_speed(int speed)  { velocity=speed;  std::cout << __FUNCTION__ << std::endl; }
+void Car::setSpeed(int speed)  { velocity=speed;  std::cout << __FUNCTION__ << std::endl; }
 
-int Car::get_speed()const       { std::cout<<"Speed = "<<velocity<<std::endl; return velocity; }
+int Car::getSpeed()const       { std::cout<<"Speed = "<<velocity<<std::endl; return velocity; }
 
 void Car::feed() 
 {   

@@ -19,7 +19,7 @@ SCENARIO("Cars", "velocityTests")
 
                 THEN("The velocity is valueAccelerate")
                 {
-                    CHECK(testCar->get_speed() == valueAccelerate);
+                    CHECK(testCar->getSpeed() == valueAccelerate);
                 }
             }
         }
@@ -39,7 +39,7 @@ SCENARIO("Cars", "velocityTests")
 
                 THEN("The velocity is valueAccelerate - valueBrake")
                 {
-                    CHECK(testCar->get_speed() == valueAccelerate - valueBrake);
+                    CHECK(testCar->getSpeed() == valueAccelerate - valueBrake);
                 }
             }
         }
@@ -55,13 +55,13 @@ SCENARIO("Cars", "velocityTests")
         {
             WHEN("accelerate() and brake() is called")
             {
-                testCar->set_speed(valueSetSpeed);
+                testCar->setSpeed(valueSetSpeed);
                 testCar->accelerate(valueAccelerate);
                 testCar->brake(valueBrake);
 
                 THEN("The velocity is valueSetSpeed + valueAccelerate - valueBrake")
                 {
-                    CHECK(testCar->get_speed() == valueSetSpeed + valueAccelerate - valueBrake);
+                    CHECK(testCar->getSpeed() == valueSetSpeed + valueAccelerate - valueBrake);
                 }
             }
         }

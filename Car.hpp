@@ -9,8 +9,8 @@ public:
     void turnLeft();
     void turnRight();
     void brake(int speed);
-    int get_speed() const;
-    void set_speed(int speed);
+    int getSpeed() const;
+    void setSpeed(int speed);
     void accelerate(int speed);
     void feed();
 };

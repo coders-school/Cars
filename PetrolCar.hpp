@@ -12,7 +12,7 @@ public:
     ~PetrolCar();
     void feed();
 
-    void set_petrol_engine(int, float ,int);
+    void setPetrolEngine(int, float ,int);
     int showGear();
     void setGear(int);
 
