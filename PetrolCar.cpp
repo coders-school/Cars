@@ -26,5 +26,5 @@ void PetrolCar::setPetrolEngine(int power, float capacity, int gears)
         }
 }
 
-int PetrolCar::showGear(){std::cout << "Your gear is: " << this->engine_->returnGear() << std::endl;}
+void PetrolCar::showGear(){std::cout << "Your gear is: " << this->engine_->returnGear() << std::endl;}
 void PetrolCar::setGear(int g){this->engine_->changeGear(g);}

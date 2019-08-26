@@ -12,6 +12,6 @@ public:
     int getSpeed() const;
     void setSpeed(int speed);
     void accelerate(int speed);
-    void feed();
+    virtual void feed()=0;
 };
 

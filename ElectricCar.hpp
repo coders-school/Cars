@@ -10,7 +10,7 @@ protected:
 public:
     ElectricCar(ElectricEngine* engine);
     ~ElectricCar();
-    void feed();
+    void feed() override;
     void setElectricEngine(int, int);
 };
 

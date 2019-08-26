@@ -18,41 +18,21 @@ void PetrolEngine::changeGear(int gear)
     // 0 is for NEUTRAL
     
     std::cout << __FUNCTION__ << std::endl;
-    try
-    {
         if (gear >= -1 && gear <= gears_) 
         {
-            try
-            { 
-                if (currentGear_ == -1 && gear != 1)
+                if (currentGear_ == -1 && gear > 1)
                 {   
-//                  throw std::logic_error("Can't change gear from rear to higher than 1");
-                    throw 0;
+                    throw std::logic_error("Can't change gear from rear to higher than 1");
                 }
 
                 if (currentGear_ > 1 && gear == -1) 
                 {
-                    throw 1;   
-//                  std::cout << "Can't change gear from " << currentGear_ << " to " << gear << std::endl;
+                    throw std::logic_error("Can't change gear from higher than one to rear");
                 }
                 
                 else {currentGear_ = gear;}
-
-            }
-            catch (...)
-            {
-                std::cout << "Logical exception" << std::endl;
-            }
- 
-
         }
         else {throw std::out_of_range("Invalid gear!");}
-    }
-    catch (std::exception &e)
-    {
-        std::cout << "Exception: " << e.what() << std::endl;
-    }   
-    
 
 }
 

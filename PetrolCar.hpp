@@ -10,10 +10,10 @@ protected:
 public:
     PetrolCar(PetrolEngine* engine);
     ~PetrolCar();
-    void feed();
+    void feed() override;
 
     void setPetrolEngine(int, float ,int);
-    int showGear();
+    void showGear();
     void setGear(int);
 
 };
