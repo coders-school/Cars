@@ -15,7 +15,7 @@ int main()
     opel.showGear();
     opel.setGear(-1);
     opel.showGear();
-    opel.setGear(5);
+    opel.setGear(4);
     opel.showGear();
     car->brake(50);
     opel.setPetrolEngine(100,1500,5);

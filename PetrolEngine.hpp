@@ -2,7 +2,7 @@
 
 class PetrolEngine
 {
-private:
+protected:
 
     int power_;         // in HP
     float capacity_;    // in ccm

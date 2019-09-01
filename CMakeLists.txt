@@ -24,12 +24,12 @@ set(SRC_LIST
 INCLUDE_DIRECTORIES(inc)
 add_library(${PROJECT_NAME}-lib ${SRC_LIST})
 add_executable(${PROJECT_NAME} ${SRC_LIST})
-add_compile_options(${PROJECT_NAME}  -Wall -Werror -Wpedantic -Wextra)
+target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Werror -Wpedantic -Wextra)
 
 set(CATCH_SRC_LIST
     test_catch/CarsTests
     )
 add_executable(${PROJECT_NAME}-catch ${CATCH_SRC_LIST})
-add_compile_options(${PROJECT_NAME}-catch -Wall -Werror -Wpedantic -Wextra)
+target_compile_options(${PROJECT_NAME}-catch PUBLIC -Wall -Werror -Wpedantic -Wextra)
 target_link_libraries(${PROJECT_NAME}-catch ${PROJECT_NAME}-lib)
 
