@@ -1,6 +1,6 @@
 #pragma once
 
-class PetrolEngine
+class PetrolEngine 
 {
 public:
     PetrolEngine(int power, float capacity, int gears);

@@ -2,7 +2,7 @@
 #include <iostream>
  
 PetrolCar::PetrolCar(PetrolEngine* engine)
-    : engine_(engine)
+    : PetrolEngine(*engine)
 {
     std::cout << __FUNCTION__ << std::endl;
 }

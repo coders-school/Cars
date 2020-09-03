@@ -1,7 +1,7 @@
 #include "ElectricEngine.hpp"
 #include "PetrolEngine.hpp"
 
-class HybridCar
+class HybridCar : public PetrolEngine, ElectricEngine
 {
 public:
     HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng);

@@ -1,6 +1,6 @@
 #include "ElectricEngine.hpp"
 
-class ElectricCar
+class ElectricCar : public ElectricEngine
 {
 public:
     ElectricCar(ElectricEngine* engine);
@@ -11,6 +11,5 @@ public:
     void accelerate(int speed);
     void charge();
 
-    ElectricEngine* engine_;
 };
 
