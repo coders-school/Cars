@@ -8,6 +8,7 @@ project(Cars)
 set(SRC_LIST
     ElectricCar.cpp
     ElectricEngine.cpp
+    Car.cpp
     HybridCar.cpp
     main.cpp
     PetrolCar.cpp
