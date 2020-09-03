@@ -1,16 +1,22 @@
+#pragma once
+
+#include "Car.hpp"
 #include "ElectricEngine.hpp"
 
-class ElectricCar
-{
+class ElectricCar : virtual public Car {
 public:
     ElectricCar(ElectricEngine* engine);
-    ~ElectricCar();
-    void turnLeft();
-    void turnRight();
-    void brake();
-    void accelerate(int speed);
+
+    // Override from Car
+    ~ElectricCar() override;
+    void restore() override;
+    void changeEngine(Engine* engine) override;
+
+    int getBatteryCapacity() const;
+    int getElectricPower() const;
+
+protected:
     void charge();
 
-    ElectricEngine* engine_;
+    ElectricEngine* electricEngine_;
 };
-
