@@ -2,8 +2,8 @@
 #include <iostream>
 
 HybridCar::HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng)
-    : petrolEngine_(petrolEng)
-    , electricEngine_(electricEng)
+    : PetrolCar(petrolEng)
+    , ElectricCar(electricEng)
 {
     std::cout << __FUNCTION__ << std::endl;
 }

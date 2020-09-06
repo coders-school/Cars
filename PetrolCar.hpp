@@ -1,7 +1,9 @@
+#pragma once
+
 #include "Car.hpp"
 #include "PetrolEngine.hpp"
 
-class PetrolCar : virtual public Car
+class PetrolCar : public Car
 {
 public:
     PetrolCar(PetrolEngine* engine);

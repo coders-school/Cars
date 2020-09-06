@@ -1,15 +1,14 @@
+#pragma once
+
 #include "ElectricCar.hpp"
 #include "ElectricEngine.hpp"
 #include "PetrolCar.hpp"
 #include "PetrolEngine.hpp"
 
-class HybridCar : public ElectricCar, public PetrolCar
+class HybridCar : public PetrolCar, public ElectricCar
 {
 public:
     HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng);
     ~HybridCar();
-
-    PetrolEngine* petrolEngine_;
-    ElectricEngine* electricEngine_;
 };
 
