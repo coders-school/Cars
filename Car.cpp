@@ -1,18 +1,15 @@
-#include "ElectricCar.hpp"
+#include "Car.hpp"
 #include <iostream>
 
-ElectricCar::ElectricCar(ElectricEngine* engine)
-    : engine_(engine) {
+void Car::turnLeft() {
     std::cout << __FUNCTION__ << std::endl;
 }
-
-ElectricCar::~ElectricCar() {
+void Car::turnRight() {
     std::cout << __FUNCTION__ << std::endl;
 }
-void ElectricCar::refill() {
+void Car::brake() {
     std::cout << __FUNCTION__ << std::endl;
-    charge();
 }
-void ElectricCar::charge() {
+void Car::accelerate(int) {
     std::cout << __FUNCTION__ << std::endl;
 }
