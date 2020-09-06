@@ -3,7 +3,7 @@
 #include "Car.hpp"
 #include "PetrolEngine.hpp"
 
-class PetrolCar : public Car
+class PetrolCar : virtual public Car
 {
 public:
     PetrolCar(PetrolEngine* engine);
