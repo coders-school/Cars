@@ -1,9 +1,10 @@
 #pragma once
 
-class Car {
+class Car
+{
 public:
-    virtual ~Car();
     Car();
+    virtual ~Car();
     virtual void turnLeft();
     virtual void turnRight();
     virtual void brake();
