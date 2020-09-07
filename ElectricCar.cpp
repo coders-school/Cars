@@ -8,6 +8,7 @@ ElectricCar::ElectricCar(ElectricEngine* engine)
 }
 
 ElectricCar::~ElectricCar()       { std::cout << __FUNCTION__ << std::endl; }
+void ElectricCar::restore()       { charge(); }
 void ElectricCar::charge()        { std::cout << __FUNCTION__ << std::endl; }
 void ElectricCar::setEngine(int power, int batteryCapacity) {
     engine_ = new ElectricEngine(power, batteryCapacity);

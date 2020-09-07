@@ -12,12 +12,12 @@ int main()
     car->accelerate(50);
     car->brake();
     car->accelerate(-900);
-    //car->refuel();
+    car->restore();
 
     std::cout << std::endl << "NISSAN" << std::endl;
     ElectricCar nissan(new ElectricEngine(130, 650));
     car = &nissan;
-    //car->charge();
+    car->restore();
     car->accelerate(80);
     nissan.setEngine(150, 700);  // Changing an engine during driving is not safe
     car->turnLeft();
@@ -27,6 +27,5 @@ int main()
     car = &toyota;
     car->accelerate(100);
     car->brake();
-    //toyota.charge();
-    //toyota.refuel();
+    car->restore();
 }

@@ -8,6 +8,7 @@ class ElectricCar : virtual public Car
 public:
     ElectricCar(ElectricEngine* engine);
     ~ElectricCar();
+    void restore();
     void charge();
     void setEngine(int power, int batteryCapacity);
 private:
