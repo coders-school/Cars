@@ -9,7 +9,8 @@ public:
     ElectricCar(ElectricEngine* engine);
     ~ElectricCar();
     void charge();
-
+    void setEngine(int power, int batteryCapacity);
+private:
     ElectricEngine* engine_;
 };
 
