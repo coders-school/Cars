@@ -2,3 +2,8 @@
 build/*
 cmake-build-debug
 *.swp
+
+# emacs
+*~
+.ccls-cache/
+\#*\#
