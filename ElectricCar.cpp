@@ -23,3 +23,7 @@ void ElectricCar::setEngine(int power, int batteryCapacity) {
     }
 }
 
+int ElectricCar::getEnginePower() {
+    return engine_->getPower();
+}
+

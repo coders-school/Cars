@@ -1,5 +1,9 @@
 accelerate - speed canged only if >= 0
 
+setEngine - only while speed equals 0
+
+engine parameters in class ElectricEngine and Petrol Engine set as private
+
 
 MEMORY LEEKS
 engines deleted in PetrolCar and ElectricCar destructors

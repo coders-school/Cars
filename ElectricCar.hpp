@@ -10,6 +10,7 @@ public:
     ~ElectricCar();
     void restore();
     void setEngine(int power, int batteryCapacity);
+    int getEnginePower();
 private:
     void charge();
     ElectricEngine* engine_;
