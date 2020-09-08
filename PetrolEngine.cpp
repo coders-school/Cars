@@ -1,5 +1,10 @@
 #include "PetrolEngine.hpp"
+#include <cstdlib>
 #include <iostream>
+
+InvalidGear::InvalidGear(const std::string& eWhat)
+    : std::logic_error(eWhat)
+{}
 
 PetrolEngine::PetrolEngine(int power, float capacity, int gears)
     : power_(power)
@@ -10,11 +15,18 @@ PetrolEngine::PetrolEngine(int power, float capacity, int gears)
     std::cout << __FUNCTION__ << std::endl;
 }
 
+PetrolEngine::~PetrolEngine() {
+    std::cout << __FUNCTION__ << std::endl;
+}
+
 void PetrolEngine::changeGear(int gear)
 {
-    // TODO: Add checking if gear is between -1 and gears_
-    // -1 is for REAR
-    // 0 is for NEUTRAL
+    if (gear < -1) {
+        throw InvalidGear("Wrong gear");
+    }
+    else if (abs(gear - gears_) > 2) {
+        throw InvalidGear("Too fast gear changing");
+    }
     currentGear_ = gear;
     std::cout << __FUNCTION__ << std::endl;
 }

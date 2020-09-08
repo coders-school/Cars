@@ -10,4 +10,7 @@ public:
     virtual void brake();
     virtual void accelerate(int speed);
     virtual void restore() = 0;
+    int getSpeed();
+protected:
+    int speed_;
 };

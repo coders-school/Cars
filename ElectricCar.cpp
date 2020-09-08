@@ -14,6 +14,12 @@ ElectricCar::~ElectricCar() {
 void ElectricCar::restore()       { charge(); }
 void ElectricCar::charge()        { std::cout << __FUNCTION__ << std::endl; }
 void ElectricCar::setEngine(int power, int batteryCapacity) {
-    engine_ = new ElectricEngine(power, batteryCapacity);
+    if (Car::speed_ == 0) {
+        engine_ = new ElectricEngine(power, batteryCapacity);
+        std::cout << "Engine changed" << std::endl;
+    }
+    else {
+        std::cout << "Can't change engine while driving (please verify with Youtube)" <<std::endl;
+    }
 }
 
