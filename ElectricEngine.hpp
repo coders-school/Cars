@@ -8,4 +8,3 @@ public:
     int power_;             // in HP 
     int batteryCapacity_;   // in Ah
 };
-
