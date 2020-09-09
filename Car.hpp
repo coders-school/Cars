@@ -3,7 +3,7 @@
 class Car
 {
 public:
-    ~Car();
+    virtual ~Car();
     void turnLeft();
     void turnRight();
     void brake();
