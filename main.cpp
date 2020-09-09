@@ -1,11 +1,11 @@
-#include "PetrolCar.hpp"
+#include <iostream>
 #include "ElectricCar.hpp"
 #include "HybridCar.hpp"
-#include <iostream>
+#include "PetrolCar.hpp"
 
 int main()
 {
-    Car *car = nullptr;
+    Car* car = nullptr;
 
     std::cout << std::endl << "OPEL" << std::endl;
     PetrolCar opel(new PetrolEngine(120, 1800, 6));
