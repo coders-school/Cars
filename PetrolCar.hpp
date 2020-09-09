@@ -10,7 +10,7 @@ public:
     ~PetrolCar();
 
     //override from Car
-    void restore() override { refuel(); }
+    void restore() override;
 
 private:
     PetrolEngine* engine_;

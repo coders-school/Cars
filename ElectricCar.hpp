@@ -10,7 +10,7 @@ public:
     ~ElectricCar();
 
     //override from Car
-    void restore() override { charge(); }
+    void restore() override;
 
 private:
     ElectricEngine* engine_;

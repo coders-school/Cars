@@ -12,5 +12,5 @@ public:
     ~HybridCar();
 
     //override from Car
-    void restore() override { PetrolCar::restore(); ElectricCar::restore(); }
+    void restore() override;
 };

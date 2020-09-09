@@ -16,6 +16,7 @@ PetrolEngine::PetrolEngine(int power, float capacity, int gears)
 
 void PetrolEngine::changeGear(int gear)
 {
+    std::cout << __FUNCTION__ << std::endl;
     if (gear < GEAR_REAR || gear > gears_) {
         throw InvalidGear("Gear out of range");
     }
@@ -26,5 +27,4 @@ void PetrolEngine::changeGear(int gear)
         throw InvalidGear("You cannot change to forward gears from REAR");
     }
     currentGear_ = gear;
-    std::cout << __FUNCTION__ << std::endl;
 }
