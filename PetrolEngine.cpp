@@ -13,11 +13,11 @@ PetrolEngine::PetrolEngine(int power, float capacity, int gears)
 void PetrolEngine::changeGear(int gear)
 {
     if ((gear < -1) or (gear > gears_)) {
-        throw InvalidGear{};
+        throw InvalidGear("Wrong gear");
     } else if ((currentGear_ > 0) and (gear == -1)) {
-        throw InvalidGear{};
+        throw InvalidGear("Can not chage direction");
     } else if ((currentGear_ == -1) and (gear > 0)) {
-        throw InvalidGear{};
+        throw InvalidGear("Can not change direction");
     }
 
     currentGear_ = gear;

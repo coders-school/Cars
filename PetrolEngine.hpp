@@ -1,9 +1,10 @@
 #pragma once
 #include <stdexcept>
+#include <string>
 
 class InvalidGear : public std::logic_error {
 public:
-    InvalidGear() : std::logic_error("Invalid Gear") {}
+    InvalidGear(const std::string& what) : std::logic_error(what) {}
 };
 
 class PetrolEngine
