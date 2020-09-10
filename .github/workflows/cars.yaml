@@ -3,7 +3,7 @@ name: Cars homework
 on: [push, pull_request]
 
 jobs:
-    pizzas:
+    cars:
       runs-on: ubuntu-latest
       steps:
       - name: Check out code
@@ -18,4 +18,5 @@ jobs:
       - name: Run tests
         working-directory: build
         run: ctest -V
+
         

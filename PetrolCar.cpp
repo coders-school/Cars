@@ -15,11 +15,9 @@ void PetrolCar::refuel() {
 }
 
 void PetrolCar::changeEngine(Engine* petrolEngine) {
-
     if (currentSpeed_ != 0) {
         throw CarInMovementExcept("Car is moving");
-    }
-    else if (typeid(*petrolEngine) == typeid(PetrolEngine)) {
+    } else if (typeid(*petrolEngine) == typeid(PetrolEngine)) {
         delete petrolEngine_;
         petrolEngine_ = static_cast<PetrolEngine*>(petrolEngine);
     }

@@ -15,11 +15,9 @@ void ElectricCar::charge() {
 }
 
 void ElectricCar::changeEngine(Engine* electricEngine) {
-
     if (currentSpeed_ != 0) {
         throw CarInMovementExcept("Car is moving");
-    }
-    else if (typeid(*electricEngine) == typeid(ElectricEngine)) {
+    } else if (typeid(*electricEngine) == typeid(ElectricEngine)) {
         delete electricEngine_;
         electricEngine_ = static_cast<ElectricEngine*>(electricEngine);
     }
