@@ -11,6 +11,4 @@ class HybridCar :public PetrolCar, public ElectricCar {
     void brake() override;
     void accelerate(int speed) override;
 
-    PetrolEngine* petrolEngine_;
-    ElectricEngine* electricEngine_;
 };
