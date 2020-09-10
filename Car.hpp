@@ -8,4 +8,7 @@ public:
     void brake();
     void accelerate(int speed);
     virtual void restore() = 0;
+
+private:
+    int speed_{};
 };
