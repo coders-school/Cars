@@ -40,8 +40,8 @@ endif()
 
 project(Cars)
 
-set(INCLUDE_DIR ${CMAKE_SOURCE_DIR})
-set(SOURCE_DIR ${CMAKE_SOURCE_DIR})
+set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/inc)
+set(SOURCE_DIR ${CMAKE_SOURCE_DIR}/src)
 # set(TEST_DIR ${CMAKE_SOURCE_DIR})
 
 include_directories(${INCLUDE_DIR})
