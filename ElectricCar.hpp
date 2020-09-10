@@ -2,7 +2,7 @@
 #include "ElectricEngine.hpp"
 #include "Vehicle.hpp"
 
-class ElectricCar :public Vehicle
+class ElectricCar : virtual public Vehicle
 {
 public:
     ElectricCar(ElectricEngine* engine);
