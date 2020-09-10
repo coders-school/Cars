@@ -8,8 +8,9 @@ public:
     ElectricCar(ElectricEngine* engine);
     ~ElectricCar();
     void refill() override;
+    void changeEngine(Engine* electricEngine) override;
 
 protected:
     void charge();
-    ElectricEngine* engine_;
+    ElectricEngine* electricEngine_;
 };

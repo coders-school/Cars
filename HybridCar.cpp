@@ -14,3 +14,8 @@ void HybridCar::refill() {
     charge();
     refuel();
 }
+void HybridCar::changeEngine(Engine* engine) {
+    std::cout << __FUNCTION__ << std::endl;
+    PetrolCar::changeEngine(engine);
+    ElectricCar::changeEngine(engine);
+}

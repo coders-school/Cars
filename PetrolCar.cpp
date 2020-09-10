@@ -2,7 +2,7 @@
 #include <iostream>
 
 PetrolCar::PetrolCar(PetrolEngine* engine)
-    : engine_(engine) {
+    : petrolEngine_(engine) {
     std::cout << __FUNCTION__ << std::endl;
 }
 
@@ -15,4 +15,14 @@ void PetrolCar::refill() {
 }
 void PetrolCar::refuel() {
     std::cout << __FUNCTION__ << std::endl;
+}
+
+void PetrolCar::changeEngine(Engine* petrolEngine) {
+    std::cout << __FUNCTION__ << std::endl;
+
+    if (typeid(*petrolEngine) == typeid(PetrolEngine)) {
+        delete petrolEngine_;
+        petrolEngine_ = static_cast<PetrolEngine*>(petrolEngine);
+        ;
+    }
 }
