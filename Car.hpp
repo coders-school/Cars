@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cstddef>
 class Car {
 public:
     virtual void turnLeft();
@@ -10,4 +11,5 @@ public:
     virtual ~Car(){};
 
 protected:
+    size_t currentSpeed_{};
 };

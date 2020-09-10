@@ -23,6 +23,8 @@ int main() {
 
     std::cout << std::endl
               << "TOYOTA" << std::endl;
+    Car* toyota1 = new HybridCar(new PetrolEngine(80, 1400, 5), new ElectricEngine(100, 540));
+    toyota1->refill();
     HybridCar toyota(new PetrolEngine(80, 1400, 5), new ElectricEngine(100, 540));
     toyota.accelerate(100);
     toyota.brake();

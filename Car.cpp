@@ -10,6 +10,7 @@ void Car::turnRight() {
 void Car::brake() {
     std::cout << __FUNCTION__ << std::endl;
 }
-void Car::accelerate(int) {
+void Car::accelerate(int speed) {
     std::cout << __FUNCTION__ << std::endl;
+    currentSpeed_ += speed > 0 ? speed : 0;
 }
