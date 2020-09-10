@@ -1,16 +1,17 @@
-#include "PetrolEngine.hpp"
+#pragma once
 
-class PetrolCar
+#include "PetrolEngine.hpp"
+#include "Vehicle.hpp"
+class PetrolCar : public Vehicle
 {
 public:
     PetrolCar(PetrolEngine* engine);
     ~PetrolCar();
-    void turnLeft();
-    void turnRight();
-    void brake();
-    void accelerate(int speed);
+    void turnLeft() override;
+    void turnRight() override;
+    void brake() override;
+    void accelerate(int speed) override;
     void refuel();
 
-    PetrolEngine* engine_;
 };
 
