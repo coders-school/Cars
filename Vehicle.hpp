@@ -3,8 +3,10 @@
 #include "Engine.hpp"
 
 class Vehicle {
+    Engine* engine;
    public:
     Vehicle(Engine* engine);
+    virtual ~Vehicle();
     virtual void turnLeft() = 0;
     virtual void turnRight() = 0;
     virtual void brake() = 0;
