@@ -42,7 +42,7 @@ project(Cars)
 
 set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/inc)
 set(SOURCE_DIR ${CMAKE_SOURCE_DIR}/src)
-# set(TEST_DIR ${CMAKE_SOURCE_DIR})
+set(TEST_DIR ${CMAKE_SOURCE_DIR}/test)
 
 include_directories(${INCLUDE_DIR})
 
@@ -51,23 +51,23 @@ set(SOURCES
     ${SOURCE_DIR}/ElectricCar.cpp
     ${SOURCE_DIR}/ElectricEngine.cpp
     ${SOURCE_DIR}/HybridCar.cpp
-    ${SOURCE_DIR}/InvalidGear.cpp
     ${SOURCE_DIR}/PetrolCar.cpp
     ${SOURCE_DIR}/PetrolEngine.cpp
 )
 
-# set(TESTS
-
-# )
+set(TESTS
+    ${TEST_DIR}/ElectricEngine-ut.cpp
+)
 
 add_library(${PROJECT_NAME}-lib STATIC ${SOURCES})
 
 add_executable(${PROJECT_NAME} ${SOURCE_DIR}/main.cpp)
+add_executable(${PROJECT_NAME}-ut ${TESTS})
 
 target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}-lib)
-# target_link_libraries(${PROJECT_NAME}-ut ${PROJECT_NAME}-lib gtest_main)
+target_link_libraries(${PROJECT_NAME}-ut ${PROJECT_NAME}-lib gtest_main)
 
 target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Wextra -Werror -Wconversion -pedantic -O3)
-# target_compile_options(${PROJECT_NAME}-ut PRIVATE -Wall -Wextra -Werror -Wconversion -pedantic -O3)
-# enable_testing()
-# add_test(NAME CarsTests COMMAND ${PROJECT_NAME}-ut)
+target_compile_options(${PROJECT_NAME}-ut PRIVATE -Wall -Wextra -Werror -Wconversion -pedantic -O3)
+enable_testing()
+add_test(NAME CarsTests COMMAND ${PROJECT_NAME}-ut)

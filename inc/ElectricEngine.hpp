@@ -1,10 +1,13 @@
 #pragma once
 
-class ElectricEngine
-{
+#include "Engine.hpp"
+
+class ElectricEngine : public Engine {
 public:
     ElectricEngine(int power, int batteryCapacity);
+    
+    int getBatteryCapacity() const { return batteryCapacity_; }
 
-    int power_;             // in HP 
+private:
     int batteryCapacity_;   // in Ah
 };

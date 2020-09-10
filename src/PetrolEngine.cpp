@@ -1,21 +1,20 @@
 #include "InvalidGear.hpp"
 #include "PetrolEngine.hpp"
+
 #include <iostream>
 
 constexpr int GEAR_REAR = -1;
 constexpr int GEAR_NEUTRAL= 0;
 
 PetrolEngine::PetrolEngine(int power, float capacity, int gears)
-    : power_(power)
+    : Engine(power)
     , capacity_(capacity)
     , gears_(gears)
-    , currentGear_(0)
-{
+    , currentGear_(0) {
     std::cout << __FUNCTION__ << std::endl;
 }
 
-void PetrolEngine::changeGear(int gear)
-{
+void PetrolEngine::changeGear(int gear) {
     std::cout << __FUNCTION__ << std::endl;
     if (gear < GEAR_REAR || gear > gears_) {
         throw InvalidGear("Gear out of range");
