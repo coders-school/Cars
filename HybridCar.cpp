@@ -3,19 +3,15 @@
 
 HybridCar::HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng)
     : ElectricCar(electricEng), PetrolCar(petrolEng) {
-    std::cout << __FUNCTION__ << std::endl;
 }
 
 HybridCar::~HybridCar() {
-    std::cout << __FUNCTION__ << std::endl;
 }
 void HybridCar::refill() {
-    std::cout << __FUNCTION__ << std::endl;
     charge();
     refuel();
 }
 void HybridCar::changeEngine(Engine* engine) {
-    std::cout << __FUNCTION__ << std::endl;
     PetrolCar::changeEngine(engine);
     ElectricCar::changeEngine(engine);
 }

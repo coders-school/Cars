@@ -12,6 +12,7 @@ public:
     virtual void changeEngine(Engine*) = 0;
     virtual int getEnginePower() = 0;
     virtual void accelerate(int speed);
+    virtual int checkSpeed();
     virtual ~Car(){};
 
 protected:

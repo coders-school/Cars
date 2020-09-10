@@ -2,15 +2,16 @@
 #include <iostream>
 
 void Car::turnLeft() {
-    std::cout << __FUNCTION__ << std::endl;
 }
 void Car::turnRight() {
-    std::cout << __FUNCTION__ << std::endl;
 }
 void Car::brake() {
-    std::cout << __FUNCTION__ << std::endl;
+    currentSpeed_ = 0;
 }
 void Car::accelerate(int speed) {
-    std::cout << __FUNCTION__ << std::endl;
     currentSpeed_ += speed > 0 ? speed : 0;
+}
+
+int Car::checkSpeed() {
+    return currentSpeed_;
 }
