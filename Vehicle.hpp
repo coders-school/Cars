@@ -3,7 +3,7 @@
 #include "Engine.hpp"
 
 class Vehicle {
-    Engine* engine;
+    Engine* engine_;
    public:
     Vehicle(Engine* engine);
     virtual ~Vehicle();
