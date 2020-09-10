@@ -46,8 +46,13 @@ set(SRC_LIST
     Car.cpp
 )
 
+set(TEST_LIST
+    CarTest.cpp
+    PetrolEngineTest.cpp
+)
+
 add_executable(${PROJECT_NAME} main.cpp)
-add_executable(${PROJECT_NAME}-ut CarTest.cpp)
+add_executable(${PROJECT_NAME}-ut ${TEST_LIST})
 target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Werror -Wpedantic -Wextra)
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR})
 add_library(${PROJECT_NAME}-lib ${SRC_LIST})
