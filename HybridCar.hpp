@@ -11,4 +11,5 @@ public:
     ~HybridCar();
     void refill() override;
     void changeEngine(Engine* engine) override;
+    int getEnginePower() override;
 };

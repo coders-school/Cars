@@ -19,3 +19,7 @@ void HybridCar::changeEngine(Engine* engine) {
     PetrolCar::changeEngine(engine);
     ElectricCar::changeEngine(engine);
 }
+
+int HybridCar::getEnginePower() {
+    return electricEngine_->getPower() + petrolEngine_->getPower();
+}

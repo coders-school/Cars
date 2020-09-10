@@ -9,6 +9,10 @@ public:
     ~PetrolCar();
     void refill() override;
     void changeEngine(Engine* petrolEngine) override;
+    void changeGear(int gear);
+    int getCurrentGear();
+    int getEnginePower() override;
+
 
 protected:
     void refuel();

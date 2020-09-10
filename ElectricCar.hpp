@@ -9,8 +9,8 @@ public:
     ~ElectricCar();
     void refill() override;
     void changeEngine(Engine* electricEngine) override;
+    int getEnginePower() override;
 
-protected:
-    void charge();
+        protected : void charge();
     ElectricEngine* electricEngine_;
 };

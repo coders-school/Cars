@@ -26,3 +26,15 @@ void PetrolCar::changeEngine(Engine* petrolEngine) {
         ;
     }
 }
+
+void PetrolCar::changeGear(int gear) {
+    petrolEngine_->changeGear(gear);
+}
+
+int PetrolCar::getEnginePower() {
+    return petrolEngine_->getPower();
+}
+
+int PetrolCar::getCurrentGear() {
+    return petrolEngine_->getCurrentGear();
+}

@@ -25,3 +25,7 @@ void ElectricCar::changeEngine(Engine* electricEngine) {
         electricEngine_ = static_cast<ElectricEngine*>(electricEngine);
     }
 }
+
+int ElectricCar::getEnginePower() {
+    return electricEngine_->getPower();
+}
