@@ -9,7 +9,11 @@
 struct ElectricCarTest : public ::testing::Test {
     const int power = 500;
     const int capacity = 20;
+
     const int newSpeed = 120;
+    const int newPower = 666;
+    const int newCapacity = 777;
+    const int newGears = 6;
 
     ElectricCar testCar{new ElectricEngine{power, capacity}};
 };
@@ -42,7 +46,7 @@ TEST_F(ElectricCarTest, shoudldNotThrowAnyExceptionWhenTryToReplaceEngine)
     // Given
     // When
     // Then
-    ASSERT_NO_THROW(testCar.changeEngine(new ElectricEngine{666, 777}));
+    ASSERT_NO_THROW(testCar.changeEngine(new ElectricEngine{newPower, newCapacity}));
 }
 
 TEST_F(ElectricCarTest, shoudldThrowMovingCarWhenTryToReplaceEngine)
@@ -52,7 +56,7 @@ TEST_F(ElectricCarTest, shoudldThrowMovingCarWhenTryToReplaceEngine)
     testCar.accelerate(newSpeed);    
 
     // Then
-    ASSERT_THROW(testCar.changeEngine(new ElectricEngine{666, 777}), MovingCar);
+    ASSERT_THROW(testCar.changeEngine(new ElectricEngine{newPower, newCapacity}), MovingCar);
 }
 
 TEST_F(ElectricCarTest, shoudldThrowInvalidEngineWhenTryToReplaceEngine)
@@ -60,5 +64,5 @@ TEST_F(ElectricCarTest, shoudldThrowInvalidEngineWhenTryToReplaceEngine)
     // Given
     // When
     // Then
-    ASSERT_THROW(testCar.changeEngine(new PetrolEngine{999, 123, 6}), InvalidEngine);
+    ASSERT_THROW(testCar.changeEngine(new PetrolEngine{newPower, float(newCapacity), newGears}), InvalidEngine);
 }
