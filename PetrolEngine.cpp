@@ -14,8 +14,7 @@ void PetrolEngine::changeGear(int gear)
 {
     if(gear < -1 || gear > gears_ || (currentGear_ != 0 && gear == -1)) {
         throw InvalidGear{};
-    } else {
-        currentGear_ = gear;
-        std::cout << __FUNCTION__ << std::endl;
     }
+    currentGear_ = gear;
+    std::cout << __FUNCTION__ << std::endl;
 }
