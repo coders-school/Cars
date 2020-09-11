@@ -1,5 +1,12 @@
 #pragma once
 
+#include <stdexcept>
+
+class InvalidGear : public std::runtime_error {
+public:
+    InvalidGear() : std::runtime_error("Invalid Gear\n") {}
+};
+
 class PetrolEngine
 {
 public:

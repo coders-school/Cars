@@ -7,10 +7,21 @@ ElectricCar::ElectricCar(ElectricEngine* engine)
     std::cout << __FUNCTION__ << std::endl;
 }
 
-ElectricCar::~ElectricCar()       { std::cout << __FUNCTION__ << std::endl; }
-void ElectricCar::turnLeft()      { std::cout << __FUNCTION__ << std::endl; }
-void ElectricCar::turnRight()     { std::cout << __FUNCTION__ << std::endl; }
-void ElectricCar::brake()         { std::cout << __FUNCTION__ << std::endl; }
-void ElectricCar::accelerate(int) { std::cout << __FUNCTION__ << std::endl; }
+ElectricCar::~ElectricCar() { 
+    std::cout << __FUNCTION__ << std::endl;
+    delete engine_;
+}
 void ElectricCar::charge()        { std::cout << __FUNCTION__ << std::endl; }
 
+void ElectricCar::restore() {
+    charge();
+}
+
+void ElectricCar::changeEngine(int power, int batteryCapacity) {
+    if(speed_ != 0) {
+        return;
+    }
+    delete engine_;
+    engine_ = new ElectricEngine(power, batteryCapacity);
+    std::cout << "Engine change\n";
+}
