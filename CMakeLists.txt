@@ -58,6 +58,8 @@ set(SOURCES
 set(TESTS
     ${TEST_DIR}/ElectricEngine-ut.cpp
     ${TEST_DIR}/ElectricCar-ut.cpp
+    ${TEST_DIR}/HybridCar-ut.cpp
+    ${TEST_DIR}/PetrolCar-ut.cpp
 )
 
 add_library(${PROJECT_NAME}-lib STATIC ${SOURCES})

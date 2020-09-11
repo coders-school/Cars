@@ -37,10 +37,10 @@ int main()
 
     PetrolEngine petrolEng{100, 50, 5};
     try {
-        petrolEng.changeGear(-1);
-        petrolEng.changeGear(0);
-        petrolEng.changeGear(1);
-        petrolEng.changeGear(-1);
+        petrolEng.setGear(-1);
+        petrolEng.setGear(0);
+        petrolEng.setGear(1);
+        petrolEng.setGear(-1);
     } catch (const InvalidGear& ex) {
         std::cout << ex.what() << "\n";
     }
