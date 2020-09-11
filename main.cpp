@@ -25,8 +25,9 @@ int main() {
     ElectricCar nissan(new ElectricEngine(130, 650));
     car = &nissan;
     car->restore();
-    car->accelerate(80);
-    //nissan.engine_ = new ElectricEngine(150, 700);  // Changing an engine during driving is not safe
+    car->accelerate(0);
+    car->changeEngine(new ElectricEngine(150, 700));
+    car->changeEngine(new PetrolEngine(150, 700, 4));
     car->turnLeft();
 
     std::cout << std::endl
@@ -36,4 +37,6 @@ int main() {
     car->accelerate(100);
     car->brake();
     car->restore();
+    car->changeEngine(new ElectricEngine(150, 700));
+    car->changeEngine(new PetrolEngine(150, 700, 4));
 }

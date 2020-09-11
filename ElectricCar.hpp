@@ -5,11 +5,14 @@
 
 class ElectricCar : virtual public Car {
 public:
-    ElectricCar(ElectricEngine* engine);
-    ~ElectricCar();
-    void restore() override;
+    ElectricCar(ElectricEngine* electricEngine);
 
-private:
+    // Override from Car
+    ~ElectricCar() override;
+    void restore() override;
+    void changeEngine(Engine* engine) override;
+
+protected:
     void charge();
-    ElectricEngine* engine_;
+    ElectricEngine* electricEngine_;
 };

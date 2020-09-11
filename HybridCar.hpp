@@ -8,6 +8,9 @@
 class HybridCar : public PetrolCar, public ElectricCar {
 public:
     HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng);
-    ~HybridCar();
+
+    //Override from Car
+    ~HybridCar() override;
     void restore() override;
+    void changeEngine(Engine* engine) override;
 };

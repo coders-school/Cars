@@ -6,14 +6,15 @@
 class PetrolCar : virtual public Car {
 public:
     PetrolCar(PetrolEngine* engine);
-    ~PetrolCar();
     void changeGear(int gear);
 
     //Override from car
+    ~PetrolCar() override;
     void restore() override;
+    void changeEngine(Engine* engine) override;
 
 protected:
-    PetrolEngine* engine_;
+    PetrolEngine* petrolEngine_;
 
 private:
     void refuel();
