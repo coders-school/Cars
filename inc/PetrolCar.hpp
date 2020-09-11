@@ -13,6 +13,9 @@ public:
     void changeEngine(Engine* engine) override;
     int getEnginePower() const override { return petrolEngine_->getPower(); }
 
+    void setGear(int gear) { petrolEngine_->setGear(gear); }
+    int getGear() const { return petrolEngine_->getCurrentGear(); }
+
 protected:
     PetrolEngine* petrolEngine_;
 

@@ -14,7 +14,7 @@ PetrolEngine::PetrolEngine(int power, float capacity, int gears)
     std::cout << __FUNCTION__ << std::endl;
 }
 
-void PetrolEngine::changeGear(int gear) {
+void PetrolEngine::setGear(int gear) {
     std::cout << __FUNCTION__ << std::endl;
     if (gear < GEAR_REAR || gear > gears_) {
         throw InvalidGear("Gear out of range");
