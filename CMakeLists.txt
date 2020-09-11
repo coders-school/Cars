@@ -35,6 +35,7 @@ set(SRC_LIST
     Car.cpp
     ElectricCar.cpp
     ElectricEngine.cpp
+    InvalidGear.cpp
     HybridCar.cpp
     PetrolCar.cpp
     PetrolEngine.cpp

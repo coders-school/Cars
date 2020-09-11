@@ -14,6 +14,11 @@ int main() {
     car->brake();
     car->accelerate(-900);
     car->restore();
+    opel.changeGear(2);
+    opel.changeGear(-1);
+    opel.changeGear(0);
+    opel.changeGear(-1);
+    opel.changeGear(-2);
 
     std::cout << std::endl
               << "NISSAN" << std::endl;

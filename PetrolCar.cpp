@@ -17,3 +17,9 @@ void PetrolCar::refuel() {
 void PetrolCar::restore() {
     refuel();
 }
+
+void PetrolCar::changeGear(int gear) try {
+    engine_->setCurrentGear(gear);
+} catch (const std::logic_error& error) {
+    std::cout << error.what() << '\n';
+}
