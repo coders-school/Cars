@@ -41,7 +41,7 @@ TEST_F(ElectricCarTest, shouldNotAccelerate)
     ASSERT_EQ(before, after);
 }
 
-TEST_F(ElectricCarTest, shoudldNotThrowAnyExceptionWhenTryToReplaceEngine)
+TEST_F(ElectricCarTest, shouldNotThrowAnyExceptionWhenTryToReplaceEngine)
 {
     // Given
     // When
@@ -49,7 +49,7 @@ TEST_F(ElectricCarTest, shoudldNotThrowAnyExceptionWhenTryToReplaceEngine)
     ASSERT_NO_THROW(testCar.changeEngine(new ElectricEngine{newPower, newCapacity}));
 }
 
-TEST_F(ElectricCarTest, shoudldThrowMovingCarWhenTryToReplaceEngine)
+TEST_F(ElectricCarTest, shouldThrowMovingCarWhenTryToReplaceEngine)
 {
     // Given
     // When
@@ -59,10 +59,21 @@ TEST_F(ElectricCarTest, shoudldThrowMovingCarWhenTryToReplaceEngine)
     ASSERT_THROW(testCar.changeEngine(new ElectricEngine{newPower, newCapacity}), MovingCar);
 }
 
-TEST_F(ElectricCarTest, shoudldThrowInvalidEngineWhenTryToReplaceEngine)
+TEST_F(ElectricCarTest, shouldThrowInvalidEngineWhenTryToReplaceEngine)
 {
     // Given
     // When
     // Then
     ASSERT_THROW(testCar.changeEngine(new PetrolEngine{newPower, float(newCapacity), newGears}), InvalidEngine);
+}
+
+TEST_F(ElectricCarTest, shouldUpdatePowerAfterEngineChange)
+{
+    // Given
+    // When
+    testCar.changeEngine(new ElectricEngine{newPower, newCapacity});
+    auto result = testCar.getEnginePower();
+
+    // Then
+    ASSERT_EQ(result, newPower);
 }
