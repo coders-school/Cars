@@ -1,7 +1,7 @@
 #include "PetrolCar.hpp"
 #include <iostream>
  
-PetrolCar::PetrolCar(PetrolEngine* engine)
+PetrolCar::PetrolCar(std::shared_ptr<PetrolEngine> engine)
     : engine_(engine)
 {
     std::cout << __FUNCTION__ << std::endl;
