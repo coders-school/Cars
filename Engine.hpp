@@ -1,11 +1,14 @@
 #pragma once
 
+#include <stdint.h>
+
 class Engine {
 public:
-    Engine(int power)
+    Engine(uint16_t power)
         : power_(power) {}
     virtual ~Engine() = default;
+    uint16_t getPower() const { return power_; }
 
 protected:
-    int power_;
+    uint16_t power_{};
 };

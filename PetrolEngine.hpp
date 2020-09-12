@@ -1,16 +1,19 @@
 #pragma once
 
+#include <cstddef>
+
 #include "Engine.hpp"
 
 class PetrolEngine : public Engine {
 public:
-    PetrolEngine(int power, float capacity, int gears);
-    int getGears() { return gears_; }
+    PetrolEngine(uint16_t power, size_t capacity, uint8_t gears);
+    size_t getCapacity() { return capacity_; }
+    uint8_t getGears() { return gears_; }
     int getCurrentGear() { return currentGear_; }
     void setCurrentGear(int gear);
 
 private:
-    float capacity_;  // in ccm
-    int gears_;
-    int currentGear_;
+    size_t capacity_{};  // in ccm
+    uint8_t gears_{};
+    int currentGear_{};
 };

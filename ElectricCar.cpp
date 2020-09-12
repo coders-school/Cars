@@ -19,6 +19,17 @@ void ElectricCar::restore() {
     charge();
 }
 
+void ElectricCar::carInfo() {
+    std::cout << "Car info:\n "
+              << "Speed: " << getSpeed() << '\n'
+              << "Power: " << getEnginePower() << '\n'
+              << "Battery Capacity: " << electricEngine_->getBatteryCapacity() << '\n';
+}
+
+uint16_t ElectricCar::getEnginePower() {
+    return electricEngine_->getPower();
+}
+
 void ElectricCar::changeEngine(Engine* engine) {
     if (getSpeed() != MINIMUM_VELOCITY) {
         std::cout << "You can't change engine while driving!\n";

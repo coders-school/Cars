@@ -19,6 +19,19 @@ void PetrolCar::restore() {
     refuel();
 }
 
+void PetrolCar::carInfo() {
+    std::cout << "Car info:\n "
+              << "Speed: " << getSpeed() << '\n'
+              << "Power: " << getEnginePower() << '\n'
+              << "Capacity: " << petrolEngine_->getCapacity() << '\n'
+              << "Current Gear: " << petrolEngine_->getCurrentGear() << '\n'
+              << "Gears: " << unsigned(petrolEngine_->getGears()) << '\n';
+}
+
+uint16_t PetrolCar::getEnginePower() {
+    return petrolEngine_->getPower();
+}
+
 void PetrolCar::changeGear(int gear) try {
     petrolEngine_->setCurrentGear(gear);
 } catch (const std::logic_error& error) {

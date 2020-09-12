@@ -4,10 +4,10 @@
 
 #include "InvalidGear.hpp"
 
-constexpr int NEUTRAL_GEAR = 0;
-constexpr int REAR_GEAR = -1;
+constexpr bool NEUTRAL_GEAR = 0;
+constexpr short REAR_GEAR = -1;
 
-PetrolEngine::PetrolEngine(int power, float capacity, int gears)
+PetrolEngine::PetrolEngine(uint16_t power, size_t capacity, uint8_t gears)
     : Engine(power), capacity_(capacity), gears_(gears), currentGear_(0) {
     std::cout << __FUNCTION__ << std::endl;
 }
