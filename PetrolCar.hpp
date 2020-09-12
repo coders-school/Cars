@@ -9,8 +9,8 @@ public:
     void restore() override;
     int getGear() const;
     void setGear(int);
-    PetrolEngine* engine_;
 
 private:
     void refuel();
+    PetrolEngine* engine_;
 };
