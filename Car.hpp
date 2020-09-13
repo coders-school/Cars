@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Engine.hpp"
+
 class Car {
 public:
     Car();
@@ -8,9 +10,12 @@ public:
     void turnRight();
     void brake(int speed);
     void accelerate(int speed);
-    virtual void restore() = 0;
-    int getSpeed() const;
     void setSpeed(int speed);
+    int getSpeed() const;
+
+    virtual void restore() = 0;
+    virtual void changeEngine(Engine* engine) = 0;
+    //virtual void setGear(int gear) = 0;
 
 protected:
     int currentSpeed_ = 50;

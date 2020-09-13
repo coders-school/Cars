@@ -13,7 +13,7 @@ int main() {
     car->accelerate(50);
     car->brake(50);
     car->accelerate(900);
-    opel.setGear(4);
+    //car->setGear(4);
     car->restore();
     opel.setGear(-1);
 
@@ -24,7 +24,7 @@ int main() {
     car->restore();
     car->accelerate(80);
     car->brake(100);
-    //car->engine_ = new ElectricEngine(150, 700);  // Changing an engine during driving is not safe
+    car->changeEngine(new ElectricEngine(150, 700));
     car->turnLeft();
 
     std::cout << std::endl

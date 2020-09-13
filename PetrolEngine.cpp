@@ -9,7 +9,11 @@ public:
 };
 
 PetrolEngine::PetrolEngine(int power, float capacity, int gears)
-    : power_(power), capacity_(capacity), gears_(gears), currentGear_(0) {
+    : Engine(power), capacity_(capacity), gears_(gears), currentGear_(0) {
+    std::cout << __FUNCTION__ << std::endl;
+}
+
+PetrolEngine::~PetrolEngine() {
     std::cout << __FUNCTION__ << std::endl;
 }
 
@@ -19,7 +23,6 @@ void PetrolEngine::changeGear(int newGear) {
     if (newGear < gears_ && newGear >= -1) {
         try {
             if (newGear == -1 && currentGear_ != 0) {
-                //throw std::out_of_range("Invalid Gear - gear -1 can be set only when current gear is equal to 0.");
                 throw InvalidGearError{std::to_string(currentGear_)};
             }
 
@@ -33,5 +36,14 @@ void PetrolEngine::changeGear(int newGear) {
 }
 
 int PetrolEngine::getCurrentGear() const {
+    return currentGear_;
+}
+int PetrolEngine::getPower() const {
+    return power_;
+}
+int PetrolEngine::getGears() const {
     return gears_;
+}
+float PetrolEngine::getCapacity() const {
+    return capacity_;
 }

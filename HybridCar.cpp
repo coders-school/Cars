@@ -14,3 +14,12 @@ void HybridCar::restore() {
     ElectricCar::restore();
     PetrolCar::restore();
 }
+
+void HybridCar::changeEngine(Engine* engine) {
+    if (typeid(*engine) != typeid(ElectricEngine)) {
+        ElectricCar::changeEngine(engine);
+    }
+    if (typeid(*engine) != typeid(PetrolEngine)) {
+        PetrolCar::changeEngine(engine);
+    }
+}

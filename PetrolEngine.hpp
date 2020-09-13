@@ -1,10 +1,16 @@
 #pragma once
+#include "Engine.hpp"
 
-class PetrolEngine {
+class PetrolEngine : public Engine {
 public:
     PetrolEngine(int power, float capacity, int gears);
+    ~PetrolEngine();
+
     void changeGear(int gear);
     int getCurrentGear() const;
+    int getPower() const;
+    int getGears() const;
+    float getCapacity() const;
 
 private:
     int power_;       // in HP
