@@ -1,0 +1,7 @@
+1. Added #pragma once to every *.hpp file
+2. Added "Car.cpp" file in CmakeLists.txt
+
+
+
+1. Created std::unique_ptr for engines in electric and petrol car;
+2. 
