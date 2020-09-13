@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Engine.hpp"
+#include "Errors.hpp"
 
 class Car {
 public:
@@ -15,7 +16,7 @@ public:
 
     virtual void restore() = 0;
     virtual void changeEngine(Engine* engine) = 0;
-    //virtual void setGear(int gear) = 0;
+    virtual void setGear(int gear) = 0;
 
 protected:
     int currentSpeed_ = 50;

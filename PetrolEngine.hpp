@@ -1,5 +1,7 @@
 #pragma once
+
 #include "Engine.hpp"
+#include "Errors.hpp"
 
 class PetrolEngine : public Engine {
 public:

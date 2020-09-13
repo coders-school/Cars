@@ -11,4 +11,5 @@ public:
 
     void restore() override;
     void changeEngine(Engine* engine) override;
+    void setGear(int gear) override;
 };

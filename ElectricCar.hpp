@@ -8,7 +8,7 @@ public:
     ~ElectricCar();
     void restore() override;
     void changeEngine(Engine* engine) override;
-    //void setGear(int gear) override;
+    void setGear(int gear) override;
 
 private:
     void charge();

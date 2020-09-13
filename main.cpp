@@ -13,7 +13,7 @@ int main() {
     car->accelerate(50);
     car->brake(50);
     car->accelerate(900);
-    //car->setGear(4);
+    car->setGear(4);
     car->restore();
     opel.setGear(-1);
 
@@ -24,6 +24,7 @@ int main() {
     car->restore();
     car->accelerate(80);
     car->brake(100);
+    car->setGear(4);
     car->changeEngine(new ElectricEngine(150, 700));
     car->turnLeft();
 

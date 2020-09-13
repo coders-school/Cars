@@ -23,3 +23,7 @@ void HybridCar::changeEngine(Engine* engine) {
         PetrolCar::changeEngine(engine);
     }
 }
+
+void HybridCar::setGear(int gear) {
+    PetrolCar::setGear(gear);
+}

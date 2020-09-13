@@ -34,6 +34,6 @@ void ElectricCar::changeEngine(Engine* engine) {
     electricEngine_ = static_cast<ElectricEngine*>(engine);
 }
 
-// void setGear(int gear) {
-//     std::cout << "Set Gear function not available for Electric Car\n";
-// }
+void ElectricCar::setGear(int gear) {
+    std::cout << "Set Gear to: " << gear << " - function not available for Electric Car\n";
+}

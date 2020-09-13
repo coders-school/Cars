@@ -1,36 +1,12 @@
 #include "Car.hpp"
 #include <iostream>
 
-class ToLowSpeedError : public std::logic_error {
-public:
-    ToLowSpeedError(std::string speed)
-        : std::logic_error("To Low Speed Error - speed " + speed + " cannot be set for this car.") {}
-};
-
-class ToHighSpeedError : public std::logic_error {
-public:
-    ToHighSpeedError(std::string speed)
-        : std::logic_error("To High Speed Error - speed " + speed + " cannot be set for this car.") {}
-};
-
-class AccelerateToLoweSpeedError : public std::logic_error {
-public:
-    AccelerateToLoweSpeedError(std::string speed)
-        : std::logic_error("You cannot accelerato to lower speed than actual (" + speed + ").") {}
-};
-
-class BreakeToHigherSpeedError : public std::logic_error {
-public:
-    BreakeToHigherSpeedError(std::string speed)
-        : std::logic_error("You cannot breake to higher speed than actual (" + speed + ").") {}
-};
-
 Car::Car() {
-    std::cout << __FUNCTION__ << std::endl;
+    std::cout << __FUNCTION__ << " - ";
 }
 
 Car::~Car() {
-    std::cout << __FUNCTION__ << std::endl;
+    std::cout << __FUNCTION__ << " - ";
 }
 void Car::turnLeft() {
     std::cout << __FUNCTION__ << std::endl;

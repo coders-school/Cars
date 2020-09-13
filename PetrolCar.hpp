@@ -10,8 +10,8 @@ public:
     void restore() override;
     int getGear() const;
     void changeEngine(Engine* engine) override;
-    //void setGear(int gear) override;
-    void setGear(int gear);
+    void setGear(int gear) override;
+    //void setGear(int gear);
 
 private:
     void refuel();
