@@ -48,7 +48,7 @@ set(SRC_LIST
 
 set(TEST_LIST
     CarTest.cpp
-    PetrolEngineTest.cpp
+    PetrolEngine-ut.cpp
 )
 
 add_executable(${PROJECT_NAME} main.cpp)
