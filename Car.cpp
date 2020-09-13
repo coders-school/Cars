@@ -25,7 +25,9 @@ void Car::brake() {
 }
 
 void Car::accelerate(int speed) {
+    if(speed > 0){
     speed_ = std::min(speed_ + speed, maxSpeed_);
+    }
 }
 
 int Car::getSpeed() const {

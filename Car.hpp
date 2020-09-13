@@ -1,6 +1,5 @@
 #pragma once
 
-#include <cstddef>
 
 #include "Engine.hpp"
 
@@ -20,6 +19,6 @@ public:
     int getSpeed() const;
 
 protected:
-    size_t speed_ = 0;
-    size_t maxSpeed_ = 200;
+    int speed_ = 0;
+    int maxSpeed_ = 200;
 };
