@@ -1,28 +1,62 @@
+#include <iostream>
+
 #include "PetrolCar.hpp"
 #include "ElectricCar.hpp"
 #include "HybridCar.hpp"
-#include <iostream>
 
-int main()
-{
-    std::cout << std::endl << "OPEL" << std::endl;
-    PetrolCar opel(new PetrolEngine(120, 1800, 6));
-    opel.accelerate(50);
-    opel.brake();
-    opel.accelerate(-900);
-    opel.refuel();
+void testPetrolCar(Car* car) {
+    std::cout << std::endl << "# PETROL CAR TEST #" << std::endl;
+    
+    PetrolCar petrol(new PetrolEngine(120, 1800, 5));
+    petrol.accelerateTo(50);
+    petrol.accelerateTo(-900);
+    petrol.brake();
+    petrol.setEngine(new PetrolEngine(160, 2000, 6));
+    petrol.restore();
 
-    std::cout << std::endl << "NISSAN" << std::endl;
-    ElectricCar nissan(new ElectricEngine(130, 650));
-    nissan.charge();
-    nissan.accelerate(80);
-    nissan.engine_ = new ElectricEngine(150, 700);  // Changing an engine during driving is not safe
-    nissan.turnLeft();
+    car = &petrol;
+    car->accelerateTo(100);
+    car->changeGear(4);
+    car->changeGear(-1);
+    car->brake();
+    car->changeGear(-1);
+    car->restore();
+}
 
-    std::cout << std::endl << "TOYOTA" << std::endl;
-    HybridCar toyota(new PetrolEngine(80, 1400, 5), new ElectricEngine(100, 540));
-    toyota.accelerate(100);
-    toyota.brake();
-    toyota.charge();
-    toyota.refuel();
+void testElectricCar(Car* car) {
+    std::cout << std::endl << "# ELECTRIC CAR TEST #" << std::endl;
+
+    ElectricCar electric(new ElectricEngine(130, 650));
+    electric.restore();
+    electric.accelerateTo(80);
+    electric.setEngine(new ElectricEngine(210, 1100));
+    electric.turnLeft();
+
+    car = &electric;
+    car->changeGear(-1);
+    car->restore();
+}
+
+void testHybridCar(Car* car) {
+    std::cout << std::endl << "# HYBRID CAR TEST #" << std::endl;
+
+    HybridCar hybrid(new PetrolEngine(80, 1400, 5), new ElectricEngine(100, 540));
+    hybrid.accelerateTo(100);
+    hybrid.setEngine(new PetrolEngine(145, 190, 6), new ElectricEngine(130, 660));
+    hybrid.brake();
+    hybrid.restore();
+
+    car = &hybrid;
+    car->setEngine(new PetrolEngine(120, 160, 5), new ElectricEngine(100, 770));
+    car->changeGear(9);
+    car->restore();
+}
+
+int main() {
+    Car* car = nullptr;
+    testPetrolCar(car);
+    testElectricCar(car);
+    testHybridCar(car);
+
+    return 0;
 }
