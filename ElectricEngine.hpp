@@ -4,8 +4,11 @@ class ElectricEngine
 {
 public:
     ElectricEngine(int power, int batteryCapacity);
+    ~ElectricEngine();
+    
+    int getPower();
 
-    int power_;             // in HP 
-    int batteryCapacity_;   // in Ah
+private:
+    int power_;
+    int batteryCapacity_;
 };
-
