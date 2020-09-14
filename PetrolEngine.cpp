@@ -1,4 +1,6 @@
 #include "PetrolEngine.hpp"
+#include "Errors.hpp"
+
 #include <iostream>
 #include <stdexcept>
 

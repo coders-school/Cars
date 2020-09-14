@@ -13,7 +13,7 @@ struct PetrolCarTest : public ::testing::Test {
     PetrolCar testPetrolCar;
 
     const int newPower = 100;
-    const int newCapacity = 600;
+    const int newCapacity = 1500;
     const int newGear = 4;
     const int rearGear = -1;
 };
@@ -83,9 +83,9 @@ TEST_F(PetrolCarTest, ShouldNotChangeEngineDuringDrive) {
     ASSERT_EQ(testPetrolCar.getPetrolEngineCapacity(), capacity);
 }
 
-TEST_F(PetrolCarTest, ShouldNotChangeEngineForPetrolEngine) {
+TEST_F(PetrolCarTest, ShouldNotChangeEngineForElectricEngine) {
     testPetrolCar.setSpeed(100);
-    testPetrolCar.changeEngine(new PetrolEngine(newPower, newCapacity, 5));
+    testPetrolCar.changeEngine(new ElectricEngine(newPower, newCapacity));
     ASSERT_EQ(testPetrolCar.getPetrolEnginePower(), power);
     ASSERT_EQ(testPetrolCar.getPetrolEngineCapacity(), capacity);
 }
