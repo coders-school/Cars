@@ -47,10 +47,9 @@ set(SRC_LIST
 )
 
 set(TEST_LIST
-    CarTest.cpp
     PetrolEngine-ut.cpp
     ElectricEngine-ut.cpp
-    ElectricCar-ut.cpp
+    Cars-ut.cpp
 )
 
 add_executable(${PROJECT_NAME} main.cpp)
