@@ -52,8 +52,8 @@ set(SRC_LIST
 
 set(TEST_SRC_LIST
     ElectricCar-ut.cpp
-    # HybridCar.ut.cpp
-    # PetrolCar.ut.cpp
+    # HybridCar-ut.cpp
+    PetrolCar-ut.cpp
 )
 
 # Now simply link against gtest or gtest_main as needed. Eg

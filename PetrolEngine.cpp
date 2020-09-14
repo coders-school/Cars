@@ -27,14 +27,13 @@ void PetrolEngine::changeGear(int newGear) {
             std::cerr << currentGear_.what() << "\n";
         }
     }
+    std::cout << "Gear out of range - you cannot change gear for " << newGear << '\n';
 }
 
 int PetrolEngine::getCurrentGear() const {
     return currentGear_;
 }
-int PetrolEngine::getPower() const {
-    return power_;
-}
+
 int PetrolEngine::getGears() const {
     return gears_;
 }

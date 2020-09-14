@@ -19,10 +19,6 @@ void PetrolCar::refuel() {
     std::cout << __FUNCTION__ << std::endl;
 }
 
-int PetrolCar::getGear() const {
-    return this->petrolEngine_->getCurrentGear();
-}
-
 void PetrolCar::setGear(int newGear) {
     this->petrolEngine_->changeGear(newGear);
 }
@@ -39,4 +35,15 @@ void PetrolCar::changeEngine(Engine* engine) {
     }
     delete petrolEngine_;
     petrolEngine_ = static_cast<PetrolEngine*>(engine);
+}
+
+int PetrolCar::getGear() const {
+    return this->petrolEngine_->getCurrentGear();
+}
+
+int PetrolCar::getPetrolEnginePower() const {
+    return this->petrolEngine_->getPower();
+}
+float PetrolCar::getPetrolEngineCapacity() const {
+    return this->petrolEngine_->getCapacity();
 }

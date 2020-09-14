@@ -39,9 +39,9 @@ void ElectricCar::setGear(int gear) {
 }
 
 int ElectricCar::getElectricEnginePower() const {
-    return electricEngine_->getPower();
+    return this->electricEngine_->getPower();
 }
 
 int ElectricCar::getElectricEngineBatteryCapacity() const {
-    return electricEngine_->getBatteryCapacity();
+    return this->electricEngine_->getBatteryCapacity();
 }

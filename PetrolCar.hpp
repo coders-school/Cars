@@ -8,10 +8,11 @@ public:
     PetrolCar(PetrolEngine* engine);
     ~PetrolCar();
     void restore() override;
-    int getGear() const;
     void changeEngine(Engine* engine) override;
     void setGear(int gear) override;
-    //void setGear(int gear);
+    int getGear() const;
+    int getPetrolEnginePower() const;
+    float getPetrolEngineCapacity() const;
 
 private:
     void refuel();
