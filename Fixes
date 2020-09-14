@@ -4,4 +4,10 @@
 
 
 1. Created std::unique_ptr for engines in electric and petrol car;
-2. 
+2. Made function to to take away unique_ptr with engine "pullOutPetrolEngine()"  
+3. Made getters to ElectricEngine data "getElectricEngineData()", they are returning raw ptr
+4. Made accelerate() virtual function
+5. Implemented accelerate() in ElectricCar, PetrolCar, and HybridCar to check if there are engines, and if a<0;
+6. Accelerate() throw exception "invalid argument", when a<0 or there are no engines in car
+7. Added "int speed" in Car.hpp
+8. 
