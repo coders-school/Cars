@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+#include "InvalidEngineChange.hpp"
+
 PetrolCar::PetrolCar(PetrolEngine* petrolEngine)
     : petrolEngine_(petrolEngine) {
     std::cout << __FUNCTION__ << std::endl;
@@ -28,7 +30,7 @@ void PetrolCar::carInfo() {
               << "Gears: " << unsigned(petrolEngine_->getGears()) << '\n';
 }
 
-uint16_t PetrolCar::getEnginePower() {
+uint16_t PetrolCar::getEnginePower() const {
     return petrolEngine_->getPower();
 }
 
@@ -40,14 +42,11 @@ void PetrolCar::changeGear(int gear) try {
 
 void PetrolCar::changeEngine(Engine* engine) {
     if (getSpeed() != MINIMUM_VELOCITY) {
-        std::cout << "You can't change engine while driving!\n";
-        return;
+        throw InvalidEngineChange("You can't change engine while driving!");
     }
-
     if (typeid(*engine) != typeid(PetrolEngine)) {
-        std::cout << "Wrong engine!\n";
+        throw InvalidEngineChange("Wrong engine!");
     }
-
     delete petrolEngine_;
     petrolEngine_ = static_cast<PetrolEngine*>(engine);
 }

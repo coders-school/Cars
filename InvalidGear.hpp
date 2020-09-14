@@ -4,5 +4,5 @@
 
 class InvalidGear : public std::logic_error {
 public:
-    InvalidGear(const std::string&);
+    InvalidGear(const std::string& errorMessage);
 };

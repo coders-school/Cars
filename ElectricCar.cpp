@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+#include "InvalidEngineChange.hpp"
+
 ElectricCar::ElectricCar(ElectricEngine* electricEngine)
     : electricEngine_(electricEngine) {
     std::cout << __FUNCTION__ << std::endl;
@@ -26,22 +28,19 @@ void ElectricCar::carInfo() {
               << "Battery Capacity: " << electricEngine_->getBatteryCapacity() << '\n';
 }
 
-uint16_t ElectricCar::getEnginePower() {
+uint16_t ElectricCar::getEnginePower() const {
     return electricEngine_->getPower();
 }
 
 void ElectricCar::changeEngine(Engine* engine) {
     if (getSpeed() != MINIMUM_VELOCITY) {
-        std::cout << "You can't change engine while driving!\n";
-        return;
+        throw InvalidEngineChange("You can't change engine while driving!");
     }
 
     if (typeid(*engine) != typeid(ElectricEngine)) {
-        std::cout << "Wrong engine!\n";
-        return;
+        throw InvalidEngineChange("Wrong engine!");
     }
 
     delete electricEngine_;
     electricEngine_ = static_cast<ElectricEngine*>(engine);
-    std::cout << __FUNCTION__ << std::endl;
 }

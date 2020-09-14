@@ -12,8 +12,11 @@ int main() {
     car = &opel;
     car->accelerate(50);
     car->brake();
-    car->accelerate(-900);
-    car->accelerate(100);
+    try {
+        car->accelerate(-900);
+    } catch (const std::logic_error& error) {
+        std::cout << error.what() << '\n';
+    }
     car->restore();
     opel.changeGear(2);
     opel.changeGear(-1);
@@ -27,9 +30,12 @@ int main() {
     ElectricCar nissan(new ElectricEngine(130, 650));
     car = &nissan;
     car->restore();
-    car->accelerate(0);
-    car->changeEngine(new ElectricEngine(150, 700));
-    car->changeEngine(new PetrolEngine(150, 700, 4));
+    car->accelerate(80);
+    try {
+        car->changeEngine(new PetrolEngine(150, 700, 4));
+    } catch (const std::logic_error& error) {
+        std::cout << error.what() << '\n';
+    }
     car->turnLeft();
     car->carInfo();
 
@@ -43,4 +49,6 @@ int main() {
     car->changeEngine(new ElectricEngine(150, 700));
     car->changeEngine(new PetrolEngine(180, 700, 4));
     car->carInfo();
+    car->setSpeed(-100);
+    std::cout << car->getSpeed() << '\n';
 }

@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+#include "InvalidEngineChange.hpp"
+
 HybridCar::HybridCar(PetrolEngine* petrolEngine, ElectricEngine* electricEngine)
     : PetrolCar(petrolEngine), ElectricCar(electricEngine) {
     std::cout << __FUNCTION__ << std::endl;
@@ -28,14 +30,13 @@ void HybridCar::carInfo() {
               << "Summary power: " << getEnginePower() << '\n';
 }
 
-uint16_t HybridCar::getEnginePower() {
+uint16_t HybridCar::getEnginePower() const {
     return petrolEngine_->getPower() + electricEngine_->getPower();
 }
 
 void HybridCar::changeEngine(Engine* engine) {
     if (getSpeed() != MINIMUM_VELOCITY) {
-        std::cout << "You can't change engine while driving!\n";
-        return;
+        throw InvalidEngineChange("You can't change engine while driving!");
     }
 
     if (typeid(*engine) == typeid(ElectricEngine)) {
@@ -52,5 +53,5 @@ void HybridCar::changeEngine(Engine* engine) {
         return;
     }
 
-    std::cout << "Wrong engine!\n";
+    return;
 }

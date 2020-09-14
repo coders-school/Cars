@@ -12,7 +12,7 @@ public:
     //Override from Car
     ~HybridCar() override;
     void restore() override;
-    uint16_t getEnginePower() override;
+    uint16_t getEnginePower() const override;
     void carInfo() override;
     void changeEngine(Engine* engine) override;
     void setSumPower(uint16_t powerOfPetrolEngine, uint16_t powerOfElectricEngine);

@@ -12,7 +12,7 @@ public:
     ~PetrolCar() override;
     void restore() override;
     void carInfo() override;
-    uint16_t getEnginePower() override;
+    uint16_t getEnginePower() const override;
     void changeEngine(Engine* engine) override;
 
 protected:

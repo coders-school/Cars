@@ -11,7 +11,7 @@ public:
     virtual void restore() = 0;
     virtual void carInfo() = 0;
     virtual void changeEngine(Engine* engine) = 0;
-    virtual uint16_t getEnginePower() = 0;
+    virtual uint16_t getEnginePower() const = 0;
     void turnLeft();
     void turnRight();
     void brake();

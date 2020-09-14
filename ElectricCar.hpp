@@ -9,7 +9,7 @@ public:
 
     // Override from Car
     ~ElectricCar() override;
-    uint16_t getEnginePower() override;
+    uint16_t getEnginePower() const override;
     void restore() override;
     void changeEngine(Engine* engine) override;
     void carInfo() override;

@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+#include "InvalidSpeed.hpp"
+
 Car::Car() {
     std::cout << __FUNCTION__ << std::endl;
 }
@@ -25,8 +27,7 @@ void Car::brake() {
 
 void Car::accelerate(int speed) {
     if (speed < MINIMUM_VELOCITY) {
-        std::cout << "Negative value of velocity is not allowed!\n";
-        return;
+        throw InvalidSpeed("Negative value of velocity is not allowed!");
     }
 
     setSpeed(speed);

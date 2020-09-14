@@ -28,23 +28,31 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
 endif()
 
 enable_testing()
-
 project(Cars)
 
 set(SRC_LIST
     Car.cpp
     ElectricCar.cpp
     ElectricEngine.cpp
+    InvalidEngineChange.cpp
     InvalidGear.cpp
+    InvalidSpeed.cpp
     HybridCar.cpp
     PetrolCar.cpp
     PetrolEngine.cpp
 )
 
+set(TEST_LIST
+    ElectricCar-ut.cpp
+    PetrolCar-ut.cpp
+    HybridCar-ut.cpp
+)
+
 add_executable(${PROJECT_NAME}  main.cpp ${SRC_LIST})
-add_executable(${PROJECT_NAME}-ut test.cpp ${SRC_LIST})
+add_executable(${PROJECT_NAME}-ut ${TEST_LIST} ${SRC_LIST})
 
 target_link_libraries(${PROJECT_NAME}-ut gtest_main)
 add_test(NAME ${PROJECT_NAME}-test COMMAND ${PROJECT_NAME}-ut)
 
 target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Werror -Wpedantic -Wextra)
+target_compile_options(${PROJECT_NAME}-ut PUBLIC -Wall -Werror -Wpedantic -Wextra)
