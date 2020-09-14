@@ -3,7 +3,7 @@
 class Engine {
 public:
     explicit Engine(int power);
-    ~Engine();
+    virtual ~Engine();
 
     int getPower() const;
 

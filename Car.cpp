@@ -6,7 +6,7 @@ Car::Car() {
 }
 
 Car::~Car() {
-    std::cout << __FUNCTION__ << " - ";
+    std::cout << __FUNCTION__ << std::endl;
 }
 void Car::turnLeft() {
     std::cout << __FUNCTION__ << std::endl;

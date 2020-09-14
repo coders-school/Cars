@@ -19,5 +19,5 @@ public:
     virtual void setGear(int gear) = 0;
 
 protected:
-    int currentSpeed_ = 50;
+    int currentSpeed_ = 0;
 };

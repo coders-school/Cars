@@ -26,6 +26,8 @@ int main() {
     car->brake(100);
     car->setGear(4);
     car->changeEngine(new ElectricEngine(150, 700));
+    car->setSpeed(0);
+    car->changeEngine(new ElectricEngine(150, 700));
     car->turnLeft();
 
     std::cout << std::endl

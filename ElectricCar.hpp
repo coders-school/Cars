@@ -9,6 +9,8 @@ public:
     void restore() override;
     void changeEngine(Engine* engine) override;
     void setGear(int gear) override;
+    int getElectricEnginePower() const;
+    int getElectricEngineBatteryCapacity() const;
 
 private:
     void charge();

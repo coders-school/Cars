@@ -7,7 +7,7 @@ Engine::Engine(int power)
 }
 
 Engine::~Engine() {
-    std::cout << __FUNCTION__ << " - ";
+    std::cout << __FUNCTION__ << std::endl;
 }
 
 int Engine::getPower() const {
