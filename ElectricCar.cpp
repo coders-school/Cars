@@ -22,7 +22,7 @@ void ElectricCar::charge() {
 
 void ElectricCar::changeEngine(Engine* electricEngine) {
     std::cout << __FUNCTION__ << std::endl;
-    if (currentSpeed_ != 0) {
+    if (this->getSpeed() != 0) {
         std::cout << "Changing of engine during driving is not possible!" << std::endl;
         return;
     }

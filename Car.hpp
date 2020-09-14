@@ -7,6 +7,7 @@ class Car {
 public:
     Car();
     virtual ~Car();
+
     void turnLeft();
     void turnRight();
     void brake(int speed);
@@ -18,6 +19,6 @@ public:
     virtual void changeEngine(Engine* engine) = 0;
     virtual void setGear(int gear) = 0;
 
-protected:
+private:
     int currentSpeed_ = 0;
 };

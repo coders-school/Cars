@@ -1,4 +1,5 @@
 #include "PetrolCar.hpp"
+
 #include <iostream>
 
 PetrolCar::PetrolCar(PetrolEngine* engine)
@@ -25,7 +26,7 @@ void PetrolCar::setGear(int newGear) {
 
 void PetrolCar::changeEngine(Engine* engine) {
     std::cout << __FUNCTION__ << std::endl;
-    if (currentSpeed_ != 0) {
+    if (this->getSpeed() != 0) {
         std::cout << "Changing of engine during driving is not possible!" << std::endl;
         return;
     }
@@ -44,6 +45,7 @@ int PetrolCar::getGear() const {
 int PetrolCar::getPetrolEnginePower() const {
     return this->petrolEngine_->getPower();
 }
+
 float PetrolCar::getPetrolEngineCapacity() const {
     return this->petrolEngine_->getCapacity();
 }

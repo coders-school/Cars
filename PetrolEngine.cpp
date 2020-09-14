@@ -39,6 +39,7 @@ int PetrolEngine::getCurrentGear() const {
 int PetrolEngine::getGears() const {
     return gears_;
 }
+
 float PetrolEngine::getCapacity() const {
     return capacity_;
 }

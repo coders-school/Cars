@@ -8,12 +8,15 @@ Car::Car() {
 Car::~Car() {
     std::cout << __FUNCTION__ << std::endl;
 }
+
 void Car::turnLeft() {
     std::cout << __FUNCTION__ << std::endl;
 }
+
 void Car::turnRight() {
     std::cout << __FUNCTION__ << std::endl;
 }
+
 void Car::brake(int speed) {
     std::cout << __FUNCTION__ << ": ";
     try {
@@ -25,6 +28,7 @@ void Car::brake(int speed) {
         std::cerr << speed.what() << "\n";
     }
 }
+
 void Car::accelerate(int speed) {
     std::cout << __FUNCTION__ << ": ";
     try {
@@ -36,10 +40,7 @@ void Car::accelerate(int speed) {
         std::cerr << speed.what() << "\n";
     }
 }
-int Car::getSpeed() const {
-    std::cout << "Car speed = " << currentSpeed_ << std::endl;
-    return currentSpeed_;
-}
+
 void Car::setSpeed(int speed) {
     try {
         if (speed < -20) {
@@ -55,4 +56,9 @@ void Car::setSpeed(int speed) {
     } catch (ToHighSpeedError& speed) {
         std::cerr << speed.what() << "\n";
     }
+}
+
+int Car::getSpeed() const {
+    std::cout << "Car speed = " << currentSpeed_ << std::endl;
+    return currentSpeed_;
 }
