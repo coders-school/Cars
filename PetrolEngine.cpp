@@ -11,6 +11,9 @@ PetrolEngine::PetrolEngine(int power, float capacity, int gears) :
 
 void PetrolEngine::changeGear(int gear) {
     if (gear < -1 || gear > gears_) {
+        return;
+    }
+    if (currentGear_ == 5 && gear == -1) {
         throw InvalidGear();
     }
     currentGear_ = gear;

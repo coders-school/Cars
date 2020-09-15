@@ -4,7 +4,7 @@
 class InvalidGear : public std::invalid_argument {
    public:
     InvalidGear() :
-            std::invalid_argument("Invalid gear!\n") {}
+            std::invalid_argument("You cannot change gear from 5 to R!\n") {}
 };
 
 class PetrolEngine {
