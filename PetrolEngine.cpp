@@ -1,7 +1,7 @@
 #include "PetrolEngine.hpp"
 #include <iostream>
 
-PetrolEngine::PetrolEngine(HorsePower power, CubicCentimetre capacity, int gears) :
+PetrolEngine::PetrolEngine(HorsePower power, CubicCentimetre capacity, Gear gears) :
         power_(power),
         capacity_(capacity),
         gears_(gears),
@@ -9,11 +9,11 @@ PetrolEngine::PetrolEngine(HorsePower power, CubicCentimetre capacity, int gears
     std::cout << __FUNCTION__ << std::endl;
 }
 
-void PetrolEngine::changeGear(int gear) {
-    if (gear < -1 || gear > gears_) {
+void PetrolEngine::changeGear(Gear gear) {
+    if (gear.value_ < -1 || gear.value_ > gears_.value_) {
         return;
     }
-    if (currentGear_ == 5 && gear == -1) {
+    if (currentGear_.value_ == 5 && gear.value_ == -1) {
         throw InvalidGear();
     }
     currentGear_ = gear;
