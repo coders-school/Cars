@@ -1,7 +1,7 @@
 #include "PetrolEngine.hpp"
 #include <iostream>
 
-PetrolEngine::PetrolEngine(HorsePower power, float capacity, int gears) :
+PetrolEngine::PetrolEngine(HorsePower power, CubicCentimetre capacity, int gears) :
         power_(power),
         capacity_(capacity),
         gears_(gears),
