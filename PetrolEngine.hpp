@@ -17,13 +17,14 @@ class CubicCentimetre {
 };
 
 class Gear {
-    public:
+   public:
     int value_;
-    explicit Gear(int value) : value_(value) {}
+    explicit Gear(int value) :
+            value_(value) {}
 };
 class PetrolEngine {
     HorsePower power_;
-    CubicCentimetre capacity_;  // in ccm
+    CubicCentimetre capacity_;
     Gear gears_;
     Gear currentGear_;
 
@@ -31,5 +32,9 @@ class PetrolEngine {
     PetrolEngine(HorsePower power, CubicCentimetre capacity, Gear gears);
     ~PetrolEngine();
     void changeGear(Gear gear);
-    const HorsePower& getPower() { return power_; };
+    HorsePower getPower() const { return power_; };
+    CubicCentimetre getCapacity() const { return capacity_; };
+    Gear getCurrentGear() const { return currentGear_; };
+    Gear getMaximumGear() const { return gears_; };
+    
 };
