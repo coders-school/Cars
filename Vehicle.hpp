@@ -6,6 +6,6 @@ class Vehicle {
     void turnLeft(){};
     void turnRight(){};
     void brake(){};
-    void accelerate(int){};
+    void accelerateTo(size_t){};
     virtual void restore() = 0;
 };
