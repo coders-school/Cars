@@ -10,5 +10,5 @@ public:
     uint16_t getPower() const { return power_; }
 
 protected:
-    uint16_t power_{};
+    uint16_t power_;
 };

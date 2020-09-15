@@ -1,5 +1,3 @@
-#include <stdint.h>
-
 #include "ElectricCar.hpp"
 #include "ElectricEngine.hpp"
 #include "InvalidEngineChange.hpp"
@@ -20,9 +18,13 @@ TEST_F(ElectricCarTest, ShouldRetrunElectricCarEnginePower) {
     EXPECT_EQ(basePower, testElectricCar.getEnginePower());
 }
 
-TEST_F(ElectricCarTest, ShouldReturnElectricCarSpeed) {
+TEST_F(ElectricCarTest, ShouldReturnElectricCarVelocity) {
     testElectricCar.setSpeed(baseSpeed);
     EXPECT_EQ(baseSpeed, testElectricCar.getSpeed());
+}
+
+TEST_F(ElectricCarTest, ShouldReturnElectricCarBatteryCapacity) {
+    EXPECT_EQ(baseBatteryCapacity, testElectricCar.getBatteryCapacity());
 }
 
 TEST_F(ElectricCarTest, ShouldChangeElectricCarVelocity) {
@@ -35,7 +37,7 @@ TEST_F(ElectricCarTest, ShouldNotChangeVelocityOfElectricCarWhenInputVelocityIsN
     EXPECT_THROW(testElectricCar.accelerate(negativeVelocity), InvalidSpeed);
 }
 
-TEST_F(ElectricCarTest, BreakingShouldSetSpeedToZeroForElectricCar) {
+TEST_F(ElectricCarTest, BrakingShouldSetSpeedToZeroForElectricCar) {
     const int expectedVelocityAfterBreaking = 0;
     testElectricCar.accelerate(baseSpeed);
     testElectricCar.brake();
@@ -48,7 +50,7 @@ TEST_F(ElectricCarTest, ShouldChangeEngineForElectricCarWhenVelocityIsZero) {
     EXPECT_NO_THROW(testElectricCar.changeEngine(new ElectricEngine(basePower, baseBatteryCapacity)));
 }
 
-TEST_F(ElectricCarTest, ShouldNotChangeEngineForElectricCarWhenCarIsSpeeding) {
+TEST_F(ElectricCarTest, ShouldNotChangeEngineForElectricCarWhenCarVelocityIsNotZero) {
     testElectricCar.accelerate(baseSpeed);
     EXPECT_THROW(testElectricCar.changeEngine(new ElectricEngine(basePower, baseBatteryCapacity)), InvalidEngineChange);
 }

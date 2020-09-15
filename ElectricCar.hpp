@@ -6,6 +6,7 @@
 class ElectricCar : virtual public Car {
 public:
     ElectricCar(ElectricEngine* electricEngine);
+    uint16_t getBatteryCapacity() const;
 
     // Override from Car
     ~ElectricCar() override;

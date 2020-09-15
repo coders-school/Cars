@@ -19,15 +19,15 @@ void HybridCar::restore() {
 }
 
 void HybridCar::carInfo() {
-    std::cout << "Car info:\n "
+    std::cout << "Car info :\n "
               << "Speed: " << getSpeed() << '\n'
               << "Petrol Engine Power: " << petrolEngine_->getPower() << '\n'
               << "Capacity: " << petrolEngine_->getCapacity() << '\n'
               << "Current Gear: " << petrolEngine_->getCurrentGear() << '\n'
               << "Gears: " << unsigned(petrolEngine_->getGears()) << '\n'
-              << "Electircty Engine Power: " << electricEngine_->getPower() << '\n'
-              << "Battery Capacity: " << electricEngine_->getBatteryCapacity() << '\n'
-              << "Summary power: " << getEnginePower() << '\n';
+              << "Electric Engine Power: " << electricEngine_->getPower() << '\n'
+              << "Battery Capacity: " << getBatteryCapacity() << '\n'
+              << "Summary Power: " << getEnginePower() << '\n';
 }
 
 uint16_t HybridCar::getEnginePower() const {
@@ -37,7 +37,7 @@ uint16_t HybridCar::getEnginePower() const {
 
 void HybridCar::changeEngine(Engine* engine) {
     if (getSpeed() != MINIMUM_VELOCITY) {
-        throw InvalidEngineChange("You can't change engine while driving!");
+        throw InvalidEngineChange("You cannot change the engine while driving!");
     }
 
     if (typeid(*engine) == typeid(ElectricEngine)) {

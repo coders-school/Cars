@@ -8,5 +8,5 @@ public:
     uint16_t getBatteryCapacity() const { return batteryCapacity_; }
 
 private:
-    uint16_t batteryCapacity_{};  // in Ah
+    uint16_t batteryCapacity_;  // in Ah
 };

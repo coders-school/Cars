@@ -1,5 +1,3 @@
-#include <stdint.h>
-
 #include "ElectricEngine.hpp"
 #include "InvalidEngineChange.hpp"
 #include "InvalidGear.hpp"
@@ -23,7 +21,7 @@ TEST_F(PetrolCarTest, ShouldRetrunPetrolCarEnginePower) {
     EXPECT_EQ(basePower, testPetrolCar.getEnginePower());
 }
 
-TEST_F(PetrolCarTest, ShouldReturnPetrolCarSpeed) {
+TEST_F(PetrolCarTest, ShouldReturnPetrolCarVelocity) {
     testPetrolCar.setSpeed(baseSpeed);
     EXPECT_EQ(baseSpeed, testPetrolCar.getSpeed());
 }
@@ -38,7 +36,7 @@ TEST_F(PetrolCarTest, ShouldNotChangeVelocityOfPetrolCarWhenInputVelocityIsNegat
     EXPECT_THROW(testPetrolCar.accelerate(negativeVelocity), InvalidSpeed);
 }
 
-TEST_F(PetrolCarTest, BreakingShouldSetSpeedToZeroForPetrolCar) {
+TEST_F(PetrolCarTest, BrakingShouldSetSpeedToZeroForPetrolCar) {
     const int expectedVelocityAfterBreaking = 0;
     testPetrolCar.accelerate(baseSpeed);
     testPetrolCar.brake();
@@ -51,13 +49,13 @@ TEST_F(PetrolCarTest, ShouldChangeGearInPetrolCar) {
     EXPECT_EQ(currentGear, testPetrolCar.getCurrentGear());
 }
 
-TEST_F(PetrolCarTest, ShouldntChangeGearFromHigherGearThanNeturalToRearGearInPetrolCar) {
+TEST_F(PetrolCarTest, ShouldNotChangeGearFromHigherGearThanNeturalToRearGearInPetrolCar) {
     const int rearGear = -1;
     testPetrolCar.changeGear(currentGear);
     EXPECT_THROW(testPetrolCar.changeGear(rearGear), InvalidGear);
 }
 
-TEST_F(PetrolCarTest, ShouldntChangeGearInPetrolCarForWrongRange) {
+TEST_F(PetrolCarTest, ShouldNotChangeGearInPetrolCarIfThatGearDoesntExist) {
     const int minRange = -2;
     const int maxRange = baseGears + 1;
     EXPECT_THROW(testPetrolCar.changeGear(minRange), InvalidGear);
@@ -69,7 +67,7 @@ TEST_F(PetrolCarTest, ShouldChangeEngineForPetrolCarWhenVelocityIsZero) {
     EXPECT_NO_THROW(testPetrolCar.changeEngine(new PetrolEngine(basePower, baseCapacity, baseGears)));
 }
 
-TEST_F(PetrolCarTest, ShouldNotChangeEngineForPetrolCarWhenCarIsSpeeding) {
+TEST_F(PetrolCarTest, ShouldNotChangeEngineForPetrolCarWhenCarVelocityIsNotZero) {
     testPetrolCar.accelerate(baseSpeed);
     EXPECT_THROW(testPetrolCar.changeEngine(new PetrolEngine(basePower, baseCapacity, baseGears)), InvalidEngineChange);
 }

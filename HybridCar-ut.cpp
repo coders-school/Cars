@@ -1,12 +1,8 @@
-#include <stdint.h>
-
-#include "ElectricCar.hpp"
 #include "ElectricEngine.hpp"
 #include "HybridCar.hpp"
 #include "InvalidEngineChange.hpp"
 #include "InvalidGear.hpp"
 #include "InvalidSpeed.hpp"
-#include "PetrolCar.hpp"
 #include "PetrolEngine.hpp"
 #include "gtest/gtest.h"
 
@@ -26,9 +22,13 @@ TEST_F(HybridCarTest, ShouldRetrunHybridCarEnginePower) {
     EXPECT_EQ(baseHybridPower, testHybridCar.getEnginePower());
 }
 
-TEST_F(HybridCarTest, ShouldReturnHybridCarSpeed) {
+TEST_F(HybridCarTest, ShouldReturnHybridCarVelocity) {
     testHybridCar.setSpeed(baseSpeed);
     EXPECT_EQ(baseSpeed, testHybridCar.getSpeed());
+}
+
+TEST_F(HybridCarTest, ShouldReturnHybridCarBatteryCapacity) {
+    EXPECT_EQ(baseBatteryCapacity, testHybridCar.getBatteryCapacity());
 }
 
 TEST_F(HybridCarTest, ShouldChangeHybridCarVelocity) {
@@ -41,7 +41,7 @@ TEST_F(HybridCarTest, ShouldNotChangeVelocityOfHybridCarWhenInputVelocityIsNegat
     EXPECT_THROW(testHybridCar.accelerate(negativeVelocity), InvalidSpeed);
 }
 
-TEST_F(HybridCarTest, BreakingShouldSetSpeedToZeroForHybridCar) {
+TEST_F(HybridCarTest, BrakingShouldSetSpeedToZeroForHybridCar) {
     const int expectedVelocityAfterBreaking = 0;
     testHybridCar.accelerate(baseSpeed);
     testHybridCar.brake();
@@ -70,13 +70,13 @@ TEST_F(HybridCarTest, ShouldChangeGearInHybridCar) {
     EXPECT_EQ(currentGear, testHybridCar.getCurrentGear());
 }
 
-TEST_F(HybridCarTest, ShouldntChangeGearFromHigherGearThanNeturalToRearGearInHybridCar) {
+TEST_F(HybridCarTest, ShouldNOtChangeGearFromHigherGearThanNeutralToRearGearInHybridCar) {
     const int rearGear = -1;
     testHybridCar.changeGear(currentGear);
     EXPECT_THROW(testHybridCar.changeGear(rearGear), InvalidGear);
 }
 
-TEST_F(HybridCarTest, ShouldntChangeGearInHybridCarForWrongRange) {
+TEST_F(HybridCarTest, ShouldNotChangeGearInHybridCarIfThatGearDoesntExist) {
     const int minRange = -2;
     const int maxRange = baseGears + 1;
     EXPECT_THROW(testHybridCar.changeGear(minRange), InvalidGear);

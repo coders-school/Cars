@@ -21,11 +21,15 @@ void ElectricCar::restore() {
     charge();
 }
 
+uint16_t ElectricCar::getBatteryCapacity() const {
+    return electricEngine_->getBatteryCapacity();
+}
+
 void ElectricCar::carInfo() {
-    std::cout << "Car info:\n "
+    std::cout << "Car info: \n "
               << "Speed: " << getSpeed() << '\n'
               << "Power: " << getEnginePower() << '\n'
-              << "Battery Capacity: " << electricEngine_->getBatteryCapacity() << '\n';
+              << "Battery Capacity: " << getBatteryCapacity() << '\n';
 }
 
 uint16_t ElectricCar::getEnginePower() const {
@@ -34,11 +38,11 @@ uint16_t ElectricCar::getEnginePower() const {
 
 void ElectricCar::changeEngine(Engine* engine) {
     if (getSpeed() != MINIMUM_VELOCITY) {
-        throw InvalidEngineChange("You can't change engine while driving!");
+        throw InvalidEngineChange("You cannot change the engine while driving!");
     }
 
     if (typeid(*engine) != typeid(ElectricEngine)) {
-        throw InvalidEngineChange("Wrong engine!");
+        throw InvalidEngineChange("Wrong engine type!");
     }
 
     delete electricEngine_;

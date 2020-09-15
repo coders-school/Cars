@@ -22,7 +22,7 @@ void PetrolCar::restore() {
 }
 
 void PetrolCar::carInfo() {
-    std::cout << "Car info:\n "
+    std::cout << "Car info: \n "
               << "Speed: " << getSpeed() << '\n'
               << "Power: " << getEnginePower() << '\n'
               << "Capacity: " << petrolEngine_->getCapacity() << '\n'
