@@ -6,7 +6,6 @@ PetrolEngine::PetrolEngine(HorsePower power, CubicCentimetre capacity, Gear gear
         capacity_(capacity),
         gears_(gears),
         currentGear_(0) {
-    std::cout << __FUNCTION__ << std::endl;
 }
 
 void PetrolEngine::changeGear(Gear gear) {
@@ -17,9 +16,7 @@ void PetrolEngine::changeGear(Gear gear) {
         throw InvalidGear();
     }
     currentGear_ = gear;
-    std::cout << __FUNCTION__ << std::endl;
 }
 
 PetrolEngine::~PetrolEngine() {
-    std::cout << __FUNCTION__ << std::endl;
 }

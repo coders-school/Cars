@@ -2,16 +2,15 @@
 #include <iostream>
 
 ElectricCar::ElectricCar(ElectricEngine* engine) :
-        engine_(engine) {
-    std::cout << __FUNCTION__ << std::endl;
+        engine_(engine),
+        currentBatteryLevel_(engine_->getBatterCapacity()) {
 }
 
 ElectricCar::~ElectricCar() {
-    std::cout << __FUNCTION__ << std::endl;
     delete engine_;
 }
 void ElectricCar::charge() {
-    std::cout << __FUNCTION__ << std::endl;
+    currentBatteryLevel_ = engine_->getBatterCapacity();
 }
 
 void ElectricCar::restore() {

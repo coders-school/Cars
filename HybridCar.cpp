@@ -2,13 +2,11 @@
 #include <iostream>
 
 HybridCar::HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng) :
-        PetrolCar(petrolEng),
+        PetrolCar(petrolEng, Litre(60)),
         ElectricCar(electricEng) {
-    std::cout << __FUNCTION__ << std::endl;
 }
 
 HybridCar::~HybridCar() {
-    std::cout << __FUNCTION__ << std::endl;
 }
 
 void HybridCar::restore() {
