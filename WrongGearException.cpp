@@ -1,7 +1,14 @@
 #include "WrongGearException.hpp"
+#include <sstream>
+#include <iostream>
+#include <algorithm>
 
-void WrongGearException::what(){
-
-const char*  errMsg = "You choose a wrong gear!";
-
+const char* WrongGearException::what() const noexcept{
+return msg.c_str();
 }
+
+
+WrongGearException::WrongGearException(const int gear, const int gears):
+gears_(gears),
+gear_(gear),
+msg("Exception: You choose: " + std::to_string(gear_) +  " when having only " + std::to_string(gears_) + "!\n"){}

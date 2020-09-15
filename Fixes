@@ -1,16 +1,12 @@
-1. Added #pragma once to every *.hpp file
-2. Added "Car.cpp" file in CmakeLists.txt
-
 
 
 1. Created std::unique_ptr for engines in electric and petrol car;
 2. Added speed to car interface, to check if we are moving or not,
-2. Made function to to take away unique_ptr with engine "pullOutPetrolEngine()" when speed = 0;
-3. Made getters to Electric and Petrol engines data "getElectricEngineData()", getPetrolEngineData(), they are returning raw ptr
-4. Made accelerate() virtual function
-5. Implemented accelerate() in ElectricCar, PetrolCar, and HybridCar to check if there are engines, and if a<0;
-6. Accelerate() throw exception "invalid argument", when a<0 or there are no engines in car
-7. Added "int speed" in Car.hpp
-8. Added Exception to changing gear from 5 to R (rocket!!)
-9. Added checking if choosen gear is in given range
-10. 
+3. Made function to to take away unique_ptr with engine "pullOutPetrolEngine()" when speed = 0;
+4. Made getters to Electric and Petrol engines data "getElectricEngineData()", getPetrolEngineData(), they are returning raw ptr
+5. Made accelerate() virtual function
+6. Implemented accelerate() in ElectricCar, PetrolCar, and HybridCar to check if there are engines, and if a<0;
+7. Accelerate() throw exception "invalid argument", when a<0 or there are no engines in car
+8. Added "int speed" in Car.hpp
+9. Added Exception checking if choosen gear is in given range (-1 to gears_)
+10. Added tests

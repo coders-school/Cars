@@ -26,8 +26,8 @@ std::unique_ptr<PetrolEngine> PetrolCar::pullOutPetrolEngine() {
 
 void PetrolCar::accelerate(int a){
     if(engine_){
-        if(a > 0)
-        std::cout << "\nAccelerate to: " << a << "km\\h\n";
-        else throw std::invalid_argument("\nInvalid speed, can't be negative\n");
-    } else std::cout << "\nThis car doesn't have an engine!\n";
+        if(a >= 0)
+        std::cout << "Accelerate to: " << a << "km\\h\n";
+        else throw std::invalid_argument("Invalid speed, can't be negative\n");
+    } else std::cout << "This car doesn't have an engine!\n";
 }

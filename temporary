@@ -1,0 +1,28 @@
+#include "WrongGearException.hpp"
+#include <sstream>
+#include <iostream>
+#include <algorithm>
+const char* WrongGearException::what() const noexcept{
+return msg.c_str();
+}
+
+
+WrongGearException::WrongGearException(const int gear, const int gears):
+gears_(gears),
+gear_(gear),
+msg("Exception: You choose: " + std::to_string(this->gear_) +  " when having only " + std::to_string(this -> gears_) + "!\n"){}
+
+
+#include <exception>
+#include <string>
+class WrongGearException : public std::exception {
+
+public:
+WrongGearException(int gear, int gears_);
+const char* what() const noexcept;
+
+private:
+int gears_;
+int gear_;
+std::string msg;
+};
