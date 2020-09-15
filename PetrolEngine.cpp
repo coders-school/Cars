@@ -11,10 +11,14 @@ PetrolEngine::PetrolEngine(int power, float capacity, int gears)
 }
 
 void PetrolEngine::changeGear(int gear)
-{
+{   
     // TODO: Add checking if gear is between -1 and gears_
     // -1 is for REAR
     // 0 is for NEUTRAL
+    if(currentGear_ == 0 && gear == -1 && gear > 0 && gear < gears_){
+        gear = -1;
+    } else throw WrongGearException{};
+    if(gear > 0 && gear < gears_ || gear != 0)
     currentGear_ = gear;
     std::cout << __FUNCTION__ << std::endl;
 }

@@ -35,3 +35,7 @@ void ElectricCar::accelerate(int a) {
   } else
     std::cout << "\nThis car doesn't have an engine!\n";
 }
+
+void ElectricCar::putInElectricEngine(std::unique_ptr<ElectricEngine> newEngine){
+  engine_.swap(newEngine);
+}

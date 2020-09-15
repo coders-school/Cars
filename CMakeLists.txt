@@ -13,6 +13,7 @@ set(SRC_LIST
     PetrolCar.cpp
     PetrolEngine.cpp
     Car.cpp
+    WrongGearException.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})

@@ -9,6 +9,7 @@ public:
   ~ElectricCar();
   ElectricEngine *getElectricEngineData() const;
   std::unique_ptr<ElectricEngine> pullOutElectricEngine();
+  void putInElectricEngine(std::unique_ptr<ElectricEngine> newEngine);
   void restore() override;
   void accelerate(int a) override;
 

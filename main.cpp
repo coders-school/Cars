@@ -24,7 +24,9 @@ int main()
     car = &nissan;
     car->restore();
     car->accelerate(80);
-    car->engine_ = std::make_unique<ElectricEngine>(150, 700);  // Changing an engine during driving is not safe
+    std::unique_ptr<ElectricEngine> BoxForOldEngine;
+    BoxForOldEngine = nissan.pullOutElectricEngine();
+    nissan.putInElectricEngine(std::make_unique<ElectricEngine>(150, 700));
     car->turnLeft();
 
     /**************************************
