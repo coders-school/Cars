@@ -19,7 +19,7 @@ class Vehicle {
     virtual ~Vehicle();
     void turnLeft(){};
     void turnRight(){};
-    void brake(){};
+    void brakeTo(KMH){};
     void accelerateTo(KMH){};
     virtual void restore() = 0;
 };
