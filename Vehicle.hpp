@@ -22,16 +22,17 @@ enum class Direction {
 
 class Vehicle {
     KMH currentSpeed_{0};
-    Direction currentDirection{Direction::RIGHT};
+    Direction currentDirection_{Direction::RIGHT};
+    
+    Direction getNewDirection(Direction turn);
 
    public:
     Vehicle() = default;
     virtual ~Vehicle() = default;
     void turnLeft();
     void turnRight();
-    void brakeTo(KMH);
-    void accelerateTo(KMH);
+    void changeSpeedTo(KMH);
     virtual void restore() = 0;
-    Direction getCurrentDirection();
-    KMH getCurrentSpeed();
+    Direction getCurrentDirection() const { return currentDirection_; }
+    KMH getCurrentSpeed() const { return currentSpeed_; }
 };
