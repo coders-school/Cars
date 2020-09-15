@@ -18,7 +18,6 @@ int main() {
     Car* nissanCar = new ElectricCar(new ElectricEngine(130, 650));
     nissanCar->refill();
     nissanCar->accelerate(80);
-    //nissan.engine_ = new ElectricEngine(150, 700);  // Changing an engine during driving is not safe
     nissanCar->turnLeft();
 
     std::cout << std::endl
