@@ -1,5 +1,6 @@
 #include "ElectricCar.hpp"
 #include <iostream>
+#include <stdexcept>
 
 ElectricCar::ElectricCar(ElectricEngine* engine)
     : engine_(engine)
@@ -19,7 +20,7 @@ void ElectricCar::setEngine(int power, int batteryCapacity) {
         std::cout << "Engine changed" << std::endl;
     }
     else {
-        std::cout << "Can't change engine while driving (please verify with Youtube)" <<std::endl;
+        throw std::logic_error("Can't change engine while driving (please verify with Youtube)");
     }
 }
 

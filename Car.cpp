@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdexcept>
 #include "Car.hpp"
 
 Car::Car() {}
@@ -10,6 +11,9 @@ void Car::brake()       { std::cout << __FUNCTION__ << std::endl; }
 void Car::accelerate(int speed){
     if (speed >= 0) {
         speed_ = speed;
+    }
+    else {
+        throw std::logic_error("You can't have negative speed");
     }
     std::cout << __FUNCTION__ << speed << std::endl;
 }

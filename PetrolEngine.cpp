@@ -2,6 +2,8 @@
 #include <cstdlib>
 #include <iostream>
 
+constexpr int BOTTOM_GEAR = -1;
+
 InvalidGear::InvalidGear(const std::string& eWhat)
     : std::logic_error(eWhat)
 {}
@@ -21,7 +23,7 @@ PetrolEngine::~PetrolEngine() {
 
 void PetrolEngine::changeGear(int gear)
 {
-    if (gear < -1) {
+    if (gear < BOTTOM_GEAR) {
         throw InvalidGear("Wrong gear");
     }
     else if (abs(gear - gears_) > 2) {
