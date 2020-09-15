@@ -2,16 +2,12 @@
 
 #include "PetrolEngine.hpp"
 #include "Vehicle.hpp"
-class PetrolCar : virtual public Vehicle
-{
-public:
-    PetrolCar(PetrolEngine* engine);
-    ~PetrolCar();
-    void turnLeft() override;
-    void turnRight() override;
-    void brake() override;
-    void accelerate(int speed) override;
+class PetrolCar : virtual public Vehicle {
+    PetrolEngine* engine_;
     void refuel();
 
+   public:
+    PetrolCar(PetrolEngine* engine);
+    ~PetrolCar();
+    void restore() override;
 };
-

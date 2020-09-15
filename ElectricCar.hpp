@@ -2,16 +2,12 @@
 #include "ElectricEngine.hpp"
 #include "Vehicle.hpp"
 
-class ElectricCar : virtual public Vehicle
-{
-public:
-    ElectricCar(ElectricEngine* engine);
-    ~ElectricCar();
-    void turnLeft() override;
-    void turnRight() override;
-    void brake() override;
-    void accelerate(int speed) override;
+class ElectricCar : virtual public Vehicle {
+    ElectricEngine* engine_;
     void charge();
 
+   public:
+    ElectricCar(ElectricEngine* engine);
+    ~ElectricCar();
+    void restore() override;
 };
-

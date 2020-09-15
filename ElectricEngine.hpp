@@ -1,9 +1,9 @@
 #pragma once
-
-#include "Engine.hpp"
-class ElectricEngine : public Engine {
+class ElectricEngine {
+    int power_;            //in HP
+    int batteryCapacity_;  // in Ah
+    
    public:
     ElectricEngine(int power, int batteryCapacity);
-
-    int batteryCapacity_;  // in Ah
+    ~ElectricEngine();
 };

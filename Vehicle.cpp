@@ -1,8 +1,9 @@
 #include "Vehicle.hpp"
-
-Vehicle::Vehicle(Engine* engine) : engine_(engine) {
+#include <iostream>
+Vehicle::Vehicle() {
+    std::cout << __FUNCTION__ << std::endl;
 }
 
 Vehicle::~Vehicle() {
-    delete engine_;
+    std::cout << __FUNCTION__ << std::endl;
 }
