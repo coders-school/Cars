@@ -1,6 +1,8 @@
 #pragma once
 #include <stdexcept>
 #include <string>
+
+#include "HorsePower.hpp"
 class InvalidGear : public std::invalid_argument {
    public:
     InvalidGear() :
@@ -8,13 +10,14 @@ class InvalidGear : public std::invalid_argument {
 };
 
 class PetrolEngine {
-    int power_;       // HP
-    float capacity_;  // in ccm
+    HorsePower power_;  // HP
+    float capacity_;    // in ccm
     int gears_;
     int currentGear_;
 
    public:
-    PetrolEngine(int power, float capacity, int gears);
+    PetrolEngine(HorsePower power, float capacity, int gears);
     ~PetrolEngine();
     void changeGear(int gear);
+    const HorsePower& getPower() { return power_; };
 };
