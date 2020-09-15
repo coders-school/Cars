@@ -13,13 +13,25 @@ class KMH {
     }
 };
 
+enum class Direction {
+    LEFT,
+    UP,
+    RIGHT,
+    DOWN,
+};
+
 class Vehicle {
+    KMH currentSpeed_{0};
+    Direction currentDirection{Direction::RIGHT};
+
    public:
-    Vehicle();
-    virtual ~Vehicle();
-    void turnLeft(){};
-    void turnRight(){};
-    void brakeTo(KMH){};
-    void accelerateTo(KMH){};
+    Vehicle() = default;
+    virtual ~Vehicle() = default;
+    void turnLeft();
+    void turnRight();
+    void brakeTo(KMH);
+    void accelerateTo(KMH);
     virtual void restore() = 0;
+    Direction getCurrentDirection();
+    KMH getCurrentSpeed();
 };
