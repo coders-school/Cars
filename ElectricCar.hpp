@@ -7,7 +7,7 @@ class ElectricCar : virtual public Vehicle {
     void charge();
 
    public:
-    ElectricCar(ElectricEngine* engine);
+    explicit ElectricCar(ElectricEngine* engine);
     ~ElectricCar();
     void restore() override;
 };

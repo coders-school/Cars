@@ -7,7 +7,7 @@ class PetrolCar : virtual public Vehicle {
     void refuel();
 
    public:
-    PetrolCar(PetrolEngine* engine);
+    explicit PetrolCar(PetrolEngine* engine);
     ~PetrolCar();
     void restore() override;
 };
