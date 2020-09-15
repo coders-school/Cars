@@ -1,10 +1,12 @@
 #include <stdint.h>
 
+#include "ElectricCar.hpp"
 #include "ElectricEngine.hpp"
 #include "HybridCar.hpp"
 #include "InvalidEngineChange.hpp"
 #include "InvalidGear.hpp"
 #include "InvalidSpeed.hpp"
+#include "PetrolCar.hpp"
 #include "PetrolEngine.hpp"
 #include "gtest/gtest.h"
 
@@ -14,31 +16,32 @@ constexpr uint16_t baseBatteryCapacity = 200;
 constexpr uint16_t baseCapacity = 1000;
 constexpr uint8_t baseGears = 6;
 constexpr int baseSpeed = 50;
+constexpr int currentGear = 2;
 
-struct CarsTest : public ::testing::Test {
+struct HybridCarTest : public ::testing::Test {
     HybridCar testHybridCar{new PetrolEngine(basePower, baseCapacity, baseGears), new ElectricEngine(basePower, baseBatteryCapacity)};
 };
 
-//TEST_F(CarsTest, ShouldRetrunHybridCarEnginePower) {
-//  EXPECT_EQ(baseHybridPower, testHybridCar.getEnginePower());
-//}
+TEST_F(HybridCarTest, ShouldRetrunHybridCarEnginePower) {
+    EXPECT_EQ(baseHybridPower, testHybridCar.getEnginePower());
+}
 
-TEST_F(CarsTest, ShouldReturnHybridCarSpeed) {
+TEST_F(HybridCarTest, ShouldReturnHybridCarSpeed) {
     testHybridCar.setSpeed(baseSpeed);
     EXPECT_EQ(baseSpeed, testHybridCar.getSpeed());
 }
 
-TEST_F(CarsTest, ShouldChangeHybridCarVelocity) {
+TEST_F(HybridCarTest, ShouldChangeHybridCarVelocity) {
     testHybridCar.accelerate(baseSpeed);
     EXPECT_EQ(baseSpeed, testHybridCar.getSpeed());
 }
 
-TEST_F(CarsTest, ShouldNotChangeVelocityOfHybridCarWhenInputVelocityIsNegativeValue) {
+TEST_F(HybridCarTest, ShouldNotChangeVelocityOfHybridCarWhenInputVelocityIsNegativeValue) {
     const int negativeVelocity = -1;
     EXPECT_THROW(testHybridCar.accelerate(negativeVelocity), InvalidSpeed);
 }
 
-TEST_F(CarsTest, BreakingShouldSetSpeedToZeroForHybridCar) {
+TEST_F(HybridCarTest, BreakingShouldSetSpeedToZeroForHybridCar) {
     const int expectedVelocityAfterBreaking = 0;
     testHybridCar.accelerate(baseSpeed);
     testHybridCar.brake();
@@ -46,8 +49,36 @@ TEST_F(CarsTest, BreakingShouldSetSpeedToZeroForHybridCar) {
     EXPECT_EQ(resultSpeed, expectedVelocityAfterBreaking);
 }
 
-TEST_F(CarsTest, ShouldChangeEngineForHybridCarWhenVelocityIsZero) {
+TEST_F(HybridCarTest, ShouldChangePetrolEngineForHybridCarWhenVelocityIsZero) {
     testHybridCar.brake();
     EXPECT_NO_THROW(testHybridCar.changeEngine(new PetrolEngine(basePower, baseCapacity, baseGears)));
-    //EXPECT_NO_THROW(testHybridCar.changeEngine(new ElectricEngine(basePower, baseBatteryCapacity)));
+}
+
+TEST_F(HybridCarTest, ShouldChangeElectricEngineForHybridCarWhenVelocityIsZero) {
+    testHybridCar.brake();
+    EXPECT_NO_THROW(testHybridCar.changeEngine(new ElectricEngine(basePower, baseBatteryCapacity)));
+}
+
+TEST_F(HybridCarTest, ShouldChangeBothEnginesForHybridCarWhenVelocityIsZero) {
+    testHybridCar.brake();
+    EXPECT_NO_THROW(testHybridCar.changeEngine(new PetrolEngine(basePower, baseCapacity, baseGears)));
+    EXPECT_NO_THROW(testHybridCar.changeEngine(new ElectricEngine(basePower, baseBatteryCapacity)));
+}
+
+TEST_F(HybridCarTest, ShouldChangeGearInHybridCar) {
+    testHybridCar.changeGear(currentGear);
+    EXPECT_EQ(currentGear, testHybridCar.getCurrentGear());
+}
+
+TEST_F(HybridCarTest, ShouldntChangeGearFromHigherGearThanNeturalToRearGearInHybridCar) {
+    const int rearGear = -1;
+    testHybridCar.changeGear(currentGear);
+    EXPECT_THROW(testHybridCar.changeGear(rearGear), InvalidGear);
+}
+
+TEST_F(HybridCarTest, ShouldntChangeGearInHybridCarForWrongRange) {
+    const int minRange = -2;
+    const int maxRange = baseGears + 1;
+    EXPECT_THROW(testHybridCar.changeGear(minRange), InvalidGear);
+    EXPECT_THROW(testHybridCar.changeGear(maxRange), InvalidGear);
 }

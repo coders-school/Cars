@@ -34,10 +34,8 @@ uint16_t PetrolCar::getEnginePower() const {
     return petrolEngine_->getPower();
 }
 
-void PetrolCar::changeGear(int gear) try {
+void PetrolCar::changeGear(int gear) {
     petrolEngine_->setCurrentGear(gear);
-} catch (const std::logic_error& error) {
-    std::cout << error.what() << '\n';
 }
 
 void PetrolCar::changeEngine(Engine* engine) {
@@ -49,4 +47,8 @@ void PetrolCar::changeEngine(Engine* engine) {
     }
     delete petrolEngine_;
     petrolEngine_ = static_cast<PetrolEngine*>(engine);
+}
+
+int PetrolCar::getCurrentGear() const {
+    return petrolEngine_->getCurrentGear();
 }

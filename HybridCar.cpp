@@ -31,7 +31,8 @@ void HybridCar::carInfo() {
 }
 
 uint16_t HybridCar::getEnginePower() const {
-    return petrolEngine_->getPower() + electricEngine_->getPower();
+    return (petrolEngine_->getPower() + electricEngine_->getPower());
+    ;
 }
 
 void HybridCar::changeEngine(Engine* engine) {

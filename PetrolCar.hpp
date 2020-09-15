@@ -7,6 +7,7 @@ class PetrolCar : virtual public Car {
 public:
     PetrolCar(PetrolEngine* petrolEngine);
     void changeGear(int gear);
+    int getCurrentGear() const;
 
     //Override from car
     ~PetrolCar() override;

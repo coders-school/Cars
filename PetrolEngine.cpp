@@ -24,3 +24,7 @@ void PetrolEngine::setCurrentGear(int gear) {
     currentGear_ = gear;
     std::cout << "changeGear\n";
 }
+
+int PetrolEngine::getCurrentGear() const {
+    return currentGear_;
+}

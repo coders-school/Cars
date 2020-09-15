@@ -10,19 +10,23 @@ int main() {
               << "OPEL" << std::endl;
     PetrolCar opel(new PetrolEngine(120, 1800, 6));
     car = &opel;
-    car->accelerate(50);
-    car->brake();
     try {
+        car->accelerate(50);
         car->accelerate(-900);
     } catch (const std::logic_error& error) {
         std::cout << error.what() << '\n';
     }
+    car->brake();
     car->restore();
-    opel.changeGear(2);
-    opel.changeGear(-1);
-    opel.changeGear(0);
-    opel.changeGear(-1);
-    opel.changeGear(-2);
+    try {
+        opel.changeGear(2);
+        opel.changeGear(-1);
+        opel.changeGear(0);
+        opel.changeGear(-1);
+        opel.changeGear(-2);
+    } catch (const std::logic_error& error) {
+        std::cout << error.what() << '\n';
+    }
     car->carInfo();
 
     std::cout << std::endl
@@ -30,14 +34,14 @@ int main() {
     ElectricCar nissan(new ElectricEngine(130, 650));
     car = &nissan;
     car->restore();
+    car->turnLeft();
+    car->carInfo();
     car->accelerate(80);
     try {
         car->changeEngine(new PetrolEngine(150, 700, 4));
     } catch (const std::logic_error& error) {
         std::cout << error.what() << '\n';
     }
-    car->turnLeft();
-    car->carInfo();
 
     std::cout << std::endl
               << "TOYOTA" << std::endl;
@@ -49,6 +53,6 @@ int main() {
     car->changeEngine(new ElectricEngine(150, 700));
     car->changeEngine(new PetrolEngine(180, 700, 4));
     car->carInfo();
-    car->setSpeed(-100);
-    std::cout << car->getSpeed() << '\n';
+    toyota.changeGear(2);
+    std::cout << toyota.getCurrentGear();
 }

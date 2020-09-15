@@ -13,30 +13,29 @@ constexpr uint16_t baseCapacity = 1000;
 constexpr uint8_t baseGears = 6;
 constexpr int baseSpeed = 50;
 
-struct CarsTest : public ::testing::Test {
+struct ElectricCarTest : public ::testing::Test {
     ElectricCar testElectricCar{new ElectricEngine(basePower, baseBatteryCapacity)};
 };
-
-TEST_F(CarsTest, ShouldRetrunElectricCarEnginePower) {
+TEST_F(ElectricCarTest, ShouldRetrunElectricCarEnginePower) {
     EXPECT_EQ(basePower, testElectricCar.getEnginePower());
 }
 
-TEST_F(CarsTest, ShouldReturnElectricCarSpeed) {
+TEST_F(ElectricCarTest, ShouldReturnElectricCarSpeed) {
     testElectricCar.setSpeed(baseSpeed);
     EXPECT_EQ(baseSpeed, testElectricCar.getSpeed());
 }
 
-TEST_F(CarsTest, ShouldChangeElectricCarVelocity) {
+TEST_F(ElectricCarTest, ShouldChangeElectricCarVelocity) {
     testElectricCar.accelerate(baseSpeed);
     EXPECT_EQ(baseSpeed, testElectricCar.getSpeed());
 }
 
-TEST_F(CarsTest, ShouldNotChangeVelocityOfElectricCarWhenInputVelocityIsNegativeValue) {
+TEST_F(ElectricCarTest, ShouldNotChangeVelocityOfElectricCarWhenInputVelocityIsNegativeValue) {
     const int negativeVelocity = -1;
     EXPECT_THROW(testElectricCar.accelerate(negativeVelocity), InvalidSpeed);
 }
 
-TEST_F(CarsTest, BreakingShouldSetSpeedToZeroForElectricCar) {
+TEST_F(ElectricCarTest, BreakingShouldSetSpeedToZeroForElectricCar) {
     const int expectedVelocityAfterBreaking = 0;
     testElectricCar.accelerate(baseSpeed);
     testElectricCar.brake();
@@ -44,17 +43,17 @@ TEST_F(CarsTest, BreakingShouldSetSpeedToZeroForElectricCar) {
     EXPECT_EQ(resultSpeed, expectedVelocityAfterBreaking);
 }
 
-TEST_F(CarsTest, ShouldChangeEngineForElectricCarWhenVelocityIsZero) {
+TEST_F(ElectricCarTest, ShouldChangeEngineForElectricCarWhenVelocityIsZero) {
     testElectricCar.brake();
     EXPECT_NO_THROW(testElectricCar.changeEngine(new ElectricEngine(basePower, baseBatteryCapacity)));
 }
 
-TEST_F(CarsTest, ShouldNotChangeEngineForElectricCarWhenCarIsSpeeding) {
+TEST_F(ElectricCarTest, ShouldNotChangeEngineForElectricCarWhenCarIsSpeeding) {
     testElectricCar.accelerate(baseSpeed);
     EXPECT_THROW(testElectricCar.changeEngine(new ElectricEngine(basePower, baseBatteryCapacity)), InvalidEngineChange);
 }
 
-TEST_F(CarsTest, ShouldNotChangeEngineForElectricCarWhenNewEngineIsDiffernetType) {
+TEST_F(ElectricCarTest, ShouldNotChangeEngineForElectricCarWhenNewEngineIsDiffernetType) {
     testElectricCar.brake();
     EXPECT_THROW(testElectricCar.changeEngine(new PetrolEngine(basePower, baseBatteryCapacity, baseGears)), InvalidEngineChange);
 }
