@@ -30,6 +30,7 @@ void PetrolCar::changeEngine(Engine* engine) {
     if (speed_ == 0) {
         if (typeid(*engine) != typeid(PetrolEngine)) {
             std::cout << "Wrong type of engine\n";
+            delete engine;
             return;
         }
 
@@ -38,6 +39,7 @@ void PetrolCar::changeEngine(Engine* engine) {
         std::cout << "Changed petrol engine\n";
     } else {
         std::cout << "Can't change engine during driving\n";
+        delete engine;
     }
 }
 

@@ -33,6 +33,7 @@ void ElectricCar::changeEngine(Engine* engine) {
     if (speed_ == 0) {
         if (typeid(*engine) != typeid(ElectricEngine)) {
             std::cout << "Wrong type of engine\n";
+            delete engine;
             return;
         }
 
@@ -41,5 +42,6 @@ void ElectricCar::changeEngine(Engine* engine) {
         std::cout << "Changed electric engine\n";
     } else {
         std::cout << "Can't change engine during driving\n";
+        delete engine;
     }
 }
