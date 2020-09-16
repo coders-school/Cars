@@ -1,5 +1,4 @@
 #include <memory>
-#include "ElectricEngine.hpp"
 #include "ExceptionsClass.hpp"
 #include "PetrolCar.hpp"
 #include "PetrolEngine.hpp"
@@ -53,8 +52,8 @@ TEST_F(PetrolCarTest, ShouldNotChangeEngineIfCarIsNotStopped) {
 
 TEST_F(PetrolCarTest, ChangeEngineShouldSwapEngines) {
     petrolCar.accelerate(0);
-    auto newEngine = std::make_unique<PetrolEngine>(20, 20, 1); // one gear
-    auto oldEngine = petrolCar.changeEngine(std::move(newEngine)); // four gears
+    auto newEngine = std::make_unique<PetrolEngine>(20, 20, 1);     // one gear
+    auto oldEngine = petrolCar.changeEngine(std::move(newEngine));  // four gears
     // throw exception when change gear to 3 (new engine has only one gear)
     EXPECT_THROW(petrolCar.changeGear(GearBox::third), InvalidGear);
     newEngine = petrolCar.changeEngine(std::move(oldEngine));

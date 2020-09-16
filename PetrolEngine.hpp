@@ -1,6 +1,5 @@
 #pragma once
 
-
 enum class GearBox {
     rear = -1,
     neutral = 0,
@@ -12,15 +11,14 @@ enum class GearBox {
     sixth = 6
 };
 
-class PetrolEngine
-{
+class PetrolEngine {
 public:
     PetrolEngine(int power, float capacity, int gears);
     void setGear(GearBox gear);
 
 private:
     int power_;
-    float capacity_;    // in ccm
+    float capacity_;  // in ccm
     int gears_;
     GearBox currentGear_;
 };

@@ -9,9 +9,9 @@ public:
     ~ElectricCar();
     void restore() override;
     void changeGear(GearBox gear) override;
+    std::unique_ptr<ElectricEngine> changeEngine(std::unique_ptr<ElectricEngine> newEngine);
 
 private:
     void charge();
-
     std::unique_ptr<ElectricEngine> electricEngine_;
 };

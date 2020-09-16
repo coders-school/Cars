@@ -27,7 +27,6 @@ int main() {
     car->restore();
     car->accelerate(80);
 
-    //nissan.engine_ = new ElectricEngine(150, 700);  // Changing an engine during driving is not safe
     car->turnLeft();
 
     std::cout << std::endl
