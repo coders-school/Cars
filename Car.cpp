@@ -9,6 +9,7 @@ void Car::accelerate(int speed) {
 
     speed_ = speed;
 }
+
 void Car::turnLeft() {
     std::cout << __FUNCTION__ << "\n";
 }
@@ -16,5 +17,6 @@ void Car::turnRight() {
     std::cout << __FUNCTION__ << "\n";
 }
 void Car::brake() {
+    speed_ = 0;
     std::cout << __FUNCTION__ << "\n";
 }
