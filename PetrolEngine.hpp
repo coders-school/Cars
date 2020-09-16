@@ -2,7 +2,7 @@
 
 
 enum class GearBox {
-    reverse = -1,
+    rear = -1,
     neutral = 0,
     first = 1,
     second = 2,
@@ -16,7 +16,7 @@ class PetrolEngine
 {
 public:
     PetrolEngine(int power, float capacity, int gears);
-    void changeGear(GearBox gear);
+    void setGear(GearBox gear);
 
 private:
     int power_;

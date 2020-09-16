@@ -8,15 +8,15 @@ PetrolEngine::PetrolEngine(int power, float capacity, int gears)
     std::cout << __FUNCTION__ << std::endl;
 }
 
-void PetrolEngine::changeGear(GearBox gear) {
-    if (gear == GearBox::reverse && currentGear_ != GearBox::neutral) {
+void PetrolEngine::setGear(GearBox gear) {
+    if (gear == GearBox::rear && currentGear_ != GearBox::neutral) {
         throw InvalidGear("You should change gear to neutral before use read gear");
     }
 
     if (static_cast<int>(gear) > gears_) {
         throw InvalidGear("This engine has only " + std::to_string(gears_) + " gears");
     }
-    
+
     currentGear_ = gear;
     std::cout << __FUNCTION__ << std::endl;
 }

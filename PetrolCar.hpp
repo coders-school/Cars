@@ -9,7 +9,8 @@ public:
     ~PetrolCar();
     void refuel();
     void restore() override;
+    void changeGear(GearBox gear);
 
-private:
+protected:
     std::unique_ptr<PetrolEngine> petrolEngine_;
 };

@@ -8,6 +8,7 @@ public:
     ElectricCar(std::unique_ptr<ElectricEngine> engine);
     ~ElectricCar();
     void restore() override;
+    void changeGear(GearBox gear) override;
 
 private:
     void charge();

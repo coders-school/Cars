@@ -13,10 +13,11 @@ int main() {
     car->accelerate(50);
     car->brake();
     try {
-        car->accelerate(-900);
+        car->accelerate(100);
     } catch (const std::logic_error& msg) {
         std::cout << msg.what() << "\n";
     }
+    car->changeGear(GearBox::rear);
     car->restore();
 
     std::cout << std::endl
