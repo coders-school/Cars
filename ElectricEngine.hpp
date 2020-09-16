@@ -2,9 +2,13 @@
 
 class ElectricEngine {
 public:
-    ElectricEngine(int power, int batteryCapacity);
+    ElectricEngine(int power, int batteryCapacity, int currentCapacity);
+    int GetCurrentCapacity() { return currentCapacity_; }
+    int GetBatteryCapacity() { return batteryCapacity_; }
+    void SetCurrentCapacity(int capacity) { currentCapacity_ = capacity; }
 
-private:
+protected:
     int power_;
     int batteryCapacity_;  // in Ah
+    int currentCapacity_;  // in Ah
 };

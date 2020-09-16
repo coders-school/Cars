@@ -8,3 +8,6 @@ InvalidGear::InvalidGear(const std::string& msg)
 
 InvalidSpeed::InvalidSpeed(const std::string& msg)
     : std::logic_error(msg) {}
+
+InvalidCharge::InvalidCharge(const std::string& msg)
+    : std::logic_error(msg) {}

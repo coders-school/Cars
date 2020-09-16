@@ -13,6 +13,11 @@ ElectricCar::~ElectricCar() {
     std::cout << __FUNCTION__ << std::endl;
 }
 void ElectricCar::charge() {
+    if (electricEngine_->GetCurrentCapacity() >= electricEngine_->GetBatteryCapacity()) {
+        throw InvalidCharge("Electric car has 100% battery load");
+    }
+
+    electricEngine_->SetCurrentCapacity(electricEngine_->GetBatteryCapacity());
     std::cout << __FUNCTION__ << std::endl;
 }
 void ElectricCar::restore() {

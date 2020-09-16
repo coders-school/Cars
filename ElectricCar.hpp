@@ -9,6 +9,7 @@ public:
     ~ElectricCar();
     void restore() override;
     void changeGear(GearBox gear) override;
+    int GetCurrentCapacity() { return electricEngine_->GetCurrentCapacity(); }
     std::unique_ptr<ElectricEngine> changeEngine(std::unique_ptr<ElectricEngine> newEngine);
 
 private:

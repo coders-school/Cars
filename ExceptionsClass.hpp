@@ -16,3 +16,8 @@ class InvalidGear : public std::logic_error {
 public:
     InvalidGear(const std::string& msg);
 };
+
+class InvalidCharge : public std::logic_error {
+public:
+    InvalidCharge(const std::string& msg);
+};
