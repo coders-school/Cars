@@ -1,7 +1,7 @@
 #include "PetrolEngine.hpp"
 #include <iostream>
 #include <string>
-#include "InvalidGear.hpp"
+#include "ExceptionsClass.hpp"
 
 PetrolEngine::PetrolEngine(int power, float capacity, int gears)
     : power_(power), capacity_(capacity), gears_(gears), currentGear_(GearBox::neutral) {

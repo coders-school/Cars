@@ -1,7 +1,7 @@
 #include "ElectricCar.hpp"
 #include <iostream>
 #include <string>
-#include "InvalidGear.hpp"
+#include "ExceptionsClass.hpp"
 #include "PetrolCar.hpp"
 
 ElectricCar::ElectricCar(std::unique_ptr<ElectricEngine> engine)

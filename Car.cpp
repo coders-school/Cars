@@ -1,6 +1,6 @@
 #include "Car.hpp"
 #include <iostream>
-#include "InvalidSpeed.hpp"
+#include "ExceptionsClass.hpp"
 
 void Car::accelerate(int speed) {
     if (speed < 0) {

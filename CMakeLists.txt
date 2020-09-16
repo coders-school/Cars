@@ -44,8 +44,7 @@ set(SRC_LIST
     HybridCar.cpp
     PetrolCar.cpp
     PetrolEngine.cpp
-    InvalidGear.cpp
-    InvalidSpeed.cpp
+    ExceptionsClass.cpp
 )
 
 add_executable(${PROJECT_NAME}  main.cpp ${SRC_LIST})
