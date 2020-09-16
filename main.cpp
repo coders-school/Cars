@@ -1,20 +1,27 @@
-#include "PetrolCar.hpp"
+#include <iostream>
+#include <memory>
 #include "ElectricCar.hpp"
 #include "HybridCar.hpp"
-#include <iostream>
+#include "PetrolCar.hpp"
 
-int main()
-{   Car* car = nullptr;
-    std::cout << std::endl << "OPEL" << std::endl;
-    PetrolCar opel(new PetrolEngine(120, 1800, 6));
+int main() {
+    Car* car = nullptr;
+    std::cout << std::endl
+              << "OPEL" << std::endl;
+    PetrolCar opel(std::make_unique<PetrolEngine>(120, 1800, 6));
     car = &opel;
     car->accelerate(50);
     car->brake();
-    car->accelerate(-900);
+    try {
+        car->accelerate(-900);
+    } catch (const std::logic_error& msg) {
+        std::cout << msg.what() << "\n";
+    }
     car->restore();
 
-    std::cout << std::endl << "NISSAN" << std::endl;
-    ElectricCar nissan(new ElectricEngine(130, 650));
+    std::cout << std::endl
+              << "NISSAN" << std::endl;
+    ElectricCar nissan(std::make_unique<ElectricEngine>(130, 650));
     car = &nissan;
     car->restore();
     car->accelerate(80);
@@ -22,8 +29,9 @@ int main()
     //nissan.engine_ = new ElectricEngine(150, 700);  // Changing an engine during driving is not safe
     car->turnLeft();
 
-    std::cout << std::endl << "TOYOTA" << std::endl;
-    HybridCar toyota(new PetrolEngine(80, 1400, 5), new ElectricEngine(100, 540));
+    std::cout << std::endl
+              << "TOYOTA" << std::endl;
+    HybridCar toyota(std::make_unique<PetrolEngine>(80, 1400, 5), std::make_unique<ElectricEngine>(100, 540));
     car = &toyota;
     car->accelerate(100);
     car->brake();
