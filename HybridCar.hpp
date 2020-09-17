@@ -13,5 +13,5 @@ public:
   ~HybridCar();
   PetrolEngine *getPetrolEngine() const;
   void restore() override;
-  void accelerate(int a) override;
+  void accelerate(int requiredSpeed) override;
 };

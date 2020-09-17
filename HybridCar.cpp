@@ -14,11 +14,11 @@ void HybridCar::restore() {
   PetrolCar::restore();
 }
 
-void HybridCar::accelerate(int a) {
+void HybridCar::accelerate(int requiredSpeed) {
   if (PetrolCar::getPetrolEngineData() &&
       ElectricCar::getElectricEngineData()) {
-    if (a > 0) {
-      std::cout << "\nAccelerate to: " << a << "km\\h\n";
+    if (requiredSpeed > 0) {
+      std::cout << "\nAccelerate to: " << requiredSpeed << "km\\h\n";
     } else
       throw std::invalid_argument("\nInvalid speed, can't be negative\n");
   } else

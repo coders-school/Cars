@@ -11,7 +11,7 @@ public:
   std::unique_ptr<ElectricEngine> pullOutElectricEngine();
   void putInElectricEngine(std::unique_ptr<ElectricEngine> newEngine);
   void restore() override;
-  void accelerate(int a) override;
+  void accelerate(int requiredSpeed) override;
 
 private:
   std::unique_ptr<ElectricEngine> engine_;
