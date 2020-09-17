@@ -40,7 +40,7 @@ void ElectricCar::changeEngine(Engine* engine) {
         }
 
         delete electricEngine_;
-        electricEngine_ = static_cast<ElectricEngine*>(engine);
+        electricEngine_ = dynamic_cast<ElectricEngine*>(engine);
         std::cout << "Changed electric engine\n";
     }else {
         throw MovingCar("Can you switch your Engine while u driving? Respect+");

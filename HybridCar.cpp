@@ -28,7 +28,7 @@ void HybridCar::changeEngine(Engine* engine) {
             std::cout << "Changed petrol engine\n";
         } else if (typeid(*engine) == typeid(ElectricEngine)) {
             delete electricEngine_;
-            electricEngine_ = static_cast<ElectricEngine*>(engine);
+            electricEngine_ = dynamic_cast<ElectricEngine*>(engine);
             std::cout << "Changed electric engine\n";
         } else {
             throw InvalidEngine("Wrong type of Engine");

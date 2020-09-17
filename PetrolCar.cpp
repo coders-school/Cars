@@ -37,7 +37,7 @@ void PetrolCar::changeEngine(Engine* engine) {
         }
 
         delete petrolEngine_;
-        petrolEngine_ = static_cast<PetrolEngine*>(engine);
+        petrolEngine_ = dynamic_cast<PetrolEngine*>(engine);
         std::cout << "Changed petrol engine\n";
     } else {
         throw MovingCar("Can you switch your Engine while u driving? Respect+");
