@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 
 #include "ElectricEngine.hpp"
+#include "Errors.hpp"
 #include "HybridCar.hpp"
 #include "PetrolEngine.hpp"
 
@@ -33,25 +34,25 @@ TEST_F(HybridCarTest, ShouldSetSpeed100) {
     ASSERT_EQ(testHybridCar.getSpeed(), testSpeed);
 }
 
-TEST_F(HybridCarTest, ShouldNotSetSpeedAbove200) {
+TEST_F(HybridCarTest, ShouldThrowToHighSpeedErrorAndNotSetSpeedAbove200) {
     constexpr int initialSpeed = 0;
     constexpr int testSpeed = 250;
-    testHybridCar.setSpeed(testSpeed);
+    ASSERT_THROW(testHybridCar.setSpeed(testSpeed), ToHighSpeedError);
     ASSERT_EQ(testHybridCar.getSpeed(), initialSpeed);
 }
 
-TEST_F(HybridCarTest, ShouldNotSetSpeedUnderMinus20) {
+TEST_F(HybridCarTest, ShouldThrowToLoeSpeedErrorAndNotSetSpeedUnderMinus20) {
     constexpr int initialSpeed = 0;
     constexpr int testSpeed = -100;
-    testHybridCar.setSpeed(testSpeed);
+    ASSERT_THROW(testHybridCar.setSpeed(testSpeed), ToLowSpeedError);
     ASSERT_EQ(testHybridCar.getSpeed(), initialSpeed);
 }
 
-TEST_F(HybridCarTest, ShouldNotAccelerateToLowerSpeed) {
+TEST_F(HybridCarTest, ShouldThrowAccelerateToLowerSpeedErrorAndNotAccelerateToLowerSpeed) {
     constexpr int initialSpeed = 100;
     testHybridCar.setSpeed(initialSpeed);
     constexpr int testSpeed = 50;
-    testHybridCar.accelerate(testSpeed);
+    ASSERT_THROW(testHybridCar.accelerate(testSpeed), AccelerateToLoweSpeedError);
     ASSERT_EQ(testHybridCar.getSpeed(), initialSpeed);
 }
 
@@ -63,11 +64,11 @@ TEST_F(HybridCarTest, ShouldAccelerateFrom50To100) {
     ASSERT_EQ(testHybridCar.getSpeed(), testSpeed);
 }
 
-TEST_F(HybridCarTest, ShouldNotBrakeToHigherSpeed) {
+TEST_F(HybridCarTest, ShouldThrowBrakeoHigherSpeedErrorNotBrakeToHigherSpeed) {
     constexpr int initialSpeed = 100;
     testHybridCar.setSpeed(initialSpeed);
     constexpr int testSpeed = 150;
-    testHybridCar.brake(testSpeed);
+    ASSERT_THROW(testHybridCar.brake(testSpeed), BrakeToHigherSpeedError);
     ASSERT_EQ(testHybridCar.getSpeed(), initialSpeed);
 }
 
@@ -121,8 +122,8 @@ TEST_F(HybridCarTest, ShouldChangeGearTo4) {
     ASSERT_EQ(testHybridCar.getGear(), newGear);
 }
 
-TEST_F(HybridCarTest, ShouldNotChangeGearToMinus1From4) {
+TEST_F(HybridCarTest, ShouldThrowInvalidGearErrorAndNotChangeGear) {
     testHybridCar.setGear(newGear);
-    testHybridCar.setGear(rearGear);
+    ASSERT_THROW(testHybridCar.setGear(rearGear), InvalidGearError);
     ASSERT_EQ(testHybridCar.getGear(), newGear);
 }

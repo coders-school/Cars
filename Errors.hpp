@@ -17,9 +17,9 @@ public:
     AccelerateToLoweSpeedError(std::string speed);
 };
 
-class BreakeToHigherSpeedError : public std::logic_error {
+class BrakeToHigherSpeedError : public std::logic_error {
 public:
-    BreakeToHigherSpeedError(std::string speed);
+    BrakeToHigherSpeedError(std::string speed);
 };
 
 class InvalidGearError : public std::logic_error {

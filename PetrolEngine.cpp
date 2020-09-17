@@ -17,19 +17,20 @@ void PetrolEngine::changeGear(int newGear) {
     // -1 is for REAR
     // 0 is for NEUTRAL
     if (newGear < gears_ && newGear >= -1) {
-        try {
-            if (newGear == -1 && currentGear_ != 0) {
-                throw InvalidGearError{std::to_string(currentGear_)};
-            }
-
-            currentGear_ = newGear;
-            std::cout << __FUNCTION__ << std::endl;
-            std::cout << "Gear was changed to: " << currentGear_ << std::endl;
-        } catch (InvalidGearError& currentGear_) {
-            std::cerr << currentGear_.what() << "\n";
+        //try {
+        if (newGear == -1 && currentGear_ != 0) {
+            throw InvalidGearError{std::to_string(currentGear_)};
         }
+
+        currentGear_ = newGear;
+        std::cout << __FUNCTION__ << std::endl;
+        std::cout << "Gear was changed to: " << currentGear_ << std::endl;
+        // } catch (InvalidGearError& currentGear_) {
+        //     std::cerr << currentGear_.what() << "\n";
+        //}
+    } else {
+        std::cout << "Gear out of range - you cannot change gear for " << newGear << '\n';
     }
-    std::cout << "Gear out of range - you cannot change gear for " << newGear << '\n';
 }
 
 int PetrolEngine::getCurrentGear() const {

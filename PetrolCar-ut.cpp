@@ -25,25 +25,25 @@ TEST_F(PetrolCarTest, ShouldSetSpeed100) {
     ASSERT_EQ(testPetrolCar.getSpeed(), testSpeed);
 }
 
-TEST_F(PetrolCarTest, ShouldNotSetSpeedAbove200) {
+TEST_F(PetrolCarTest, ShouldThrowToHighSpeedErrorAndNotSetSpeedAbove200) {
     constexpr int initialSpeed = 0;
     constexpr int testSpeed = 250;
-    testPetrolCar.setSpeed(testSpeed);
+    ASSERT_THROW(testPetrolCar.setSpeed(testSpeed), ToHighSpeedError);
     ASSERT_EQ(testPetrolCar.getSpeed(), initialSpeed);
 }
 
-TEST_F(PetrolCarTest, ShouldNotSetSpeedUnderMinus20) {
+TEST_F(PetrolCarTest, ShouldThrowToLoeSpeedErrorAndNotSetSpeedUnderMinus20) {
     constexpr int initialSpeed = 0;
     constexpr int testSpeed = -100;
-    testPetrolCar.setSpeed(testSpeed);
+    ASSERT_THROW(testPetrolCar.setSpeed(testSpeed), ToLowSpeedError);
     ASSERT_EQ(testPetrolCar.getSpeed(), initialSpeed);
 }
 
-TEST_F(PetrolCarTest, ShouldNotAccelerateToLowerSpeed) {
+TEST_F(PetrolCarTest, ShouldThrowAccelerateToLowerSpeedErrorAndNotAccelerateToLowerSpeed) {
     constexpr int initialSpeed = 100;
     testPetrolCar.setSpeed(initialSpeed);
     constexpr int testSpeed = 50;
-    testPetrolCar.accelerate(testSpeed);
+    ASSERT_THROW(testPetrolCar.accelerate(testSpeed), AccelerateToLoweSpeedError);
     ASSERT_EQ(testPetrolCar.getSpeed(), initialSpeed);
 }
 
@@ -55,11 +55,11 @@ TEST_F(PetrolCarTest, ShouldAccelerateFrom50To100) {
     ASSERT_EQ(testPetrolCar.getSpeed(), testSpeed);
 }
 
-TEST_F(PetrolCarTest, ShouldNotBrakeToHigherSpeed) {
+TEST_F(PetrolCarTest, ShouldThrowBrakeoHigherSpeedErrorNotBrakeToHigherSpeed) {
     constexpr int initialSpeed = 100;
     testPetrolCar.setSpeed(initialSpeed);
     constexpr int testSpeed = 150;
-    testPetrolCar.brake(testSpeed);
+    ASSERT_THROW(testPetrolCar.brake(testSpeed), BrakeToHigherSpeedError);
     ASSERT_EQ(testPetrolCar.getSpeed(), initialSpeed);
 }
 
@@ -101,8 +101,8 @@ TEST_F(PetrolCarTest, ShouldChangeGearTo4) {
     ASSERT_EQ(testPetrolCar.getGear(), newGear);
 }
 
-TEST_F(PetrolCarTest, ShouldNotChangeGearToMinus1From4) {
+TEST_F(PetrolCarTest, ShouldThrowInvalidGearErrorAndNotChangeGear) {
     testPetrolCar.setGear(newGear);
-    testPetrolCar.setGear(rearGear);
+    ASSERT_THROW(testPetrolCar.setGear(rearGear), InvalidGearError);
     ASSERT_EQ(testPetrolCar.getGear(), newGear);
 }

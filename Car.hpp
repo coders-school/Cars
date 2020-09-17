@@ -21,4 +21,6 @@ public:
 
 private:
     int currentSpeed_ = 0;
+    const int maxReverseSpeed = -20;
+    const int maxSpeed = 200;
 };

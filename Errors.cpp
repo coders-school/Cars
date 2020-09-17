@@ -10,8 +10,8 @@ ToHighSpeedError ::ToHighSpeedError(std::string speed)
 AccelerateToLoweSpeedError ::AccelerateToLoweSpeedError(std::string speed)
     : std::logic_error("You cannot accelerato to lower speed than actual (" + speed + ").") {}
 
-BreakeToHigherSpeedError ::BreakeToHigherSpeedError(std::string speed)
-    : std::logic_error("You cannot breake to higher speed than actual (" + speed + ").") {}
+BrakeToHigherSpeedError ::BrakeToHigherSpeedError(std::string speed)
+    : std::logic_error("You cannot brake to higher speed than actual (" + speed + ").") {}
 
 InvalidGearError::InvalidGearError(std::string gear)
     : std::logic_error("Invalid Gear - REAR gear cannot be set from " + gear + " gear.") {}

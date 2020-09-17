@@ -19,43 +19,29 @@ void Car::turnRight() {
 
 void Car::brake(int speed) {
     std::cout << __FUNCTION__ << ": ";
-    try {
-        if (speed > currentSpeed_) {
-            throw BreakeToHigherSpeedError(std::to_string(currentSpeed_));
-        }
-        setSpeed(speed);
-    } catch (BreakeToHigherSpeedError& speed) {
-        std::cerr << speed.what() << "\n";
+    if (speed > currentSpeed_) {
+        throw BrakeToHigherSpeedError(std::to_string(currentSpeed_));
     }
+    setSpeed(speed);
 }
 
 void Car::accelerate(int speed) {
     std::cout << __FUNCTION__ << ": ";
-    try {
-        if (speed < currentSpeed_ && speed > -20) {
-            throw AccelerateToLoweSpeedError(std::to_string(currentSpeed_));
-        }
-        setSpeed(speed);
-    } catch (AccelerateToLoweSpeedError& speed) {
-        std::cerr << speed.what() << "\n";
+    if (speed < currentSpeed_ && speed > maxReverseSpeed) {
+        throw AccelerateToLoweSpeedError(std::to_string(currentSpeed_));
     }
+    setSpeed(speed);
 }
 
 void Car::setSpeed(int speed) {
-    try {
-        if (speed < -20) {
-            throw ToLowSpeedError(std::to_string(speed));
-        }
-        if (speed > 200) {
-            throw ToHighSpeedError(std::to_string(speed));
-        }
-        currentSpeed_ = speed;
-        std::cout << "Car speed = " << currentSpeed_ << std::endl;
-    } catch (ToLowSpeedError& speed) {
-        std::cerr << speed.what() << "\n";
-    } catch (ToHighSpeedError& speed) {
-        std::cerr << speed.what() << "\n";
+    if (speed < maxReverseSpeed) {
+        throw ToLowSpeedError(std::to_string(speed));
     }
+    if (speed > maxSpeed) {
+        throw ToHighSpeedError(std::to_string(speed));
+    }
+    currentSpeed_ = speed;
+    std::cout << "Car speed = " << currentSpeed_ << std::endl;
 }
 
 int Car::getSpeed() const {
