@@ -19,8 +19,9 @@ ElectricEngine *ElectricCar::getElectricEngineData() const {
 std::unique_ptr<ElectricEngine> ElectricCar::pullOutElectricEngine() {
     if(speed == 0){
       std::cout << "Electric engine is pulled out\n";
-  return std::move(engine_);
-    }else throw std::runtime_error("This car is moving, you can't pull out engine\n");
+      return std::move(engine_);
+    }
+    throw std::runtime_error("This car is moving, you can't pull out engine\n");
 }
 
 void ElectricCar::restore(){
