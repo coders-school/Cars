@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.10)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(Cars)
@@ -12,6 +12,7 @@ set(SRC_LIST
     main.cpp
     PetrolCar.cpp
     PetrolEngine.cpp
+    Car.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})
