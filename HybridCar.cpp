@@ -16,8 +16,9 @@ PetrolCar::restore();
 
 void HybridCar::accelerate(int a){
     if(PetrolCar::getPetrolEngineData() && ElectricCar::getElectricEngineData()) {
-        if(a > 0)
-        std::cout << "\nAccelerate to: " << a << "km\\h\n";
-        else throw std::invalid_argument("\nInvalid speed, can't be negative\n");
+        if(a > 0) {
+          std::cout << "\nAccelerate to: " << a << "km\\h\n";
+        }
+        throw std::invalid_argument("\nInvalid speed, can't be negative\n");
     } else std::cout << "\nThis car doesn't have an engine!\n";
 }
