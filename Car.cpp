@@ -1,5 +1,6 @@
-#include "Car.hpp"
 #include <iostream>
+
+#include "Car.hpp"
 
 Car::~Car() {
     std::cout << __FUNCTION__ << std::endl;
