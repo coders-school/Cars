@@ -12,7 +12,7 @@ set(SRC_LIST
     main.cpp
     PetrolCar.cpp
     PetrolEngine.cpp
-        Car.cpp)
+        Car.cpp GearException.cpp GearException.hpp SpeedException.cpp SpeedException.hpp)
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})
 target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Werror -Wpedantic -Wextra)

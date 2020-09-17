@@ -3,15 +3,17 @@
 #include "PetrolEngine.hpp"
 #include "Car.hpp"
 
-class PetrolCar : virtual public Car //słówko virtual sprawia że HybridCar nie będzie dziedziczył po PetrolCar
-                                    // i ElectricCar klasę Car, tylko stricte z klasy Car. (Ma tylko jedną "sztukę" tego Car
+#include <memory>
+
+class PetrolCar : virtual public Car
 {
 public:
-    PetrolCar(PetrolEngine* engine);
+    PetrolCar(std::unique_ptr<PetrolEngine> engine);
     ~PetrolCar();
     void restore() override;
+    void changeGear(int gear);
 
-    PetrolEngine* engine_;
+    std::unique_ptr<PetrolEngine> engine_;
 private:
     void refuel();
 };
