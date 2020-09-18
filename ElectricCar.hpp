@@ -5,6 +5,7 @@
 #include "Car.hpp"
 #include "ElectricEngine.hpp"
 
+
 class ElectricCar : virtual public Car {
 public:
     ElectricCar(std::unique_ptr<ElectricEngine> engine);
