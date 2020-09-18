@@ -5,14 +5,17 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(Cars)
 
+include_directories(include)
+include_directories(src)
+
 set(SRC_LIST
-    ElectricCar.cpp
-    ElectricEngine.cpp
-    HybridCar.cpp
+    src/ElectricCar.cpp
+    src/ElectricEngine.cpp
+    src/HybridCar.cpp
+    src/PetrolCar.cpp
+    src/PetrolEngine.cpp
+    src/Car.cpp
     main.cpp
-    PetrolCar.cpp
-    PetrolEngine.cpp
-    Car.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})
