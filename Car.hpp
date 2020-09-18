@@ -13,5 +13,5 @@ public:
     void accelerate(int speed);
 
 protected:
-    int speed_;
+    int speed_ = 0;
 };

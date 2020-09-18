@@ -3,7 +3,7 @@
 #include "ElectricCar.hpp"
 
 ElectricCar::ElectricCar(std::unique_ptr<ElectricEngine> engine)
-    : engine_(std::move(engine)) {
+    : engine_(std::move(engine)){
     std::cout << __FUNCTION__ << std::endl;
 }
 

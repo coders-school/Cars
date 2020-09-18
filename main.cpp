@@ -26,12 +26,19 @@ int main() {
     std::cout << std::endl
               << "NISSAN" << std::endl;
     ElectricCar nissan(std::make_unique<ElectricEngine>(130, 650));
+    nissan.changeEngine(std::make_unique<ElectricEngine>(100, 550));
     car = &nissan;
     car->restore();
     car->accelerate(80);
     car->brake();
     car->turnLeft();
-    //nissan.engine_ = new ElectricEngine(150, 700);  // now it is throwing an error
+
+    try {
+        nissan.changeEngine(std::make_unique<ElectricEngine>(200, 750));
+
+    } catch (const InvalidEngineChange& err) {
+        std::cerr << err.what() << '\n';
+    }
 
     std::cout << std::endl
               << "TOYOTA" << std::endl;
