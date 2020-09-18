@@ -2,7 +2,7 @@
 
 #include "HybridCar.hpp"
 
-HybridCar::HybridCar(std::unique_ptr<PetrolEngine>  petrolEng, std::unique_ptr<ElectricEngine> electricEng)
+HybridCar::HybridCar(std::unique_ptr<PetrolEngine> petrolEng, std::unique_ptr<ElectricEngine> electricEng)
     : PetrolCar(std::move(petrolEng)), ElectricCar(std::move(electricEng)) {
     std::cout << __FUNCTION__ << std::endl;
 }
@@ -14,4 +14,11 @@ HybridCar::~HybridCar() {
 void HybridCar::restore() {
     ElectricCar::restore();
     PetrolCar::restore();
+}
+
+void HybridCar::changeEngine(std::unique_ptr<PetrolEngine> petrolEngine,
+                             std::unique_ptr<ElectricEngine> electricEngine) {
+    
+    PetrolCar::changeEngine(std::move(petrolEngine));
+    ElectricCar::changeEngine(std::move(electricEngine));
 }

@@ -6,7 +6,7 @@ class PetrolEngine {
 public:
     PetrolEngine(int power, float capacity, int gears);
     void changeGear(int gear);
-
+    int getPower() {return power_;};
     int getCurrentGear() const;
 private:
     int power_;       // in HP
