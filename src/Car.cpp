@@ -13,8 +13,14 @@ void Car::turnLeft() {
 void Car::turnRight() {
     std::cout << __FUNCTION__ << std::endl;
 }
-void Car::brake() {
-    std::cout << __FUNCTION__ << std::endl;
+void Car::brake(int power) {
+    if(speed_ > power){
+        speed_ -= power;
+    }
+    else{
+        speed_ = 0;
+    }
+    
 }
 void Car::accelerate(int speed) {
     std::cout << __FUNCTION__ << std::endl;

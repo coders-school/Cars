@@ -12,7 +12,7 @@ int main() {
     PetrolCar opel(std::make_unique<PetrolEngine>(120, 1800, 6));
     car = &opel;
     car->accelerate(50);
-    car->brake();
+    car->brake(10);
 
     try {
         car->accelerate(-900);
@@ -30,7 +30,7 @@ int main() {
     car = &nissan;
     car->restore();
     car->accelerate(80);
-    car->brake();
+    car->brake(50);
     car->turnLeft();
 
     try {
@@ -46,6 +46,6 @@ int main() {
     car = &toyota;
 
     car->accelerate(100);
-    car->brake();
+    car->brake(20);
     car->restore();
 }

@@ -9,7 +9,7 @@ public:
     int getSpeed();
     void turnLeft();
     void turnRight();
-    void brake();
+    void brake(int power);
     void accelerate(int speed);
 
 protected:
