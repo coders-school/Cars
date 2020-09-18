@@ -18,3 +18,10 @@ void ElectricCar::charge() {
 void ElectricCar::restore() {
     charge();
 }
+
+void ElectricCar::changeEngine(std::unique_ptr<ElectricEngine> engine) {
+    if (getSpeed() != 0) {
+        throw InvalidEngineChange("Can't change engine while it is running");
+    }
+    engine_ = std::move(engine);
+}

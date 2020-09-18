@@ -18,3 +18,10 @@ void PetrolCar::refuel() {
 void PetrolCar::restore() {
     refuel();
 }
+
+void PetrolCar::changeEngine(std::unique_ptr<PetrolEngine> engine) {
+    if (getSpeed() != 0) {
+        throw InvalidEngineChange("Can't change engine while it is running");
+    }
+    engine_ = std::move(engine);
+}

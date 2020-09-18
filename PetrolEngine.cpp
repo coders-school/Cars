@@ -16,7 +16,7 @@ void PetrolEngine::changeGear(int gear) {
     }
 
     if (gear > gears_) {
-        throw InvalidGearException("You are passing invalid gear, your engine is limited to " + gears_ + " gears");
+        throw InvalidGearException("You are passing invalid gear, your engine is limited to " + std::to_string(gears_) + "gears");
     }
 
     currentGear_ = gear;

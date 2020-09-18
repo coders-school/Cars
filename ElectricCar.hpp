@@ -5,6 +5,7 @@
 #include "Car.hpp"
 #include "ElectricEngine.hpp"
 
+#include "Exceptions.hpp"
 
 class ElectricCar : virtual public Car {
 public:
@@ -12,8 +13,9 @@ public:
     ~ElectricCar();
 
     void restore() override;
+    void changeEngine(std::unique_ptr<ElectricEngine> engine);
 
-private:
+protected:
     std::unique_ptr<ElectricEngine> engine_;
     void charge();
 };
