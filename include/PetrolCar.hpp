@@ -14,8 +14,10 @@ public:
 
     void restore() override;
     void changeEngine(std::unique_ptr<PetrolEngine> engine);
+    int getPetrolEnginePower() { return engine_->getPower(); }
+    float getPetrolEngineCapacity() { return engine_->getCapacity(); }
 
 protected:
-    std::unique_ptr<PetrolEngine>  engine_;
+    std::unique_ptr<PetrolEngine> engine_;
     void refuel();
 };
