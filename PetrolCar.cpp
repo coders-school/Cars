@@ -2,7 +2,9 @@
 
 #include <iostream>
 
-PetrolCar::PetrolCar(PetrolEngine* engine) : engine_(engine) {
+#include "Exceptions.hpp"
+
+PetrolCar::PetrolCar(std::unique_ptr<PetrolEngine> engine) : engine_(std::move(engine)) {
     std::cout << __FUNCTION__ << std::endl;
 }
 
@@ -16,17 +18,31 @@ void PetrolCar::restore() {
     refuel();
 }
 
-void PetrolCar::changeEngine(Engine* engine) {
+void PetrolCar::changeEngine(std::unique_ptr<PetrolEngine> engine) {
     if (this->getSpeed() == 0) {
-        if (typeid(*engine) != typeid(PetrolEngine)) {
-            std::cout << "Wrong type of engine\n";
-            return;
-        }
-
-        delete engine_;
-        engine_ = static_cast<PetrolEngine*>(engine);
+        std::swap(engine_, engine);
         std::cout << "Changed petrol engine\n";
     } else {
-        std::cout << "Can't change engine during driving\n";
+        throw InvalidEngineChange("Can't change engine during driving\n");
     }
+}
+
+void PetrolCar::setGear(int gear) {
+    engine_->changeGear(gear);
+}
+
+int PetrolCar::getCurrentGear() {
+    return engine_->getCurrentGear();
+}
+
+int PetrolCar::getPower() {
+    return engine_->getPower();
+}
+
+float PetrolCar::getCapacity() {
+    return engine_->getCapacity();
+}
+
+int PetrolCar::getGears() {
+    return engine_->getGears();
 }

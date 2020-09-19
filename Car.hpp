@@ -8,10 +8,10 @@ public:
     void turnRight();
     void brake();
     void accelerate(int speed);
+    void decelerate(int speed);
     int getSpeed();
     virtual void restore() = 0;
-    virtual void changeEngine(Engine* engine) = 0;
 
-private:
-    int speed_;
+protected:
+    int speed_ = 0;
 };
