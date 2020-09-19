@@ -5,6 +5,8 @@
 
 #include "Exceptions.hpp"
 
+constexpr int reverse = -1;
+
 PetrolEngine::PetrolEngine(int power, float capacity, int gears) : Engine(power) {
     std::cout << __FUNCTION__ << std::endl;
     if (capacity <= 0) {
@@ -18,9 +20,9 @@ PetrolEngine::PetrolEngine(int power, float capacity, int gears) : Engine(power)
 }
 
 void PetrolEngine::changeGear(int gear) {
-    if (gear > gears_ || gear < -1) {
+    if (gear > gears_ || gear < reverse) {
         throw InvalidGear("You want to set incorrect gear.");
-    } else if (gear == -1 && currentGear_ > 0) {
+    } else if (gear == reverse && currentGear_ > 0) {
         throw InvalidGear("It is very hard to change gear to R now, please do not try it.");
     } else if (std::abs(currentGear_ - gear) > 2) {
         throw InvalidGear("Difference between gears is too big");
