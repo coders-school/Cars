@@ -23,7 +23,7 @@ void Car::brake() {
 
 void Car::accelerate(int speed) {
     std::cout << __FUNCTION__ << std::endl;
-    if (speed >= 0 && speed < 300) {
+    if (speed >= minSpeed && speed < maxSpeed) {
         speed_ = speed;
     } else {
         throw InvalidAcceleration("Your car cannot accelerate to this speed, sorry.\n");
@@ -32,7 +32,7 @@ void Car::accelerate(int speed) {
 
 void Car::decelerate(int speed) {
     std::cout << __FUNCTION__ << std::endl;
-    if (speed >= 0 && speed <= speed_) {
+    if (speed >= minSpeed && speed <= speed_) {
         speed_ -= speed;
     } else {
         throw InvalidAcceleration("Your car cannot decelerate this speed, sorry.\n");

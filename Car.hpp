@@ -1,6 +1,9 @@
 #pragma once
 #include "Engine.hpp"
 
+constexpr int minSpeed = 0;
+constexpr int maxSpeed = 300;
+
 class Car {
 public:
     ~Car();
