@@ -9,8 +9,18 @@ int main()
     PetrolCar opel(new PetrolEngine(120, 1800, 6));
     opel.accelerate(50);
     opel.brake();
+    opel.changeGear(GearBox::first);
+    opel.changeGear(GearBox::second);
+    opel.changeGear(GearBox::third);
+    opel.changeGear(GearBox::first);
     opel.accelerate(-900);
-    opel.changePetrolEngine(new PetrolEngine(150, 700, 5));  
+    opel.changePetrolEngine(new PetrolEngine(150, 700, 5));
+    opel.changeGear(GearBox::first);
+    opel.changeGear(GearBox::second);
+    opel.changeGear(GearBox::third);
+    opel.changeGear(GearBox::fourth);
+    opel.changeGear(GearBox::fifth);  
+    opel.changeGear(GearBox::sixth);
     opel.refuel();
 
     std::cout << std::endl << "NISSAN" << std::endl;

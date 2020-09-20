@@ -21,3 +21,8 @@ void PetrolCar::changePetrolEngine(PetrolEngine* engine){
     delete engine_;
     engine_ = engine;
 }
+
+void PetrolCar::changeGear(GearBox gear)
+{
+    engine_->setGear(gear);
+}

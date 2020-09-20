@@ -1,14 +1,25 @@
 #pragma once
 #include "Engine.hpp"
 
+enum class GearBox {
+    rear = -1,
+    neutral = 0,
+    first = 1,
+    second = 2,
+    third = 3,
+    fourth = 4,
+    fifth = 5,
+    sixth = 6
+};
+
 class PetrolEngine : public Engine {
 public:
     PetrolEngine(int power, float capacity, int gears);
     virtual ~PetrolEngine();
-    void changeGear(int gear);
+    void setGear(GearBox gear);
     
 protected:
     float capacity_;  // in ccm
     int gears_;
-    int currentGear_;
+    GearBox currentGear_;
 };
