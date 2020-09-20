@@ -1,11 +1,11 @@
 #pragma once
 
-class ElectricEngine
-{
+class ElectricEngine {
 public:
     ElectricEngine(int power, int batteryCapacity);
+    void getInfoEngine();
 
-    int power_;             // in HP 
-    int batteryCapacity_;   // in Ah
+private:
+    int power_;            // in HP
+    int batteryCapacity_;  // in Ah
 };
-

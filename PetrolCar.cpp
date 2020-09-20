@@ -1,16 +1,41 @@
 #include "PetrolCar.hpp"
 #include <iostream>
- 
-PetrolCar::PetrolCar(PetrolEngine* engine)
-    : engine_(engine)
-{
+
+PetrolCar::PetrolCar(std::unique_ptr<PetrolEngine> engine) : engine_(std::move(engine)) {
     std::cout << __FUNCTION__ << std::endl;
 }
 
-PetrolCar::~PetrolCar()         { std::cout << __FUNCTION__ << std::endl; }
-void PetrolCar::turnLeft()      { std::cout << __FUNCTION__ << std::endl; }
-void PetrolCar::turnRight()     { std::cout << __FUNCTION__ << std::endl; }
-void PetrolCar::brake()         { std::cout << __FUNCTION__ << std::endl; }
-void PetrolCar::accelerate(int) { std::cout << __FUNCTION__ << std::endl; }
-void PetrolCar::refuel()        { std::cout << __FUNCTION__ << std::endl; }
+PetrolCar::~PetrolCar() {
+    std::cout << __FUNCTION__ << std::endl;
+}
+void PetrolCar::refuel() {
+    std::cout << __FUNCTION__ << std::endl;
+}
 
+void PetrolCar::restore() {
+    refuel();
+}
+
+void PetrolCar::getInfoEngine() {
+    engine_->getInfoEngine();
+}
+
+int PetrolCar::getGear() {
+    return engine_->getCurrentGear();
+}
+
+void PetrolCar::showGear() {
+    engine_->showCurrentGear();
+}
+
+void PetrolCar::setGear(int gear) {
+    engine_->changeGear(gear);
+}
+
+void PetrolCar::changeEngine(std::unique_ptr<PetrolEngine> engine) {
+    if (speed_ == 0) {
+        engine_ = std::move(engine);
+    } else {
+        throw InvalidEngine("Can not change the engine during a drive !");
+    }
+}
