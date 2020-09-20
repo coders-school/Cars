@@ -12,7 +12,6 @@ int main()
     opel.changeGear(GearBox::first);
     opel.changeGear(GearBox::second);
     opel.changeGear(GearBox::third);
-    opel.changeGear(GearBox::first);
     opel.accelerate(-900);
     opel.changePetrolEngine(new PetrolEngine(150, 700, 5));
     opel.changeGear(GearBox::first);

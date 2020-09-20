@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 project(Cars)
 
 set(SRC_LIST
+    ExceptionsCars.cpp
     Car.cpp
     Engine.cpp
     ElectricCar.cpp

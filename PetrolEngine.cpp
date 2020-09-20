@@ -1,4 +1,6 @@
 #include "PetrolEngine.hpp"
+#include "ExceptionsCars.hpp"
+
 #include <iostream>
 
 PetrolEngine::PetrolEngine(int power, float capacity, int gears)
@@ -14,10 +16,10 @@ PetrolEngine::~PetrolEngine()
 void PetrolEngine::setGear(GearBox gear)
 {
     if ((int(gear) > gears_) || (gear < GearBox::rear)) {
-        std::cout << "Bad change!";
+        throw InvalidGear("Just " + std::to_string(gears_) + " gears!");
     }
     else if ((int(gear) > (int)currentGear_ + 1) || (int(gear) < (int)currentGear_ - 1)) {
-        std::cout << "How you can do that?!";
+        throw InvalidGear("Do you want to destroy your gear box?! Current gear " + std::to_string((int)currentGear_) + " and try to set " + std::to_string((int)gear));
     }
     currentGear_ = gear;
     std::cout << __FUNCTION__ << std::endl;
