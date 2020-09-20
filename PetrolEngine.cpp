@@ -9,6 +9,10 @@ PetrolEngine::PetrolEngine(int power, float capacity, int gears)
 {
     std::cout << __FUNCTION__ << std::endl;
 }
+PetrolEngine::~PetrolEngine()
+{
+    std::cout << __FUNCTION__ << std::endl;
+}
 
 void PetrolEngine::changeGear(int gear)
 {

@@ -4,6 +4,7 @@
 class PetrolEngine : public Engine {
 public:
     PetrolEngine(int power, float capacity, int gears);
+    virtual ~PetrolEngine();
     void changeGear(int gear);
 
     float capacity_;  // in ccm
