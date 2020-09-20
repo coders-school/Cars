@@ -10,4 +10,7 @@ public:
     void turnRight();
     void brake();
     void accelerate(int speed);
+
+protected:
+    unsigned int accelerate_{};
 };
