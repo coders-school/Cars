@@ -19,7 +19,7 @@ void PetrolEngine::setGear(GearBox gear)
         throw InvalidGear("Just " + std::to_string(gears_) + " gears!");
     }
     else if ((int(gear) > (int)currentGear_ + 1) || (int(gear) < (int)currentGear_ - 1)) {
-        throw InvalidGear("Do you want to destroy your gear box?! Current gear " + std::to_string((int)currentGear_) + " and try to set " + std::to_string((int)gear));
+        throw InvalidGear("Current gear " + std::to_string((int)currentGear_) + " and try to set " + std::to_string((int)gear) + "!");
     }
     currentGear_ = gear;
     std::cout << __FUNCTION__ << std::endl;

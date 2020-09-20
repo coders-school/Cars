@@ -9,17 +9,33 @@ int main()
     PetrolCar opel(new PetrolEngine(120, 1800, 6));
     opel.accelerate(50);
     opel.brake();
-    opel.changeGear(GearBox::first);
-    opel.changeGear(GearBox::second);
-    opel.changeGear(GearBox::third);
-    opel.accelerate(-900);
-    opel.changePetrolEngine(new PetrolEngine(150, 700, 5));
+    try{
     opel.changeGear(GearBox::first);
     opel.changeGear(GearBox::second);
     opel.changeGear(GearBox::third);
     opel.changeGear(GearBox::fourth);
-    opel.changeGear(GearBox::fifth);  
     opel.changeGear(GearBox::sixth);
+    } catch (const std::logic_error& err){
+        std::cout << err.what() << "\n";
+    }
+    try{
+    opel.changeGear(GearBox::second);
+    } catch (const std::logic_error& err){
+        std::cout << err.what() << "\n";
+    }
+    
+    opel.accelerate(-900);
+    opel.changePetrolEngine(new PetrolEngine(150, 700, 5));
+    try{
+    opel.changeGear(GearBox::first);
+    opel.changeGear(GearBox::second);
+    opel.changeGear(GearBox::third);
+    opel.changeGear(GearBox::fourth);
+    opel.changeGear(GearBox::fifth);
+    opel.changeGear(GearBox::sixth);
+    } catch (const std::logic_error& err){
+        std::cout << err.what() << "\n";
+    }
     opel.refuel();
 
     std::cout << std::endl << "NISSAN" << std::endl;
