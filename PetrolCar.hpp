@@ -8,6 +8,7 @@ public:
     PetrolCar(PetrolEngine* engine);
     virtual ~PetrolCar();
     void refuel();
-
+    
+protected:
     PetrolEngine* engine_;
 };

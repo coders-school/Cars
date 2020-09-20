@@ -9,7 +9,8 @@ public:
     ElectricCar(ElectricEngine* engine);
     virtual ~ElectricCar();
     void charge();
-
+    
+protected:
     ElectricEngine* engine_;
 };
 
