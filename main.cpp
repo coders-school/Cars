@@ -68,4 +68,6 @@ int main()
     car->brake();
     toyota.charge();
     toyota.refuel();
+
+    return 0;
 }
