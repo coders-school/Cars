@@ -16,3 +16,8 @@ void PetrolCar::refuel()
 {
     std::cout << __FUNCTION__ << std::endl;
 }
+
+void PetrolCar::changePetrolEngine(PetrolEngine* engine){
+    delete engine_;
+    engine_ = engine;
+}
