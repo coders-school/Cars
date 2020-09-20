@@ -38,3 +38,20 @@ TEST_F(PetrolCarTest, ShouldThrowInvalidGearWhenTryToChangeGearWhichNotExists)
     EXPECT_THROW(petrolCar2.changeGear(GearBox::sixth), InvalidGear);
 }
 
+TEST_F(PetrolCarTest, ShouldNotThrowInvalidAccelerateWhenTryToAccelerateWithPositiveNumber)
+{
+    EXPECT_NO_THROW(petrolCar.accelerate(50));
+    EXPECT_NO_THROW(petrolCar.accelerate(40));
+    EXPECT_NO_THROW(petrolCar.accelerate(900));
+    EXPECT_NO_THROW(petrolCar.accelerate(4.4));
+    EXPECT_NO_THROW(petrolCar.accelerate(444.9));
+}
+
+TEST_F(PetrolCarTest, ShouldThrowInvalidAccelerateWhenTryToAccelerateWithNegativeNumber)
+{
+    EXPECT_THROW(petrolCar.accelerate(-500), InvalidAccelerate);
+    EXPECT_THROW(petrolCar.accelerate(-115.10), InvalidAccelerate);
+    EXPECT_THROW(petrolCar2.accelerate(-54.0), InvalidAccelerate);
+    EXPECT_THROW(petrolCar2.accelerate(-5.40), InvalidAccelerate);
+}
+
