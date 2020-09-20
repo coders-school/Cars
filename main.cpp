@@ -4,11 +4,14 @@
 #include <iostream>
 
 int main()
-{
+{   
+    Car* car;
     std::cout << std::endl << "OPEL" << std::endl;
     PetrolCar opel(new PetrolEngine(120, 1800, 6));
-    opel.accelerate(50);
-    opel.brake();
+    car = &opel;
+
+    car->accelerate(50);
+    car->brake();
     try{
     opel.changeGear(GearBox::first);
     opel.changeGear(GearBox::second);
@@ -24,7 +27,7 @@ int main()
         std::cout << err.what() << "\n";
     }
     
-    opel.accelerate(-900);
+    car->accelerate(-900);
     opel.changePetrolEngine(new PetrolEngine(150, 700, 5));
     try{
     opel.changeGear(GearBox::first);
@@ -40,17 +43,19 @@ int main()
 
     std::cout << std::endl << "NISSAN" << std::endl;
     ElectricCar nissan(new ElectricEngine(130, 650));
+    car = &nissan;
     nissan.charge();
-    nissan.accelerate(80);
+    car->accelerate(80);
     nissan.changeElectricEngine(new ElectricEngine(150, 700)); 
-    nissan.turnLeft();
+    car->turnLeft();
 
     std::cout << std::endl << "TOYOTA" << std::endl;
     HybridCar toyota(new PetrolEngine(80, 1400, 5), new ElectricEngine(100, 540));
-    toyota.accelerate(100);
+    car = &toyota;
+    car->accelerate(100);
     toyota.changeElectricEngine(new ElectricEngine(150, 700)); 
     toyota.changePetrolEngine(new PetrolEngine(150, 700, 3)); 
-    toyota.brake();
+    car->brake();
     toyota.charge();
     toyota.refuel();
 }
