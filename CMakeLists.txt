@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.10)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -27,32 +27,32 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
   include_directories("${gtest_SOURCE_DIR}/include")
 endif()
 
+enable_testing()
+
 project(Cars)
 
-set(TESTS
+set(SRC_LIST
+    Car.cpp
+    Engine.cpp
+    ElectricCar.cpp
+    ElectricEngine.cpp
+    PetrolCar.cpp
+    PetrolEngine.cpp
+    HybridCar.cpp
+    ExceptionsCars.cpp
+)
+
+set(TEST_LIST
     ElectricCar-ut.cpp
     PetrolCar-ut.cpp
     HybridCar-ut.cpp
 )
 
-set(SRC_LIST
-    ExceptionsCars.cpp
-    Car.cpp
-    Engine.cpp
-    ElectricCar.cpp
-    ElectricEngine.cpp
-    HybridCar.cpp
-    PetrolCar.cpp
-    PetrolEngine.cpp
-)
-
 add_executable(${PROJECT_NAME} main.cpp ${SRC_LIST})
-add_executable(${PROJECT_NAME}-ut ${TESTS} ${SRC_LIST})
+add_executable(${PROJECT_NAME}-ut ${TEST_LIST} ${SRC_LIST})
 
 target_link_libraries(${PROJECT_NAME}-ut gtest_main)
-add_test(NAME ${PROJECT_NAME}-test COMMAND ${PROJECT_NAME}-ut)
+add_test(NAME ${PROJECT_NAME}_test COMMAND ${PROJECT_NAME}-ut)
 
 target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Werror -Wpedantic -Wextra)
 target_compile_options(${PROJECT_NAME}-ut PUBLIC -Wall -Werror -Wpedantic -Wextra)
-
-enable_testing()

@@ -1,5 +1,8 @@
-#include "ExceptionsCars.hpp"
+#include "gtest/gtest.h"
+
 #include "HybridCar.hpp"
 #include "ElectricEngine.hpp"
-#include "PetrolEngine.hpp"
-#include "gtest/gtest.h"
+
+struct HybridCarTest : ::testing::Test {
+    HybridCar hybridCar = HybridCar(new PetrolEngine(120, 1800, 6), new ElectricEngine(120, 1800));
+};
