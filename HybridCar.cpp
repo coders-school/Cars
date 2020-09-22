@@ -10,3 +10,10 @@ HybridCar::HybridCar(std::unique_ptr<PetrolEngine> petrolEng, std::unique_ptr<El
 
 HybridCar::~HybridCar()       { std::cout << __FUNCTION__ << std::endl; }
 void HybridCar::restore()     { ElectricCar::restore(); PetrolCar::restore(); }
+
+void HybridCar::changeEngine(std::unique_ptr<PetrolEngine> petrolEngine){
+    PetrolCar::changeEngine(std::move(petrolEngine));
+}
+void HybridCar::changeEngine(std::unique_ptr<ElectricEngine> electricEngine){
+    ElectricCar::changeEngine(std::move(electricEngine));
+}

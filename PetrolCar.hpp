@@ -12,6 +12,7 @@ public:
     ~PetrolCar();
     void restore() override;
     void changeGear(int gear);
+    void changeEngine(std::unique_ptr<PetrolEngine> engine);
 
     std::unique_ptr<PetrolEngine> engine_;
 private:

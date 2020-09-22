@@ -17,11 +17,11 @@ PetrolEngine::PetrolEngine(int power, float capacity, int gears)
 
 void PetrolEngine::changeGear(int gear)
 {
-    if(currentGear_ < REAR_GEAR || currentGear_ > gears_){
+    if(gear < REAR_GEAR || gear > gears_){
         throw GearException("This car don't have " + std::to_string(gear) + " gear.\n");
     }
-    if(gear == REAR_GEAR && currentGear_ != NEUTRAL_GEAR){
-        throw GearException("Can't change gear while current is not neutral.\n");
+    if(abs(gear - currentGear_) > 2) {
+        throw GearException("Can't change gear by more than two.\n");
     }
     currentGear_ = gear;
     std::cout << __FUNCTION__ << std::endl;
