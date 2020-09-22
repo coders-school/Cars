@@ -9,6 +9,9 @@ public:
     void brake();
     void accelerate(int speed);
     virtual void restore() = 0;
+
+    int getCurrentSpeed() const { return currentSpeed_; }
+    int getMaxSpeed() const { return maxSpeed_; }
 private:
     int maxSpeed_;
     int currentSpeed_;

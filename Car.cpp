@@ -19,5 +19,6 @@ void Car::accelerate(int speed) {
     if(speed < 0){
         throw SpeedException("Speed can't be a negative number\n");
     }
+    currentSpeed_ = speed;
     std::cout << __FUNCTION__ << std::endl;
 }

@@ -1,4 +1,5 @@
 #include "ElectricCar.hpp"
+#include "SpeedException.hpp"
 #include <iostream>
 
 ElectricCar::ElectricCar(std::unique_ptr<ElectricEngine> engine)
@@ -12,5 +13,8 @@ void ElectricCar::charge()        { std::cout << __FUNCTION__ << std::endl; }
 void ElectricCar::restore()       { charge(); }
 
 void ElectricCar::changeEngine(std::unique_ptr<ElectricEngine> engine) {
+    if(getCurrentSpeed() > 0){
+        throw SpeedException("Cannot change engine while driving.\n");
+    }
     engine_ = std::move(engine);
 }

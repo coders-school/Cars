@@ -26,16 +26,23 @@ add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/googletest-src
 if (CMAKE_VERSION VERSION_LESS 2.8.11)
   include_directories("${gtest_SOURCE_DIR}/include")
 endif()
+####################################################################
 
 enable_testing()
-
 project(Cars)
+
+add_test(NAME ${PROJECT_NAME}-tests COMMAND ${PROJECT_NAME}-GTest)
+
+set(TEST_LIST
+   tests/ElectricCar.gt.cpp
+   tests/PetrolCar.gt.cpp
+   tests/HybridCar.gt.cpp
+)
 
 set(SRC_LIST
     ElectricCar.cpp
     ElectricEngine.cpp
     HybridCar.cpp
-    main.cpp
     PetrolCar.cpp
     PetrolEngine.cpp
     Car.cpp
@@ -43,10 +50,10 @@ set(SRC_LIST
     SpeedException.cpp 
 )
 
-add_executable(${PROJECT_NAME} ${SRC_LIST})
-add_executable(${PROJECT_NAME}-GTest sorting.gt.cpp ${SRC_LIST})
+add_executable(${PROJECT_NAME} main.cpp ${SRC_LIST})
+add_executable(${PROJECT_NAME}-GTest ${TEST_LIST} ${SRC_LIST})
 
 target_link_libraries(${PROJECT_NAME}-GTest gtest_main)
-add_test(NAME ${PROJECT_NAME}-test COMMAND ${PROJECT_NAME}-GTest)
-
+target_include_directories(${PROJECT_NAME}-GTest PUBLIC ${CMAKE_SOURCE_DIR})
 target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Werror -Wpedantic -Wextra)
+target_compile_options(${PROJECT_NAME}-GTest PUBLIC -Wall -Werror -Wpedantic -Wextra)
