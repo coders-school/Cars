@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "PetrolCar.hpp"
- 
+
 PetrolCar::PetrolCar(PetrolEngine* engine)
     : engine_(engine)
 {
@@ -49,19 +49,18 @@ void PetrolCar::restore() {
 
 void PetrolCar::changeGear(int gear) {
     std::cout << __FUNCTION__;
-    if (gear >= -1 && gear <= engine_->getGears()) {
-        // -1 is for REAR
-        if (getSpeed() > 0 && gear == -1) {
+    if (gear >= REVERSE && gear <= engine_->getGears()) {
+        if (getSpeed() > 0 && gear == REVERSE) {
             std::cout << " : first stop to reverse" << std::endl;
         } else {
             engine_->changeGear(gear);
-            if (gear == -1) {
+            if (gear == REVERSE) {
                 std::cout << " : reverse" << std::endl;    
             } else {
                 std::cout << " : " << gear << std::endl;
             }
         }        
     } else {
-        std::cout << " : invalid gear" << std::endl;
+        throw std::invalid_argument("invalid gear");
     }
 }
