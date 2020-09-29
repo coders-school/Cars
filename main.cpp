@@ -9,7 +9,11 @@ void testPetrolCar(Car* car) {
     
     PetrolCar petrol(new PetrolEngine(120, 1800, 5));
     petrol.accelerateTo(50);
-    petrol.accelerateTo(-900);
+    try {
+        petrol.accelerateTo(-900);
+    } catch (const std::invalid_argument& ia) {
+        std::cerr << " : " << ia.what() << std::endl;
+    }
     petrol.brake();
     petrol.setEngine(new PetrolEngine(160, 2000, 6));
     petrol.restore();
@@ -17,9 +21,14 @@ void testPetrolCar(Car* car) {
     car = &petrol;
     car->accelerateTo(100);
     car->changeGear(4);
-    car->changeGear(-1);
+    car->changeGear(REVERSE);
     car->brake();
-    car->changeGear(-1);
+    car->changeGear(REVERSE);
+    try {
+        car->changeGear(9);
+    } catch (const std::invalid_argument& ia) {
+        std::cerr << " : " << ia.what() << std::endl;
+    }
     car->restore();
 }
 
@@ -33,7 +42,7 @@ void testElectricCar(Car* car) {
     electric.turnLeft();
 
     car = &electric;
-    car->changeGear(-1);
+    car->changeGear(REVERSE);
     car->restore();
 }
 
