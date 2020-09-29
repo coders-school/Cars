@@ -3,6 +3,8 @@
 #include "Car.hpp"
 #include "PetrolEngine.hpp"
 
+constexpr int REVERSE = -1;
+
 class PetrolCar : public virtual Car
 {
 public:
