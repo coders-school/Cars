@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdexcept>
 
 #include "Car.hpp"
 
@@ -30,7 +31,7 @@ void Car::accelerateTo(int speed) {
         speed_ = speed;
         std::cout << " : " << speed << std::endl;
     } else {
-        std::cout << " : speed must be positive" << std::endl;
+        throw std::invalid_argument("speed must be positive");
     }
 }
 
