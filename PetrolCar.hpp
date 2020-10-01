@@ -1,14 +1,16 @@
+#include "ICar.hpp"
 #include "PetrolEngine.hpp"
 
-class PetrolCar
+class PetrolCar : public ICar
 {
 public:
     PetrolCar(PetrolEngine* engine);
     ~PetrolCar();
-    void turnLeft();
-    void turnRight();
-    void brake();
-    void accelerate(int speed);
+
+    void turnLeft() const override;
+    void turnRight() const override;
+    void brake() const override;
+    void accelerate(int speed) const override;
     void refuel();
 
     PetrolEngine* engine_;
