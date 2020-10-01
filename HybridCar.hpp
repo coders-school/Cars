@@ -1,15 +1,18 @@
+#pragma once
+
+#include "ICar.hpp"
 #include "ElectricEngine.hpp"
 #include "PetrolEngine.hpp"
 
-class HybridCar
+class HybridCar :  public ICar
 {
 public:
     HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng);
     ~HybridCar();
-    void turnLeft();
-    void turnRight();
-    void brake();
-    void accelerate(int speed);
+    void turnLeft() const override;
+    void turnRight() const override;
+    void brake() const override;
+    void accelerate(int speed) const override;
     void charge();
     void refuel();
 

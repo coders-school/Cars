@@ -18,3 +18,10 @@ void PetrolEngine::changeGear(int gear)
     currentGear_ = gear;
     std::cout << __FUNCTION__ << std::endl;
 }
+
+PetrolEngine::~PetrolEngine() { std::cout << __FUNCTION__ << std::endl; }
+
+void PetrolEngine::start() const { std::cout << __FUNCTION__ << std::endl; };
+void PetrolEngine::stop() const { std::cout << __FUNCTION__ << std::endl; };
+
+
