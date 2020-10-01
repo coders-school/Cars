@@ -1,7 +1,7 @@
 #include "ElectricEngine.hpp"
 #include <iostream>
 
-ElectricEngine::ElectricEngine(int power, int batteryCapacity)
+ElectricEngine::ElectricEngine(Power power, BatteryCapacity batteryCapacity)
     : power_(power)
     , batteryCapacity_(batteryCapacity)
 {

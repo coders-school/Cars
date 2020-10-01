@@ -1,15 +1,17 @@
 #pragma once
+
+#include "EngineParameters.hpp"
 #include "IEngine.hpp"
 
-class ElectricEngine : IEngine
-{
+class ElectricEngine : IEngine {
+
 public:
-    ElectricEngine(int power, int batteryCapacity);
-    ~ElectricEngine();
-    void start() const override;
-    void stop() const override;
+  ElectricEngine(Power power, BatteryCapacity batteryCapacity);
+  ~ElectricEngine();
+  void start() const override;
+  void stop() const override;
 
-    int power_;             // in HP 
-    int batteryCapacity_;   // in Ah
+private:
+  Power power_;                     // in HP
+  BatteryCapacity batteryCapacity_; // in Ah
 };
-
