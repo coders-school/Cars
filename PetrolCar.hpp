@@ -13,6 +13,9 @@ public:
     void brake() const override;
     void accelerate(Speed speed) const override;
     void refuel();
+    void start_engine() const override;
+    void stop_engine() const override;
+    void fill() const override;
 
 private:
     std::unique_ptr<PetrolEngine> engine_ = nullptr;

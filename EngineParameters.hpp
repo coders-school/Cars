@@ -1,13 +1,12 @@
 #pragma once
 
-struct Speed{
-    explicit Speed(unsigned int speed) : speed_(speed){}
-    unsigned int speed_;
+struct Speed {
+  explicit Speed(unsigned int speed) : speed_(speed) {}
+  unsigned int speed_;
 };
 
 struct BatteryCapacity {
   int batteryCapacity_ = 0; // unsigned int ? in Ah
-
 };
 
 struct Power {

@@ -12,4 +12,14 @@ void ElectricCar::brake() const { std::cout << __FUNCTION__ << ": " <<  __FILE__
 void ElectricCar::accelerate(Speed speed) const {
   std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl;
 }
+void ElectricCar::start_engine() const {
+  std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl;
+    engine_->start();
+}
+void ElectricCar::stop_engine() const {
+  std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl;
+    engine_->stop();
+}
+
 void ElectricCar::charge()        { std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl; }
+void ElectricCar::fill()    const    { std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl; }

@@ -13,5 +13,21 @@ void HybridCar::brake() const { std::cout << __FUNCTION__ << ": " <<  __FILE__  
 void HybridCar::accelerate(Speed speed) const {
   std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl;
 }
-void HybridCar::charge() { std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl; }
-void HybridCar::refuel() { std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl; }
+void HybridCar::charge() const { std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl; }
+void HybridCar::refuel() const { std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl; }
+void HybridCar::fill() const { 
+    charge();
+    refuel();
+    std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl; }
+
+void HybridCar::start_engine() const {
+  std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl;
+    petrolEngine_->start();
+    electricEngine_->start();
+}
+void HybridCar::stop_engine() const {
+  std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl;
+    petrolEngine_->stop();
+    electricEngine_->stop();
+}
+

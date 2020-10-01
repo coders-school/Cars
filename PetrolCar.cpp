@@ -13,4 +13,14 @@ void PetrolCar::turnRight() const    { std::cout << __FUNCTION__ << ": " <<  __F
 void PetrolCar::brake()     const   { std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl; }
 void PetrolCar::accelerate(Speed speed) const { std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl; }
 void PetrolCar::refuel()        { std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl; }
+void PetrolCar::fill() const       { std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl; }
+
+void PetrolCar::start_engine() const {
+  std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl;
+    engine_->start();
+}
+void PetrolCar::stop_engine() const {
+  std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl;
+    engine_->stop();
+}
 

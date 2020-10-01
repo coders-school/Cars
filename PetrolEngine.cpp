@@ -9,7 +9,7 @@ PetrolEngine::PetrolEngine(Power power, Capacity capacity, Gears gears)
     , gears_(gears)
     , currentGear_(0)
 {
-    std::cout << __FUNCTION__ << std::endl;
+    std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl; 
 }
 
 void PetrolEngine::changeGear(int gear)
@@ -17,8 +17,9 @@ void PetrolEngine::changeGear(int gear)
     // TODO: Add checking if gear is between -1 and gears_
     // -1 is for REAR
     // 0 is for NEUTRAL
-    std::cout << __FUNCTION__ << std::endl;
-    if(abs(gear - currentGear_) != 1 && gear >= -1 and gear <= gears_.gears_) 
+
+    std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl; 
+    if(abs(gear - currentGear_) != 1 or gear < -1  or gear > gears_.gears_) 
     {
         throw InvalidGear("Zgrzyyyyt!");
     }
@@ -27,7 +28,9 @@ void PetrolEngine::changeGear(int gear)
 
 PetrolEngine::~PetrolEngine() { std::cout << __FUNCTION__ << std::endl; }
 
-void PetrolEngine::start() const { std::cout << __FUNCTION__ << std::endl; };
-void PetrolEngine::stop() const { std::cout << __FUNCTION__ << std::endl; };
+void PetrolEngine::start() const {std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl; 
+};
+void PetrolEngine::stop() const {std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl; 
+};
 
 
