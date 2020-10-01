@@ -3,6 +3,8 @@
 #include "Car.hpp"
 
 constexpr int topSpeed = 200;
+constexpr int lowestSpeed = -15;
+constexpr int highestSpeed = 100;
 
 Car::~Car() {
     std::cout << __FUNCTION__ << std::endl;
@@ -25,7 +27,8 @@ void Car::brake(int power) {
 void Car::accelerate(int speed) {
     std::cout << __FUNCTION__ << std::endl;
 
-    auto isValidAccelerate = [](const auto& speed) { return speed >= -15 && speed <= 100; };
+    auto isValidAccelerate = [](const auto& speed) { return speed >= lowestSpeed && 
+                                                            speed <= highestSpeed; };
 
     if (!isValidAccelerate(speed)) {
         throw InvalidAccelerationException("Acceleration value is invalid");
