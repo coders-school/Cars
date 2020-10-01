@@ -10,7 +10,7 @@ HybridCar::~HybridCar() { std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": 
 void HybridCar::turnLeft() const { std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl; }
 void HybridCar::turnRight() const { std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl; }
 void HybridCar::brake() const { std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl; }
-void HybridCar::accelerate(unsigned int) const {
+void HybridCar::accelerate(Speed speed) const {
   std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl;
 }
 void HybridCar::charge() { std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl; }

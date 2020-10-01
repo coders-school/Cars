@@ -20,9 +20,8 @@ TEST_F(CarTestSuite, drivePetrolCar)
     EXPECT_CALL(engineMock, stop());
 
     PetrolCar opel(std::make_unique<PetrolEngine>(Power{120}, Capacity{1800}, Gears{6}));
-    opel.accelerate(50);
+    opel.accelerate(Speed{50});
     opel.brake();
-    opel.accelerate(-900);
     opel.refuel();
 
 }

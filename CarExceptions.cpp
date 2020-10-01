@@ -10,3 +10,4 @@ const char* InvalidGear::what() const throw()
     o << logic_error::what();
     return o.str().c_str();
 }
+

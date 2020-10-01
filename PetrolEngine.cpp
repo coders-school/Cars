@@ -1,5 +1,7 @@
 #include "PetrolEngine.hpp"
+#include "CarExceptions.hpp"
 #include <iostream>
+#include <stdlib.h> 
 
 PetrolEngine::PetrolEngine(Power power, Capacity capacity, Gears gears)
     : power_(power)
@@ -15,8 +17,12 @@ void PetrolEngine::changeGear(int gear)
     // TODO: Add checking if gear is between -1 and gears_
     // -1 is for REAR
     // 0 is for NEUTRAL
-    currentGear_ = gear;
     std::cout << __FUNCTION__ << std::endl;
+    if(abs(gear - currentGear_) != 1 && gear >= -1 and gear <= gears_.gears_) 
+    {
+        throw InvalidGear("Zgrzyyyyt!");
+    }
+    currentGear_ = gear;
 }
 
 PetrolEngine::~PetrolEngine() { std::cout << __FUNCTION__ << std::endl; }

@@ -12,11 +12,13 @@ list(APPEND CARS_SOURCES
     HybridCar.cpp
     PetrolCar.cpp
     PetrolEngine.cpp
+    CarExceptions.cpp
     )
 
 add_library(${PROJECT_NAME}-lib STATIC ${CARS_SOURCES})
 
-add_compile_options(-Wall -Wextra -pedantic -Wconversion -Werror)
+#add_compile_options(-Wall -Wextra -pedantic -Wconversion -Werror -Werror=sign-conversion )
+add_compile_options(-Wall -Wextra -pedantic -Wconversion -Werror )
 
 # Download and unpack googletest at configure time
 configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)

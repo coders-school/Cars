@@ -9,7 +9,7 @@ ElectricCar::~ElectricCar() { std::cout << __FUNCTION__ << ": " <<  __FILE__  <<
 void ElectricCar::turnLeft() const { std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl; }
 void ElectricCar::turnRight() const { std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl; }
 void ElectricCar::brake() const { std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl; }
-void ElectricCar::accelerate(unsigned int) const {
+void ElectricCar::accelerate(Speed speed) const {
   std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl;
 }
 void ElectricCar::charge()        { std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl; }
