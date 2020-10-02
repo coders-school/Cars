@@ -8,27 +8,17 @@
 #include "PetrolEngine.hpp"
 #include "CarExceptions.hpp"
 
-struct CarTestSuite : public ::testing::Test
+
+TEST(CarTestSuite, stopEngineShouldCallStopOEngine)
 {
-    EngineMock engineMock;
-};
-
-TEST_F(CarTestSuite, drivePetrolCar)
-{
-//how to tst with unique ptr?
-    EXPECT_CALL(engineMock, start());
-    EXPECT_CALL(engineMock, stop());
-
-    PetrolCar opel(std::make_unique<EngineMock>(Power{120}, Capacity{1800}, Gears{6}));
-    opel.accelerate(Speed{50});
-    opel.brake();
-    opel.refuel();
-    opel.start_engine();
-    opel.stop_engine();
-
-
+    std::unique_ptr<EngineMock> engineMock_ptr(new EngineMock());
+    EngineMock* engineMock_rawPtr = engineMock_ptr.get();
+    PetrolCar m_sut(engineMock_ptr);
+    EXPECT_CALL(*engineMock_rawPtr, stop());
+    m_sut.stop_engine();
 }
-TEST_F(CarTestSuite, WrongGear)
+
+TEST(CarTestSuite, WrongGear)
 {
     PetrolEngine engine(Power{120}, Capacity{1800}, Gears{6});
     EXPECT_THROW(engine.changeGear(10), InvalidGear);

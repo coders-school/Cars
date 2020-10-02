@@ -7,11 +7,12 @@
 int main()
 {
     std::cout << std::endl << "OPEL" << std::endl;
+
     PetrolCar opel(std::make_unique<PetrolEngine>(Power{120}, Capacity{1800}, Gears{6}));
     opel.accelerate(Speed{50});
     opel.brake();
 
-    //opel.accelerate(Speed{-900}); //now will not compile
+    //opel.accelerate(Speed{-900}); //will not compile
     opel.refuel();
 
     std::cout << std::endl << "NISSAN" << std::endl;
