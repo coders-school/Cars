@@ -8,7 +8,7 @@
 class HybridCar :  public ICar
 {
 public:
-    HybridCar(std::unique_ptr<PetrolEngine> petrolEng, std::unique_ptr<ElectricEngine> electricEng);
+    HybridCar(std::unique_ptr<IEngine> petrolEng, std::unique_ptr<IEngine> electricEng);
     ~HybridCar();
     void turnLeft() const override;
     void turnRight() const override;
@@ -24,7 +24,7 @@ public:
 
 
 private:
-    std::unique_ptr<PetrolEngine> petrolEngine_ = nullptr;
-    std::unique_ptr<ElectricEngine> electricEngine_ = nullptr;
+    std::unique_ptr<IEngine> petrolEngine_ = nullptr;
+    std::unique_ptr<IEngine> electricEngine_ = nullptr;
 };
 

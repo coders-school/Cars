@@ -5,7 +5,7 @@
 class PetrolCar : public ICar
 {
 public:
-    PetrolCar(std::unique_ptr<PetrolEngine> engine);
+    PetrolCar(std::unique_ptr<IEngine> engine);
     ~PetrolCar();
 
     void turnLeft() const override;
@@ -18,6 +18,6 @@ public:
     void fill() const override;
 
 private:
-    std::unique_ptr<PetrolEngine> engine_ = nullptr;
+    std::unique_ptr<IEngine> engine_ = nullptr;
 };
 

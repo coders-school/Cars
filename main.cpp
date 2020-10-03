@@ -26,8 +26,8 @@ int main()
 
     std::cout << std::endl << "TOYOTA" << std::endl;
     HybridCar toyota(std::make_unique<PetrolEngine>(Power{80}, Capacity{1400}, Gears{5}), std::make_unique<ElectricEngine>(Power{100}, BatteryCapacity{540}));
-
-    //how to change gear in toyota now ;) ... wee need gearbox..
+//
+//    //how to change gear in toyota now ;) ... wee need gearbox..
     toyota.accelerate(Speed{100});
     toyota.brake();
     toyota.charge();

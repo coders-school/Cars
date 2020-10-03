@@ -1,7 +1,7 @@
 #include "ElectricCar.hpp"
 #include <iostream>
 
-ElectricCar::ElectricCar(std::unique_ptr<ElectricEngine> engine) : engine_(std::move(engine)) {
+ElectricCar::ElectricCar(std::unique_ptr<IEngine> engine) : engine_(std::move(engine)) {
   std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl;
 }
 

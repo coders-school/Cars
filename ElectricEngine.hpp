@@ -3,7 +3,7 @@
 #include "EngineParameters.hpp"
 #include "IEngine.hpp"
 
-class ElectricEngine : IEngine {
+class ElectricEngine : public IEngine {
 
 public:
   ElectricEngine(Power power, BatteryCapacity batteryCapacity);

@@ -1,7 +1,7 @@
 #include "PetrolCar.hpp"
 #include <iostream>
  
-PetrolCar::PetrolCar(std::unique_ptr<PetrolEngine> engine)
+PetrolCar::PetrolCar(std::unique_ptr<IEngine> engine)
     : engine_(std::move(engine))
 {
     std::cout << __FUNCTION__ << ": " <<  __FILE__  << ": " <<  __LINE__  << std::endl;

@@ -7,7 +7,7 @@
 class ElectricCar : public ICar
 {
 public:
-    ElectricCar(std::unique_ptr<ElectricEngine> engine);
+    ElectricCar(std::unique_ptr<IEngine> engine);
     ~ElectricCar();
     void turnLeft() const override;
     void turnRight() const override;
@@ -20,7 +20,7 @@ public:
 
 
 private:
-    std::unique_ptr<ElectricEngine> engine_ = nullptr;
+    std::unique_ptr<IEngine> engine_ = nullptr;
 };
 
 
