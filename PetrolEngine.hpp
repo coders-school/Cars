@@ -12,9 +12,10 @@ public:
   void start() const override;
   void stop() const override;
 
+  int currentGear_;
+
 private:
   Power power_;       // in HP
   Capacity capacity_; // in ccm
   Gears gears_;
-  int currentGear_;
 };

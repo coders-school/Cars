@@ -30,7 +30,19 @@ TEST_F(CarTestSuite, startEngineShouldCallStopOEngine) {
   m_sut.start_engine();
 }
 
-TEST_F(CarTestSuite, WrongGear) {
+TEST(EngineTestSuite, WrongGear) {
   PetrolEngine engine(Power{120}, Capacity{1800}, Gears{6});
   EXPECT_THROW(engine.changeGear(10), InvalidGear);
 }
+
+TEST(EngineTestSuite, ProperGear) {
+  PetrolEngine engine(Power{120}, Capacity{1800}, Gears{6});
+  engine.changeGear(-1);
+  EXPECT_EQ(engine.currentGear_, -1);
+  engine.changeGear(0);
+  engine.changeGear(1);
+  EXPECT_EQ(engine.currentGear_, 1);
+}
+
+
+
