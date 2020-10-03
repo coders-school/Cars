@@ -1,35 +1,41 @@
-#include "PetrolCar.hpp"
 #include "ElectricCar.hpp"
 #include "HybridCar.hpp"
+#include "PetrolCar.hpp"
 #include <iostream>
 #include <memory>
 
-int main()
-{
-    std::cout << std::endl << "OPEL" << std::endl;
+int main() {
+  std::cout << std::endl << "OPEL" << std::endl;
 
-    PetrolCar opel(std::make_unique<PetrolEngine>(Power{120}, Capacity{1800}, Gears{6}));
-    opel.accelerate(Speed{50});
-    opel.brake();
+  std::unique_ptr<ICar> car_ptr;
 
-    //opel.accelerate(Speed{-900}); //will not compile
-    opel.refuel();
+  PetrolCar opel(
+      std::make_unique<PetrolEngine>(Power{120}, Capacity{1800}, Gears{6}));
+  car_ptr.reset(&opel);
+  car_ptr->refuel();
+  car_ptr->accelerate(Speed{50});
+  car_ptr->brake();
+  car_ptr.release();
 
-    std::cout << std::endl << "NISSAN" << std::endl;
-    ElectricCar nissan(std::make_unique<ElectricEngine>(Power{130}, BatteryCapacity{650}));
-    nissan.charge();
-    nissan.accelerate(Speed{80});
-    //  now is private
-    //  nissan.engine_ = new ElectricEngine(Power{150}, BatteryCapacity{700});  // Changing an engine during driving is not safe
+  std::cout << std::endl << "NISSAN" << std::endl;
+  ElectricCar nissan(
+      std::make_unique<ElectricEngine>(Power{130}, BatteryCapacity{650}));
+  car_ptr.reset(&nissan);
+  car_ptr->charge();
+  car_ptr->accelerate(Speed{80});
+  //  nissan.engine_ = new ElectricEngine(Power{150}, BatteryCapacity{700});  //
+  //  Changing an engine during driving is not safe
+  car_ptr->turnLeft();
+  car_ptr.release();
 
-    nissan.turnLeft();
-
-    std::cout << std::endl << "TOYOTA" << std::endl;
-    HybridCar toyota(std::make_unique<PetrolEngine>(Power{80}, Capacity{1400}, Gears{5}), std::make_unique<ElectricEngine>(Power{100}, BatteryCapacity{540}));
-//
-//    //how to change gear in toyota now ;) ... wee need gearbox..
-    toyota.accelerate(Speed{100});
-    toyota.brake();
-    toyota.charge();
-    toyota.refuel();
+  std::cout << std::endl << "TOYOTA" << std::endl;
+  HybridCar toyota(
+      std::make_unique<PetrolEngine>(Power{80}, Capacity{1400}, Gears{5}),
+      std::make_unique<ElectricEngine>(Power{100}, BatteryCapacity{540}));
+  car_ptr.reset(&toyota);
+  car_ptr->accelerate(Speed{100});
+  car_ptr->brake();
+  car_ptr->charge();
+  car_ptr->refuel();
+  car_ptr.release();
 }
