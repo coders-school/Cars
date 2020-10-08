@@ -21,8 +21,9 @@ protected:
 };
 
 TEST_F(CarsTest, PetrolCarThrowRearGearExceptionWhenChangeFrom4ToMinus1) {
-    petrolCar_.getPetrolEngine()->changeGear(2);
-    ASSERT_THROW(petrolCar_.getPetrolEngine()->changeGear(-1), RearGearChangeException);
+    auto engine = petrolCar_.getPetrolEngine();
+    engine->changeGear(2);
+    ASSERT_THROW(engine->changeGear(-1), RearGearChangeException);
 }
 
 TEST_F(CarsTest, PetrolCarThrowInvalidGearExceptionIfGearOutOfRange) {
