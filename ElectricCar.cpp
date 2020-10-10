@@ -9,7 +9,6 @@ ElectricCar::ElectricCar(std::shared_ptr<ElectricEngine> engine)
 
 ElectricCar::~ElectricCar() {
     std::cout << "* " << __FUNCTION__ << std::endl;
-    // delete engine_;
 }
 
 void ElectricCar::charge() { 
@@ -18,7 +17,7 @@ void ElectricCar::charge() {
         chargeLevel_ = MAX_CAPACITY;
         std::cout << " : recharged" << std::endl;
     } else {
-        std::cerr << " : battery already full" << std::endl;
+        throw std::invalid_argument("battery already full");
     }
 }
 
@@ -30,11 +29,10 @@ void ElectricCar::setEngine(std::shared_ptr<ElectricEngine> engine) {
     std::cout << __FUNCTION__;
     if (getSpeed() == 0) {
         std::cout << " : electric engine changed" << std::endl;
-        // delete engine_;
         engine_ = engine;
         std::cout << "@ electric power: " << engine_->getPower() << std::endl;
     } else {
-        std::cerr << " : (electric) not possible unless stopped" << std::endl;
+        throw std::invalid_argument("(electric) not possible unless stopped");
     }
 }
 

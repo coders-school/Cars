@@ -10,7 +10,6 @@ PetrolCar::PetrolCar(std::shared_ptr<PetrolEngine> engine)
 
 PetrolCar::~PetrolCar() {
     std::cout << "* " << __FUNCTION__ << std::endl;
-    // delete engine_;
 }
 
 void PetrolCar::refuel() {
@@ -19,7 +18,7 @@ void PetrolCar::refuel() {
         fuelLevel_ = MAX_CAPACITY;
         std::cout << " : refuelled" << std::endl;
     } else {
-        std::cerr << " : tank already full" << std::endl;
+        throw std::invalid_argument("tank already full");
     }
 }
 
@@ -31,11 +30,10 @@ void PetrolCar::setEngine(std::shared_ptr<PetrolEngine> engine) {
     std::cout << __FUNCTION__;
     if (getSpeed() == 0) {
         std::cout << " : petrol engine changed" << std::endl;
-        // delete engine_;
         engine_ = engine;
         std::cout << "@ petrol power: " << engine_->getPower() << std::endl;
     } else {
-        std::cerr << " : (petrol) not possible unless stopped" << std::endl;
+        throw std::invalid_argument("(petrol) not possible unless stopped");
     }
 }
 
