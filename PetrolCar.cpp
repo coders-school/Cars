@@ -1,12 +1,11 @@
 #include "PetrolCar.hpp"
 #include <iostream>
 
-PetrolCar::PetrolCar(PetrolEngine* engine)
-    : engine_(engine) {}
+PetrolCar::PetrolCar(std::unique_ptr<Engine> engine)
+    : engine_(std::move(engine)) {}
 
 PetrolCar::~PetrolCar() {
     std::cout << __FUNCTION__ << std::endl;
-    delete engine_;
 }
 
 void PetrolCar::refuel() {

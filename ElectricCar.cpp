@@ -2,12 +2,11 @@
 
 #include <iostream>
 
-ElectricCar::ElectricCar(ElectricEngine* engine)
-    : engine_(engine) {}
+ElectricCar::ElectricCar(std::unique_ptr<Engine> engine)
+    : engine_(std::move(engine)) {}
 
 ElectricCar::~ElectricCar() {
     std::cout << __FUNCTION__ << std::endl;
-    delete engine_;
 }
 
 void ElectricCar::charge() {

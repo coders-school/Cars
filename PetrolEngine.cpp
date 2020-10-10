@@ -2,7 +2,7 @@
 #include <iostream>
 
 PetrolEngine::PetrolEngine(int power, float capacity, int gears)
-    : power_(power), capacity_(capacity), gears_(gears) {}
+    : Engine(power), capacity_(capacity), gears_(gears) {}
 
 void PetrolEngine::changeGear(int gear) {
     // TODO: Add checking if gear is between -1 and gears_
