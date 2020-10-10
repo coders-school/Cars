@@ -20,9 +20,6 @@ public:
     int getSpeed();
     virtual void restore() = 0;
     virtual void changeGear(int gear) = 0;
-    virtual void setEngine(PetrolEngine*) = 0;
-    virtual void setEngine(ElectricEngine*) = 0;
-    virtual void setEngine(PetrolEngine*, ElectricEngine*) = 0;
 
 private:
     int speed_;
