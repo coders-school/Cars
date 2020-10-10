@@ -17,9 +17,8 @@ void HybridCar::restore() {
     ElectricCar::restore();
 }
 
-void HybridCar::changeGear(int gear) {
+void HybridCar::changeGear([maybe_unused] int gear) {
     std::cout << __FUNCTION__ << " : automatic transmission" << std::endl;
-    (void)gear;
 }
 
 void HybridCar::setEngine(std::shared_ptr<PetrolEngine> petrolEngine) {
