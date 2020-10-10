@@ -1,7 +1,7 @@
 #include "ElectricCar.hpp"
 #include <iostream>
 
-ElectricCar::ElectricCar(ElectricEngine* engine)
+ElectricCar::ElectricCar(std::shared_ptr<ElectricEngine> engine)
     : engine_(engine)
 {
     std::cout << "* " << __FUNCTION__ << std::endl;
@@ -9,7 +9,7 @@ ElectricCar::ElectricCar(ElectricEngine* engine)
 
 ElectricCar::~ElectricCar() {
     std::cout << "* " << __FUNCTION__ << std::endl;
-    delete engine_;
+    // delete engine_;
 }
 
 void ElectricCar::charge() { 
@@ -26,15 +26,15 @@ size_t ElectricCar::getChargeLevel() {
     return chargeLevel_;
 }
 
-void ElectricCar::setEngine(ElectricEngine* engine) {
+void ElectricCar::setEngine(std::shared_ptr<ElectricEngine> engine) {
     std::cout << __FUNCTION__;
     if (getSpeed() == 0) {
         std::cout << " : electric engine changed" << std::endl;
-        delete engine_;
+        // delete engine_;
         engine_ = engine;
         std::cout << "@ electric power: " << engine_->getPower() << std::endl;
     } else {
-        std::cout << " : (electric) not possible unless stopped" << std::endl;
+        std::cerr << " : (electric) not possible unless stopped" << std::endl;
     }
 }
 

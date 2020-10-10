@@ -2,7 +2,7 @@
 
 #include "HybridCar.hpp"
 
-HybridCar::HybridCar(PetrolEngine* petrolEngine, ElectricEngine* electricEngine)
+HybridCar::HybridCar(std::shared_ptr<PetrolEngine> petrolEngine, std::shared_ptr<ElectricEngine> electricEngine)
     : PetrolCar(petrolEngine), ElectricCar(electricEngine)
 {
     std::cout << "* " << __FUNCTION__ << std::endl;
@@ -22,15 +22,15 @@ void HybridCar::changeGear(int gear) {
     (void)gear;
 }
 
-void HybridCar::setEngine(PetrolEngine* petrolEngine) {
+void HybridCar::setEngine(std::shared_ptr<PetrolEngine> petrolEngine) {
     PetrolCar::setEngine(petrolEngine);
 }
 
-void HybridCar::setEngine(ElectricEngine* electricEngine) {
+void HybridCar::setEngine(std::shared_ptr<ElectricEngine> electricEngine) {
     ElectricCar::setEngine(electricEngine);
 }
 
-void HybridCar::setEngine(PetrolEngine* petrolEngine, ElectricEngine* electricEngine) {
+void HybridCar::setEngine(std::shared_ptr<PetrolEngine> petrolEngine, std::shared_ptr<ElectricEngine> electricEngine) {
     PetrolCar::setEngine(petrolEngine);
     ElectricCar::setEngine(electricEngine);
 }

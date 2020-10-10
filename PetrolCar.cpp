@@ -2,7 +2,7 @@
 
 #include "PetrolCar.hpp"
 
-PetrolCar::PetrolCar(PetrolEngine* engine)
+PetrolCar::PetrolCar(std::shared_ptr<PetrolEngine> engine)
     : engine_(engine)
 {
     std::cout << "* " << __FUNCTION__ << std::endl;
@@ -10,7 +10,7 @@ PetrolCar::PetrolCar(PetrolEngine* engine)
 
 PetrolCar::~PetrolCar() {
     std::cout << "* " << __FUNCTION__ << std::endl;
-    delete engine_;
+    // delete engine_;
 }
 
 void PetrolCar::refuel() {
@@ -27,15 +27,15 @@ size_t PetrolCar::getFuelLevel() {
     return fuelLevel_;
 }
 
-void PetrolCar::setEngine(PetrolEngine* engine) {
+void PetrolCar::setEngine(std::shared_ptr<PetrolEngine> engine) {
     std::cout << __FUNCTION__;
     if (getSpeed() == 0) {
         std::cout << " : petrol engine changed" << std::endl;
-        delete engine_;
+        // delete engine_;
         engine_ = engine;
         std::cout << "@ petrol power: " << engine_->getPower() << std::endl;
     } else {
-        std::cout << " : (petrol) not possible unless stopped" << std::endl;
+        std::cerr << " : (petrol) not possible unless stopped" << std::endl;
     }
 }
 

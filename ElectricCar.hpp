@@ -1,21 +1,23 @@
 #pragma once
 
+#include<memory>
+
 #include "Car.hpp"
 #include "ElectricEngine.hpp"
 
 class ElectricCar : public virtual Car {
 public:
-    ElectricCar(ElectricEngine* engine);
+    ElectricCar(std::shared_ptr<ElectricEngine> engine);
     virtual ~ElectricCar();
 
     size_t getChargeLevel();
-    void setEngine(ElectricEngine*);
+    void setEngine(std::shared_ptr<ElectricEngine>);
     void restore() override;
     void changeGear(int gear) override;
 
 private:
     size_t chargeLevel_ = MIN_CAPACITY;
-    ElectricEngine* engine_;
+    std::shared_ptr<ElectricEngine> engine_;
     
     void charge();
 };
