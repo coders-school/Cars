@@ -1,7 +1,10 @@
 #include <iostream>
 #include "ElectricCar.hpp"
 #include "HybridCar.hpp"
+#include "InvalidGear.hpp"
 #include "PetrolCar.hpp"
+
+#include "PetrolEngine.hpp"
 
 int main() {
     Car* car = nullptr;
@@ -34,4 +37,15 @@ int main() {
     //car->charge();
     //car->refuel();
     car->restore();
+
+    ////
+    PetrolEngine petrolEngine(100, 50, 5);
+    try {
+        petrolEngine.changeGear(-1);
+        petrolEngine.changeGear(0);
+        petrolEngine.changeGear(2);
+        petrolEngine.changeGear(-1);
+    } catch (const InvalidGear& ex) {
+        std::cout << ex.what() << '\n';
+    }
 }
