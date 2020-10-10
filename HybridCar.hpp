@@ -13,11 +13,7 @@ public:
 
     void restore() override;
     void changeGear(int gear) override;
-    virtual void setEngine(PetrolEngine*) override;     // overloaded (not used)
-    virtual void setEngine(ElectricEngine*) override;   // overloaded (not used)
-    virtual void setEngine(PetrolEngine*, ElectricEngine*) override;
-
-private:
-    PetrolEngine* petrolEngine_;
-    ElectricEngine* electricEngine_;
+    void setEngine(PetrolEngine*);
+    void setEngine(ElectricEngine*);
+    void setEngine(PetrolEngine*, ElectricEngine*);
 };
