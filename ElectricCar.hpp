@@ -9,9 +9,7 @@ public:
     virtual ~ElectricCar();
 
     size_t getChargeLevel();
-    virtual void setEngine(PetrolEngine*) override;                  // overloaded (not used)
-    virtual void setEngine(ElectricEngine*) override;
-    virtual void setEngine(PetrolEngine*, ElectricEngine*) override; // overloaded (not used)
+    void setEngine(ElectricEngine*);
     void restore() override;
     void changeGear(int gear) override;
 
