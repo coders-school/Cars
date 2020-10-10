@@ -12,9 +12,7 @@ public:
     virtual ~PetrolCar();
     
     size_t getFuelLevel();
-    virtual void setEngine(PetrolEngine*) override;
-    virtual void setEngine(ElectricEngine*) override;                // overloaded (not used)
-    virtual void setEngine(PetrolEngine*, ElectricEngine*) override; // overloaded (not used)
+    void setEngine(PetrolEngine*);
     void restore() override;
     void changeGear(int gear) override;
 
