@@ -29,19 +29,15 @@ size_t PetrolCar::getFuelLevel() {
 
 void PetrolCar::setEngine(PetrolEngine* engine) {
     std::cout << __FUNCTION__;
-    if (!getSpeed()) {
-        std::cout << " : engine changed" << std::endl;
+    if (getSpeed() == 0) {
+        std::cout << " : petrol engine changed" << std::endl;
         delete engine_;
         engine_ = engine;
         std::cout << "@ petrol power: " << engine_->getPower() << std::endl;
     } else {
-        delete engine;
-        std::cout << " : not possible unless stopped" << std::endl;
+        std::cout << " : (petrol) not possible unless stopped" << std::endl;
     }
 }
-void PetrolCar::setEngine(ElectricEngine*) {}
-void PetrolCar::setEngine(PetrolEngine*, ElectricEngine*) {}
-
 
 void PetrolCar::restore() {
     refuel();
