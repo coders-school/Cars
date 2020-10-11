@@ -10,4 +10,6 @@ public:
     void restore() override;
     void changeEngine(std::unique_ptr<PetrolEngine> newEngine);
     void changeEngine(std::unique_ptr<ElectricEngine> newEngine);
+    PetrolEngine* getPetrolEngine() const { return PetrolCar::getEngine(); }
+    ElectricEngine* getElectricEngine() const { return ElectricCar::getEngine(); }
 };

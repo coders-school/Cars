@@ -51,7 +51,7 @@ set(SRC
 set(CAR_TESTS
     PetrolCar-ut.cpp
     ElectricCar-ut.cpp
-    #HybridCar-ut.cpp
+    HybridCar-ut.cpp
 )
 
 set(FLAGS
