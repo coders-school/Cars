@@ -10,7 +10,7 @@ PetrolEngine::PetrolEngine(int power, float capacity, int gears)
 void PetrolEngine::changeGear(int gear) {
     if (gear < -1 || gear > gears_) {
         throw InvalidGear("This car does not have this gear.");
-    } else if (getCurrentGear() == 5 && gear == -1) {
+    } else if (getCurrentGear() == gears_ && gear == -1) {
         throw InvalidGear("Changing gears like that is not good idea.");
     }
     currentGear_ = gear;
