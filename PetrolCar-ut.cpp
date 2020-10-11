@@ -11,6 +11,8 @@ constexpr float capacity = 50.f;
 constexpr int gears = 5;
 
 constexpr int expectedSpeed = 100;
+constexpr int invalidValue = 42;
+constexpr int modifier = 1;
 
 struct PetrolCarTest : public ::testing::Test {
     PetrolCar car{std::make_unique<PetrolEngine>(power, capacity, gears)};
@@ -31,7 +33,8 @@ TEST_F(PetrolCarTest, shouldThrowAccelerateException) {
 }
 
 TEST_F(PetrolCarTest, shouldThrowExceptionWhenChangingToInvalidGear) {
-    ASSERT_THROW(car.getEngine()->changeGear(gears + 1), InvalidGear);
+    ASSERT_THROW(car.getEngine()->changeGear(invalidValue), InvalidGear);
+    ASSERT_THROW(car.getEngine()->changeGear(-invalidValue), InvalidGear);
 }
 
 TEST_F(PetrolCarTest, shouldChangeGearAndThrowExceptionWhenChangingFrom5ToRear) {
@@ -42,7 +45,7 @@ TEST_F(PetrolCarTest, shouldChangeGearAndThrowExceptionWhenChangingFrom5ToRear) 
 
 TEST_F(PetrolCarTest, shouldChangeEngineAndThrowExceptionWhenSpeedAbove0) {
     car.brake();
-    ASSERT_NO_THROW(car.changeEngine(std::make_unique<PetrolEngine>(power + 1, capacity + 1, gears + 1)));
+    ASSERT_NO_THROW(car.changeEngine(std::make_unique<PetrolEngine>(power + modifier, capacity + modifier, gears + modifier)));
     car.accelerate(expectedSpeed);
-    ASSERT_THROW(car.changeEngine(std::make_unique<PetrolEngine>(power + 1, capacity + 1, gears + 1)), InvalidEngineChange);
+    ASSERT_THROW(car.changeEngine(std::make_unique<PetrolEngine>(power - modifier, capacity - modifier, gears - modifier)), InvalidEngineChange);
 }
