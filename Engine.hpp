@@ -6,5 +6,6 @@ private:
 
 public:
     Engine(int power);
+    int getPower() const { return power_; }
     ~Engine() {};
 };

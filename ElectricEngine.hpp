@@ -8,4 +8,5 @@ private:
 
 public:
     ElectricEngine(int power, int batteryCapacity);
+    int getBatteryCap() const { return batteryCapacity_; }
 };

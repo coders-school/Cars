@@ -43,9 +43,9 @@ TEST_F(PetrolCarTest, shouldChangeGearAndThrowExceptionWhenChangingFrom5ToRear) 
     ASSERT_THROW(car.getEngine()->changeGear(-1), InvalidGear);
 }
 
-TEST_F(PetrolCarTest, shouldChangeEngineAndThrowExceptionWhenSpeedAbove0) {
-    car.brake();
-    ASSERT_NO_THROW(car.changeEngine(std::make_unique<PetrolEngine>(power + modifier, capacity + modifier, gears + modifier)));
+TEST_F(PetrolCarTest)
+
+TEST_F(PetrolCarTest, shoudlThrowExceptionWhenChangingEngineWhileSpeedAbove0) {
     car.accelerate(expectedSpeed);
     ASSERT_THROW(car.changeEngine(std::make_unique<PetrolEngine>(power - modifier, capacity - modifier, gears - modifier)), InvalidEngineChange);
 }

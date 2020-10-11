@@ -13,4 +13,6 @@ public:
     void restore() override;
     void changeEngine(std::unique_ptr<ElectricEngine> newEngine);
 
+    ElectricEngine* getEngine() const { return engine_.get(); }
+
 };
