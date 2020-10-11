@@ -1,6 +1,10 @@
 #include "Car.hpp"
 #include <iostream>
 
+Car::Car()
+    : speed_(0) {
+    std::cout << __FUNCTION__ << std::endl;
+}
 Car::~Car() {
     std::cout << __FUNCTION__ << std::endl;
 }
@@ -13,6 +17,12 @@ void Car::turnRight() {
 void Car::brake() {
     std::cout << __FUNCTION__ << std::endl;
 }
-void Car::accelerate(int) {
+void Car::accelerate(int speed) {
     std::cout << __FUNCTION__ << std::endl;
+    if (speed >= 0) {
+        speed_ = speed;
+    }
+}
+int Car::getSpeed() const {
+    return speed_;
 }

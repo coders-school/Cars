@@ -16,3 +16,11 @@ void PetrolCar::refuel() {
 void PetrolCar::restore() {
     refuel();
 }
+
+void PetrolCar::changeGear(int gear) {
+    engine_->changeGear(gear);
+}
+
+int PetrolCar::getGear() const {
+    return engine_->getGear();
+}

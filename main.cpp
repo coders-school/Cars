@@ -39,7 +39,7 @@ int main() {
     car->restore();
 
     ////
-    PetrolEngine petrolEngine(100, 50, 5);
+    /*PetrolEngine petrolEngine(100, 50, 5);
     try {
         petrolEngine.changeGear(-1);
         petrolEngine.changeGear(0);
@@ -47,5 +47,5 @@ int main() {
         petrolEngine.changeGear(-1);
     } catch (const InvalidGear& ex) {
         std::cout << ex.what() << '\n';
-    }
+    }*/
 }

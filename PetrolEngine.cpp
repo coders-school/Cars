@@ -21,3 +21,15 @@ void PetrolEngine::changeGear(int gear) {
     currentGear_ = gear;
     std::cout << __FUNCTION__ << std::endl;
 }
+
+float PetrolEngine::getCapacity() const{
+    return capacity_;
+}
+
+ int PetrolEngine::getGear() const{
+     return gears_;
+ }
+ 
+ int PetrolEngine::getCurrentGear() const{
+     return currentGear_;
+ }

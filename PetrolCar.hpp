@@ -9,8 +9,10 @@ public:
     ~PetrolCar();
     void restore() override;
 
-    PetrolEngine* engine_;
+    void changeGear(int gear);
+    int getGear() const;
 
 private:
+    PetrolEngine* engine_;
     void refuel();
 };
