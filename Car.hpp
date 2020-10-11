@@ -2,7 +2,7 @@
 
 #include "Engine.hpp"
 
-constexpr bool MINIMUM_VELOCITY = 0;
+constexpr int MINIMUM_VELOCITY = 0;
 
 class Car {
 public:

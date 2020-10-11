@@ -53,6 +53,4 @@ void HybridCar::changeEngine(Engine* engine) {
         std::cout << __FUNCTION__ << std::endl;
         return;
     }
-
-    return;
 }
