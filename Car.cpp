@@ -11,6 +11,7 @@ void Car::turnRight() {
     std::cout << __FUNCTION__ << std::endl;
 }
 void Car::brake() {
+    speed_ = 0;
     std::cout << __FUNCTION__ << std::endl;
 }
 void Car::accelerate(int speed) {
