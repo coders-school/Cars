@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+#include "Exception.hpp"
+
 ElectricCar::ElectricCar(std::unique_ptr<ElectricEngine> engine)
     : engine_(std::move(engine)) {}
 
@@ -15,4 +17,12 @@ void ElectricCar::charge() {
 
 void ElectricCar::restore() {
     charge();
+}
+
+void ElectricCar::changeEngine(std::unique_ptr<ElectricEngine> newEngine) {
+    if (getSpeed() == 0) {
+        engine_.swap(newEngine);
+    } else {
+        throw InvalidEngineChange("Changing engine while driving is not safe.");
+    }
 }

@@ -1,7 +1,5 @@
 #pragma once
 
-#include <memory>
-
 #include "Car.hpp"
 #include "ElectricEngine.hpp"
 
@@ -13,5 +11,6 @@ public:
     ElectricCar(std::unique_ptr<ElectricEngine> engine);
     ~ElectricCar();
     void restore() override;
+    void changeEngine(std::unique_ptr<ElectricEngine> newEngine);
 
 };

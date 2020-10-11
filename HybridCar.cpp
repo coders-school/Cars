@@ -12,3 +12,11 @@ void HybridCar::restore() {
     PetrolCar::restore();
     ElectricCar::restore();
 }
+
+void HybridCar::changeEngine(std::unique_ptr<PetrolEngine> newEngine) {
+    PetrolCar::changeEngine(std::move(newEngine));
+}
+
+void HybridCar::changeEngine(std::unique_ptr<ElectricEngine> newEngine) {
+    ElectricCar::changeEngine(std::move(newEngine));
+}
