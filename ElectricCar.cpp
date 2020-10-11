@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-ElectricCar::ElectricCar(std::unique_ptr<Engine> engine)
+ElectricCar::ElectricCar(std::unique_ptr<ElectricEngine> engine)
     : engine_(std::move(engine)) {}
 
 ElectricCar::~ElectricCar() {

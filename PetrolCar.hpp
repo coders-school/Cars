@@ -7,10 +7,12 @@
 
 class PetrolCar : virtual public Car {
 private:
-    std::unique_ptr<Engine> engine_;
+    std::unique_ptr<PetrolEngine> engine_;
     void refuel();
 public:
-    PetrolCar(std::unique_ptr<Engine> engine);
+    PetrolCar(std::unique_ptr<PetrolEngine> engine);
     ~PetrolCar();
     void restore() override;
+    
+    PetrolEngine* getEngine() const { return engine_.get(); }
 };

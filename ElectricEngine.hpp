@@ -8,5 +8,4 @@ private:
 
 public:
     ElectricEngine(int power, int batteryCapacity);
-    ~ElectricEngine() override {}
 };

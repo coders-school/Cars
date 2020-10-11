@@ -10,7 +10,8 @@ private:
 
 public:
     PetrolEngine(int power, float capacity, int gears);
+    int getCurrentGear() const { return currentGear_; }
     void changeGear(int gear);
-    ~PetrolEngine() override {}
+    ~PetrolEngine() {}
 
 };

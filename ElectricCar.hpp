@@ -7,10 +7,10 @@
 
 class ElectricCar : virtual public Car {
 private:
-    std::unique_ptr<Engine> engine_{};
+    std::unique_ptr<ElectricEngine> engine_{};
     void charge();
 public:
-    ElectricCar(std::unique_ptr<Engine> engine);
+    ElectricCar(std::unique_ptr<ElectricEngine> engine);
     ~ElectricCar();
     void restore() override;
 

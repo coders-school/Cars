@@ -6,5 +6,5 @@ private:
 
 public:
     Engine(int power);
-    virtual ~Engine() {};
+    ~Engine() {};
 };
