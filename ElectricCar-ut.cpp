@@ -2,9 +2,9 @@
 #include <memory>
 
 #include "Car.hpp"
-#include "Exception.hpp"
 #include "ElectricCar.hpp"
 #include "ElectricEngine.hpp"
+#include "Exception.hpp"
 
 constexpr int power = 200;
 constexpr float batteryCap = 50.f;
