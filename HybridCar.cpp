@@ -44,13 +44,11 @@ void HybridCar::changeEngine(Engine* engine) {
         delete electricEngine_;
         electricEngine_ = static_cast<ElectricEngine*>(engine);
         std::cout << __FUNCTION__ << std::endl;
-        return;
     }
 
     if (typeid(*engine) == typeid(PetrolEngine)) {
         delete petrolEngine_;
         petrolEngine_ = static_cast<PetrolEngine*>(engine);
         std::cout << __FUNCTION__ << std::endl;
-        return;
     }
 }
