@@ -3,10 +3,16 @@
 
 #include "InvalidGear.hpp"
 
+// PetrolEngine::PetrolEngine(int power, float capacity, int gears)
+//     : power_(power), capacity_(capacity), gears_(gears), currentGear_(0) {
+//     std::cout << __FUNCTION__ << std::endl;
+// }
+
 PetrolEngine::PetrolEngine(int power, float capacity, int gears)
     : power_(power), capacity_(capacity), gears_(gears), currentGear_(0) {
     std::cout << __FUNCTION__ << std::endl;
 }
+
 
 void PetrolEngine::changeGear(int gear) {
     if (gear > gears_ || gear < -1) {
@@ -22,14 +28,18 @@ void PetrolEngine::changeGear(int gear) {
     std::cout << __FUNCTION__ << std::endl;
 }
 
-float PetrolEngine::getCapacity() const{
+float PetrolEngine::getCapacity() const {
     return capacity_;
 }
 
- int PetrolEngine::getGear() const{
-     return gears_;
- }
- 
- int PetrolEngine::getCurrentGear() const{
-     return currentGear_;
- }
+int PetrolEngine::getGear() const {
+    return gears_;
+}
+
+int PetrolEngine::getCurrentGear() const {
+    return currentGear_;
+}
+
+int PetrolEngine::getPower() const {
+    return power_;
+}

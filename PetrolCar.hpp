@@ -5,14 +5,18 @@
 
 class PetrolCar : virtual public Car {
 public:
-    PetrolCar(PetrolEngine* engine);
+    PetrolCar(std::shared_ptr<PetrolEngine> engine);
     ~PetrolCar();
     void restore() override;
-
+    void changeEngine(std::shared_ptr<PetrolEngine> engine);
+    //int getPower() const override;
     void changeGear(int gear);
     int getGear() const;
 
+//protected:
+  //  PetrolEngine* engine_;
+
 private:
-    PetrolEngine* engine_;
+    std::shared_ptr<PetrolEngine> engine_;
     void refuel();
 };

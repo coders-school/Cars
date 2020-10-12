@@ -1,5 +1,8 @@
 #pragma once
 
+//#include "Engine.hpp"
+#include <memory>
+
 class Car {
 public:
     Car();
@@ -9,7 +12,9 @@ public:
     void brake();
     void accelerate(int speed);
     virtual void restore() = 0;
-
+    
+    //virtual void changeEngine(Engine* engine) = 0;
+    //virtual int getPower() const = 0;
     int getSpeed() const;
 
 private:
