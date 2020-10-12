@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(Cars)
 enable_testing()
-add_test(${PROJECT_NAME} COMMAND ${PROJECT_NAME}-ut)
+add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME}-ut)
 
 set(SRC_LIST
     ElectricCar.cpp
