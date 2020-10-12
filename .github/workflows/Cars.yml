@@ -21,9 +21,9 @@ jobs:
       working-directory: build
       run: ctest -V 
     - name: Run Valgrind
-      working-directory: homework/shared_ptr/build
+      working-directory: build
       run: |
           sudo apt-get update -y    
           sudo apt-get install -y valgrind
-          valgrind --leak-check=yes ./SharedPointer-TestsExe
+          valgrind --leak-check=yes ./Cars-ut
 
