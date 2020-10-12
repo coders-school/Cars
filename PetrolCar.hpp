@@ -11,6 +11,7 @@ public:
   void accelerate(int a) override;
   PetrolEngine *getPetrolEngineData() const;
   std::unique_ptr<PetrolEngine> pullOutPetrolEngine();
+  void putInPetrolEngine(std::unique_ptr<PetrolEngine> newEngine);
 
 private:
   std::unique_ptr<PetrolEngine> engine_;

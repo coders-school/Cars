@@ -11,7 +11,15 @@ public:
   HybridCar(std::unique_ptr<PetrolEngine> petrolEng,
             std::unique_ptr<ElectricEngine> electricEng);
   ~HybridCar();
-  PetrolEngine *getPetrolEngine() const;
+
+  //ElectricEngine *getElectricEngineData() const;
+  //std::unique_ptr<ElectricEngine> pullOutElectricEngine();
+  //void putInElectricEngine(std::unique_ptr<ElectricEngine> newEngine);
+  
+/*   PetrolEngine *getPetrolEngineData() const;
+  std::unique_ptr<PetrolEngine> pullOutPetrolEngine();
+  void putInPetrolEngine(std::unique_ptr<PetrolEngine> newEngine); */
+
   void restore() override;
   void accelerate(int requiredSpeed) override;
 };

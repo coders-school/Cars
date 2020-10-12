@@ -26,6 +26,15 @@ std::unique_ptr<ElectricEngine> ElectricCar::pullOutElectricEngine() {
     throw std::runtime_error("This car is moving, you can't pull out engine\n");
 }
 
+void ElectricCar::putInElectricEngine(
+    std::unique_ptr<ElectricEngine> newEngine) {
+  if (engine_ != nullptr) {
+    std::cout << "There is an engine in car!\n";
+  } else
+    engine_.swap(newEngine);
+}
+
+
 void ElectricCar::restore() { charge(); }
 
 void ElectricCar::accelerate(int a) {
@@ -39,10 +48,3 @@ void ElectricCar::accelerate(int a) {
     std::cout << "This car doesn't have an engine!\n";
 }
 
-void ElectricCar::putInElectricEngine(
-    std::unique_ptr<ElectricEngine> newEngine) {
-  if (engine_ != nullptr) {
-    std::cout << "There is an engine in car!\n";
-  } else
-    engine_.swap(newEngine);
-}

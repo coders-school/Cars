@@ -2,7 +2,6 @@
                           // in one cpp file
 #include "HybridCar.hpp"
 #include "catch.hpp"
-//#include "WrongGearException.hpp"
 
 // Electric Car is best implemented, so I will check only electric Car
 
