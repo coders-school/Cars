@@ -9,13 +9,12 @@ public:
     ~PetrolCar();
     void restore() override;
     void changeEngine(std::shared_ptr<PetrolEngine> engine);
-    //int getPower() const override;
+    int getPower() const;
     void changeGear(int gear);
-    int getGear() const;
-
-//protected:
-  //  PetrolEngine* engine_;
-
+    int getGears() const;
+    float getCapacity() const;
+    int getCurrentGear() const;
+    
 private:
     std::shared_ptr<PetrolEngine> engine_;
     void refuel();
