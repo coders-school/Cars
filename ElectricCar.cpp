@@ -1,16 +1,13 @@
 #include "ElectricCar.hpp"
 #include <iostream>
 #include "InvalidEngine.hpp"
-#include "MovingCar.hpp"
 
-//ElectricCar::ElectricCar(ElectricEngine* engine)
- ElectricCar::ElectricCar(std::shared_ptr<ElectricEngine> engine)
+ElectricCar::ElectricCar(std::shared_ptr<ElectricEngine> engine)
     : engine_(engine) {
     std::cout << __FUNCTION__ << std::endl;
 }
 
 ElectricCar::~ElectricCar() {
-    //delete engine_;
     std::cout << __FUNCTION__ << std::endl;
 }
 void ElectricCar::charge() {
@@ -20,12 +17,19 @@ void ElectricCar::restore() {
     charge();
 }
 
-//void ElectricCar::changeEngine(Engine* engine) {
-void ElectricCar::changeEngine(std::shared_ptr<ElectricEngine> engine){ 
+void ElectricCar::changeEngine(std::shared_ptr<ElectricEngine> engine) {
     std::cout << __FUNCTION__ << std::endl;
     if (getSpeed() != 0) {
-        throw MovingCar("Car is in move");
+        throw InvalidEngine("Car is in move. Cannot change engine during driving");
     } else {
         engine_ = engine;
-    }   
+    }
+}
+
+int ElectricCar::getPower() const {
+    return engine_->getPower();
+}
+
+int ElectricCar::getBatteryCapacity() const {
+    return engine_->getBatteryCapacity();
 }
