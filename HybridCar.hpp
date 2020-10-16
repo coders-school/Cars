@@ -8,15 +8,19 @@
 
 class HybridCar : public PetrolCar, public ElectricCar {
 public:
-    //HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng);
     HybridCar(std::shared_ptr<PetrolEngine>petrolEng, std::shared_ptr<ElectricEngine>electricEng);
     ~HybridCar();
     void restore() override;
-    ////void changeEngine(Engine* engine) override;
-    ////void changeEngine(ElectricEngine* elecEng, PetrolEngine* petrEng);
-    void changeEngine(std::shared_ptr<PetrolEngine>);
-    void changeEngine(std::shared_ptr<ElectricEngine>);
+    //void changeEngine(std::shared_ptr<PetrolEngine>);
+    //void changeEngine(std::shared_ptr<ElectricEngine>);
     void changeEngine(std::shared_ptr<ElectricEngine>, std::shared_ptr<PetrolEngine>);
 
-    //int getPower() const override;
+    ////int getPower() const override;
+    int getPower() const;// override;
+    int getBatteryCapacity() const;
+    // void changeGear(int gear);
+    // int getGears() const;
+    float getCapacity() const;
+    // int getCurrentGear() const;
+
 };
