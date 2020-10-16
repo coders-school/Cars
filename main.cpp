@@ -3,7 +3,6 @@
 #include "HybridCar.hpp"
 #include "InvalidGear.hpp"
 #include "PetrolCar.hpp"
-
 #include "PetrolEngine.hpp"
 
 int main() {
@@ -15,17 +14,14 @@ int main() {
     car->accelerate(50);
     car->brake();
     car->accelerate(-900);
-    //car->refuel();
     car->restore();
 
     std::cout << std::endl
               << "NISSAN" << std::endl;
     ElectricCar nissan(std::make_shared<ElectricEngine>(130, 650));
     car = &nissan;
-    //car->charge();
     car->restore();
     car->accelerate(80);
-    //car->engine_ = new ElectricEngine(150, 700);  // Changing an engine during driving is not safe
     car->turnLeft();
 
     std::cout << std::endl
@@ -34,18 +30,5 @@ int main() {
     car = &toyota;
     car->accelerate(100);
     car->brake();
-    //car->charge();
-    //car->refuel();
     car->restore();
-
-    ////
-    /*PetrolEngine petrolEngine(100, 50, 5);
-    try {
-        petrolEngine.changeGear(-1);
-        petrolEngine.changeGear(0);
-        petrolEngine.changeGear(2);
-        petrolEngine.changeGear(-1);
-    } catch (const InvalidGear& ex) {
-        std::cout << ex.what() << '\n';
-    }*/
 }

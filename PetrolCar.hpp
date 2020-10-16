@@ -14,7 +14,7 @@ public:
     int getGears() const;
     float getCapacity() const;
     int getCurrentGear() const;
-    
+
 private:
     std::shared_ptr<PetrolEngine> engine_;
     void refuel();

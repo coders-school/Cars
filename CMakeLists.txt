@@ -44,7 +44,6 @@ set(SRC_LIST
     ElectricCar.cpp
     ElectricEngine.cpp
     HybridCar.cpp
-    #main.cpp
     PetrolCar.cpp
     PetrolEngine.cpp
     Car.cpp
@@ -64,7 +63,4 @@ add_test(NAME ${PROJECT_NAME}_test COMMAND ${PROJECT_NAME}-ut)
 
 
 target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Werror -Wpedantic -Wextra)
-#target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Wpedantic -Wextra)
-
-#target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR})
 target_compile_options(${PROJECT_NAME}-ut PUBLIC -Wall -Werror -Wpedantic -Wextra)

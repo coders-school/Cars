@@ -11,8 +11,6 @@ public:
     void brake();
     void accelerate(int speed);
     virtual void restore() = 0;
-    
-    //virtual int getPower() const = 0;
     int getSpeed() const;
 
 private:
