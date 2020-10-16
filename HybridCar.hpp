@@ -10,7 +10,7 @@ public:
     ~HybridCar();
     virtual void restore() override;
 
-    virtual void getInfoEngine() override;
+    virtual void printInfoEngine() const override;
     void changePetrolEngine(std::unique_ptr<PetrolEngine> petrolEngine);
     void changeElectricEngine(std::unique_ptr<ElectricEngine> electricEngine);
 };

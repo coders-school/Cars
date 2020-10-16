@@ -24,6 +24,6 @@ void ElectricCar::changeEngine(std::unique_ptr<ElectricEngine> engine) {
     }
 }
 
-void ElectricCar::getInfoEngine() {
+void ElectricCar::printInfoEngine() const {
     engine_->getInfoEngine();
 }

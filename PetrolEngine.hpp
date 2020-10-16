@@ -6,9 +6,9 @@ public:
     PetrolEngine(int power, float capacity, int gears);
     ~PetrolEngine();
     void changeGear(int gear);
-    void showCurrentGear();
+    void showCurrentGear() const;
     int getCurrentGear();
-    void getInfoEngine();
+    void printInfoEngine() const;
 
 private:
     int power_;       // in HP

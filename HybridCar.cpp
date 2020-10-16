@@ -15,9 +15,9 @@ void HybridCar::restore() {
     ElectricCar::restore();
 }
 
-void HybridCar::getInfoEngine() {
-    PetrolCar::getInfoEngine();
-    ElectricCar::getInfoEngine();
+void HybridCar::printInfoEngine() const {
+    PetrolCar::printInfoEngine();
+    ElectricCar::printInfoEngine();
 }
 
 void HybridCar::changePetrolEngine(std::unique_ptr<PetrolEngine> petrolEngine) {

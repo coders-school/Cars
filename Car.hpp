@@ -10,10 +10,10 @@ public:
     void turnRight();
     void brake();
     void accelerate(int speed);
-    void showSpeed();
-    int getSpeed();
+    void showSpeed() const;
+    int getSpeed() const;
     virtual void restore() = 0;
-    virtual void getInfoEngine() = 0;
+    virtual void printInfoEngine() const = 0;
 
 protected:
     int speed_ = 0;

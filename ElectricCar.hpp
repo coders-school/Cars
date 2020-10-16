@@ -11,7 +11,7 @@ public:
     virtual void restore() override;
     void charge();
     void changeEngine(std::unique_ptr<ElectricEngine> engine);
-    void getInfoEngine() override;
+    void printInfoEngine() const override;
 
 private:
     std::unique_ptr<ElectricEngine> engine_;

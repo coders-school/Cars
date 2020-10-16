@@ -18,13 +18,13 @@ int main() {
     }
     car->showSpeed();
     car->restore();
-    car->getInfoEngine();
+    car->printInfoEngine();
 
     PetrolCar* car_p = dynamic_cast<PetrolCar*>(car);
     if (car_p) {
         car_p->getGear();
         car_p->changeEngine(std::make_unique<PetrolEngine>(140, 1700, 5));
-        car_p->getInfoEngine();
+        car_p->printInfoEngine();
     }
     try {
         opel.setGear(1);
@@ -62,7 +62,7 @@ int main() {
 
     car = &toyota;
     car->restore();
-    car->getInfoEngine();
+    car->printInfoEngine();
 
     car = &nissan;
     car_p = dynamic_cast<PetrolCar*>(car);
@@ -75,6 +75,6 @@ int main() {
     if (car_c) {
         car_c->changePetrolEngine(std::make_unique<PetrolEngine>(120, 1300, 5));
         car_c->changeElectricEngine(std::make_unique<ElectricEngine>(120, 1300));
-        car_c->getInfoEngine();
+        car_c->printInfoEngine();
     }
 }

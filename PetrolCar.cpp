@@ -16,8 +16,8 @@ void PetrolCar::restore() {
     refuel();
 }
 
-void PetrolCar::getInfoEngine() {
-    engine_->getInfoEngine();
+void PetrolCar::printInfoEngine() const {
+    engine_->printInfoEngine();
 }
 
 int PetrolCar::getGear() {

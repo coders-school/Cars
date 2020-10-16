@@ -8,6 +8,16 @@
 4. Use polymorphism to represent every type of car, using a single pointer
 5. Fix a diamond problem
 6. Fix potential memory leaks
+7. Think about the way of keeping engine# Object-oriented C++
+
+## Assignment
+
+1. Design proper abstraction (interfaces)
+2. Apply inheritance
+3. Fix encapsulation
+4. Use polymorphism to represent every type of car, using a single pointer
+5. Fix a diamond problem
+6. Fix potential memory leaks
 7. Think about the way of keeping engines in cars. Should they be kept by a value, reference or a pointer (what kind of pointer)?
 8. Is this code testable?
 

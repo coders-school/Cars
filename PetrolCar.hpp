@@ -9,7 +9,7 @@ public:
     ~PetrolCar();
     virtual void restore() override;
     void refuel();
-    void getInfoEngine() override;
+    void printInfoEngine() const override;
     void changeEngine(std::unique_ptr<PetrolEngine> engine);
     int getGear();
     void showGear();
