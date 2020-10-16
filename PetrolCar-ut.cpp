@@ -9,10 +9,12 @@
 constexpr int power = 200;
 constexpr float capacity = 50.f;
 constexpr int gears = 5;
+constexpr int rearGear = -1;
 
 constexpr int expectedSpeed = 100;
 constexpr int invalidValue = 42;
 constexpr int modifier = 1;
+
 
 struct PetrolCarTest : public ::testing::Test {
     PetrolCar car{std::make_unique<PetrolEngine>(power, capacity, gears)};
@@ -25,7 +27,7 @@ TEST_F(PetrolCarTest, shouldAccelerate) {
 
 TEST_F(PetrolCarTest, shouldBrake) {
     car.brake();
-    ASSERT_EQ(car.getSpeed(), 0);
+    ASSERT_EQ(car.getSpeed(), noSpeed);
 }
 
 TEST_F(PetrolCarTest, shouldThrowAccelerateException) {
@@ -38,9 +40,9 @@ TEST_F(PetrolCarTest, shouldThrowExceptionWhenChangingToInvalidGear) {
 }
 
 TEST_F(PetrolCarTest, shouldChangeGearAndThrowExceptionWhenChangingFrom5ToRear) {
-    car.getEngine()->changeGear(5);
-    ASSERT_EQ(car.getEngine()->getCurrentGear(), 5);
-    ASSERT_THROW(car.getEngine()->changeGear(-1), InvalidGear);
+    car.getEngine()->changeGear(gears);
+    ASSERT_EQ(car.getEngine()->getCurrentGear(), gears);
+    ASSERT_THROW(car.getEngine()->changeGear(rearGear), InvalidGear);
 }
 
 TEST_F(PetrolCarTest, shouldChangeEngine) {

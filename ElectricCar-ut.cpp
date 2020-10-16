@@ -1,7 +1,6 @@
 #include <gtest/gtest.h>
 #include <memory>
 
-#include "Car.hpp"
 #include "ElectricCar.hpp"
 #include "ElectricEngine.hpp"
 #include "Exception.hpp"
@@ -24,7 +23,7 @@ TEST_F(ElectricCarTest, shouldAccelerate) {
 
 TEST_F(ElectricCarTest, shouldBrake) {
     car.brake();
-    ASSERT_EQ(car.getSpeed(), 0);
+    ASSERT_EQ(car.getSpeed(), noSpeed);
 }
 
 TEST_F(ElectricCarTest, shouldThrowAccelerateException) {

@@ -20,7 +20,7 @@ void PetrolCar::restore() {
 }
 
 void PetrolCar::changeEngine(std::unique_ptr<PetrolEngine> newEngine) {
-    if (getSpeed() == 0) {
+    if (getSpeed() == noSpeed) {
         engine_.swap(newEngine);
     } else {
         throw InvalidEngineChange("Changing engine while driving is not safe.");

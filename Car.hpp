@@ -4,6 +4,8 @@
 
 #include "Engine.hpp"
 
+constexpr int noSpeed = 0;
+
 class Car {
 protected:
     int speed_;

@@ -1,17 +1,13 @@
 #include <gtest/gtest.h>
 
-#include "Car.hpp"
-#include "ElectricCar.hpp"
-#include "ElectricEngine.hpp"
 #include "Exception.hpp"
 #include "HybridCar.hpp"
-#include "PetrolCar.hpp"
-#include "PetrolEngine.hpp"
 
 constexpr int power = 200;
 constexpr float batteryCap = 50.f;
 constexpr float capacity = 50.f;
 constexpr int gears = 5;
+constexpr int rearGear = -1;
 
 constexpr int expectedSpeed = 100;
 constexpr int invalidValue = 42;
@@ -30,7 +26,7 @@ TEST_F(HybridCarTest, shouldAccelerate) {
 
 TEST_F(HybridCarTest, shouldBrake) {
     car.brake();
-    ASSERT_EQ(car.getSpeed(), 0);
+    ASSERT_EQ(car.getSpeed(), noSpeed);
 }
 
 TEST_F(HybridCarTest, shouldThrowAccelerateException) {
@@ -43,9 +39,9 @@ TEST_F(HybridCarTest, shouldThrowExceptionWhenChangingToInvalidGear) {
 }
 
 TEST_F(HybridCarTest, shouldChangeGearAndThrowExceptionWhenChangingFrom5ToRear) {
-    car.getPetrolEngine()->changeGear(5);
-    ASSERT_EQ(car.getPetrolEngine()->getCurrentGear(), 5);
-    ASSERT_THROW(car.getPetrolEngine()->changeGear(-1), InvalidGear);
+    car.getPetrolEngine()->changeGear(gears);
+    ASSERT_EQ(car.getPetrolEngine()->getCurrentGear(), gears);
+    ASSERT_THROW(car.getPetrolEngine()->changeGear(rearGear), InvalidGear);
 }
 
 TEST_F(HybridCarTest, shouldChangePetrolEngine) {
