@@ -3,6 +3,10 @@
 #include <iostream>
 #include <stdlib.h>
 
+constexpr int REAR = -1;
+constexpr int NEUTRAL = 0;
+constexpr int GEAR_1 = 1;
+
 PetrolEngine::PetrolEngine(Power power, Capacity capacity, Gears gears)
     : power_(power), capacity_(capacity), gears_(gears), currentGear_(0) {
   std::cout << __FUNCTION__ << ": " << __FILE__ << ": " << __LINE__
@@ -16,7 +20,7 @@ void PetrolEngine::changeGear(int gear) {
 
   std::cout << __FUNCTION__ << ": " << __FILE__ << ": " << __LINE__
             << std::endl;
-  if (abs(gear - currentGear_) != 1 or gear < -1 or gear > gears_.gears_) {
+  if (abs(gear - currentGear_) != GEAR_1 or gear < REAR or gear > gears_.gears_) {
     throw InvalidGear("Zgrzyyyyt!");
   }
   currentGear_ = gear;
