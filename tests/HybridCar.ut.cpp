@@ -8,7 +8,7 @@ constexpr int engineGears = 6;
 constexpr int electringEnginePower = 150;
 constexpr int batteryCapacity = 80;
 
-constexpr int newEnginePower = 150;
+constexpr int newEnginePower = 200;
 constexpr float newEngineCapacity = 9.0;
 constexpr int newEngineGears = 8;
 
