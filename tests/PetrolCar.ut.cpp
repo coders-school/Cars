@@ -7,23 +7,32 @@ constexpr int engineGears = 6;
 
 constexpr int betterEnginePower = 150;
 
-TEST(PetrolCarTest, ChangingEngineDouringDrivingShouldThrowException) {
-    PetrolCar newCar(std::make_unique<PetrolEngine>(enginePower, engineCapacity, engineGears));
-    newCar.accelerate(40);
-    EXPECT_THROW(newCar.changeEngine(std::make_unique<PetrolEngine>(betterEnginePower, engineCapacity, engineGears)), InvalidEngineChange);
+class PetrolCarTest : public testing::Test {
+public:
+    PetrolCarTest()
+        : car(std::make_unique<PetrolEngine>(enginePower, engineCapacity, engineGears)) {}
+    PetrolCar car;
+};
+TEST_F(PetrolCarTest, ChangingEngineDouringDrivingShouldThrowException) {
+    car.accelerate(40);
+    EXPECT_THROW(car.changeEngine(std::make_unique<PetrolEngine>(betterEnginePower, engineCapacity, engineGears)), InvalidEngineChange);
 }
 
-TEST(BrakeTest, IfSpeedHigherThanBrakePowerSpeedShouldBeReduceByBrakePower) {
-    PetrolCar car(std::make_unique<PetrolEngine>(enginePower, engineCapacity, engineGears));
+TEST_F(PetrolCarTest, IfSpeedHigherThanBrakePowerSpeedShouldBeReduceByBrakePower) {
     car.accelerate(50);
     car.brake(30);
     EXPECT_EQ(car.getSpeed(), 20);
 }
 
-
-TEST(BrakeTest, IfSpeedLowerThanBrakePowerSpeedShouldBeEqualToZero) {
-    PetrolCar car(std::make_unique<PetrolEngine>(enginePower, engineCapacity, engineGears));
+TEST_F(PetrolCarTest, IfSpeedLowerThanBrakePowerSpeedShouldBeEqualToZero) {
     car.accelerate(70);
     car.brake(90);
     EXPECT_EQ(car.getSpeed(), 0);
+}
+
+TEST_F(PetrolCarTest, IfCarStayChangeEngineShouldBeCorrect){
+    car.accelerate(50);
+    car.brake(51);
+    car.changeEngine(std::make_unique<PetrolEngine>(betterEnginePower, engineCapacity, engineGears));
+    EXPECT_EQ(car.getPetrolEnginePower(), betterEnginePower);
 }
