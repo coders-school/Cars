@@ -1,8 +1,9 @@
 #include "ElectricCar.hpp"
+#include "Exceptions.hpp"
 #include <iostream>
 
-ElectricCar::ElectricCar(ElectricEngine* engine)
-    : engine_(engine)
+ElectricCar::ElectricCar(std::unique_ptr<ElectricEngine> engine)
+    : engine_(std::move(engine))
 {
     std::cout << __FUNCTION__ << std::endl;
 }

@@ -1,8 +1,8 @@
 #include "PetrolCar.hpp"
 #include <iostream>
 
-PetrolCar::PetrolCar(PetrolEngine* engine)
-    : engine_(engine)
+PetrolCar::PetrolCar(std::unique_ptr<PetrolEngine> engine)
+    : engine_(std::move(engine))
 {
     std::cout << __FUNCTION__ << std::endl;
 }
