@@ -34,7 +34,7 @@ void PetrolCar::setGear(int gear) {
 
 void PetrolCar::changeEngine(std::unique_ptr<PetrolEngine> engine) {
     if (speed_ == 0) {
-        engine_ = std::move(engine);
+        std::swap(engine_, engine);
     } else {
         throw InvalidEngine("Can not change the engine during a drive !");
     }

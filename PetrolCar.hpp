@@ -15,5 +15,6 @@ public:
     void showGear();
     void setGear(int gear);
 
+private:
     std::unique_ptr<PetrolEngine> engine_;
 };

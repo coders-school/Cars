@@ -18,7 +18,7 @@ void ElectricCar::restore() {
 
 void ElectricCar::changeEngine(std::unique_ptr<ElectricEngine> engine) {
     if (speed_ == 0) {
-        engine_ = std::move(engine);
+        std::swap(engine_, engine);
     } else {
         throw InvalidEngine("Can not change the engine during a drive !");
     }

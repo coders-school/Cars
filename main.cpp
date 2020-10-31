@@ -73,8 +73,7 @@ int main() {
     car = &toyota;
     HybridCar* car_c = dynamic_cast<HybridCar*>(car);
     if (car_c) {
-        car_c->changePetrolEngine(std::make_unique<PetrolEngine>(120, 1300, 5));
-        car_c->changeElectricEngine(std::make_unique<ElectricEngine>(120, 1300));
+        car_c->changeEngine(std::make_unique<ElectricEngine>(120, 1300), std::make_unique<PetrolEngine>(120, 1300, 5));
         car_c->printInfoEngine();
     }
 }

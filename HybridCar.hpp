@@ -11,6 +11,5 @@ public:
     virtual void restore() override;
 
     virtual void printInfoEngine() const override;
-    void changePetrolEngine(std::unique_ptr<PetrolEngine> petrolEngine);
-    void changeElectricEngine(std::unique_ptr<ElectricEngine> electricEngine);
+    void changeEngine(std::unique_ptr<ElectricEngine> electricEngine, std::unique_ptr<PetrolEngine> petrolEngine);
 };

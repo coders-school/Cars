@@ -20,10 +20,8 @@ void HybridCar::printInfoEngine() const {
     ElectricCar::printInfoEngine();
 }
 
-void HybridCar::changePetrolEngine(std::unique_ptr<PetrolEngine> petrolEngine) {
+void HybridCar::changeEngine(std::unique_ptr<ElectricEngine> electricEngine,
+                             std::unique_ptr<PetrolEngine> petrolEngine) {
     PetrolCar::changeEngine(std::move(petrolEngine));
-}
-
-void HybridCar::changeElectricEngine(std::unique_ptr<ElectricEngine> electricEngine) {
     ElectricCar::changeEngine(std::move(electricEngine));
 }

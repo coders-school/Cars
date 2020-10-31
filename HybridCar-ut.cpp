@@ -29,20 +29,13 @@ TEST_F(HybridCarTest, TestOfNegateiveAccelerateException) {
 
 TEST_F(HybridCarTest, TestOfChangePetrolEngineWhenCarIsDrive) {
     hybridCarTest.accelerate(120);
-    EXPECT_THROW(hybridCarTest.changePetrolEngine(std::make_unique<PetrolEngine>(120, 110, 5)), InvalidEngine);
-}
-
-TEST_F(HybridCarTest, TestOfChangeElectricEngineWhenCarIsDrive) {
-    hybridCarTest.accelerate(120);
-    EXPECT_THROW(hybridCarTest.changeElectricEngine(std::make_unique<ElectricEngine>(120, 110)), InvalidEngine);
+    EXPECT_THROW(hybridCarTest.changeEngine(std::make_unique<ElectricEngine>(120, 110),
+                                            std::make_unique<PetrolEngine>(120, 110, 5)),
+                 InvalidEngine);
 }
 
 TEST_F(HybridCarTest, TestOfChangePetrolEngineWhenCarIsStopped) {
     hybridCarTest.brake();
-    EXPECT_NO_THROW(hybridCarTest.changePetrolEngine(std::make_unique<PetrolEngine>(120, 110, 5)));
-}
-
-TEST_F(HybridCarTest, TestOfChangeElectricEngineWhenCarIsStopped) {
-    hybridCarTest.brake();
-    EXPECT_NO_THROW(hybridCarTest.changeElectricEngine(std::make_unique<ElectricEngine>(120, 110)));
+    EXPECT_NO_THROW(hybridCarTest.changeEngine(std::make_unique<ElectricEngine>(120, 110),
+                                               std::make_unique<PetrolEngine>(120, 110, 5)));
 }
