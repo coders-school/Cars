@@ -5,7 +5,7 @@ constexpr int enginePower = 100;
 constexpr float engineCapacity = 8.0;
 constexpr int engineGears = 6;
 
-constexpr int betterEnginePower = 100;
+constexpr int betterEnginePower = 150;
 
 TEST(PetrolCarTest, ChangingEngineDouringDrivingShouldThrowException) {
     PetrolCar newCar(std::make_unique<PetrolEngine>(enginePower, engineCapacity, engineGears));
