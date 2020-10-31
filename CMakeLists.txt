@@ -37,16 +37,40 @@ endif()
 
 project(Cars)
 
-set(SRC_LIST
+set(SRC
+    Car.cpp
     ElectricCar.cpp
     ElectricEngine.cpp
+    Exceptions.cpp
     HybridCar.cpp
     main.cpp
     PetrolCar.cpp
     PetrolEngine.cpp
-    Car.cpp
+)
+enable_testing()
+
+set(TEST
+    ElectricCar-ut.cpp
+    HybridCar-ut.cpp
+    PetrolCar-ut.cpp
 )
 
-add_executable(${PROJECT_NAME} ${SRC_LIST})
-target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Werror -Wpedantic -Wextra)
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR})
+add_library(${PROJECT_NAME}-lib STATIC ${SRC})
+
+add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME}-ut ${TEST})
+
+target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}-lib)
+target_link_libraries(${PROJECT_NAME}-ut gtest_main ${PROJECT_NAME}-lib)
+
+add_test(NAME ${PROJECT_NAME}_test COMMAND ${PROJECT_NAME}-ut)
+
+set(FLAGS
+    -Wextra
+    -Werror
+    -pedantic
+    -Wconversion
+    -O3)
+
+target_compile_options(${PROJECT_NAME} PRIVATE ${FLAGS})
+target_compile_options(${PROJECT_NAME}-lib PRIVATE ${FLAGS})
