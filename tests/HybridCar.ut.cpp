@@ -23,10 +23,21 @@ TEST(HybridCarTest, IfEnginesWasChangedForOtherEnginesGetPowerAndGetCapacityShou
     hybrid.changeEngine(
         std::make_unique<PetrolEngine>(newEnginePower, newEngineCapacity, newEngineGears),
         std::make_unique<ElectricEngine>(newElectricEnginePower, newBatteryCapacity));
-    
-    EXPECT_EQ(hybrid.getPetrolEnginePower(),newEnginePower);
+
+    EXPECT_EQ(hybrid.getPetrolEnginePower(), newEnginePower);
     EXPECT_FLOAT_EQ(hybrid.getPetrolEngineCapacity(), newEngineCapacity);
     EXPECT_EQ(hybrid.getPower(), newElectricEnginePower);
     EXPECT_EQ(hybrid.getBatteryCapacity(), newBatteryCapacity);
+}
 
+TEST(HybridCarTest, IfCarMoveChangeEngineShouldBeImpossible) {
+    HybridCar hybrid(
+        std::make_unique<PetrolEngine>(enginePower, engineCapacity, engineGears),
+        std::make_unique<ElectricEngine>(electringEnginePower, batteryCapacity));
+
+    hybrid.accelerate(20);
+    EXPECT_THROW(hybrid.changeEngine(
+                     std::make_unique<PetrolEngine>(newEnginePower, newEngineCapacity, newEngineGears),
+                     std::make_unique<ElectricEngine>(newElectricEnginePower, newBatteryCapacity)),
+                 InvalidEngineChange);
 }
