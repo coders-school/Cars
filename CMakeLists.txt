@@ -56,6 +56,7 @@ set(TESTS_LIST
     tests/PetrolEngine.ut.cpp
     tests/HybridCar.ut.cpp
     tests/ElectricEngine.ut.cpp
+    tests/ElectricCar.ut.cpp
     )
 
 add_library(${PROJECT_NAME}-lib STATIC ${SRC_LIST})
