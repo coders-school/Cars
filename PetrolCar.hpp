@@ -10,6 +10,7 @@ public:
     ~PetrolCar();
     void restore() override;
     void changePetrolEngine(std::unique_ptr<PetrolEngine> newEngine);
+    void changeGear(int gear);
 
 protected:
     void refuel();
