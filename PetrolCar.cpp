@@ -16,7 +16,6 @@ void PetrolCar::refuel() {
         petrolEngine_->currentFuelTank_ = petrolEngine_->maxFuelTank_;
     }
 }
-
 void PetrolCar::restore() {
     refuel();
 }
@@ -27,7 +26,6 @@ void PetrolCar::changePetrolEngine(std::unique_ptr<PetrolEngine> newEngine) {
         std::swap(petrolEngine_, newEngine);
     }
 }
-
 void PetrolCar::changeGear(int gear) {
     petrolEngine_->changeGear(gear);
 }

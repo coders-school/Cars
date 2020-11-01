@@ -1,7 +1,7 @@
 #include "Exceptions.hpp"
-#include "gtest/gtest.h"
 #include "PetrolCar.hpp"
 #include "PetrolEngine.hpp"
+#include "gtest/gtest.h"
 
 constexpr int enginePower = 186;
 constexpr int engineCapacity = 1998.9;
@@ -53,10 +53,10 @@ TEST_F(PetrolTestCar, PetrolCarCanChangeEngineAfterStop) {
 TEST_F(PetrolTestCar, PetrolCarCANTChangeEngineWhileItIstMoving) {
     petrolCar.accelerate(100);
     EXPECT_THROW(petrolCar.changePetrolEngine(std::make_unique<PetrolEngine>(newEnginePower,
-                                                                             newEngineCapacity, 
+                                                                             newEngineCapacity,
                                                                              newGears,
-                                                                             maxFuelTank)), 
-                                                                             InvalidSpeed);
+                                                                             maxFuelTank)),
+                 InvalidSpeed);
 }
 
 TEST_F(PetrolTestCar, PetrolCarCanChargeWhenHasLowerBatteryCapacityThanengineCapacity) {

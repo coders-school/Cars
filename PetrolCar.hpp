@@ -1,10 +1,9 @@
 #pragma once
-#include "PetrolEngine.hpp"
-#include "Car.hpp"
 #include <memory>
+#include "Car.hpp"
+#include "PetrolEngine.hpp"
 
-class PetrolCar : virtual public Car
-{
+class PetrolCar : virtual public Car {
 public:
     PetrolCar(std::unique_ptr<PetrolEngine> engine);
     ~PetrolCar();
