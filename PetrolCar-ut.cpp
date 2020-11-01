@@ -59,11 +59,11 @@ TEST_F(PetrolTestCar, PetrolCarCANTChangeEngineWhileItIstMoving) {
                  InvalidSpeed);
 }
 
-TEST_F(PetrolTestCar, PetrolCarCanChargeWhenHasLowerBatteryCapacityThanengineCapacity) {
+TEST_F(PetrolTestCar, PetrolCarCanRefuelWhenHasLowerFuelLevelThanMaxLevelTank) {
     EXPECT_NO_THROW(petrolCar.restore());
 }
 
-TEST_F(PetrolTestCar, PetrolCarCANTChargeWhenItsFull) {
+TEST_F(PetrolTestCar, PetrolCarCANTRefuelWhenItsFull) {
     petrolCar.restore();
     EXPECT_THROW(petrolCar.restore(), InvalidRestore);
 }

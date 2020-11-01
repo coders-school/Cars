@@ -1,4 +1,5 @@
 #pragma once
+#include <map>
 #include <memory>
 #include "ElectricCar.hpp"
 #include "ElectricEngine.hpp"
@@ -11,4 +12,10 @@ public:
     ~HybridCar();
     void restore() override;
     void changeEngine(std::unique_ptr<ElectricEngine> newElectricEngine, std::unique_ptr<PetrolEngine> newPetrolEngine);
+    void changeGear(int gear) = delete;
+    void changeDriveMode(int mode);
+
+protected:
+    std::map<int, std::string> driveMode_ = {{-1, "backward"}, {0, "handbrake"}, {1, "forward"}};
+    int currentMode_ = 0;
 };

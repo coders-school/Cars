@@ -1,81 +1,114 @@
-// #include "ElectricEngine.hpp"
-// #include "Exceptions.hpp"
-// #include "gtest/gtest.h"
-// #include "HybridCar.hpp"
-// #include "PetrolEngine.hpp"
+#include "ElectricEngine.hpp"
+#include "Exceptions.hpp"
+#include "gtest/gtest.h"
+#include "HybridCar.hpp"
+#include "PetrolEngine.hpp"
 
-// constexpr int enginePower = 186;
-// constexpr int engineCapacity = 1998.9;
-// constexpr int gears = 5;
-// constexpr int maxFuelTank = 180;
+constexpr int enginePPower = 186;
+constexpr int engineCapacity = 1998.9;
+constexpr int gears = 5;
+constexpr int maxFuelTank = 180;
 
-// constexpr int newEnginePower = 320;
-// constexpr int newEngineCapacity = 2499.5;
-// constexpr int newGears = 6;
+constexpr int engineEPower = 200;
+constexpr int maxBatteryCapacity = 3000;
+constexpr int currentBatteryCapacity = 2000;
 
-// class HybridTestCar : public ::testing::Test {
-// protected:
-//     HybridTestCar()
-//         : HybridCar(std::make_unique<PetrolEngine>(enginePower, engineCapacity, gears, maxFuelTank)){};
-//     HybridCar HybridCar;
-// };
+constexpr int newEnginePPower = 320;
+constexpr int newEngineCapacity = 2499.5;
+constexpr int newGears = 6;
 
-// TEST_F(HybridTestCar, HybridCarCanAccelerateBy30) {
-//     EXPECT_NO_THROW(HybridCar.accelerate(30));
-// }
+constexpr int newEngineEPower = 400;
+constexpr int newMaxBatteryCapacity = 6000;
+constexpr int newCurrentBatteryCapacity = 3000;
 
-// TEST_F(HybridTestCar, HybridCarCANTAccelerateBy30Below0) {
-//     EXPECT_THROW(HybridCar.accelerate(-30), InvalidSpeed);
-// }
+class HybridTestCar : public ::testing::Test {
+protected:
+    HybridTestCar()
+        : hybridCar(std::make_unique<PetrolEngine>(enginePPower, engineCapacity, gears, maxFuelTank),
+                    std::make_unique<ElectricEngine>(engineEPower, maxBatteryCapacity, currentBatteryCapacity)){};
+    HybridCar hybridCar;
+};
 
-// TEST_F(HybridTestCar, HybridCarCanDecelerateBy30AfterAccelerateBy50) {
-//     HybridCar.accelerate(50);
-//     EXPECT_NO_THROW(HybridCar.decelerate(30));
-// }
+TEST_F(HybridTestCar, HybridCarCanAccelerateBy30) {
+    EXPECT_NO_THROW(hybridCar.accelerate(30));
+}
 
-// TEST_F(HybridTestCar, HybridCarCANTDecelerateBy30AfterAccelerateBy20) {
-//     HybridCar.accelerate(20);
-//     EXPECT_THROW(HybridCar.decelerate(30), InvalidSpeed);
-// }
+TEST_F(HybridTestCar, HybridCarCANTAccelerateBy30Below0) {
+    EXPECT_THROW(hybridCar.accelerate(-30), InvalidSpeed);
+}
 
-// TEST_F(HybridTestCar, HybridCarCANTDecelerateBy30Below0AfterAccelerateBy20) {
-//     HybridCar.accelerate(20);
-//     EXPECT_THROW(HybridCar.decelerate(-30), InvalidSpeed);
-// }
+TEST_F(HybridTestCar, HybridCarCanDecelerateBy30AfterAccelerateBy50) {
+    hybridCar.accelerate(50);
+    EXPECT_NO_THROW(hybridCar.decelerate(30));
+}
 
-// TEST_F(HybridTestCar, HybridCarCanChangeEngineAfterStop) {
-//     HybridCar.brake();
-//     EXPECT_NO_THROW(HybridCar.changePetrolEngine(std::make_unique<PetrolEngine>(newEnginePower,
-//                                                                                 newEngineCapacity,
-//                                                                                 newGears,
-//                                                                                 maxFuelTank)));
-// }
+TEST_F(HybridTestCar, HybridCarCANTDecelerateBy30AfterAccelerateBy20) {
+    hybridCar.accelerate(20);
+    EXPECT_THROW(hybridCar.decelerate(30), InvalidSpeed);
+}
 
-// TEST_F(HybridTestCar, HybridCarCANTChangeEngineWhileItIstMoving) {
-//     HybridCar.accelerate(100);
-//     EXPECT_THROW(HybridCar.changePetrolEngine(std::make_unique<PetrolEngine>(newEnginePower,
-//                                                                              newEngineCapacity, 
-//                                                                              newGears,
-//                                                                              maxFuelTank)), 
-//                                                                              InvalidSpeed);
-// }
+TEST_F(HybridTestCar, HybridCarCANTDecelerateBy30Below0AfterAccelerateBy20) {
+    hybridCar.accelerate(20);
+    EXPECT_THROW(hybridCar.decelerate(-30), InvalidSpeed);
+}
 
-// TEST_F(HybridTestCar, HybridCarCanChargeWhenHasLowerBatteryCapacityThanengineCapacity) {
-//     EXPECT_NO_THROW(HybridCar.restore());
-// }
+TEST_F(HybridTestCar, HybridCarCanChangePetrolEngineAfterStop) {
+    hybridCar.brake();
+    EXPECT_NO_THROW(hybridCar.changePetrolEngine(std::make_unique<PetrolEngine>(newEnginePPower,
+                                                                                newEngineCapacity,
+                                                                                newGears,
+                                                                                maxFuelTank)));
+}
 
-// TEST_F(HybridTestCar, HybridCarCANTChargeWhenItsFull) {
-//     HybridCar.restore();
-//     EXPECT_THROW(HybridCar.restore(), InvalidRestore);
-// }
+TEST_F(HybridTestCar, HybridCarCANTChangePetrolEngineWhileItIstMoving) {
+    hybridCar.accelerate(100);
+    EXPECT_THROW(hybridCar.changePetrolEngine(std::make_unique<PetrolEngine>(newEnginePPower,
+                                                                             newEngineCapacity, 
+                                                                             newGears,
+                                                                             maxFuelTank)), 
+                                                                             InvalidSpeed);
+}
 
-// TEST_F(HybridTestCar, HybridCarCanChangeTheGear) {
-//     EXPECT_NO_THROW(HybridCar.changeGear(-1));
-//     EXPECT_NO_THROW(HybridCar.changeGear(0));
-//     EXPECT_NO_THROW(HybridCar.changeGear(6));
-// }
+TEST_F(HybridTestCar, HybridCarCanChangeElectricEngineAfterStop) {
+    hybridCar.brake();
+    EXPECT_NO_THROW(hybridCar.changeElectricEngine(std::make_unique<ElectricEngine>(newEngineEPower,
+                                                                                  newMaxBatteryCapacity,
+                                                                                  newCurrentBatteryCapacity)));
+}
 
-// TEST_F(HybridTestCar, HybridCarCANTChargeTheWrongGear) {
-//     EXPECT_THROW(HybridCar.changeGear(-2), InvalidGear);
-//     EXPECT_THROW(HybridCar.changeGear(7), InvalidGear);
-// }
+TEST_F(HybridTestCar, HybridCarCANTChangElectricEngineWhileItIstMoving) {
+    hybridCar.accelerate(100);
+    EXPECT_THROW(hybridCar.changeElectricEngine(std::make_unique<ElectricEngine>(newEnginePPower,
+                                                                                 newMaxBatteryCapacity,
+                                                                                 newCurrentBatteryCapacity)),
+                                                                                 InvalidSpeed);
+}
+
+TEST_F(HybridTestCar, HybridCarCanChargeWhenHasLowerBatteryCapacityThanengineCapacity) {
+    EXPECT_NO_THROW(hybridCar.ElectricCar::restore());
+}
+
+TEST_F(HybridTestCar, HybridCarCANTChargeWhenItsFull) {
+    hybridCar.ElectricCar::restore();
+    EXPECT_THROW(hybridCar.ElectricCar::restore(), InvalidRestore);
+}
+
+TEST_F(HybridTestCar, HybridCarCanRefuelWhenHasLowerTankLevelThanMax) {
+    EXPECT_NO_THROW(hybridCar.PetrolCar::restore());
+}
+
+TEST_F(HybridTestCar, HybridCarCANTRefuelWhenTankIsFull) {
+    hybridCar.PetrolCar::restore();
+    EXPECT_THROW(hybridCar.PetrolCar::restore(), InvalidRestore);
+}
+
+TEST_F(HybridTestCar, HybridCarCanChangeTheDriveMode) {
+    EXPECT_NO_THROW(hybridCar.changeDriveMode(-1));
+    EXPECT_NO_THROW(hybridCar.changeDriveMode(0));
+    EXPECT_NO_THROW(hybridCar.changeDriveMode(1));
+}
+
+TEST_F(HybridTestCar, HybridCarCANTHasTheseDrivingModes) {
+    EXPECT_THROW(hybridCar.changeDriveMode(-2), InvalidDriveMode);
+    EXPECT_THROW(hybridCar.changeDriveMode(7), InvalidDriveMode);
+}
