@@ -14,3 +14,8 @@ void HybridCar::restore() {
     ElectricCar::restore();
     PetrolCar::restore();
 }
+
+void HybridCar::changeEngine(std::unique_ptr<ElectricEngine> newElectricEngine, std::unique_ptr<PetrolEngine> newPetrolEngine) {
+    std::swap(electricEngine_, newElectricEngine);
+    std::swap(petrolEngine_, newPetrolEngine);
+}

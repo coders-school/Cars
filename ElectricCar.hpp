@@ -9,9 +9,9 @@ public:
     ElectricCar(std::unique_ptr<ElectricEngine> engine);
     ~ElectricCar();
     void restore() override;
+    void changeElectricEngine(std::unique_ptr<ElectricEngine> newEngine);
 
-
-private:
+protected:
     void charge();
-    std::unique_ptr<ElectricEngine> engine_;
+    std::unique_ptr<ElectricEngine> electricEngine_;
 };

@@ -9,9 +9,9 @@ public:
     PetrolCar(std::unique_ptr<PetrolEngine> engine);
     ~PetrolCar();
     void restore() override;
+    void changePetrolEngine(std::unique_ptr<PetrolEngine> newEngine);
 
-
-private:
+protected:
     void refuel();
-    std::unique_ptr<PetrolEngine> engine_;
+    std::unique_ptr<PetrolEngine> petrolEngine_;
 };
