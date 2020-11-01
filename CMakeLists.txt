@@ -43,7 +43,6 @@ set(SRC
     ElectricEngine.cpp
     Exceptions.cpp
     HybridCar.cpp
-    main.cpp
     PetrolCar.cpp
     PetrolEngine.cpp
 )
