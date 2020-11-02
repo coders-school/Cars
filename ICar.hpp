@@ -1,17 +1,50 @@
 #pragma once
+#include <iostream>
 
 #include "EngineParameters.hpp"
 
 class ICar {
 public:
   virtual ~ICar(){};
-  virtual void turnLeft() const = 0;
-  virtual void turnRight() const = 0;
-  virtual void brake() const = 0;
-  virtual void accelerate(Speed speed) const = 0;
-  virtual void start_engine() const = 0;
-  virtual void stop_engine() const = 0;
-  virtual void fill() const = 0;
-  virtual void refuel(){};
-  virtual void charge(){};
+  virtual void turnLeft() const {
+    std::cout << __FUNCTION__ << ": " << __FILE__ << ": " << __LINE__
+              << std::endl;
+  }
+  virtual void turnRight() const {
+    std::cout << __FUNCTION__ << ": " << __FILE__ << ": " << __LINE__
+              << std::endl;
+  }
+  virtual void brake() const {
+    std::cout << __FUNCTION__ << ": " << __FILE__ << ": " << __LINE__
+              << std::endl;
+  }
+  virtual void accelerate(Speed speed) const {
+    std::cout << __FUNCTION__ << ": " << __FILE__ << ": " << __LINE__
+              << std::endl;
+    std::cout << "Speed : " << speed.speed_ << std::endl;
+  }
+  virtual void start_engine() const {
+    std::cout << __FUNCTION__ << ": " << __FILE__ << ": " << __LINE__
+              << std::endl;
+  }
+
+  virtual void stop_engine() const {
+    std::cout << __FUNCTION__ << ": " << __FILE__ << ": " << __LINE__
+              << std::endl;
+  }
+
+  virtual void fill() const {
+    std::cout << __FUNCTION__ << ": " << __FILE__ << ": " << __LINE__
+              << std::endl;
+  }
+
+  virtual void refuel() {
+    std::cout << __FUNCTION__ << ": " << __FILE__ << ": " << __LINE__
+              << std::endl;
+  }
+
+  virtual void charge() {
+    std::cout << __FUNCTION__ << ": " << __FILE__ << ": " << __LINE__
+              << std::endl;
+  }
 };
