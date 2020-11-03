@@ -7,13 +7,7 @@ HybridCar::HybridCar(std::unique_ptr<IEngine> petrolEng,
       electricEngine_(std::move(electricEng)) {}
 
 HybridCar::~HybridCar() {}
-void HybridCar::turnLeft() const {}
-void HybridCar::turnRight() const {}
-void HybridCar::brake() const {}
-void HybridCar::accelerate(Speed speed) const {}
-void HybridCar::charge() const {}
-void HybridCar::refuel() const {}
-void HybridCar::fill() const {
+void HybridCar::fill() {
   charge();
   refuel();
 }
@@ -26,3 +20,13 @@ void HybridCar::stop_engine() const {
   petrolEngine_->stop();
   electricEngine_->stop();
 }
+
+void HybridCar::charge() {
+  std::cout << __FUNCTION__ << ": " << __FILE__ << ": " << __LINE__
+            << std::endl;
+}
+void HybridCar::refuel() {
+  std::cout << __FUNCTION__ << ": " << __FILE__ << ": " << __LINE__
+            << std::endl;
+}
+

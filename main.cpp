@@ -12,7 +12,7 @@ int main() {
   PetrolCar opel(
       std::make_unique<PetrolEngine>(Power{120}, Capacity{1800}, Gears{6}));
   car_ptr.reset(&opel);
-  car_ptr->refuel();
+  car_ptr->fill();
   car_ptr->accelerate(Speed{50});
   car_ptr->brake();
   car_ptr.release();
@@ -21,7 +21,7 @@ int main() {
   ElectricCar nissan(
       std::make_unique<ElectricEngine>(Power{130}, BatteryCapacity{650}));
   car_ptr.reset(&nissan);
-  car_ptr->charge();
+  car_ptr->fill();
   car_ptr->accelerate(Speed{80});
   //  nissan.engine_ = new ElectricEngine(Power{150}, BatteryCapacity{700});  //
   //  Changing an engine during driving is not safe
@@ -35,7 +35,6 @@ int main() {
   car_ptr.reset(&toyota);
   car_ptr->accelerate(Speed{100});
   car_ptr->brake();
-  car_ptr->charge();
-  car_ptr->refuel();
+  car_ptr->fill();
   car_ptr.release();
 }

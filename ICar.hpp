@@ -33,17 +33,7 @@ public:
               << std::endl;
   }
 
-  virtual void fill() const {
-    std::cout << __FUNCTION__ << ": " << __FILE__ << ": " << __LINE__
-              << std::endl;
-  }
-
-  virtual void refuel() {
-    std::cout << __FUNCTION__ << ": " << __FILE__ << ": " << __LINE__
-              << std::endl;
-  }
-
-  virtual void charge() {
+  virtual void fill() {
     std::cout << __FUNCTION__ << ": " << __FILE__ << ": " << __LINE__
               << std::endl;
   }
