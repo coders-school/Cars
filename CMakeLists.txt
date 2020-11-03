@@ -55,7 +55,8 @@ endif()
 enable_testing()
 
 add_executable(${PROJECT_NAME} main.cpp)
-add_executable(${PROJECT_NAME}-ut test.cpp )
+add_executable(${PROJECT_NAME}-ut test_electric_car.cpp  test_hybrid_car.cpp test_petrol_car.cpp)
+
 
 target_link_libraries(${PROJECT_NAME}-ut gtest_main gmock_main ${PROJECT_NAME}-lib)
 target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}-lib)
