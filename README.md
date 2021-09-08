@@ -1,23 +1,24 @@
 # Object-oriented C++
 
-## Assignment
+## Zadanie
 
-1. Design proper abstraction (interfaces)
-2. Apply inheritance
-3. Fix encapsulation
-4. Use polymorphism to represent every type of car, using a single pointer
-5. Fix a diamond problem
-6. Fix potential memory leaks
-7. Think about the way of keeping engines in cars. Should they be kept by a value, reference or a pointer (what kind of pointer)?
-8. Is this code testable?
+1. <!-- .element: class="fragment fade-in" --> Zaproponuj właściwą abstrakcję (interfejs)
+2. <!-- .element: class="fragment fade-in" --> Zastosuj dziedziczenie
+3. <!-- .element: class="fragment fade-in" --> Napraw enkapsulację
+4. <!-- .element: class="fragment fade-in" --> Użyj polimorfizmu, aby za pomocą wskaźnika na klasę bazową reprezentować dowolny typ samochodu
 
-## Post-work
+## Pytania
+
+1. <!-- .element: class="fragment fade-in" --> Jak trzymać silniki? Przez wartość, referencję, czy wskaźnik?
+2. <!-- .element: class="fragment fade-in" --> Czy jest problem diamentowy?
+3. <!-- .element: class="fragment fade-in" --> Czy są wycieki pamięci?
+4. <!-- .element: class="fragment fade-in" --> Czy kod jest testowalny?
+
+## Praca domowa
 
 You can work in groups or individually. Please fork the repo and submit a Pull Request after you have finished.
 
 1. Create `InvalidGear` exception. It should be thrown when someone tries eg. change a gear from 5 to R. It should inherit from one of STL exceptions
 2. Fix interfaces to be easy to use correctly and hard to use incorrectly (like `accelerate(-999)`)
 3. (Optional) Write proper unit tests to this code.
-4. Read one of below articles. It will be useful for the next lesson.
-    - [SOLID czyli dobre praktyki w programowaniu obiektowym](https://www.samouczekprogramisty.pl/solid-czyli-dobre-praktyki-w-programowaniu-obiektowym/) (in Polish)
-    - [S.O.L.I.D: The First 5 Principles of Object Oriented Design](https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design) (in English)
+4. Przeczytaj artykuł [SOLID czyli dobre praktyki w programowaniu obiektowym](https://www.samouczekprogramisty.pl/solid-czyli-dobre-praktyki-w-programowaniu-obiektowym/)
