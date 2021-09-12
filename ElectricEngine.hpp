@@ -4,12 +4,12 @@
 class ElectricEngine : public Engine {
 public:
     struct AmpereHour {
-        explicit AmpereHour(int batteryCapacity)
+        explicit constexpr AmpereHour(int batteryCapacity)
             : val(batteryCapacity) {}
         int val;
     };
 
-    ElectricEngine(Engine::HorsePower power, AmpereHour batteryCapacity);
+    ElectricEngine(const Engine::HorsePower& power, const AmpereHour& batteryCapacity);
 
 private:
     AmpereHour batteryCapacity_;
