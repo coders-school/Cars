@@ -2,8 +2,14 @@
 
 class Engine {
 public:
-    Engine(int power);
+    struct HorsePower {
+        explicit HorsePower(int hp)
+            : hp_(hp) {}
+        int hp_;
+    };
+
+    Engine(HorsePower power);
 
 private:
-    int power_;  // in HP
+    HorsePower power_;
 };

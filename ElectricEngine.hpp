@@ -3,7 +3,7 @@
 
 class ElectricEngine : public Engine {
 public:
-    ElectricEngine(int power, int batteryCapacity);
+    ElectricEngine(Engine::HorsePower power, int batteryCapacity);
 
 private:
     int batteryCapacity_;  // in Ah

@@ -6,7 +6,7 @@
 int main() {
     std::cout << std::endl
               << "OPEL" << std::endl;
-    PetrolCar opel(new PetrolEngine(120, 1800, 6));
+    PetrolCar opel(new PetrolEngine(Engine::HorsePower(120), 1800, 6));
     opel.accelerate(50);
     opel.brake();
     opel.accelerate(-900);
@@ -14,7 +14,7 @@ int main() {
 
     std::cout << std::endl
               << "NISSAN" << std::endl;
-    ElectricCar nissan(new ElectricEngine(130, 650));
+    ElectricCar nissan(new ElectricEngine(Engine::HorsePower(130), 650));
     nissan.refill();
     nissan.accelerate(80);
     //nissan.engine_ = new ElectricEngine(150, 700);  // Changing an engine during driving is not safe
@@ -22,7 +22,7 @@ int main() {
 
     std::cout << std::endl
               << "TOYOTA" << std::endl;
-    HybridCar toyota(new PetrolEngine(80, 1400, 5), new ElectricEngine(100, 540));
+    HybridCar toyota(new PetrolEngine(Engine::HorsePower(80), 1400, 5), new ElectricEngine(Engine::HorsePower(100), 540));
     toyota.accelerate(100);
     toyota.brake();
     toyota.refill();
