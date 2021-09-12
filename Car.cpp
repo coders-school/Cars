@@ -12,10 +12,12 @@ void Car::turnRight() {
 }
 void Car::brake() {
     std::cout << __FUNCTION__ << std::endl;
+    speed_ = 0;
 }
-void Car::accelerate(int) {
+void Car::accelerate(int speed) {
     std::cout << __FUNCTION__ << std::endl;
+    speed_ = speed;
 }
-int Car::getSpeed() const{
+int Car::getSpeed() const {
     return speed_;
 }
