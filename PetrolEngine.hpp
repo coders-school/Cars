@@ -9,11 +9,18 @@ public:
         float ccm_;
     };
 
-    PetrolEngine(Engine::HorsePower power, CubicCentimetre capacity, int gears);
-    void changeGear(int gear);
+    struct Gear {
+        explicit Gear(int gear)
+            : gear_(gear) {}
+        int gear_;
+        bool operator==(const Gear& other) const;
+    };
+
+    PetrolEngine(Engine::HorsePower power, CubicCentimetre capacity, Gear maxGear);
+    void changeGear(Gear gear);
 
 private:
     CubicCentimetre capacity_;
-    int gears_;
-    int currentGear_;
+    Gear maxGear_;
+    Gear currentGear_;
 };

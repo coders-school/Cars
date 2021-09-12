@@ -6,7 +6,7 @@
 int main() {
     std::cout << std::endl
               << "OPEL" << std::endl;
-    PetrolCar opel(new PetrolEngine(Engine::HorsePower(120), PetrolEngine::CubicCentimetre(1800), 6));
+    PetrolCar opel(new PetrolEngine(Engine::HorsePower(120), PetrolEngine::CubicCentimetre(1800), PetrolEngine::Gear(6)));
     opel.accelerate(50);
     opel.brake();
     opel.accelerate(-900);
@@ -21,7 +21,7 @@ int main() {
 
     std::cout << std::endl
               << "TOYOTA" << std::endl;
-    HybridCar toyota(new PetrolEngine(Engine::HorsePower(80), PetrolEngine::CubicCentimetre(1400), 5),
+    HybridCar toyota(new PetrolEngine(Engine::HorsePower(80), PetrolEngine::CubicCentimetre(1400), PetrolEngine::Gear(5)),
                      new ElectricEngine(Engine::HorsePower(100), ElectricEngine::AmpereHour(540)));
     toyota.accelerate(100);
     toyota.brake();
