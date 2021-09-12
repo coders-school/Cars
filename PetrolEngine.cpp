@@ -22,6 +22,10 @@ PetrolEngine::PetrolEngine(Engine::HorsePower power, CubicCentimetre capacity, G
 
 void PetrolEngine::changeGear(Gear gear) {
     std::cout << __FUNCTION__ << std::endl;
+    if (!this->car_) {
+        std::cout << "Tried to change gear on engie without a car\n";
+        return;
+    }
     if (gear > this->maxGear_ || gear < Gear(-1)) {
         // throw
         std::cout << gear.val << " does not exist\n";
