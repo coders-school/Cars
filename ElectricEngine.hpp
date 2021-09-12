@@ -3,8 +3,14 @@
 
 class ElectricEngine : public Engine {
 public:
-    ElectricEngine(Engine::HorsePower power, int batteryCapacity);
+    struct AmpereHour {
+        explicit AmpereHour(int ah)
+            : ah_(ah) {}
+        int ah_;
+    };
+
+    ElectricEngine(Engine::HorsePower power, AmpereHour batteryCapacity);
 
 private:
-    int batteryCapacity_;  // in Ah
+    AmpereHour batteryCapacity_;
 };

@@ -14,15 +14,15 @@ int main() {
 
     std::cout << std::endl
               << "NISSAN" << std::endl;
-    ElectricCar nissan(new ElectricEngine(Engine::HorsePower(130), 650));
+    ElectricCar nissan(new ElectricEngine(Engine::HorsePower(130), ElectricEngine::AmpereHour(650)));
     nissan.refill();
     nissan.accelerate(80);
-    //nissan.engine_ = new ElectricEngine(150, 700);  // Changing an engine during driving is not safe
     nissan.turnLeft();
 
     std::cout << std::endl
               << "TOYOTA" << std::endl;
-    HybridCar toyota(new PetrolEngine(Engine::HorsePower(80), 1400, 5), new ElectricEngine(Engine::HorsePower(100), 540));
+    HybridCar toyota(new PetrolEngine(Engine::HorsePower(80), 1400, 5),
+                     new ElectricEngine(Engine::HorsePower(100), ElectricEngine::AmpereHour(540)));
     toyota.accelerate(100);
     toyota.brake();
     toyota.refill();
