@@ -1,8 +1,12 @@
 #include "PetrolCar.hpp"
 #include <iostream>
+#include <memory>
+#include <utility>
+#include "PetrolEngine.hpp"
 
-PetrolCar::PetrolCar(PetrolEngine* engine)
-    : engine_(engine) {
+PetrolCar::PetrolCar(std::unique_ptr<PetrolEngine> engine)
+    : petrolEngine_(std::move(engine)) {
+    petrolEngine_->attach(this);
     std::cout << __FUNCTION__ << std::endl;
 }
 

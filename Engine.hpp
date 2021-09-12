@@ -1,5 +1,7 @@
 #pragma once
 
+class Car;
+
 class Engine {
 public:
     struct HorsePower {
@@ -9,7 +11,10 @@ public:
     };
 
     Engine(HorsePower power);
+    bool attach(const Car* const ptr);
+    void detach();
 
 private:
     HorsePower power_;
+    const Car* car_{nullptr};
 };

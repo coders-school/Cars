@@ -23,9 +23,13 @@ void PetrolEngine::changeGear(Gear gear) {
     std::cout << __FUNCTION__ << std::endl;
     if (gear > this->maxGear_ || gear < Gear(-1)) {
         // throw
+        std::cout << gear.val << " does not exist\n";
+        return;
     }
     if (gear == Gear(-1) && this->currentGear_ > Gear(1)) {
         // throw
+        std::cout << "Unsafe to change gear\n";
+        return;
     }
     currentGear_ = gear;
 }
