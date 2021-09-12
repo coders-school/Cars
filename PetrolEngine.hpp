@@ -4,15 +4,15 @@
 class PetrolEngine : public Engine {
 public:
     struct CubicCentimetre {
-        explicit CubicCentimetre(float ccm)
-            : ccm_(ccm) {}
-        float ccm_;
+        explicit CubicCentimetre(float capacity)
+            : val(capacity) {}
+        float val;
     };
 
     struct Gear {
         explicit Gear(int gear)
-            : gear_(gear) {}
-        int gear_;
+            : val(gear) {}
+        int val;
         bool operator==(const Gear& other) const;
     };
 

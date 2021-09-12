@@ -3,7 +3,7 @@
 #include "Engine.hpp"
 
 bool PetrolEngine::Gear::operator==(const Gear& other) const {
-    return this->gear_ == other.gear_;
+    return this->val == other.val;
 }
 
 PetrolEngine::PetrolEngine(Engine::HorsePower power, CubicCentimetre capacity, Gear maxGear)
