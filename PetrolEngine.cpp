@@ -2,7 +2,7 @@
 #include <iostream>
 #include "Engine.hpp"
 
-PetrolEngine::PetrolEngine(Engine::HorsePower power, float capacity, int gears)
+PetrolEngine::PetrolEngine(Engine::HorsePower power, CubicCentimetre capacity, int gears)
     : Engine(power), capacity_(capacity), gears_(gears), currentGear_(0) {
     std::cout << __FUNCTION__ << std::endl;
 }
