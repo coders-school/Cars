@@ -16,3 +16,6 @@ void Car::brake() {
 void Car::accelerate(int) {
     std::cout << __FUNCTION__ << std::endl;
 }
+int Car::getSpeed() const{
+    return speed_;
+}

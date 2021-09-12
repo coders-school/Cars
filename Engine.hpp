@@ -14,7 +14,9 @@ public:
     bool attach(const Car* const ptr);
     void detach();
 
+protected:
+    const Car* car_{nullptr};
+
 private:
     HorsePower power_;
-    const Car* car_{nullptr};
 };

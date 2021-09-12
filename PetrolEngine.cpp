@@ -1,5 +1,6 @@
 #include "PetrolEngine.hpp"
 #include <iostream>
+#include "Car.hpp"
 #include "Engine.hpp"
 
 bool PetrolEngine::Gear::operator==(const Gear& other) const {
@@ -26,7 +27,7 @@ void PetrolEngine::changeGear(Gear gear) {
         std::cout << gear.val << " does not exist\n";
         return;
     }
-    if (gear == Gear(-1) && this->currentGear_ > Gear(1)) {
+    if (gear == Gear(-1) && this->car_->getSpeed() != 0) {
         // throw
         std::cout << "Unsafe to change gear\n";
         return;
