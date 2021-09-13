@@ -21,3 +21,6 @@ void PetrolEngine::changeGear(int gear) {
     currentGear_ = gear;
     std::cout << __FUNCTION__ << std::endl;
 }
+int PetrolEngine::getCurrentGear() const {
+    return currentGear_;
+}

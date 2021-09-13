@@ -2,8 +2,6 @@
 
 class Car {
    public:
-    ~Car();
-
     void turnLeft();
     void turnRight();
     void brake();
@@ -11,4 +9,7 @@ class Car {
 
     virtual void restore() = 0;
     virtual ~Car() {}
+
+   private:
+    int speed_{0};
 };
