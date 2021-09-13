@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Exception.hpp"
 class PetrolEngine {
    public:
     PetrolEngine(int power, float capacity, int gears);
