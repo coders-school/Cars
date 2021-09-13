@@ -20,5 +20,5 @@ jobs:
     - name: Run tests
       working-directory: ${{ env.path }}
       run: |
-        ../../../.github/workflows/check-tests.sh ../CMakeLists.txt
+        ../.github/workflows/check-tests.sh ../CMakeLists.txt
         ctest -V

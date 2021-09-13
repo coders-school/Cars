@@ -20,4 +20,4 @@ jobs:
     - name: Run tests
       working-directory: ${{ env.path }}
       run: |
-        ../../../.github/workflows/check-exception.sh ../*.cpp ../*.hpp
+        ../.github/workflows/check-exception.sh ../*.cpp ../*.hpp
