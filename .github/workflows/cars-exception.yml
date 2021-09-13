@@ -20,4 +20,5 @@ jobs:
     - name: Run tests
       working-directory: ${{ env.path }}
       run: |
+        chmod +x ../.github/workflows/check-exception.sh
         ../.github/workflows/check-exception.sh ../*.cpp ../*.hpp
