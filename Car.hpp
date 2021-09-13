@@ -1,12 +1,14 @@
 #pragma once
 
-class Car
-{
-public:
+class Car {
+   public:
+    ~Car();
+
     void turnLeft();
     void turnRight();
     void brake();
     void accelerate(int speed);
-    virtual void refill() = 0;
-    virtual ~Car(){}
+
+    virtual void restore() = 0;
+    virtual ~Car() {}
 };

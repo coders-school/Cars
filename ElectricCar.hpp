@@ -2,16 +2,16 @@
 #include "Car.hpp"
 #include "ElectricEngine.hpp"
 
-class ElectricCar : public virtual Car
-{
-public:
+class ElectricCar : public virtual Car {
+   public:
     ElectricCar(ElectricEngine* engine);
     ~ElectricCar();
 
-    void changeEngine(ElectricEngine* ee);
-    void refill() override;
+    void restore() override;
 
-private:
+    void changeEngine(ElectricEngine* ee);
+
+   private:
     void charge();
     ElectricEngine* engine_;
 };

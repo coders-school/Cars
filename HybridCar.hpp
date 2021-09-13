@@ -1,14 +1,12 @@
-#pragma once
+
 #include "ElectricCar.hpp"
 #include "ElectricEngine.hpp"
 #include "PetrolCar.hpp"
+#pragma once
 #include "PetrolEngine.hpp"
-#include <iostream>
-
-class HybridCar : public ElectricCar, public PetrolCar
-{
-public:
+class HybridCar : public PetrolCar, public ElectricCar {
+   public:
     HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng);
     ~HybridCar();
-    void refill() override;
+    void restore() override;
 };
