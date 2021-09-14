@@ -43,7 +43,7 @@ int main() {
     try {
         PetrolEngine engine(60, 120, 5);
         engine.changeGear(6);
-    } catch (InvalidGear &err) {
+    } catch (std::logic_error &err) {
         std::cerr << err.what() << '\n';
     }
 }
