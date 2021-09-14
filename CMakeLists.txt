@@ -45,7 +45,6 @@ set(SRC_LIST
     PetrolCar.cpp
     PetrolEngine.cpp
     Car.cpp
-    InvalidGear.cpp
 )
 
 set(TEST_LIST
@@ -55,7 +54,6 @@ set(TEST_LIST
     PetrolCar.cpp
     PetrolEngine.cpp
     Car.cpp
-    InvalidGear.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})

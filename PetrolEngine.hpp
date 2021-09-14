@@ -1,6 +1,13 @@
 #pragma once
 
-#include "InvalidGear.hpp"
+#include <stdexcept>
+#include <string>
+
+class InvalidGear : public std::logic_error {
+   public:
+    InvalidGear(const std::string& msg) : std::logic_error(msg) {
+    }
+};
 class PetrolEngine {
    public:
     PetrolEngine(int power, float capacity, int gears);
