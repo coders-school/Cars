@@ -13,7 +13,11 @@ int main() {
     car = &opel;
     car->accelerate(50);
     car->brake();
-    car->accelerate(-900);
+    try {
+        car->accelerate(-900);
+    } catch (std::range_error &err) {
+        std::cerr << err.what() << '\n';
+    }
     car->restore();
 
     std::cout << std::endl
