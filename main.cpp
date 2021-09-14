@@ -39,4 +39,11 @@ int main() {
     car->brake();
 
     car->restore();
+
+    try {
+        PetrolEngine engine(60, 120, 5);
+        engine.changeGear(6);
+    } catch (InvalidGear &err) {
+        std::cerr << err.what() << '\n';
+    }
 }
