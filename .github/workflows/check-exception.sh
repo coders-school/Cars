@@ -30,7 +30,7 @@ echo -e $BOLD "Performing checks" $DEFAULT
 
 positive_lookup "should have InvalidGear that inherits from logic_error" "(class|struct)\s+InvalidGear\s*:\s*(public)?\s*(std::)?logic_error"
 positive_lookup "should throw InvalidGear" "throw\s+InvalidGear"
-positive_lookup "should catch InvalidGear" "catch.*InvalidGear"
+# positive_lookup "should catch InvalidGear" "catch.*InvalidGear"
 
 echo -e "==="
 
