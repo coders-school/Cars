@@ -7,9 +7,9 @@ public:
     int getPower() const;
     int getBatteryCapacity() const;
 
-    void setPower();
-    void setBaterryCapacity();
-    
+    void setPower(int);
+    void setBaterryCapacity(int);
+
 private:
     int power_;             // in HP 
     int batteryCapacity_;   // in Ah

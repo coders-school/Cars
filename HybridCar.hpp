@@ -5,7 +5,7 @@ class HybridCar
 {
 public:
     HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng);
-    ~HybridCar();
+    ~HybridCar() = default;
     void turnLeft();
     void turnRight();
     void brake();
@@ -13,6 +13,7 @@ public:
     void charge();
     void refuel();
 
+private:
     PetrolEngine* petrolEngine_;
     ElectricEngine* electricEngine_;
 };
