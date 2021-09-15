@@ -10,6 +10,8 @@ public:
     void brake();
     void accelerate(int speed);
     void refuel();
+
+    PetrolEngine* getEngine() const;
 private:
     PetrolEngine* engine_;
 };

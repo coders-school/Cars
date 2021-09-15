@@ -12,7 +12,7 @@ public:
     void accelerate(int speed);
     void charge();
     void refuel();
-
+    
 private:
     PetrolEngine* petrolEngine_;
     ElectricEngine* electricEngine_;

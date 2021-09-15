@@ -4,7 +4,7 @@ class ElectricCar
 {
 public:
     ElectricCar(ElectricEngine* engine);
-    ~ElectricCar();
+    ~ElectricCar() = default;
     void turnLeft();
     void turnRight();
     void brake();
