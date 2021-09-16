@@ -9,7 +9,9 @@
 int main() {
     std::cout << std::endl
               << "OPEL" << std::endl;
-    PetrolCar opel(std::make_unique<PetrolEngine>(Engine::HorsePower(120), PetrolEngine::CubicCentimetre(1800), PetrolEngine::Gear(6)));
+    PetrolCar opel(std::make_unique<PetrolEngine>(Engine::HorsePower(120),
+                                                  PetrolEngine::CubicCentimetre(1800),
+                                                  PetrolEngine::Gear(6)));
     Car* car = &opel;
     car->accelerate(50);
     car->brake();
@@ -29,8 +31,11 @@ int main() {
 
     std::cout << std::endl
               << "TOYOTA" << std::endl;
-    HybridCar toyota(std::make_unique<PetrolEngine>(Engine::HorsePower(80), PetrolEngine::CubicCentimetre(1400), PetrolEngine::Gear(5)),
-                     std::make_unique<ElectricEngine>(Engine::HorsePower(100), ElectricEngine::AmpereHour(540)));
+    HybridCar toyota(std::make_unique<PetrolEngine>(Engine::HorsePower(80),
+                                                    PetrolEngine::CubicCentimetre(1400),
+                                                    PetrolEngine::Gear(5)),
+                     std::make_unique<ElectricEngine>(Engine::HorsePower(100),
+                                                      ElectricEngine::AmpereHour(540)));
     car = &toyota;
     car->accelerate(100);
     car->brake();
