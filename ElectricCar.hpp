@@ -1,17 +1,15 @@
 #pragma once
+#include <memory>
 #include "Car.hpp"
 #include "ElectricEngine.hpp"
 
-class ElectricCar : public virtual Car
-{
+class ElectricCar : virtual public Car {
 public:
-    ElectricCar(ElectricEngine* engine);
-    ~ElectricCar();
-
-    void changeEngine(ElectricEngine* ee);
+    ElectricCar(std::unique_ptr<ElectricEngine> engine);
+    virtual ~ElectricCar();
     void refill() override;
 
 private:
     void charge();
-    ElectricEngine* engine_;
+    std::unique_ptr<ElectricEngine> electricEngine_;
 };

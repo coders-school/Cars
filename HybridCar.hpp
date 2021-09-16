@@ -1,14 +1,18 @@
 #pragma once
+#include <memory>
 #include "ElectricCar.hpp"
 #include "ElectricEngine.hpp"
 #include "PetrolCar.hpp"
 #include "PetrolEngine.hpp"
 #include <iostream>
 
-class HybridCar : public ElectricCar, public PetrolCar
-{
+class HybridCar : public PetrolCar, public ElectricCar {
 public:
-    HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng);
-    ~HybridCar();
+    HybridCar(std::unique_ptr<PetrolEngine> petrolEng, std::unique_ptr<ElectricEngine> electricEng);
+    virtual ~HybridCar();
     void refill() override;
+
+private:
+    void charge();
+    void refuel();
 };

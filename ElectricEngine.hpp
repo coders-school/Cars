@@ -1,11 +1,16 @@
 #pragma once
+#include "Engine.hpp"
 
-class ElectricEngine
-{
+class ElectricEngine : public Engine {
 public:
-    ElectricEngine(int power, int batteryCapacity);
+    struct AmpereHour {
+        explicit constexpr AmpereHour(int batteryCapacity)
+            : val(batteryCapacity) {}
+        int val;
+    };
+
+    ElectricEngine(const Engine::HorsePower& power, const AmpereHour& batteryCapacity);
 
 private:
-    int power_;             // in HP
-    int batteryCapacity_;   // in Ah
+    AmpereHour batteryCapacity_;
 };

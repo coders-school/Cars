@@ -1,14 +1,28 @@
 #pragma once
+#include "Engine.hpp"
 
-class PetrolEngine
-{
+class PetrolEngine : public Engine {
 public:
-    PetrolEngine(int power, float capacity, int gears);
-    void changeGear(int gear);
+    struct CubicCentimetre {
+        explicit constexpr CubicCentimetre(float capacity)
+            : val(capacity) {}
+        float val;
+    };
+
+    struct Gear {
+        explicit constexpr Gear(int gear)
+            : val(gear) {}
+        int val;
+        bool operator==(const Gear& other) const;
+        bool operator>(const Gear& other) const;
+        bool operator<(const Gear& other) const;
+    };
+
+    PetrolEngine(const Engine::HorsePower& power, const CubicCentimetre& capacity, const Gear& maxGear);
+    void changeGear(Gear gear);
 
 private:
-    int power_;         // in HP
-    float capacity_;    // in ccm
-    int gears_;
-    int currentGear_;
+    CubicCentimetre capacity_;
+    Gear maxGear_;
+    Gear currentGear_;
 };

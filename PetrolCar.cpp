@@ -1,18 +1,23 @@
 #include "PetrolCar.hpp"
 #include <iostream>
+#include <memory>
+#include <utility>
+#include "PetrolEngine.hpp"
 
-PetrolCar::PetrolCar(PetrolEngine* engine)
-    : engine_(engine)
-{
+PetrolCar::PetrolCar(std::unique_ptr<PetrolEngine> engine)
+    : petrolEngine_(std::move(engine)) {
+    petrolEngine_->attach(this);
     std::cout << __FUNCTION__ << std::endl;
 }
 
-PetrolCar::~PetrolCar()         { std::cout << __FUNCTION__ << std::endl; }
-void PetrolCar::refuel()        { std::cout << __FUNCTION__ << std::endl; }
-void PetrolCar::changeEngine(PetrolEngine* pe) {
-    delete engine_;
-    engine_ = pe;
+PetrolCar::~PetrolCar() {
+    std::cout << __FUNCTION__ << std::endl;
 }
+
 void PetrolCar::refill() {
-    refuel();
+    this->refuel();
+}
+
+void PetrolCar::refuel() {
+    std::cout << __FUNCTION__ << std::endl;
 }
