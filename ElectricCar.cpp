@@ -5,8 +5,8 @@
 #include "ElectricEngine.hpp"
 
 ElectricCar::ElectricCar(std::unique_ptr<ElectricEngine> engine)
-    : electricEngine_(std::move(engine)) {
-    electricEngine_->attach(this);
+    : engine_(std::move(engine)) {
+    engine_->attach(this);
     std::cout << __FUNCTION__ << std::endl;
 }
 

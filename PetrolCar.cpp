@@ -5,8 +5,8 @@
 #include "PetrolEngine.hpp"
 
 PetrolCar::PetrolCar(std::unique_ptr<PetrolEngine> engine)
-    : petrolEngine_(std::move(engine)) {
-    petrolEngine_->attach(this);
+    : engine_(std::move(engine)) {
+    engine_->attach(this);
     std::cout << __FUNCTION__ << std::endl;
 }
 
