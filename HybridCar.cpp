@@ -15,14 +15,6 @@ HybridCar::~HybridCar() {
 }
 
 void HybridCar::refill() {
-    this->refuel();
-    this->charge();
-}
-
-void HybridCar::charge() {
-    std::cout << __FUNCTION__ << std::endl;
-}
-
-void HybridCar::refuel() {
-    std::cout << __FUNCTION__ << std::endl;
+    PetrolCar::refill();
+    ElectricCar::refill();
 }

@@ -11,8 +11,4 @@ public:
     HybridCar(std::unique_ptr<PetrolEngine> petrolEng, std::unique_ptr<ElectricEngine> electricEng);
     virtual ~HybridCar();
     void refill() override;
-
-private:
-    void charge();
-    void refuel();
 };
