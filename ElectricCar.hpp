@@ -11,5 +11,5 @@ public:
 
 private:
     void charge();
-    std::unique_ptr<ElectricEngine> electricEngine_;
+    std::unique_ptr<ElectricEngine> engine_;
 };

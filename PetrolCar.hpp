@@ -12,5 +12,5 @@ public:
 
 private:
     void refuel();
-    std::unique_ptr<PetrolEngine> petrolEngine_;
+    std::unique_ptr<PetrolEngine> engine_;
 };
