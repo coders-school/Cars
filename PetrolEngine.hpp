@@ -19,7 +19,7 @@ public:
     };
 
     PetrolEngine(const Engine::HorsePower& power, const CubicCentimetre& capacity, const Gear& maxGear);
-    void changeGear(Gear gear);
+    void changeGear(const Gear& gear);
 
 private:
     CubicCentimetre capacity_;
