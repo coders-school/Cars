@@ -12,9 +12,9 @@ int main() {
                                                   PetrolEngine::CubicCentimetre(1800),
                                                   PetrolEngine::Gear(6)));
     Car* car = &opel;
-    car->accelerate(50);
+    car->accelerate(Car::Speed(50));
     car->brake();
-    car->accelerate(-900);
+    car->accelerate(Car::Speed(-900));
     car->refill();
     car->changeEngine(std::make_unique<PetrolEngine>(Engine::HorsePower(150),
                                                      PetrolEngine::CubicCentimetre(700),
@@ -24,7 +24,7 @@ int main() {
     ElectricCar nissan(std::make_unique<ElectricEngine>(Engine::HorsePower(130), ElectricEngine::AmpereHour(650)));
     car = &nissan;
     car->refill();
-    car->accelerate(80);
+    car->accelerate(Car::Speed(50));
     car->changeEngine(std::make_unique<ElectricEngine>(Engine::HorsePower(150), ElectricEngine::AmpereHour(700)));
     car->turnLeft();
 
@@ -35,7 +35,7 @@ int main() {
                      std::make_unique<ElectricEngine>(Engine::HorsePower(100),
                                                       ElectricEngine::AmpereHour(540)));
     car = &toyota;
-    car->accelerate(100);
+    car->accelerate(Car::Speed(100));
     car->brake();
     car->refill();
     car->changeEngine(std::make_unique<ElectricEngine>(Engine::HorsePower(150), ElectricEngine::AmpereHour(700)));

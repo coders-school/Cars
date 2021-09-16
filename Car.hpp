@@ -7,16 +7,23 @@ class ElectricEngine;
 
 class Car {
 public:
+    struct Speed {
+        explicit constexpr Speed(int speed)
+            : val(speed) {}
+        int val;
+        bool operator!=(const Speed& other) const;
+    };
+
     virtual ~Car();
     void turnLeft();
     void turnRight();
     void brake();
-    void accelerate(int speed);
-    int getSpeed() const;
+    void accelerate(Speed speed);
+    Speed getSpeed() const;
     virtual void refill() = 0;
     virtual void changeEngine(std::unique_ptr<PetrolEngine> engine) = 0;
     virtual void changeEngine(std::unique_ptr<ElectricEngine> engine) = 0;
 
 private:
-    int speed_;
+    Speed speed_{0};
 };

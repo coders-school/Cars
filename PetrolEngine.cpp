@@ -31,7 +31,7 @@ void PetrolEngine::changeGear(Gear gear) {
         std::cout << gear.val << " does not exist\n";
         return;
     }
-    if (gear == Gear(-1) && this->car_->getSpeed() != 0) {
+    if (gear == Gear(-1) && this->car_->getSpeed() != Car::Speed(0)) {
         // throw
         std::cout << "Unsafe to change gear\n";
         return;

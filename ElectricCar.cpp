@@ -25,6 +25,7 @@ void ElectricCar::changeEngine(std::unique_ptr<ElectricEngine> engine) {
     std::cout << __FUNCTION__ << std::endl;
     engine_.reset();
     engine_ = std::move(engine);
+    engine_->attach(this);
 }
 
 void ElectricCar::charge() {
