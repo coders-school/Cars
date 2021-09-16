@@ -18,3 +18,10 @@ void HybridCar::refill() {
     PetrolCar::refill();
     ElectricCar::refill();
 }
+
+void HybridCar::changeEngine(std::unique_ptr<PetrolEngine> engine) {
+    PetrolCar::changeEngine(std::move(engine));
+}
+void HybridCar::changeEngine(std::unique_ptr<ElectricEngine> engine) {
+    ElectricCar::changeEngine(std::move(engine));
+}

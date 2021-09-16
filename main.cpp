@@ -7,8 +7,7 @@
 #include "PetrolEngine.hpp"
 
 int main() {
-    std::cout << std::endl
-              << "OPEL" << std::endl;
+    std::cout << "\nOPEL\n";
     PetrolCar opel(std::make_unique<PetrolEngine>(Engine::HorsePower(120),
                                                   PetrolEngine::CubicCentimetre(1800),
                                                   PetrolEngine::Gear(6)));
@@ -17,20 +16,19 @@ int main() {
     car->brake();
     car->accelerate(-900);
     car->refill();
-    // car->changeEngine(new PetrolEngine(150, 700, 7));
+    car->changeEngine(std::make_unique<PetrolEngine>(Engine::HorsePower(150),
+                                                     PetrolEngine::CubicCentimetre(700),
+                                                     PetrolEngine::Gear(7)));
 
-    std::cout << std::endl
-              << "NISSAN" << std::endl;
+    std::cout << "\nNISSAN\n";
     ElectricCar nissan(std::make_unique<ElectricEngine>(Engine::HorsePower(130), ElectricEngine::AmpereHour(650)));
     car = &nissan;
     car->refill();
     car->accelerate(80);
-    // nissan.engine_ = new ElectricEngine(150, 700);  // Changing an engine during driving is not safe
-    // car->changeEngine(new ElectricEngine(150, 700));
+    car->changeEngine(std::make_unique<ElectricEngine>(Engine::HorsePower(150), ElectricEngine::AmpereHour(700)));
     car->turnLeft();
 
-    std::cout << std::endl
-              << "TOYOTA" << std::endl;
+    std::cout << "\nTOYOTA\n";
     HybridCar toyota(std::make_unique<PetrolEngine>(Engine::HorsePower(80),
                                                     PetrolEngine::CubicCentimetre(1400),
                                                     PetrolEngine::Gear(5)),
@@ -40,4 +38,8 @@ int main() {
     car->accelerate(100);
     car->brake();
     car->refill();
+    car->changeEngine(std::make_unique<ElectricEngine>(Engine::HorsePower(150), ElectricEngine::AmpereHour(700)));
+    car->changeEngine(std::make_unique<PetrolEngine>(Engine::HorsePower(150),
+                                                     PetrolEngine::CubicCentimetre(700),
+                                                     PetrolEngine::Gear(7)));
 }

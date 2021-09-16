@@ -11,4 +11,6 @@ public:
     HybridCar(std::unique_ptr<PetrolEngine> petrolEng, std::unique_ptr<ElectricEngine> electricEng);
     virtual ~HybridCar();
     void refill() override;
+    void changeEngine(std::unique_ptr<PetrolEngine> engine) override;
+    void changeEngine(std::unique_ptr<ElectricEngine> engine) override;
 };

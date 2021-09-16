@@ -1,6 +1,7 @@
 #include "PetrolCar.hpp"
 #include <iostream>
 #include <memory>
+#include <stdexcept>
 #include <utility>
 #include "PetrolEngine.hpp"
 
@@ -16,6 +17,15 @@ PetrolCar::~PetrolCar() {
 
 void PetrolCar::refill() {
     this->refuel();
+}
+
+void PetrolCar::changeEngine(std::unique_ptr<PetrolEngine> engine) {
+    std::cout << __FUNCTION__ << std::endl;
+    engine_.reset();
+    engine_ = std::move(engine);
+}
+void PetrolCar::changeEngine(std::unique_ptr<ElectricEngine>) {
+    throw std::invalid_argument("Cannot change electric engine in petrol car");
 }
 
 void PetrolCar::refuel() {
