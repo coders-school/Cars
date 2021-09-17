@@ -1,19 +1,21 @@
+#include "Car.hpp"
 #include "ElectricEngine.hpp"
 #include "PetrolEngine.hpp"
-
-class HybridCar
-{
+class HybridCar : public Car {
 public:
-    HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng);
-    ~HybridCar();
-    void turnLeft();
-    void turnRight();
-    void brake();
-    void accelerate(int speed);
+    HybridCar(std::shared_ptr<PetrolEngine> petrolEng, std::shared_ptr<ElectricEngine> electricEng);
+    virtual ~HybridCar();
+    void turnLeft() override;
+    void turnRight() override;
+    void brake() override;
+    void accelerate(int speed) override;
     void charge();
     void refuel();
+ 
+ std::shared_ptr<ElectricEngine> getElectricEngine();
+ std::shared_ptr<PetrolEngine> getPetrolEngine();   
 
-    PetrolEngine* petrolEngine_;
-    ElectricEngine* electricEngine_;
+private:
+    std::shared_ptr<PetrolEngine> petrolEngine_;
+    std::shared_ptr<ElectricEngine> electricEngine_;
 };
-

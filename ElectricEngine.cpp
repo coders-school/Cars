@@ -7,3 +7,11 @@ ElectricEngine::ElectricEngine(int power, int batteryCapacity)
 {
     std::cout << __FUNCTION__ << std::endl;
 }
+
+int ElectricEngine::getPower(){
+    return power_;
+}
+
+int ElectricEngine::getBatteryCapacity(){
+    return batteryCapacity_;
+}

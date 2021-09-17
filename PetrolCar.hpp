@@ -1,16 +1,17 @@
+#include "Car.hpp"
 #include "PetrolEngine.hpp"
-
-class PetrolCar
-{
+class PetrolCar : public Car {
 public:
-    PetrolCar(PetrolEngine* engine);
-    ~PetrolCar();
-    void turnLeft();
-    void turnRight();
-    void brake();
-    void accelerate(int speed);
+    PetrolCar(std::shared_ptr<PetrolEngine> engine);
+    virtual ~PetrolCar();
+    void turnLeft ()override;
+    void turnRight ()override;
+    void brake()override;
+    void accelerate(int speed)override;
     void refuel();
 
-    PetrolEngine* engine_;
-};
+std::shared_ptr<PetrolEngine>getEngine();
 
+private:
+    std::shared_ptr<PetrolEngine> engine_;
+};

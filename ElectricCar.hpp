@@ -1,16 +1,19 @@
+#include "Car.hpp"
 #include "ElectricEngine.hpp"
 
-class ElectricCar
-{
+class ElectricCar : public Car {
 public:
-    ElectricCar(ElectricEngine* engine);
-    ~ElectricCar();
-    void turnLeft();
+    ElectricCar(std::shared_ptr<ElectricEngine> engine);
+    virtual ~ElectricCar();
+
+    void turnLeft() override;
     void turnRight();
     void brake();
-    void accelerate(int speed);
+    void accelerate(int);
     void charge();
 
-    ElectricEngine* engine_;
+    std::shared_ptr<ElectricEngine> getEngine();
+    
+private:
+    std::shared_ptr<ElectricEngine> engine_;
 };
-
