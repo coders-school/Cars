@@ -13,7 +13,7 @@ public:
     void charge();
 
     std::shared_ptr<ElectricEngine> getEngine();
-    
+
 private:
     std::shared_ptr<ElectricEngine> engine_;
 };

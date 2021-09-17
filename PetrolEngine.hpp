@@ -11,6 +11,11 @@ public:
     int getCapacity();
     int getGears();
     int getCurrentGear();
+  
+    void setPower(int);
+    void setCapacity(float);
+    void setGears(int);
+    void setCurrentGear(int);
 
     private: 
     int power_;         // in HP

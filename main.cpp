@@ -15,6 +15,8 @@ int main()
     std::cout << std::endl << "NISSAN" << std::endl;
     ElectricCar nissan(std::make_shared<ElectricEngine>(130,650));
     nissan.charge();
+    nissan.getEngine()->setPower(45);
+    std::cout<<"nissan engine power "<<nissan.getEngine()->getPower()<<std::endl;
     //nissan.accelerate(80);
     nissan.getEngine() = std::make_shared<ElectricEngine>(150, 700);  // Changing an engine during driving is not safe
     nissan.turnLeft();
