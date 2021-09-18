@@ -3,12 +3,14 @@
 #include "ElectricCar.hpp"
 #include "HybridCar.hpp"
 #include <iostream>
+#include <memory>
+
 
 int main()
 {
 
     std::cout << std::endl << "OPEL" << std::endl;
-    PetrolCar opel(new PetrolEngine(120, 1800, 6));
+    PetrolCar opel(std::make_shared<PetrolEngine>(120, 1800, 6));
     Car* car = &opel;
     car->accelerate(50);
     car->brake();
@@ -17,7 +19,7 @@ int main()
     // car->changeEngine(new PetrolEngine(150, 700, 7));
 
     std::cout << std::endl << "NISSAN" << std::endl;
-    ElectricCar nissan(new ElectricEngine(130, 650));
+    ElectricCar nissan(std::make_shared<ElectricEngine>(130, 650));
     car = &nissan;
     car->refill();
     car->accelerate(80);
@@ -26,7 +28,7 @@ int main()
     car->turnLeft();
 
     std::cout << std::endl << "TOYOTA" << std::endl;
-    HybridCar toyota(new PetrolEngine(80, 1400, 5), new ElectricEngine(100, 540));
+    HybridCar toyota(std::make_shared<PetrolEngine>(80, 1400, 5), std::make_shared<ElectricEngine>(100, 540));
     car = &toyota;
     car->accelerate(100);
     car->brake();

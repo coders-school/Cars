@@ -6,7 +6,7 @@ public:
     void turnLeft();
     void turnRight();
     void brake();
-    void accelerate(int speed);
+    void accelerate(unsigned int speed);
     virtual void refill() = 0;
     virtual ~Car(){}
 };
