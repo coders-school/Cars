@@ -2,6 +2,10 @@
 
 #include <iostream>
 
+#include "../exception/InvalidGear.hpp"
+
+constexpr int reverse_gear{ -1 };
+
 PetrolEngine::PetrolEngine(int power, float capacity, int gears)
     : Engine(power)
     , capacity_(capacity)
@@ -13,9 +17,9 @@ PetrolEngine::PetrolEngine(int power, float capacity, int gears)
 
 void PetrolEngine::changeGear(int gear)
 {
-    // TODO: Add checking if gear is between -1 and gears_
-    // -1 is for REAR
-    // 0 is for NEUTRAL
+    if (gear > gears_ || gear < reverse_gear) {
+        throw InvalidGear("> no such gear!");
+    }
     currentGear_ = gear;
     std::cout << __FUNCTION__ << std::endl;
 }
