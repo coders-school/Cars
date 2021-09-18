@@ -10,6 +10,7 @@ public:
     ~PetrolCar();
 
     void refuel();
+    void changeGear(int gear);
     void restore() override;
 
 private:

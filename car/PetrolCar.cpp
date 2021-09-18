@@ -12,3 +12,7 @@ void PetrolCar::refuel()        { std::cout << __FUNCTION__ << std::endl; }
 void PetrolCar::restore() {
     refuel();
 }
+
+void PetrolCar::changeGear(int gear) {
+    engine_->changeGear(gear);
+}
