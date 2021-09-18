@@ -6,9 +6,9 @@
 
 class HybridCar : public PetrolCar, public ElectricCar {
 private:
-    PetrolEngine* petrolEngine_;
-    ElectricEngine* electricEngine_;
+    std::shared_ptr<PetrolEngine> petrolEngine;
+    std::shared_ptr<ElectricEngine> electricEngine_;
 public:
-    HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng);
+    HybridCar(std::shared_ptr<PetrolEngine> petrolEng, std::shared_ptr<ElectricEngine>  electricEng);
     ~HybridCar();
 };
