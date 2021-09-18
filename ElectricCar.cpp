@@ -9,9 +9,8 @@ ElectricCar::ElectricCar(std::shared_ptr<ElectricEngine> engine)
 
 ElectricCar::~ElectricCar()       { std::cout << __FUNCTION__ << std::endl; }
 void ElectricCar::charge()        { std::cout << __FUNCTION__ << std::endl; }
-void ElectricCar::changeEngine(ElectricEngine* ee) {
-    delete engine_;
-    engine_ = ee;
+void ElectricCar::changeEngine(std::shared_ptr<ElectricEngine> newEngine) {
+    engine_ = newEngine;
 }
 void ElectricCar::refill() {
     charge();
