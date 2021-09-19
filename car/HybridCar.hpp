@@ -2,10 +2,10 @@
 
 #include <memory>
 
-#include "ElectricCar.hpp"
-#include "PetrolCar.hpp"
-#include "../engine/PetrolEngine.hpp"
-#include "../engine/ElectricEngine.hpp"
+#include "car/ElectricCar.hpp"
+#include "car/PetrolCar.hpp"
+#include "engine/PetrolEngine.hpp"
+#include "engine/ElectricEngine.hpp"
 
 class HybridCar : public ElectricCar
                 , public PetrolCar

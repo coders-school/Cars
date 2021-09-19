@@ -1,6 +1,10 @@
 #include "PetrolCar.hpp"
+
 #include <iostream>
- 
+
+#include "exception/InvalidEngineChange.hpp"
+#include "exception/InvalidGear.hpp"
+
 PetrolCar::PetrolCar(std::unique_ptr<PetrolEngine> engine)
     : engine_(std::move(engine))
 {
@@ -14,9 +18,19 @@ void PetrolCar::restore() {
 }
 
 void PetrolCar::changeGear(int gear) {
+    if (gear == -1 && speed_ > 0) {
+        throw InvalidGear("> cannot put in reverese gear while driving");
+    }
     engine_->changeGear(gear);
 }
 
 int PetrolCar::getCurrentGear() {
     return engine_->getCurrentGear();
+}
+
+void PetrolCar::changeEngine(std::unique_ptr<PetrolEngine> engine) {
+    if (speed_ > 0) {
+        throw InvalidEngineChange("> cannot change engine while driving!");
+    }
+    std::swap(engine_, engine);
 }

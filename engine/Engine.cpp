@@ -1,3 +1,10 @@
 #include "Engine.hpp"
 
-Engine::Engine(int power) : power_(power) {}
+#include "exception/InvalidParameter.hpp"
+
+Engine::Engine(int power) {
+    if (power <= 0) {
+        throw InvalidParameter("> power cannot be negative!");
+    }
+    power_ = power;
+}

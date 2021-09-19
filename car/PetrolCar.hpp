@@ -2,8 +2,8 @@
 
 #include <memory>
 
-#include "Car.hpp"
-#include "../engine/PetrolEngine.hpp"
+#include "car/Car.hpp"
+#include "engine/PetrolEngine.hpp"
 
 class PetrolCar : virtual public Car
 {
@@ -15,7 +15,8 @@ public:
     void changeGear(int gear);
     void restore() override;
     int getCurrentGear();
-    
+    void changeEngine(std::unique_ptr<PetrolEngine>  engine);
+
 private:
     std::unique_ptr<PetrolEngine> engine_;
 };
