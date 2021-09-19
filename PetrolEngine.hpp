@@ -24,5 +24,5 @@ public:
 private:
     CubicCentimetre capacity_;
     Gear maxGear_;
-    Gear currentGear_;
+    Gear currentGear_{Gear(0)};
 };
