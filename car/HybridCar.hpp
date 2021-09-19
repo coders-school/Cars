@@ -1,5 +1,7 @@
 #pragma once
 
+#include <memory>
+
 #include "ElectricCar.hpp"
 #include "PetrolCar.hpp"
 #include "../engine/PetrolEngine.hpp"
@@ -9,12 +11,13 @@ class HybridCar : public ElectricCar
                 , public PetrolCar
 {
 public:
-    HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng);
+    HybridCar(std::unique_ptr<PetrolEngine> petrolEng,
+              std::unique_ptr<ElectricEngine> electricEng);
     ~HybridCar();
 
     void restore() override;
 
 private:
-    PetrolEngine* petrolEngine_;
-    ElectricEngine* electricEngine_;
+    std::unique_ptr<PetrolEngine> petrolEngine_;
+    std::unique_ptr<ElectricEngine> electricEngine_;
 };

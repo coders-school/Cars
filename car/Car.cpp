@@ -1,6 +1,8 @@
 #include "Car.hpp"
-#include "../exception/InvalidSpeed.hpp"
+
 #include <iostream>
+
+#include "../exception/InvalidSpeed.hpp"
 
 void Car::turnLeft() {
     std::cout << __FUNCTION__ << std::endl;

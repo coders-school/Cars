@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 #include <stdexcept>
 
 #include "car/Car.hpp"
@@ -13,7 +14,7 @@ int main()
 {
     Car* car{};
 
-    auto isuzu = new PetrolCar(new PetrolEngine(120, 1800, 6));
+    auto isuzu = new PetrolCar(std::make_unique<PetrolEngine>(120, 1800, 6));
     car = isuzu;
     car->accelerate(90);
     car->turnLeft();
@@ -28,7 +29,7 @@ int main()
     delete isuzu;
     std::cout << "-----------------------" << std::endl;
 
-    auto nissan = new ElectricCar(new ElectricEngine(130, 650));
+    auto nissan = new ElectricCar(std::make_unique<ElectricEngine>(130, 650));
     car = nissan;
     car->accelerate(90);
     car->turnLeft();
@@ -38,8 +39,8 @@ int main()
     delete nissan;
     std::cout << "-----------------------" << std::endl;
 
-    auto toyota = new HybridCar(new PetrolEngine(90, 1400, 4),
-                                new ElectricEngine(80, 420));
+    auto toyota = new HybridCar(std::make_unique<PetrolEngine>(90, 1400, 4),
+                                std::make_unique<ElectricEngine>(80, 420));
     car = toyota;
     car->accelerate(90);
     car->turnLeft();

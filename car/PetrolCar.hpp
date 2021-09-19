@@ -1,12 +1,14 @@
 #pragma once
 
+#include <memory>
+
 #include "Car.hpp"
 #include "../engine/PetrolEngine.hpp"
 
 class PetrolCar : virtual public Car
 {
 public:
-    PetrolCar(PetrolEngine* engine);
+    PetrolCar(std::unique_ptr<PetrolEngine> engine);
     ~PetrolCar();
 
     void refuel();
@@ -15,5 +17,5 @@ public:
     int getCurrentGear();
     
 private:
-    PetrolEngine* engine_;
+    std::unique_ptr<PetrolEngine> engine_;
 };
