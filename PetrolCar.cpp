@@ -3,6 +3,7 @@
 #include <memory>
 #include <stdexcept>
 #include <utility>
+#include "MyExceptions.hpp"
 #include "PetrolEngine.hpp"
 
 PetrolCar::PetrolCar(std::unique_ptr<PetrolEngine> engine)
@@ -21,12 +22,13 @@ void PetrolCar::refill() {
 
 void PetrolCar::changeEngine(std::unique_ptr<PetrolEngine> engine) {
     std::cout << __FUNCTION__ << std::endl;
+    if (!engine) {
+        throw InvalidEngine("Invalid engine provided to PetrolCar::changeEngine");
+    }
+    engine_->detach();  // Redundant for now
     engine_.reset();
     engine_ = std::move(engine);
     engine_->attach(this);
-}
-void PetrolCar::changeEngine(std::unique_ptr<ElectricEngine>) {
-    throw std::invalid_argument("Cannot change electric engine in petrol car");
 }
 
 void PetrolCar::refuel() {

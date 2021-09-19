@@ -23,8 +23,8 @@ public:
     void accelerate(const Speed& speed);
     Speed getSpeed() const;
     virtual void refill() = 0;
-    virtual void changeEngine(std::unique_ptr<PetrolEngine> engine) = 0;
-    virtual void changeEngine(std::unique_ptr<ElectricEngine> engine) = 0;
+    virtual void changeEngine(std::unique_ptr<PetrolEngine>);
+    virtual void changeEngine(std::unique_ptr<ElectricEngine>);
 
 private:
     Speed speed_{0};
