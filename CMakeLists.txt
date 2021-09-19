@@ -33,14 +33,18 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
+enable_testing()
 add_executable(PetrolCar-ut tests/PetrolCar-ut.cpp Car.cpp PetrolCar.cpp Engine.cpp PetrolEngine.cpp ElectricEngine.cpp)
 target_link_libraries(PetrolCar-ut gtest_main)
 target_include_directories(PetrolCar-ut PUBLIC ${CMAKE_SOURCE_DIR})
+add_test(NAME PetrolCarTests COMMAND PetrolCar-ut)
 
 add_executable(ElectricCar-ut tests/ElectricCar-ut.cpp Car.cpp ElectricCar.cpp Engine.cpp PetrolEngine.cpp ElectricEngine.cpp)
 target_link_libraries(ElectricCar-ut gtest_main)
 target_include_directories(ElectricCar-ut PUBLIC ${CMAKE_SOURCE_DIR})
+add_test(NAME ElectricCarTests COMMAND ElectricCar-ut)
 
 add_executable(HybridCar-ut tests/HybridCar-ut.cpp Car.cpp PetrolCar.cpp ElectricCar.cpp Engine.cpp PetrolEngine.cpp ElectricEngine.cpp HybridCar.cpp)
 target_link_libraries(HybridCar-ut gtest_main)
 target_include_directories(HybridCar-ut PUBLIC ${CMAKE_SOURCE_DIR})
+add_test(NAME HybridCarTests COMMAND HybridCar-ut)
