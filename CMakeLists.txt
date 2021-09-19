@@ -32,6 +32,8 @@ set(SRC_LIST
     ${ENGINE_SOURCES}/PetrolEngine.cpp
     ${EXCEPTION_SOURCES}/InvalidGear.cpp
     ${EXCEPTION_SOURCES}/InvalidSpeed.cpp
+    ${EXCEPTION_SOURCES}/InvalidEngineChange.cpp
+    ${EXCEPTION_SOURCES}/InvalidParameter.cpp
 )
 add_library(${PROJECT_NAME}-lib STATIC ${SRC_LIST})
 
@@ -48,6 +50,6 @@ set(TEST_LIST
 add_executable(${PROJECT_NAME}-ut ${TEST_LIST})
 target_link_libraries(${PROJECT_NAME}-ut ${PROJECT_NAME}-lib GTest::gtest_main)    
 
-# ctest enable
+# enable ctest
 enable_testing()
 add_test(NAME cars-test COMMAND ${PROJECT_NAME}-ut)
