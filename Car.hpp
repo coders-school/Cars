@@ -12,6 +12,7 @@ public:
             : val(speed) {}
         int val;
         bool operator!=(const Speed& other) const;
+        bool operator==(const Speed& other) const;
         bool operator>(const Speed& other) const;
         bool operator<(const Speed& other) const;
     };

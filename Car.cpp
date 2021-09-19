@@ -6,6 +6,10 @@ bool Car::Speed::operator!=(const Speed& other) const {
     return this->val != other.val;
 }
 
+bool Car::Speed::operator==(const Speed& other) const {
+    return this->val == other.val;
+}
+
 bool Car::Speed::operator>(const Speed& other) const {
     return this->val > other.val;
 }

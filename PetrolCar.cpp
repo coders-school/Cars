@@ -31,6 +31,10 @@ void PetrolCar::changeEngine(std::unique_ptr<PetrolEngine> engine) {
     engine_->attach(this);
 }
 
+PetrolEngine* PetrolCar::getEngine() {
+    return engine_.get();
+}
+
 void PetrolCar::refuel() {
     std::cout << __FUNCTION__ << std::endl;
 }

@@ -9,6 +9,7 @@ public:
     virtual ~PetrolCar();
     void refill() override;
     void changeEngine(std::unique_ptr<PetrolEngine> engine) override;
+    PetrolEngine* getEngine();
 
 private:
     void refuel();
