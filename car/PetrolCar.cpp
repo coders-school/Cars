@@ -16,3 +16,7 @@ void PetrolCar::restore() {
 void PetrolCar::changeGear(int gear) {
     engine_->changeGear(gear);
 }
+
+int PetrolCar::getCurrentGear() {
+    return engine_->getCurrentGear();
+}

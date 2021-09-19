@@ -12,7 +12,8 @@ public:
     void refuel();
     void changeGear(int gear);
     void restore() override;
-
+    int getCurrentGear();
+    
 private:
     PetrolEngine* engine_;
 };
