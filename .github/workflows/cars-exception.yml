@@ -21,4 +21,4 @@ jobs:
       working-directory: ${{ env.path }}
       run: |
         chmod +x ../.github/workflows/check-exception.sh
-        ../.github/workflows/check-exception.sh ../*.cpp ../*.hpp
+        ../.github/workflows/check-exception.sh ../exception/*.hpp ../engine/*.cpp
