@@ -16,6 +16,8 @@ public:
     ~HybridCar();
 
     void restore() override;
+    void changePetrolEngine(std::unique_ptr<PetrolEngine>  engine);
+    void changeElectricEngine(std::unique_ptr<ElectricEngine>  engine);
 
 private:
     std::unique_ptr<PetrolEngine> petrolEngine_;
