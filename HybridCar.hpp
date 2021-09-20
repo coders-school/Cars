@@ -1,16 +1,9 @@
 #pragma once
-
-#include "ElectricEngine.hpp"
-#include "PetrolEngine.hpp"
 #include "ElectricCar.hpp"
 #include "PetrolCar.hpp"
 
-class HybridCar : public PetrolCar, public ElectricCar
-{
+class HybridCar : public ElectricCar, public PetrolCar {
 public:
-    HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng);
-    ~HybridCar();
-
-    void restore() override;
+    HybridCar(std::unique_ptr<PetrolEngine> petrolEngine, std::unique_ptr<ElectricEngine> electricEngine);
+    ~HybridCar() override;
 };
-

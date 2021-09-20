@@ -1,13 +1,16 @@
 #pragma once
+#include "Engine.hpp"
+#include "Gearable.hpp"
 
-class PetrolEngine
-{
+class PetrolEngine : virtual Engine, public Gearable {
 public:
     PetrolEngine(int power, float capacity, int gears);
-    void changeGear(int gear);
+    ~PetrolEngine() override;
+    
+    void changeGear(int gear) override;
 
-    int power_;         // in HP
-    float capacity_;    // in ccm
+protected:
+    float capacity_;  // in ccm
     int gears_;
-    int currentGear_;
+    int currentGear_ = 0;
 };

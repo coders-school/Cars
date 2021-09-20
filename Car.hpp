@@ -2,10 +2,11 @@
 
 class Car {
 public:
-    ~Car();
-    void turnLeft();
-    void turnRight();
-    void brake();
-    void accelerate(int speed);
-    virtual void restore() = 0;
+    Car() = default;
+    virtual ~Car() = default;
+
+    virtual void turnLeft();
+    virtual void turnRight();
+    virtual void brake();
+    virtual void accelerate(int);
 };
