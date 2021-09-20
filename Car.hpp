@@ -5,8 +5,8 @@ public:
     Car() = default;
     virtual ~Car() = default;
 
-    virtual void turnLeft();
-    virtual void turnRight();
-    virtual void brake();
-    virtual void accelerate(int);
+    void turnLeft();
+    void turnRight();
+    void brake();
+    void accelerate(int);
 };

@@ -1,10 +1,10 @@
 #include <iostream>
 #include "ElectricCar.hpp"
-#include "HybridCar.hpp"
-#include "PetrolCar.hpp"
-
-#include "PetrolEngine.hpp"
 #include "ElectricEngine.hpp"
+#include "HybridCar.hpp"
+#include "InvalidGear.hpp"
+#include "PetrolCar.hpp"
+#include "PetrolEngine.hpp"
 
 int main() {
     std::cout << std::endl
@@ -35,11 +35,10 @@ int main() {
     toyota.charge();
     toyota.refuel();
 
-    try{
+    try {
         toyota.changeGear(3);
         toyota.changeGear(-1);
-    } catch (const std::logic_error& err) {
-        std::cout << err.what() <<'\n';
+    } catch (const InvalidGear& err) {
+        std::cout << err.what() << '\n';
     }
-    
 }

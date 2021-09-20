@@ -1,12 +1,6 @@
 #include "PetrolEngine.hpp"
+#include "InvalidGear.hpp"
 #include <iostream>
-#include <exception>
-
-class InvalidGear : public std::logic_error {
-public:
-    InvalidGear(const char* info) : logic_error(info) {}
-    ~InvalidGear() = default;
-};
 
 PetrolEngine::PetrolEngine(int power, float capacity, int gears)
     : Engine(power)
@@ -22,10 +16,10 @@ PetrolEngine::~PetrolEngine() {
 
 void PetrolEngine::changeGear(int gear){
     if(currentGear_ < 0 && gear > 0){
-        throw InvalidGear("Logic error: change from R to gear");
+        throw InvalidGear("InvalidGear error: change from R to gear");
     }
     if(currentGear_ > 0 && gear < 0){
-        throw InvalidGear("Logic error: change from gear to R");
+        throw InvalidGear("InvalidGear error: change from gear to R");
     }
 
     currentGear_ = gear;
