@@ -11,6 +11,6 @@ public:
 
 protected:
     float capacity_;  // in ccm
-    int gears_;
+    const int gears_;
     int currentGear_ = 0;
 };

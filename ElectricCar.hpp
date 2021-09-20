@@ -11,6 +11,10 @@ public:
 
     void charge() override;
 
+    void engineSwap(std::unique_ptr<ElectricEngine>& engine) {
+        engine_.swap(engine);
+    }
+
 protected:
     std::unique_ptr<ElectricEngine> engine_;
 };

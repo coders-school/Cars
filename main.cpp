@@ -12,9 +12,12 @@ int main() {
     PetrolCar opel(std::make_unique<PetrolEngine>(120, 1800, 6));
     opel.accelerate(50);
     opel.brake();
-    opel.accelerate(-900);
+    try {
+        opel.accelerate(-900);
+    } catch (const std::logic_error& err) {
+        std::cout << err.what() << '\n';
+    }
     opel.refuel();
-
     opel.changeGear(3);
     //opel.changeGear(-1);
 
@@ -23,7 +26,14 @@ int main() {
     ElectricCar nissan(std::make_unique<ElectricEngine>(130, 650));
     nissan.charge();
     nissan.accelerate(80);
-    //nissan.engine_ = std::make_unique<ElectricEngine>(150, 700);  // Changing an engine during driving is not safe
+    
+    // auto newEngine = std::make_unique<ElectricEngine>(150, 700);  // Changing an engine during driving is not safe
+    // std::cout << newEngine.get() << '\n';
+    // nissan.engineSwap(newEngine);
+    // std::cout << newEngine.get() << '\n';
+    // nissan.engineSwap(newEngine);
+    // std::cout << newEngine.get() << '\n';
+
     nissan.turnLeft();
 
     std::cout << std::endl
