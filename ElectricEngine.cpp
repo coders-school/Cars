@@ -11,7 +11,3 @@ ElectricEngine::ElectricEngine(int power, int batteryCapacity)
 ElectricEngine::~ElectricEngine() {
     std::cout << __FUNCTION__ << std::endl;
 }
-
-void ElectricEngine::charge() {
-    std::cout << __FUNCTION__ << " batery capacity: " << batteryCapacity_ << "Ah" <<std::endl;
-}

@@ -13,7 +13,7 @@ PetrolCar::~PetrolCar() {
 }
 
 void PetrolCar::refuel() { 
-    engine_->refuel();
+    std::cout << __FUNCTION__ << std::endl;
 }
 
 void PetrolCar::changeGear(int gear) {

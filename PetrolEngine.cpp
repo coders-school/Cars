@@ -20,11 +20,6 @@ PetrolEngine::~PetrolEngine() {
     std::cout << __FUNCTION__ << std::endl;
 }
 
-void PetrolEngine::refuel() {
-    std::cout << __FUNCTION__ << std::endl;
-    std::cout << __FUNCTION__ << " capacity: " << capacity_ << "ccm" <<std::endl;
-}
-
 void PetrolEngine::changeGear(int gear){
     if(currentGear_ < 0 && gear > 0){
         throw InvalidGear("Logic error: change from R to gear");

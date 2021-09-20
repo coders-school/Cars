@@ -13,5 +13,5 @@ ElectricCar::~ElectricCar() {
 }
 
 void ElectricCar::charge() {
-    engine_->charge();
+    std::cout << __FUNCTION__ << std::endl;
 }
