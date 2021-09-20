@@ -41,4 +41,11 @@ int main() {
     } catch (const InvalidGear& err) {
         std::cout << err.what() << '\n';
     }
+    toyota.changeGear(0);
+    try {
+        toyota.changeGear(-1);
+        toyota.changeGear(5);
+    } catch (const InvalidGear& err) {
+        std::cout << err.what() << '\n';
+    }
 }
