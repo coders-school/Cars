@@ -1,21 +1,14 @@
-<<<<<<< HEAD
-#include "Car.hpp"
-#include "PetrolCar.hpp"
-#include "ElectricCar.hpp"
-#include "HybridCar.hpp"
-=======
->>>>>>> transient
 #include <iostream>
 #include <memory>
 #include <stdexcept>
 
-#include "car/Car.hpp"
-#include "car/PetrolCar.hpp"
-#include "car/ElectricCar.hpp"
-#include "car/HybridCar.hpp"
-#include "engine/Engine.hpp"
-#include "engine/PetrolEngine.hpp"
-#include "engine/ElectricEngine.hpp"
+#include "Car.hpp"
+#include "PetrolCar.hpp"
+#include "ElectricCar.hpp"
+#include "HybridCar.hpp"
+#include "Engine.hpp"
+#include "PetrolEngine.hpp"
+#include "ElectricEngine.hpp"
 
 int main()
 {

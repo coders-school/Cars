@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include "exception/InvalidEngineChange.hpp"
+#include "InvalidEngineChange.hpp"
 
 ElectricCar::ElectricCar(std::unique_ptr<ElectricEngine> engine)
     : engine_(std::move(engine))

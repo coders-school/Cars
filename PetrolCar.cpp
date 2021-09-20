@@ -2,8 +2,8 @@
 
 #include <iostream>
 
-#include "exception/InvalidEngineChange.hpp"
-#include "exception/InvalidGear.hpp"
+#include "InvalidEngineChange.hpp"
+#include "InvalidGear.hpp"
 
 PetrolCar::PetrolCar(std::unique_ptr<PetrolEngine> engine)
     : engine_(std::move(engine))

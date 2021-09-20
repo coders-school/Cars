@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include "exception/InvalidSpeed.hpp"
+#include "InvalidSpeed.hpp"
 
 void Car::turnLeft() {
     std::cout << __FUNCTION__ << std::endl;

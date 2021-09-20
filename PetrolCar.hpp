@@ -2,8 +2,8 @@
 
 #include <memory>
 
-#include "car/Car.hpp"
-#include "engine/PetrolEngine.hpp"
+#include "Car.hpp"
+#include "PetrolEngine.hpp"
 
 class PetrolCar : virtual public Car
 {

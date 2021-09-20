@@ -2,8 +2,8 @@
 
 #include <iostream>
 
-#include "exception/InvalidGear.hpp"
-#include "exception/InvalidParameter.hpp"
+#include "InvalidGear.hpp"
+#include "InvalidParameter.hpp"
 
 constexpr int reverse_gear{ -1 };
 

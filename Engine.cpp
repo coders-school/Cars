@@ -1,6 +1,6 @@
 #include "Engine.hpp"
 
-#include "exception/InvalidParameter.hpp"
+#include "InvalidParameter.hpp"
 
 Engine::Engine(int power) {
     if (power <= 0) {

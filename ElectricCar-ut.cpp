@@ -2,11 +2,11 @@
 #include <memory>
 #include <stdexcept>
 
-#include "car/ElectricCar.hpp"
-#include "engine/ElectricEngine.hpp"
-#include "exception/InvalidEngineChange.hpp"
-#include "exception/InvalidSpeed.hpp"
-#include "exception/InvalidParameter.hpp"
+#include "ElectricCar.hpp"
+#include "ElectricEngine.hpp"
+#include "InvalidEngineChange.hpp"
+#include "InvalidSpeed.hpp"
+#include "InvalidParameter.hpp"
 
 struct ElectricCarTest : ::testing::Test {
     int power{ 110 };

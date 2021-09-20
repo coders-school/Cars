@@ -2,12 +2,12 @@
 #include <memory>
 #include <stdexcept>
 
-#include "car/PetrolCar.hpp"
-#include "engine/PetrolEngine.hpp"
-#include "exception/InvalidEngineChange.hpp"
-#include "exception/InvalidGear.hpp"
-#include "exception/InvalidSpeed.hpp"
-#include "exception/InvalidParameter.hpp"
+#include "PetrolCar.hpp"
+#include "PetrolEngine.hpp"
+#include "InvalidEngineChange.hpp"
+#include "InvalidGear.hpp"
+#include "InvalidSpeed.hpp"
+#include "InvalidParameter.hpp"
 
 struct PetrolCarTest : ::testing::Test {
     int power{ 110 };

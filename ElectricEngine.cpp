@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include "exception/InvalidParameter.hpp"
+#include "InvalidParameter.hpp"
 
 ElectricEngine::ElectricEngine(int power, int batteryCapacity)
     : Engine(power)
