@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.14)
 project(cars)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -12,7 +12,13 @@ set(TEST_SOURCES ${CMAKE_SOURCE_DIR}/test)
 
 include_directories(${CMAKE_SOURCE_DIR})
 
-find_package(GTest REQUIRED)
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/refs/heads/master.zip
+)
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
 
 add_compile_options(-Wall -Werror -Wpedantic -Wextra)
 
@@ -41,7 +47,7 @@ set(TEST_LIST
     ${TEST_SOURCES}/HybridCar-ut.cpp
 )
 add_executable(${PROJECT_NAME}-ut ${TEST_LIST})
-target_link_libraries(${PROJECT_NAME}-ut ${PROJECT_NAME}-lib GTest::gtest_main)    
+target_link_libraries(${PROJECT_NAME}-ut ${PROJECT_NAME}-lib gtest_main)    
 
 enable_testing()
 add_test(NAME cars-test COMMAND ${PROJECT_NAME}-ut)
