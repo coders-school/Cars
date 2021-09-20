@@ -13,6 +13,7 @@ public:
     
     void charge();
     void restore() override;
+    void changeEngine(std::unique_ptr<ElectricEngine>  engine);
 
 private:
     std::unique_ptr<ElectricEngine> engine_;
