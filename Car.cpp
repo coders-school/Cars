@@ -10,3 +10,4 @@ Car::~Car() {
 
 void Car::accelerate(int) {
 }
+

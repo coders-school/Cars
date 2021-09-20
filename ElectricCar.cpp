@@ -2,7 +2,7 @@
 #include <iostream>
 
 ElectricCar::ElectricCar(std::unique_ptr<ElectricEngine> engine)
-    : engine_(std::move(engine)) {
+    : electricEngine_(std::move(engine)) {
     std::cout << __FUNCTION__ << std::endl;
 }
 
@@ -25,6 +25,6 @@ void ElectricCar::charge() {
     std::cout << __FUNCTION__ << std::endl;
 }
 
-const std::unique_ptr<ElectricEngine>& ElectricCar::getEngine() {
-        return engine_;
-    }
+const std::unique_ptr<ElectricEngine>& ElectricCar::getElectricEngine() {
+    return electricEngine_;
+}

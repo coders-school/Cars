@@ -8,13 +8,13 @@ public:
     virtual ~ElectricCar();
 
     void turnLeft() override;
-    void turnRight()override;
-    void brake()override;
-    void accelerate(int)override;
+    void turnRight() override;
+    void brake() override;
+    void accelerate(int) override;
     void charge();
 
-    const std::unique_ptr<ElectricEngine>& getEngine();
+    const std::unique_ptr<ElectricEngine>& getElectricEngine();
 
 private:
-    std::unique_ptr<ElectricEngine> engine_;
+    std::unique_ptr<ElectricEngine> electricEngine_;
 };

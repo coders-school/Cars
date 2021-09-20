@@ -12,9 +12,9 @@ public:
     void accelerate(int speed) override;
     void charge();
     void refuel();
- 
- const std::unique_ptr<ElectricEngine>& getElectricEngine();
- const std::unique_ptr<PetrolEngine>& getPetrolEngine();   
+
+    const std::unique_ptr<ElectricEngine>& getElectricEngine();
+    const std::unique_ptr<PetrolEngine>& getPetrolEngine();
 
 private:
     std::unique_ptr<PetrolEngine> petrolEngine_;
