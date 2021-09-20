@@ -2,7 +2,7 @@
 #include "PetrolEngine.hpp"
 class PetrolCar : public Car {
 public:
-    PetrolCar(std::shared_ptr<PetrolEngine> engine);
+    PetrolCar(std::unique_ptr<PetrolEngine> engine);
     virtual ~PetrolCar();
     void turnLeft ()override;
     void turnRight ()override;
@@ -10,8 +10,8 @@ public:
     void accelerate(int speed)override;
     void refuel();
 
-std::shared_ptr<PetrolEngine>getEngine();
+const std::unique_ptr<PetrolEngine>& getEngine();
 
 private:
-    std::shared_ptr<PetrolEngine> engine_;
+    std::unique_ptr<PetrolEngine> engine_;
 };

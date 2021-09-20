@@ -1,9 +1,10 @@
+#pragma once
 #include "Car.hpp"
 #include "ElectricEngine.hpp"
 #include "PetrolEngine.hpp"
 class HybridCar : public Car {
 public:
-    HybridCar(std::shared_ptr<PetrolEngine> petrolEng, std::shared_ptr<ElectricEngine> electricEng);
+    HybridCar(std::unique_ptr<PetrolEngine> petrolEng, std::unique_ptr<ElectricEngine> electricEng);
     virtual ~HybridCar();
     void turnLeft() override;
     void turnRight() override;
@@ -12,10 +13,10 @@ public:
     void charge();
     void refuel();
  
- std::shared_ptr<ElectricEngine> getElectricEngine();
- std::shared_ptr<PetrolEngine> getPetrolEngine();   
+ const std::unique_ptr<ElectricEngine>& getElectricEngine();
+ const std::unique_ptr<PetrolEngine>& getPetrolEngine();   
 
 private:
-    std::shared_ptr<PetrolEngine> petrolEngine_;
-    std::shared_ptr<ElectricEngine> electricEngine_;
+    std::unique_ptr<PetrolEngine> petrolEngine_;
+    std::unique_ptr<ElectricEngine> electricEngine_;
 };

@@ -1,8 +1,8 @@
 #include "ElectricCar.hpp"
 #include <iostream>
 
-ElectricCar::ElectricCar(std::shared_ptr<ElectricEngine> engine)
-    : engine_(engine) {
+ElectricCar::ElectricCar(std::unique_ptr<ElectricEngine> engine)
+    : engine_(std::move(engine)) {
     std::cout << __FUNCTION__ << std::endl;
 }
 
@@ -16,7 +16,7 @@ void ElectricCar::turnRight() {
     std::cout << __FUNCTION__ << std::endl;
 }
 void ElectricCar::brake() {
-    std::cout << __FUNCTION__ << std::endl;
+    std::cout << "brake electric car \n" << std::endl;
 }
 void ElectricCar::accelerate(int) {
     std::cout << __FUNCTION__ << std::endl;
@@ -25,6 +25,6 @@ void ElectricCar::charge() {
     std::cout << __FUNCTION__ << std::endl;
 }
 
-std::shared_ptr<ElectricEngine> ElectricCar::getEngine() {
+const std::unique_ptr<ElectricEngine>& ElectricCar::getEngine() {
         return engine_;
     }

@@ -1,19 +1,20 @@
+#pragma once
 #include "Car.hpp"
 #include "ElectricEngine.hpp"
 
 class ElectricCar : public Car {
 public:
-    ElectricCar(std::shared_ptr<ElectricEngine> engine);
+    ElectricCar(std::unique_ptr<ElectricEngine> engine);
     virtual ~ElectricCar();
 
     void turnLeft() override;
-    void turnRight();
-    void brake();
-    void accelerate(int);
+    void turnRight()override;
+    void brake()override;
+    void accelerate(int)override;
     void charge();
 
-    std::shared_ptr<ElectricEngine> getEngine();
+    const std::unique_ptr<ElectricEngine>& getEngine();
 
 private:
-    std::shared_ptr<ElectricEngine> engine_;
+    std::unique_ptr<ElectricEngine> engine_;
 };

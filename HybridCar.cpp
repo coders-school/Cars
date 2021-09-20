@@ -1,8 +1,8 @@
 #include "HybridCar.hpp"
 #include <iostream>
 
-HybridCar::HybridCar(std::shared_ptr<PetrolEngine> petrolEng, std::shared_ptr<ElectricEngine> electricEng)
-    : petrolEngine_(petrolEng), electricEngine_(electricEng) {
+HybridCar::HybridCar(std::unique_ptr<PetrolEngine> petrolEng, std::unique_ptr<ElectricEngine> electricEng)
+    : petrolEngine_(std::move(petrolEng)), electricEngine_(std::move(electricEng)) {
     std::cout << __FUNCTION__ << std::endl;
 }
 
@@ -28,9 +28,9 @@ void HybridCar::refuel() {
     std::cout << __FUNCTION__ << std::endl;
 }
 
-std::shared_ptr<ElectricEngine> HybridCar::getElectricEngine() {
+const std::unique_ptr<ElectricEngine>& HybridCar::getElectricEngine() {
     return electricEngine_;
 }
-std::shared_ptr<PetrolEngine> HybridCar::getPetrolEngine() {
+const std::unique_ptr<PetrolEngine>& HybridCar::getPetrolEngine() {
     return petrolEngine_;
 }

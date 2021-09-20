@@ -5,6 +5,18 @@
 
 int main()
 {
+
+   
+   
+std::unique_ptr<PetrolCar>Ptr = std::make_unique<PetrolCar>(std::make_unique<PetrolEngine>(120, 1800, 6));
+std::unique_ptr<ElectricCar>Ptr2 = std::make_unique<ElectricCar>(std::make_unique<ElectricEngine>(12, 180));
+
+std::unique_ptr<Car>carPtr=std::move(Ptr);
+std::unique_ptr<Car>carPtr2=std::move(Ptr2);
+carPtr->brake();
+carPtr2->brake();
+    
+    /*
     std::cout << std::endl << "OPEL" << std::endl;
     PetrolCar opel(std::make_shared<PetrolEngine>(120, 1800, 6));
     opel.accelerate(50);
@@ -27,4 +39,5 @@ int main()
     toyota.brake();
     toyota.charge();
     toyota.refuel();
+    */
 }
