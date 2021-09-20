@@ -49,5 +49,7 @@ googletest/
 *.exe
 *.out
 *.app
-.cache/
+
+# clangd
 compile_flags.txt
+.cache/
