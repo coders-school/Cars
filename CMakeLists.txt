@@ -46,6 +46,7 @@ target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}-lib)
 # test library
 set(TEST_LIST
     ${TEST_SOURCES}/PetrolCar-ut.cpp
+    ${TEST_SOURCES}/ElectricCar-ut.cpp
 )
 add_executable(${PROJECT_NAME}-ut ${TEST_LIST})
 target_link_libraries(${PROJECT_NAME}-ut ${PROJECT_NAME}-lib GTest::gtest_main)    
