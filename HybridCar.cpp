@@ -17,10 +17,8 @@ void HybridCar::refill() {
 }
 
 void HybridCar::changeEngine(PetrolEngine* petrolEngineNew, ElectricEngine* electroEngineNew) {
-    delete petrolEngine_;
-    delete electricEngine_;
-    petrolEngine_ = petrolEngineNew;
-    electricEngine_ = electroEngineNew;
+    PetrolCar::changeEngine(petrolEngineNew);
+    ElectricCar::changeEngine(electroEngineNew);
 }
 
 // void HybridCar::changeEngine(ElectricEngine* electricEngineNew) {
