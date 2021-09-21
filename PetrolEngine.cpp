@@ -17,9 +17,9 @@ void PetrolEngine::changeGear(int gear)
     // TODO: Add checking if gear is between -1 and gears_
     // -1 is for REAR
     // 0 is for NEUTRAL
-    if (gear == -1 && currentGear_ != 0) {
-        throw std::logic_error("Never change to reverse gear from farward gear!!")
-    }
+    // if (gear == -1 && currentGear_ != 0) {
+    //     throw std::logic_error("Never change to reverse gear from farward gear!!")
+    // }
     currentGear_ = gear;
     std::cout << __FUNCTION__ << std::endl;
 }
