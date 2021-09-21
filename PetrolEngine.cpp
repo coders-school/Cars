@@ -10,6 +10,10 @@ PetrolEngine::PetrolEngine(int power, float capacity, int gears)
     std::cout << __FUNCTION__ << std::endl;
 }
 
+void PetrolEngine::refuel() {
+    std::cout << __FUNCTION__ << std::endl;
+}
+
 void PetrolEngine::changeGear(int gear)
 {
     // TODO: Add checking if gear is between -1 and gears_
