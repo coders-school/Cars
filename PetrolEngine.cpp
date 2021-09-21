@@ -13,11 +13,11 @@ void PetrolEngine::changeGear(int gear) {
     // -1 is for REAR
     // 0 is for NEUTRAL
     if (gear == -1 && currentGear_ != 0 ) {
-        throw InvalidGear("Invalid changing gears");
+        throw std::logic_error("Invalid changing gears");
     }
 
-    if (gear > gears_) {
-        throw InvalidGear("There is no so many gears!!!");
+    if (gear > gears_ || gear < -1) {
+        throw std::logic_error("There is no so many gears!!!");
     }
     currentGear_ = gear;
     std::cout << __FUNCTION__ << std::endl;

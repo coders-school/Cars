@@ -11,6 +11,7 @@ public:
 
     void changeEngine(std::unique_ptr<PetrolEngine> pe) ;
     void refill() override;
+    PetrolEngine* getEngine() const;
 private:
     void refuel();
     std::unique_ptr<PetrolEngine> engine_;
