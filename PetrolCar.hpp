@@ -9,7 +9,7 @@ public:
     PetrolCar(std::unique_ptr<PetrolEngine> engine);
     virtual ~PetrolCar();
 
-    void changeEngine(std::unique_ptr<PetrolEngine> pe) override ;
+    void changeEngine(std::unique_ptr<PetrolEngine> pe) ;
     void refill() override;
 private:
     void refuel();

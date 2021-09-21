@@ -1,9 +1,10 @@
 #include "HybridCar.hpp"
 #include <iostream>
+#include <utility>
 
-HybridCar::HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng)
-    : ElectricCar(electricEng)
-    , PetrolCar(petrolEng)
+HybridCar::HybridCar(std::unique_ptr<PetrolEngine> petrolEng, ElectricEngine* electricEng)
+    : PetrolCar(std::move(petrolEng))
+    , ElectricCar(electricEng)
 {
     std::cout << __FUNCTION__ << std::endl;
 }
@@ -16,8 +17,8 @@ void HybridCar::refill() {
     PetrolCar::refill();
 }
 
-void HybridCar::changeEngine(PetrolEngine* petrolEngineNew, ElectricEngine* electroEngineNew) {
-    PetrolCar::changeEngine(petrolEngineNew);
+void HybridCar::changeEngine(std::unique_ptr<PetrolEngine> petrolEngineNew, ElectricEngine* electroEngineNew) {
+    PetrolCar::changeEngine(std::move(petrolEngineNew));
     ElectricCar::changeEngine(electroEngineNew);
 }
 

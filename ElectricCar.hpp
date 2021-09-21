@@ -7,7 +7,7 @@ public:
     ElectricCar(ElectricEngine* engine);
     ~ElectricCar();
  
-    void changeEngine(ElectricEngine* ee) override;
+    void changeEngine(ElectricEngine* ee) ;
     void refill() override;
 private:
     void charge();
