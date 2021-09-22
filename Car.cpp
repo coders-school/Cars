@@ -23,6 +23,8 @@ void Car::accelerate(int speed) {
     }
 }
 double Car::getSpeed() const {
+    std::cout << __FUNCTION__ << std::endl;
+    std::cout << speed_ << '\n';
     return speed_;
 }
 

@@ -26,6 +26,7 @@ int main() {
     car = &nissan;
     car->refill();
     car->accelerate(80);
+    car->getSpeed();
     car->changeEngine(std::make_unique<ElectricEngine>(150, 700)); // Changing an engine during driving is not safe
     car->turnLeft();
     std::cout << '\n';
