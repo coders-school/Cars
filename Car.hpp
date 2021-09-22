@@ -2,6 +2,7 @@
 
 #include <memory>
 
+#include "Exeptions.hpp"
 #include "PetrolEngine.hpp"
 #include "ElectricEngine.hpp"
 

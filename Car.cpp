@@ -15,7 +15,7 @@ void Car::brake() {
 void Car::accelerate(int speed) {
     std::cout << __FUNCTION__ << std::endl;
 
-    auto validationSpeed =[](const int speed) { return speed >= 0 && speed <= 180; };
+    auto validationSpeed = [](const int speed) { return speed >= 0 && speed <= 180; };
     if (validationSpeed(speed)) {
         speed_ = speed;
     } else {
@@ -26,10 +26,10 @@ double Car::getSpeed() const {
     return speed_;
 }
 
-void Car::changeEngine(std::unique_ptr<PetrolEngine> pe) {
+void Car::changeEngine(std::unique_ptr<PetrolEngine>) {
     throw InvalidParameter("It is not petrol engine!!!");
 }
 
-void Car::changeEngine(std::unique_ptr<ElectricEngine> ee) {
+void Car::changeEngine(std::unique_ptr<ElectricEngine>) {
     throw InvalidParameter("It is not electrical engine!!!");
 }
