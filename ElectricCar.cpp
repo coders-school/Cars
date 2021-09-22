@@ -16,7 +16,7 @@ void ElectricCar::charge() {
 
 void ElectricCar::changeEngine(std::unique_ptr<ElectricEngine> ee) {
     if (!ee) {
-        throw InvalidParameter("Invalid engine to electrical car. ");
+        throw InvalidParameter("Invalid engine to electrical car.");
     }
     engine_.reset();
     engine_ = std::move(ee);
