@@ -7,14 +7,12 @@ public:
     ElectricCar(std::unique_ptr<ElectricEngine> engine);
     virtual ~ElectricCar();
 
-    void turnLeft() override;
-    void turnRight() override;
-    void brake() override;
-    void accelerate(int) override;
-    void charge();
+    void powerSuply() override;
+    void changeEngine(int, float, int = 0, int = 0, int = 0) override;
 
     const std::unique_ptr<ElectricEngine>& getElectricEngine();
 
 private:
     std::unique_ptr<ElectricEngine> electricEngine_;
+    void charge();
 };

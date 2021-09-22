@@ -9,18 +9,7 @@ HybridCar::HybridCar(std::unique_ptr<PetrolEngine> petrolEng, std::unique_ptr<El
 HybridCar::~HybridCar() {
     std::cout << __FUNCTION__ << std::endl;
 }
-void HybridCar::turnLeft() {
-    std::cout << __FUNCTION__ << std::endl;
-}
-void HybridCar::turnRight() {
-    std::cout << __FUNCTION__ << std::endl;
-}
-void HybridCar::brake() {
-    std::cout << __FUNCTION__ << std::endl;
-}
-void HybridCar::accelerate(int) {
-    std::cout << __FUNCTION__ << std::endl;
-}
+
 void HybridCar::charge() {
     std::cout << __FUNCTION__ << std::endl;
 }
@@ -28,6 +17,15 @@ void HybridCar::refuel() {
     std::cout << __FUNCTION__ << std::endl;
 }
 
+void HybridCar::powerSuply() {
+    charge();
+    refuel();
+}
+
+void HybridCar::changeEngine(int power, float capacity, int gears, int pow, int bat_capacity) {
+    petrolEngine_ = std::make_unique<PetrolEngine>(power, capacity, gears);
+    electricEngine_ = std::make_unique<ElectricEngine>(pow, bat_capacity);
+}
 const std::unique_ptr<ElectricEngine>& HybridCar::getElectricEngine() {
     return electricEngine_;
 }

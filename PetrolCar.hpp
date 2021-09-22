@@ -4,14 +4,14 @@ class PetrolCar : public Car {
 public:
     PetrolCar(std::unique_ptr<PetrolEngine> engine);
     virtual ~PetrolCar();
-    void turnLeft() override;
-    void turnRight() override;
-    void brake() override;
-    void accelerate(int speed) override;
-    void refuel();
-
+    
+    
+    void powerSuply() override;
     const std::unique_ptr<PetrolEngine>& getPetrolEngine();
-
+   
+    void changeEngine(int,float,int=0,int=0,int=0)override;
 private:
     std::unique_ptr<PetrolEngine> petrolEngine_;
+    void refuel();
+   
 };

@@ -35,7 +35,12 @@ int PetrolEngine::getCurrentGear() {
 }
 
 void PetrolEngine::setPower(int power) {
+    if(power<=0){
+        std::cout<<"power cannot be negative "<<std::endl;
+    }
+    else{
     power_ = power;
+    }
 }
 
 void PetrolEngine::setCapacity(float capacity) {

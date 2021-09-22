@@ -11,3 +11,14 @@ Car::~Car() {
 void Car::accelerate(int) {
 }
 
+ void Car::turnLeft(){
+
+
+ }
+ void Car::turnRight(){
+
+ }
+ void Car::brake(){
+
+ }
+ 

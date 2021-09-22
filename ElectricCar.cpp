@@ -9,22 +9,21 @@ ElectricCar::ElectricCar(std::unique_ptr<ElectricEngine> engine)
 ElectricCar::~ElectricCar() {
     std::cout << __FUNCTION__ << std::endl;
 }
-void ElectricCar::turnLeft() {
-    std::cout << __FUNCTION__ << std::endl;
-}
-void ElectricCar::turnRight() {
-    std::cout << __FUNCTION__ << std::endl;
-}
-void ElectricCar::brake() {
-    std::cout << "brake electric car \n" << std::endl;
-}
-void ElectricCar::accelerate(int) {
-    std::cout << __FUNCTION__ << std::endl;
-}
+
 void ElectricCar::charge() {
     std::cout << __FUNCTION__ << std::endl;
+}
+
+ void ElectricCar::powerSuply(){
+    charge();
+ }
+
+void ElectricCar::changeEngine(int power,float bat_capacity,int p ,int c ,int g){
+     
+      electricEngine_=std::make_unique<ElectricEngine>(power, static_cast<int>(bat_capacity));
 }
 
 const std::unique_ptr<ElectricEngine>& ElectricCar::getElectricEngine() {
     return electricEngine_;
 }
+
