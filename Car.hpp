@@ -1,4 +1,5 @@
 #pragma once
+#include "Speed.hpp"
 
 class Car {
 public:
@@ -8,5 +9,5 @@ public:
     void turnLeft();
     void turnRight();
     void brake();
-    void accelerate(int);
+    void accelerate(Speed speed);
 };

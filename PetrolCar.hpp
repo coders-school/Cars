@@ -13,6 +13,10 @@ public:
 
     void refuel() override;
     void changeGear(int gear) override;
+
+    void engineSwap(std::unique_ptr<PetrolEngine>& engine) {
+        engine_.swap(engine);
+    }
     
 protected:
     std::unique_ptr<PetrolEngine> engine_;

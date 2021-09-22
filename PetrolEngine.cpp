@@ -2,7 +2,7 @@
 #include "InvalidGear.hpp"
 #include <iostream>
 
-PetrolEngine::PetrolEngine(int power, float capacity, int gears)
+PetrolEngine::PetrolEngine(Power power, PetrolCapacity capacity, int gears)
     : Engine(power)
     , capacity_(capacity)
     , gears_(gears)
@@ -20,6 +20,9 @@ void PetrolEngine::changeGear(int gear){
     }
     if(currentGear_ > 0 && gear < 0){
         throw InvalidGear("InvalidGear error: change from gear to R");
+    }
+    if(gear > gears_) {
+        throw InvalidGear("InvalidGear error: gear to high to change");
     }
 
     currentGear_ = gear;

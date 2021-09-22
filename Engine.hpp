@@ -1,10 +1,11 @@
 #pragma once
+#include "Power.hpp"
 
 class Engine {
 public:
-    Engine(int power) : power_(power) {}
+    Engine(Power power) : power_(power) {}
     virtual ~Engine() = default;
 
 protected:
-    int power_;  // in HP
+    Power power_;  // in HP
 };
