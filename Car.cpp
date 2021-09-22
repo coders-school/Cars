@@ -10,9 +10,9 @@ void Car::turnRight() {
 void Car::brake() {
     std::cout << __FUNCTION__ << std::endl;
 }
-void Car::accelerate(int speed) {
-    if(speed < 0) {
+void Car::accelerate(Speed speed) {
+    /*if(speed < 0) {
         throw std::logic_error("Logic error: negative acceleration speed");
-    }
-    std::cout << __FUNCTION__ << std::endl;
+    }*/
+    std::cout << __FUNCTION__ << "\taccelerated to " << speed << "km/h" << std::endl;
 }

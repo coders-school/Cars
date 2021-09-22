@@ -1,11 +1,12 @@
 #pragma once
 #include "Engine.hpp"
+#include "ElectricCapacity.hpp"
 
 class ElectricEngine : public Engine {
 public:
-    ElectricEngine(int power, int batteryCapacity);
+    ElectricEngine(Power power, ElectricCapacity batteryCapacity);
     ~ElectricEngine() override;
 
 protected:
-    int batteryCapacity_;  // in Ah
+    ElectricCapacity batteryCapacity_;  // in Ah
 };

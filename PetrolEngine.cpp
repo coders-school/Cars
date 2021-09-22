@@ -2,7 +2,7 @@
 #include "InvalidGear.hpp"
 #include <iostream>
 
-PetrolEngine::PetrolEngine(int power, float capacity, int gears)
+PetrolEngine::PetrolEngine(Power power, PetrolCapacity capacity, int gears)
     : Engine(power)
     , capacity_(capacity)
     , gears_(gears)

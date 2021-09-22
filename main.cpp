@@ -1,31 +1,32 @@
 #include <iostream>
 #include "ElectricCar.hpp"
 #include "ElectricEngine.hpp"
-#include "HybridCar.hpp"
-#include "InvalidGear.hpp"
 #include "PetrolCar.hpp"
 #include "PetrolEngine.hpp"
+#include "HybridCar.hpp"
+#include "InvalidGear.hpp"
+#include "PetrolCapacity.hpp"
 
 int main() {
     std::cout << std::endl
               << "OPEL" << std::endl;
-    PetrolCar opel(std::make_unique<PetrolEngine>(120, 1800, 6));
-    opel.accelerate(50);
+    PetrolCar opel(std::make_unique<PetrolEngine>(120_hp, 1800.0_ccm, 6));
+    opel.accelerate(50_km_h);
     opel.brake();
-    try {
-        opel.accelerate(-900);
-    } catch (const std::logic_error& err) {
-        std::cout << err.what() << '\n';
-    }
+    // try {
+    //     opel.accelerate(-900_mile_h);
+    // } catch (const std::logic_error& err) {
+    //     std::cout << err.what() << '\n';
+    // }
     opel.refuel();
     opel.changeGear(3);
     //opel.changeGear(-1);
 
     std::cout << std::endl
               << "NISSAN" << std::endl;
-    ElectricCar nissan(std::make_unique<ElectricEngine>(130, 650));
+    ElectricCar nissan(std::make_unique<ElectricEngine>(130_hp, 650_Ah));
     nissan.charge();
-    nissan.accelerate(80);
+    nissan.accelerate(80_mile_h);
     
     // auto newEngine = std::make_unique<ElectricEngine>(150, 700);  // Changing an engine during driving is not safe
     // std::cout << newEngine.get() << '\n';
@@ -38,9 +39,9 @@ int main() {
 
     std::cout << std::endl
               << "TOYOTA" << std::endl;
-    HybridCar toyota(std::make_unique<PetrolEngine>(80, 1400, 5),
-                     std::make_unique<ElectricEngine>(100, 540));
-    toyota.accelerate(100);
+    HybridCar toyota(std::make_unique<PetrolEngine>(80_hp, 1400.0_ccm, 5),
+                     std::make_unique<ElectricEngine>(100_hp, 540_Ah));
+    toyota.accelerate(100_km_h);
     toyota.brake();
     toyota.charge();
     toyota.refuel();

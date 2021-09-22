@@ -26,6 +26,10 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest Catch2)
 
 set(SRC_LIST
+    Speed.cpp
+    Power.cpp
+    PetrolCapacity.cpp
+    ElectricCapacity.cpp
     Car.cpp
     ElectricCar.cpp
     ElectricEngine.cpp
