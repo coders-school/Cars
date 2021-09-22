@@ -1,15 +1,17 @@
 #pragma once
 
 struct ElectricCapacity {
+    using Type = int;
+
     ElectricCapacity() = default;
     
     static ElectricCapacity capacityAh (unsigned long long int Ah);
 
-    operator unsigned long long int () const;
+    operator Type() const;
 
 private:
-    ElectricCapacity(unsigned long long int Ah);
-    unsigned long long int  Ah;  // in Ah
+    ElectricCapacity(Type Ah);
+    Type Ah = 0;
 };
 
 ElectricCapacity operator""_Ah (unsigned long long int batteryCapacity);

@@ -1,12 +1,17 @@
 #include "Power.hpp"
+#include <limits>
+#include <stdexcept>
 
-Power::Power(unsigned long long int hp) : hp(hp) {}
+Power::Power(Type hp) : hp(hp) {}
 
 Power Power::powerHp(unsigned long long int hp) {
-    return Power(hp);
+    if(hp > std::numeric_limits<Type>::max()) {
+        throw std::range_error("Error: Petrol capacity to high to be stored.");
+    }
+    return Power{static_cast<Type>(hp)};
 }
 
-Power::operator unsigned long long int() const {
+Power::operator Type() const {
     return hp;
 }
 
