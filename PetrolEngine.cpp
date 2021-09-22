@@ -1,7 +1,7 @@
 #include "PetrolEngine.hpp"
 #include <iostream>
-#include "InvalidGear.hpp"
 #include <stdexcept>
+#include "InvalidGear.hpp"
 
 PetrolEngine::PetrolEngine(int power, float capacity, int gears)
     : power_(power), capacity_(capacity), gears_(gears), currentGear_(0) {
@@ -12,7 +12,7 @@ void PetrolEngine::changeGear(int gear) {
     // TODO: Add checking if gear is between -1 and gears_
     // -1 is for REAR
     // 0 is for NEUTRAL
-    if (gear == -1 && currentGear_ != 0 ) {
+    if (gear == -1 && currentGear_ != 0) {
         throw std::logic_error("Invalid changing gears");
     }
 

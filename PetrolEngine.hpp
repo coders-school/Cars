@@ -1,6 +1,7 @@
 #pragma once
 
 #include <stdexcept>
+#include "InvalidGear.hpp"
 
 
 class PetrolEngine {

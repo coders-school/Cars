@@ -21,3 +21,10 @@ void Car::accelerate(int speed) {
         throw std::range_error("Speed out of range!!!!");
     }
 }
+double Car::getSpeed() const {
+    return speed_;
+}
+
+void Car::changeEngine(std::unique_ptr<PetrolEngine> pe) {
+    throw
+}
