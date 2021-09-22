@@ -3,13 +3,13 @@
 struct ElectricCapacity {
     ElectricCapacity() = default;
     
-    friend ElectricCapacity operator""_Ah (unsigned long long int batteryCapacity);
+    static ElectricCapacity capacityAh (unsigned long long int Ah);
 
     operator unsigned long long int () const;
 
 private:
-    ElectricCapacity(unsigned long long int capabatteryCapacitycity);
-    unsigned long long int  batteryCapacity;  // in Ah
+    ElectricCapacity(unsigned long long int Ah);
+    unsigned long long int  Ah;  // in Ah
 };
 
-ElectricCapacity operator""_Ah (unsigned long long int  batteryCapacity);
+ElectricCapacity operator""_Ah (unsigned long long int batteryCapacity);
