@@ -1,6 +1,7 @@
+#include <iostream>
 
 #include "Car.hpp"
-#include <iostream>
+#include "Exeptions.hpp"
 
 void Car::turnLeft() {
     std::cout << __FUNCTION__ << std::endl;
@@ -26,5 +27,9 @@ double Car::getSpeed() const {
 }
 
 void Car::changeEngine(std::unique_ptr<PetrolEngine> pe) {
-    throw
+    throw InvalidParameter("It is not petrol engine!!!");
+}
+
+void Car::changeEngine(std::unique_ptr<ElectricEngine> ee) {
+    throw InvalidParameter("It is not electrical engine!!!");
 }

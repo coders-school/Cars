@@ -8,3 +8,10 @@ ElectricEngine::ElectricEngine(int power, int batteryCapacity)
 {
     std::cout << __FUNCTION__ << std::endl;
 }
+int ElectricEngine::getBatteryCapacity() const {
+    return batteryCapacity_;
+}
+
+int ElectricEngine::getPower() const {
+    return power_;
+}
