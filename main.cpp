@@ -1,35 +1,47 @@
-#include "PetrolCar.hpp"
-#include "ElectricCar.hpp"
-#include "HybridCar.hpp"
-#include "ElectricEngine.hpp"
-#include "PetrolEngine.hpp"
 #include "Car.hpp"
+#include "ElectricCar.hpp"
+#include "ElectricEngine.hpp"
+#include "Engine.hpp"
+#include "HybridCar.hpp"
+#include "PetrolCar.hpp"
+#include "PetrolEngine.hpp"
+
 #include <iostream>
 
 int main()
 {
     Car* car;
+    Engine* electricEngine;
+    Engine* petrolEngine;
+    PetrolEngine petrolEng (80, 1400, 20);
+    petrolEngine = &petrolEng;
+
     std::cout << std::endl << "OPEL" << std::endl;
-    PetrolCar opel(new PetrolEngine(80, 1400, 5));
+    PetrolCar opel(petrolEngine);
     car = &opel;
     car->accelerate(50);
     car->brake();
     car->accelerate(-900);
-    opel.refuel();
+    car->fillUp();
+    try {
+        opel.changeGear(1, petrolEng);
+    } catch (const PetrolEngine::InvalidGear & error){
+        std::cout << error.what() << '\n';
+    }
 
+    std::cout << std::endl << "NISSAN" << std::endl;
+    ElectricEngine electricEng(100, 1110);
+    electricEngine = &electricEng;
+    ElectricCar nissan(electricEngine);
+    car = &nissan;
+    car->fillUp();
+    car->accelerate(80);
+    ElectricEngine newElectricEngine(150, 700);
+    car->turnLeft();
 
-    // std::cout << std::endl << "NISSAN" << std::endl;
-    // ElectricCar nissan(new ElectricEngine(130, 650));
-    // car = &nissan;
-    // car->charge();
-    // car->accelerate(80);
-    // nissan.engine_ = new ElectricEngine(150, 700);  // Changing an engine during driving is not safe
-    // nissan.turnLeft();
-
-    // std::cout << std::endl << "TOYOTA" << std::endl;
-    // HybridCar toyota(new PetrolEngine(80, 1400, 5), new ElectricEngine(100, 540));
-    // toyota.accelerate(100);
-    // toyota.brake();
-    // toyota.charge();
-    // toyota.refuel();
+    std::cout << std::endl << "TOYOTA" << std::endl;
+    HybridCar toyota(electricEngine, petrolEngine);
+    car->accelerate(100);
+    car->brake();
+    car->fillUp();
 }

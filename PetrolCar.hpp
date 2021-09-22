@@ -1,15 +1,15 @@
 #pragma once
-#include "PetrolEngine.hpp"
+
 #include "Car.hpp"
+#include "Engine.hpp"
+#include "PetrolEngine.hpp"
+
 class PetrolCar : public Car
 {
 public:
-    PetrolCar(PetrolEngine* petrolEngine);
+    PetrolCar(Engine* engine);
     ~PetrolCar();
     void accelerate(int speed);
-    void refuel();
-
-private:
-    PetrolEngine* petrolEngine_;
+    void changeGear(int gear, PetrolEngine & petrolEngine);
 };
 

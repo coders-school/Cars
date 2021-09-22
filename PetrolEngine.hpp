@@ -1,14 +1,24 @@
 #pragma once
+#include "Engine.hpp"
 
-class PetrolEngine
+#include <stdexcept>
+#include <string>
+
+class PetrolEngine : public Engine
 {
 public:
+    struct InvalidGear : public std::logic_error {
+        InvalidGear(std::string msg) : std::logic_error(msg)
+        {
+            
+        }
+    };
     PetrolEngine(int power, float capacity, int gears);
+    ~PetrolEngine() override;
     void changeGear(int gear);
-    void refuel();
+    void fillUp() override;
 
-    int power_;         // in HP
-    float capacity_;    // in ccm
+private:
     int gears_;
     int currentGear_;
 };

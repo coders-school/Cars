@@ -1,8 +1,9 @@
 #include "ElectricCar.hpp"
+
 #include <iostream>
 
-ElectricCar::ElectricCar(ElectricEngine* engine)
-    : engine_(engine)
+ElectricCar::ElectricCar(Engine* engine)
+    : Car(engine)
 {
     std::cout << __FUNCTION__ << std::endl;
 }
@@ -14,8 +15,3 @@ ElectricCar::~ElectricCar() {
 void ElectricCar::accelerate(int) { 
     std::cout << __FUNCTION__ << std::endl; 
 }
-
-void ElectricCar::charge() { 
-    std::cout << __FUNCTION__ << std::endl; 
-}
-
