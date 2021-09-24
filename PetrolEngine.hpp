@@ -1,14 +1,17 @@
 #pragma once
+#include "Engine.hpp"
+#include "Gearable.hpp"
+#include "PetrolCapacity.hpp"
 
-class PetrolEngine
-{
+class PetrolEngine : virtual Engine, public Gearable {
 public:
-    PetrolEngine(int power, float capacity, int gears);
-    void changeGear(int gear);
+    PetrolEngine(Power power, PetrolCapacity capacity, int gears);
+    ~PetrolEngine() override;
+    
+    void changeGear(int gear) override;
 
-private:
-    int power_;         // in HP
-    float capacity_;    // in ccm
-    int gears_;
-    int currentGear_;
+protected:
+    PetrolCapacity capacity_;  // in ccm
+    const int gears_;
+    int currentGear_ = 0;
 };
