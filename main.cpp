@@ -28,12 +28,13 @@ int main() {
     nissan.charge();
     nissan.accelerate(80_mile_h);
     
-    // auto newEngine = std::make_unique<ElectricEngine>(150, 700);  // Changing an engine during driving is not safe
-    // std::cout << newEngine.get() << '\n';
-    // nissan.engineSwap(newEngine);
-    // std::cout << newEngine.get() << '\n';
-    // nissan.engineSwap(newEngine);
-    // std::cout << newEngine.get() << '\n';
+    auto newEngine = std::make_unique<ElectricEngine>( 150_hp, 700_Ah);  // Changing an engine during driving is not safe
+    //auto newEngine = std::make_unique<ElectricEngine>( Power::powerHp(150), ElectricCapacity::capacityAh(700));  // Changing an engine during driving is not safe
+    std::cout << newEngine.get() << '\n';
+    nissan.engineSwap(newEngine);
+    std::cout << newEngine.get() << '\n';
+    nissan.engineSwap(newEngine);
+    std::cout << newEngine.get() << '\n';
 
     nissan.turnLeft();
 
