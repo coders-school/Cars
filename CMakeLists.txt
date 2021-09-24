@@ -19,23 +19,25 @@ set(SRC_LIST
     ElectricCar.cpp
     ElectricEngine.cpp
     HybridCar.cpp
-    main.cpp
     PetrolCar.cpp
     PetrolEngine.cpp
     Engine.cpp
     Car.cpp
 )
 
-add_executable(${PROJECT_NAME} ${SRC_LIST})
+set(TEST_LIST
+    HibridCarTests.cpp
+    ElectricCarTests.cpp
+    PetrolCarTests.cpp
+)
+
+add_library(${PROJECT_NAME}-lib STATIC ${SRC_LIST})
+add_executable(${PROJECT_NAME} main.cpp)
 target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Werror -Wpedantic -Wextra)
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR})
+target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}-lib)
 
 # Now simply link against gtest or gtest_main as needed. Eg
-add_executable(tests-gt tests.cpp ${SRC_LIST})
-target_link_libraries(tests-gt gtest_main)
+add_executable(${PROJECT_NAME}-gt ${TEST_LIST})
+target_link_libraries(${PROJECT_NAME}-gt ${PROJECT_NAME}-lib gtest_main)
 enable_testing()
-add_test(NAME tests_test COMMAND tests-gt)
-
-
-
-
+add_test(NAME ${PROJECT_NAME}-test COMMAND ${PROJECT_NAME}-gt)

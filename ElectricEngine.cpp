@@ -1,4 +1,5 @@
 #include "ElectricEngine.hpp"
+
 #include <iostream>
 
 ElectricEngine::ElectricEngine(int power, float capacity)

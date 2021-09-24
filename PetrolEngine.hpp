@@ -19,6 +19,7 @@ public:
     void fillUp() override;
     int getMaxSpeed() override;
     int getMaxReverseSpeed() override;
+    
 private:
     int gears_;
     int currentGear_;

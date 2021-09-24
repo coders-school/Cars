@@ -1,4 +1,5 @@
 #include "HybridCar.hpp"
+
 #include <iostream>
 
 HybridCar::HybridCar(Engine* electricEng, Engine* petrolEng)
@@ -16,5 +17,7 @@ void HybridCar::accelerate(int) {
     std::cout << __FUNCTION__ << std::endl; 
 }
 
- 
+void HybridCar::changeGear(int gear, PetrolEngine & petrolEngine) {
+    petrolEngine.changeGear(gear);
+}
 
