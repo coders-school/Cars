@@ -36,10 +36,12 @@ set(SRC_LIST
     HybridCar.cpp
     PetrolCar.cpp
     PetrolEngine.cpp
+    Car.cpp
 )
 
-add_executable(${PROJECT_NAME} main.cpp ${SRC_LIST})
-target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Werror -Wpedantic -Wextra)
+add_executable(${PROJECT_NAME} ${SRC_LIST})
+target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Wpedantic -Wextra)
+
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR})
 
 add_executable(${PROJECT_NAME}-ut Test.cpp ${SRC_LIST})
