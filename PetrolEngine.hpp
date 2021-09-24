@@ -17,7 +17,8 @@ public:
     ~PetrolEngine() override;
     void changeGear(int gear);
     void fillUp() override;
-
+    int getMaxSpeed() override;
+    int getMaxReverseSpeed() override;
 private:
     int gears_;
     int currentGear_;

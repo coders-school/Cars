@@ -32,3 +32,11 @@ void PetrolEngine::changeGear(int gear)
         std::cout << __FUNCTION__ << std::endl;
     }
 }
+
+int PetrolEngine::getMaxSpeed() {
+    return (power_ * capacity_ + (gears_ * 10))/ 500;
+}
+
+int PetrolEngine::getMaxReverseSpeed() {
+    return getMaxSpeed() / 6 * (-1);
+}

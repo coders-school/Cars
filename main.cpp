@@ -13,15 +13,23 @@ int main()
     Car* car;
     Engine* electricEngine;
     Engine* petrolEngine;
-    PetrolEngine petrolEng (80, 1400, 20);
+    PetrolEngine petrolEng (80, 1400, 5);
     petrolEngine = &petrolEng;
 
     std::cout << std::endl << "OPEL" << std::endl;
     PetrolCar opel(petrolEngine);
     car = &opel;
-    car->accelerate(50);
+    try {
+        car->accelerate(50);
+    } catch (const Car::InvalidAccelerate & error){
+        std::cout << error.what() << '\n';
+    }
     car->brake();
-    car->accelerate(-900);
+    try {
+        car->accelerate(-900);
+    } catch (const Car::InvalidAccelerate & error){
+        std::cout << error.what() << '\n';
+    }
     car->fillUp();
     try {
         opel.changeGear(1, petrolEng);
@@ -35,13 +43,21 @@ int main()
     ElectricCar nissan(electricEngine);
     car = &nissan;
     car->fillUp();
-    car->accelerate(80);
+    try {
+        car->accelerate(80);
+    } catch (const Car::InvalidAccelerate & error){
+        std::cout << error.what() << '\n';
+    }
     ElectricEngine newElectricEngine(150, 700);
     car->turnLeft();
 
     std::cout << std::endl << "TOYOTA" << std::endl;
     HybridCar toyota(electricEngine, petrolEngine);
-    car->accelerate(100);
+    try {
+        car->accelerate(-20);
+    } catch (const Car::InvalidAccelerate & error){
+        std::cout << error.what() << '\n';
+    }
     car->brake();
     car->fillUp();
 }

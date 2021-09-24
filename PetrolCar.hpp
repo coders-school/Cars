@@ -9,7 +9,6 @@ class PetrolCar : public Car
 public:
     PetrolCar(Engine* engine);
     ~PetrolCar();
-    void accelerate(int speed);
     void changeGear(int gear, PetrolEngine & petrolEngine);
 };
 

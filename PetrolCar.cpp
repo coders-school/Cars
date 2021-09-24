@@ -6,6 +6,7 @@ PetrolCar::PetrolCar(Engine* engine)
     : Car(engine)
 {
     std::cout << __FUNCTION__ << std::endl;
+    engine->getPower();
 }
 
 PetrolCar::~PetrolCar() { 

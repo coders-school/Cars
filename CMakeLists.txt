@@ -31,7 +31,7 @@ target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Werror -Wpedantic -Wextra)
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR})
 
 # Now simply link against gtest or gtest_main as needed. Eg
-add_executable(tests-gt tests.cpp)
+add_executable(tests-gt tests.cpp ${SRC_LIST})
 target_link_libraries(tests-gt gtest_main)
 enable_testing()
 add_test(NAME tests_test COMMAND tests-gt)

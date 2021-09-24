@@ -11,7 +11,3 @@ ElectricCar::ElectricCar(Engine* engine)
 ElectricCar::~ElectricCar() {
     std::cout << __FUNCTION__ << std::endl; 
 }
-
-void ElectricCar::accelerate(int) { 
-    std::cout << __FUNCTION__ << std::endl; 
-}

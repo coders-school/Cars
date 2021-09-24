@@ -8,6 +8,5 @@ class ElectricCar : public Car
 public:
     ElectricCar(Engine* engine);
     ~ElectricCar();
-    void accelerate(int speed);
 };
 
