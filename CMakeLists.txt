@@ -25,7 +25,8 @@ set(SRC_LIST
     HybridCar.cpp
     PetrolCar.cpp
     PetrolEngine.cpp
-    Car.cpp  
+    Car.cpp
+    InvalidGear.hpp  
 )
 
 set(FLAGS
