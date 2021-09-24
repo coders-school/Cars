@@ -7,7 +7,7 @@ public:
     //~PetrolEngine();
     void changeGear(int gear);
 
-
+    bool validation(int);
     int getPower();
     int getCapacity();
     int getGears();

@@ -4,6 +4,7 @@ class ElectricEngine {
 public:
     ElectricEngine(int power, int batteryCapacity);
 
+    bool validation(int);
     int getPower();
     int getBatteryCapacity();
     void setPower(int);

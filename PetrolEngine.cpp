@@ -10,6 +10,10 @@ PetrolEngine::~PetrolEngine(){
  std::cout << __FUNCTION__ << std::endl; 
 }
 */
+bool PetrolEngine::validation(int value) {
+    return value < 0;
+}
+
 void PetrolEngine::changeGear(int gear) {
     // TODO: Add checking if gear is between -1 and gears_
     // -1 is for REAR
@@ -35,22 +39,33 @@ int PetrolEngine::getCurrentGear() {
 }
 
 void PetrolEngine::setPower(int power) {
-    if(power<=0){
-        std::cout<<"power cannot be negative "<<std::endl;
-    }
-    else{
-    power_ = power;
+    if (validation(power)) {
+        std::cout << "power cannot be negative " << std::endl;
+    } else {
+        power_ = power;
     }
 }
 
 void PetrolEngine::setCapacity(float capacity) {
-    capacity_ = capacity;
+    if (validation(capacity)) {
+        std::cout << "capacity cannot be negative " << std::endl;
+    } else {
+        capacity_ = capacity;
+    }
 }
 
 void PetrolEngine::setGears(int gears) {
-    gears_ = gears;
+    if (validation(gears)) {
+        std::cout << "gears cannot be negative " << std::endl;
+    } else {
+        gears_ = gears;
+    }
 }
 
 void PetrolEngine::setCurrentGear(int currentGear) {
-    currentGear_ = currentGear;
+    if (currentGear<-1) {
+        std::cout << "gears cannot be negative " << std::endl;
+    } else {
+        currentGear_ = currentGear;
+    }
 }
