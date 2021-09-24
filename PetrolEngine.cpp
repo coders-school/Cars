@@ -21,9 +21,7 @@ void PetrolEngine::fillUp() {
 
 void PetrolEngine::changeGear(int gear)
 {
-    if (gear == currentGear_) {
-        throw PetrolEngine::InvalidGear("Nothing happen");
-    } else if (std::abs(currentGear_ - gear) != 1) {
+    if (std::abs(currentGear_ - gear) != 1) {
         throw PetrolEngine::InvalidGear("Error, you try change gear to fast");
     } else if (gear < -1 || gear > gears_) {
         throw PetrolEngine::InvalidGear("Error, i can't find this gear");
