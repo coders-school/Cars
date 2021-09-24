@@ -9,4 +9,3 @@ public:
     ElectricCar(Engine* engine);
     ~ElectricCar();
 };
-

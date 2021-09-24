@@ -4,6 +4,7 @@
 #include "ElectricEngine.hpp"
 #include "Engine.hpp"
 #include "PetrolEngine.hpp"
+#include <iostream>
 
 class HybridCar : public Car
 {
@@ -16,4 +17,3 @@ public:
 private:
     Engine* petrolEngine_;
 };
-

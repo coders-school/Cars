@@ -11,4 +11,3 @@ public:
     int getMaxSpeed() override;
     int getMaxReverseSpeed() override;
 };
-
