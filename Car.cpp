@@ -11,16 +11,16 @@ void Car::turnRight() {
 }
 void Car::brake() {
     std::cout << __FUNCTION__ << std::endl;
+    speed_ = 0;
 }
 void Car::accelerate(int speed) {
     std::cout << __FUNCTION__ << std::endl;
 
     auto validationSpeed = [](const int speed) { return speed >= 0 && speed <= 180; };
-    if (validationSpeed(speed)) {
-        speed_ = speed;
-    } else {
-        throw std::range_error("Speed out of range!!!!");
+    if (!validationSpeed(speed)) {
+        throw InvalidParameter("Speed out of range!!!!");
     }
+    speed_ = speed;
 }
 double Car::getSpeed() const {
     std::cout << __FUNCTION__ << std::endl;

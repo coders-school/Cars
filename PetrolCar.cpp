@@ -25,8 +25,8 @@ void PetrolCar::refill() {
     std::cout << __FUNCTION__ << std::endl;
 }
 
-// PetrolEngine* PetrolCar::getEngine() const {
-//     return engine_.get();
-// }
+PetrolEngine* PetrolCar::getEngine() const {
+    return engine_.get();
+}
 
 
