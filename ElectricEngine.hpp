@@ -1,11 +1,14 @@
 #pragma once
 
-class ElectricEngine
-{
+class ElectricEngine {
 public:
     ElectricEngine(int power, int batteryCapacity);
+    void setBatteryCapacity(int batteryCapacity) { batteryCapacity_ = batteryCapacity; };
+    int getBatteryCapacity() const { return batteryCapacity_; };
+    void setPower(int power) { power_ = power; };
+    int getPower() const { return power_; };
 
-    int power_;             // in HP 
-    int batteryCapacity_;   // in Ah
+private:
+    int power_;            //in HP
+    int batteryCapacity_;  // in Ah
 };
-
