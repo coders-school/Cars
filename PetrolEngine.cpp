@@ -1,10 +1,14 @@
 #include "PetrolEngine.hpp"
 #include <cmath>
 #include <iostream>
+#include <stdexcept>
 #include "Invalidgear.hpp"
 
 PetrolEngine::PetrolEngine(int power, float capacity, int gears)
-    : power_(power), capacity_(capacity), gears_(gears), currentGear_(0) {
+    : power_(power), capacity_(capacity), gears_(gears) {
+    if (power < 0 || capacity < 0 || (gears < -1 || gears > 5)) {
+        throw std::invalid_argument("Wrong parametr");
+    }
     std::cout << __FUNCTION__ << std::endl;
 }
 /*
@@ -52,7 +56,7 @@ void PetrolEngine::setPower(int power) {
 }
 
 void PetrolEngine::setCapacity(float capacity) {
-    if (capacity<=0) {
+    if (capacity <= 0) {
         std::cout << "Capacity should be greater than zero  " << std::endl;
     } else {
         capacity_ = capacity;
@@ -62,10 +66,10 @@ void PetrolEngine::setCapacity(float capacity) {
 void PetrolEngine::setGears(int gears) {
     if (gears > 7) {
         std::cout << "The maximum number of gears is 7 " << std::endl;
-    } else if(validation(gears)) {
-        std::cout<<"The number of gears should be greater than zero "<<std::endl;
-    }else{
-        gears_=gears;
+    } else if (validation(gears)) {
+        std::cout << "The number of gears should be greater than zero " << std::endl;
+    } else {
+        gears_ = gears;
     }
 }
 

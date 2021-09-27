@@ -14,16 +14,14 @@ void ElectricCar::charge() {
     std::cout << __FUNCTION__ << std::endl;
 }
 
- void ElectricCar::powerSuply(){
+void ElectricCar::powerSuply() {
     charge();
- }
+}
 
-void ElectricCar::changeEngine(int power,float bat_capacity,int p ,int c ,int g){
-     
-      electricEngine_=std::make_unique<ElectricEngine>(power, static_cast<int>(bat_capacity));
+void ElectricCar::changeEngine(int power, float bat_capacity, int p, int c, int g) {
+    electricEngine_ = std::make_unique<ElectricEngine>(power, static_cast<int>(bat_capacity));
 }
 
 const std::unique_ptr<ElectricEngine>& ElectricCar::getElectricEngine() {
     return electricEngine_;
 }
-

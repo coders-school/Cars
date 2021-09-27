@@ -14,6 +14,6 @@ public:
     virtual void brake();
     virtual void accelerate(int);
     virtual void powerSuply() = 0;
-   
+
     virtual void changeEngine(int, float, int = 0, int = 0, int = 0) = 0;
 };

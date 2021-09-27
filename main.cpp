@@ -5,26 +5,25 @@
 #include "PetrolCar.hpp"
 
 int main() {
-    std::unique_ptr<PetrolCar> Ptr = std::make_unique<PetrolCar>(std::make_unique<PetrolEngine>(-120, 1800, 6));
-    std::unique_ptr<ElectricCar> Ptr2 = std::make_unique<ElectricCar>(std::make_unique<ElectricEngine>(12, 180));
-    Ptr->getPetrolEngine()->setCurrentGear(3);
-    PetrolCar Car(std::make_unique<PetrolEngine>(-120, 1800, 6));
-    
-    /*
-int p = Ptr2->getElectricEngine()->getPower();
-*/
-    //std::unique_ptr<Car>carPtr=std::move(Ptr);
-    //std::unique_ptr<Car>carPtr2=std::move(Ptr2);
-
-    ///carPtr2->powerSuply();
-    //carPtr->changeEngine(4,5,6,7,8);
-
     try {
-        Ptr->getPetrolEngine()->changeGear(4);
+        std::unique_ptr<ElectricCar> Ptr2 = std::make_unique<ElectricCar>(std::make_unique<ElectricEngine>(12, 180));
 
-    } catch (InvalidGear const& m) {
-        std::cout << m.what();
+    } catch (std::invalid_argument const& a) {
+        std::cout << a.what() << std::endl;
     }
 
-return 0;
+    try {
+        PetrolCar Audi(std::make_unique<PetrolEngine>(0, 4, 5));
+    } catch (std::invalid_argument const& arg) {
+        std::cout << arg.what() << std::endl;
+    }
+
+    try {
+        HybridCar Audi(std::make_unique<PetrolEngine>(0, 4, 5), std::make_unique<ElectricEngine>(12, 180));
+
+    } catch (std::invalid_argument const& arg) {
+        std::cout << arg.what() << std::endl;
+    }
+
+    return 0;
 }
