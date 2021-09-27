@@ -1,7 +1,7 @@
 #include "PetrolEngine.hpp"
-#include "Invalidgear.hpp"
 #include <cmath>
 #include <iostream>
+#include "Invalidgear.hpp"
 
 PetrolEngine::PetrolEngine(int power, float capacity, int gears)
     : power_(power), capacity_(capacity), gears_(gears), currentGear_(0) {
@@ -13,27 +13,25 @@ PetrolEngine::~PetrolEngine(){
 }
 */
 bool PetrolEngine::validation(int value) {
-    return value < 0;
+    return value <= 0;
 }
 
 void PetrolEngine::changeGear(int gear) {
     // TODO: Add checking if gear is between -1 and gears_
     // -1 is for REAR
     // 0 is for NEUTRAL
-    if(abs(gear - getCurrentGear())!=1){
+    if (abs(gear - getCurrentGear()) != 1) {
         throw InvalidGear{"wrong change Gear"};
+    } else {
+        currentGear_ = gear;
     }
-    else{
-    currentGear_ = gear;
-    }
-    
 }
 
 int PetrolEngine::getPower() {
     return power_;
 }
 
-int PetrolEngine::getCapacity() {
+float PetrolEngine::getCapacity() {
     return capacity_;
 }
 
@@ -54,24 +52,26 @@ void PetrolEngine::setPower(int power) {
 }
 
 void PetrolEngine::setCapacity(float capacity) {
-    if (validation(capacity)) {
-        std::cout << "capacity cannot be negative " << std::endl;
+    if (capacity<=0) {
+        std::cout << "Capacity should be greater than zero  " << std::endl;
     } else {
         capacity_ = capacity;
     }
 }
 
 void PetrolEngine::setGears(int gears) {
-    if (validation(gears)) {
-        std::cout << "gears cannot be negative " << std::endl;
-    } else {
-        gears_ = gears;
+    if (gears > 7) {
+        std::cout << "The maximum number of gears is 7 " << std::endl;
+    } else if(validation(gears)) {
+        std::cout<<"The number of gears should be greater than zero "<<std::endl;
+    }else{
+        gears_=gears;
     }
 }
 
 void PetrolEngine::setCurrentGear(int currentGear) {
-    if (currentGear<-1) {
-        std::cout << "gears cannot be negative " << std::endl;
+    if (currentGear < -1 || currentGear > 5) {
+        std::cout << "Gears should be in the range -1 to 5" << std::endl;
     } else {
         currentGear_ = currentGear;
     }

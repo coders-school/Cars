@@ -10,7 +10,7 @@ public:
 
     bool validation(int);
     int getPower();
-    int getCapacity();
+    float getCapacity();
     int getGears();
     int getCurrentGear();
   

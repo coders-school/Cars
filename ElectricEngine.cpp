@@ -7,7 +7,7 @@ ElectricEngine::ElectricEngine(int power, int batteryCapacity)
 }
 
 bool ElectricEngine::validation(int value){
-    return value < 0;
+    return value <= 0;
 }
 
 int ElectricEngine::getPower() {
@@ -20,7 +20,7 @@ int ElectricEngine::getBatteryCapacity() {
 
 void ElectricEngine::setPower(int power){
     if (validation(power)) {
-        std::cout << "power cannot be negative " << std::endl;
+        std::cout << "force should be greater than zero " << std::endl;
     } else {
         power_ = power;
     } 
@@ -28,7 +28,7 @@ void ElectricEngine::setPower(int power){
 
 void ElectricEngine::setBatteryCapacity(int batteryCapacity) {
     if (validation(batteryCapacity)) {
-        std::cout << "batteryCapacity cannot be negative " << std::endl;
+        std::cout << "Battery capacity should be greater than zero " << std::endl;
     } else {
          batteryCapacity_ = batteryCapacity;
     }
