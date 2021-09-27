@@ -1,1 +1,0 @@
-/usr/bin/c++ -g -rdynamic CMakeFiles/Cars.dir/Car.cpp.o CMakeFiles/Cars.dir/Engine.cpp.o CMakeFiles/Cars.dir/ElectricCar.cpp.o CMakeFiles/Cars.dir/ElectricEngine.cpp.o CMakeFiles/Cars.dir/HybridCar.cpp.o CMakeFiles/Cars.dir/main.cpp.o CMakeFiles/Cars.dir/PetrolCar.cpp.o CMakeFiles/Cars.dir/PetrolEngine.cpp.o -o Cars 
