@@ -16,18 +16,23 @@ PetrolEngine::~PetrolEngine(){
  std::cout << __FUNCTION__ << std::endl; 
 }
 */
+
 bool PetrolEngine::validation(int value) {
     return value <= 0;
 }
-
-void PetrolEngine::changeGear(int gear) {
-    // TODO: Add checking if gear is between -1 and gears_
-    // -1 is for REAR
-    // 0 is for NEUTRAL
+bool PetrolEngine::correctnessOfTheGearChange(int gear) {
     if (abs(gear - getCurrentGear()) != 1) {
         throw InvalidGear{"wrong change Gear"};
-    } else {
-        currentGear_ = gear;
+    }
+    return true;
+}
+void PetrolEngine::changeGear(int gear) {
+    try {
+        if (correctnessOfTheGearChange(gear)) {
+            currentGear_ = gear;
+        }
+    } catch(InvalidGear inv) {
+        std::cout<<inv.what()<<std::endl;
     }
 }
 

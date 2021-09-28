@@ -6,8 +6,9 @@ public:
     //~PetrolEngine();
 
     void changeGear(int gear);
-
+    bool correctnessOfTheGearChange(int); 
     bool validation(int);
+     
     int getPower();
     float getCapacity();
     int getGears();
@@ -19,6 +20,7 @@ public:
     void setCurrentGear(int);
 
 private:
+    
     int power_;       // in HP
     float capacity_;  // in ccm
     int gears_;

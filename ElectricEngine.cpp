@@ -2,13 +2,21 @@
 #include <iostream>
 #include <stdexcept>
 
-ElectricEngine::ElectricEngine(int power, int batteryCapacity)
-    : power_(power), batteryCapacity_(batteryCapacity) {
+ElectricEngine::ElectricEngine(int power, int batteryCapacity) {
+    try {
+        if (ConstructorDataTest(power, batteryCapacity))
+            std::cout << __FUNCTION__ << std::endl;
+        power_ = power;
+        batteryCapacity_ = batteryCapacity;
+    } catch (std::invalid_argument arg) {
+        std::cout << arg.what() << std::endl;
+    }
+}
+bool ElectricEngine::ConstructorDataTest(int power, int batteryCapacity) {
     if (power < 0 || batteryCapacity < 0) {
         throw std::invalid_argument("negative value of the parameter ");
     }
-
-    std::cout << __FUNCTION__ << std::endl;
+    return true;
 }
 
 bool ElectricEngine::validation(int value) {
