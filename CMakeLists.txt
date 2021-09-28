@@ -28,15 +28,15 @@ set(SRC_LIST
     Car.cpp
 )
 
-add_executable(${PROJECT_NAME} ${SRC_LIST})
+add_executable(${PROJECT_NAME} ${SRC_LIST} main.cpp)
 target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Wpedantic -Wextra)
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR})
 
 add_executable(${PROJECT_NAME}-ut Test.cpp ${SRC_LIST})
+target_compile_options(${PROJECT_NAME}-ut PUBLIC -Wall -Wpedantic -Wextra)
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR})
 target_link_libraries(${PROJECT_NAME}-ut Catch2::Catch2WithMain)
-# target_link_libraries(${PROJECT_NAME}-ut ${PROJECT_NAME}-lib gtest_main)
 
 enable_testing()
 add_test(NAME Tests-catch2 COMMAND ${PROJECT_NAME}-ut)
