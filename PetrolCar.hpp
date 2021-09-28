@@ -12,7 +12,7 @@ public:
     ~PetrolCar() override;
 
     void refuel() override;
-    void changeGear(int gear) override;
+    void changeGear(ManualGear gear) override;
 
     void engineSwap(std::unique_ptr<PetrolEngine>& engine) {
         engine_.swap(engine);

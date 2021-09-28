@@ -18,5 +18,5 @@ enum class ManualGear : int {
 class Gearable {
 public:
    virtual ~Gearable() = default;
-   virtual void changeGear(int gear) = 0;
+   virtual void changeGear(ManualGear gear) = 0;
 };

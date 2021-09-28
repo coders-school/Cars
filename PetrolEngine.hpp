@@ -5,13 +5,13 @@
 
 class PetrolEngine : virtual Engine, public Gearable {
 public:
-    PetrolEngine(Power power, PetrolCapacity capacity, int gears);
+    PetrolEngine(Power power, PetrolCapacity capacity, ManualGear gears);
     ~PetrolEngine() override;
     
-    void changeGear(int gear) override;
+    void changeGear(ManualGear gear) override;
 
 protected:
     PetrolCapacity capacity_;  // in ccm
-    const int gears_;
-    int currentGear_ = 0;
+    const ManualGear gears_;
+    ManualGear currentGear_ = ManualGear::neutral;
 };

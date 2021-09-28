@@ -7,23 +7,12 @@ project(Cars)
 
 include(FetchContent)
 FetchContent_Declare(
-  googletest
-  GIT_REPOSITORY https://github.com/google/googletest.git
-  GIT_TAG        master
-)
-
-FetchContent_Declare(
   Catch2
   GIT_REPOSITORY https://github.com/catchorg/Catch2.git
   GIT_TAG        devel
 )
 
-# After the following call, the CMake targets defined by googletest and
-# Catch2 will be defined and available to the rest of the build
-
-# For Windows: Prevent overriding the parent project's compiler/linker settings
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-FetchContent_MakeAvailable(googletest Catch2)
+FetchContent_MakeAvailable(Catch2)
 
 set(SRC_LIST
     Speed.cpp
