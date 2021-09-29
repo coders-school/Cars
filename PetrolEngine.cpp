@@ -4,18 +4,24 @@
 #include <stdexcept>
 #include "Invalidgear.hpp"
 
-PetrolEngine::PetrolEngine(int power, float capacity, int gears)
-    : power_(power), capacity_(capacity), gears_(gears) {
+PetrolEngine::PetrolEngine(int power, float capacity, int gears){
+   try{
+    if(TestConstructorData(power,capacity,gears))
+    power_=power; 
+    capacity_=capacity; 
+    gears_=gears; 
+    std::cout << __FUNCTION__ << std::endl;
+   }catch(const std::invalid_argument& arg){
+       std::cout<<arg.what()<<std::endl;
+   }
+}
+
+bool PetrolEngine::TestConstructorData(int power, float capacity, int gears) {
     if (power < 0 || capacity < 0 || (gears < -1 || gears > 5)) {
         throw std::invalid_argument("Wrong parametr");
     }
-    std::cout << __FUNCTION__ << std::endl;
+    return true;
 }
-/*
-PetrolEngine::~PetrolEngine(){
- std::cout << __FUNCTION__ << std::endl; 
-}
-*/
 
 bool PetrolEngine::validation(int value) {
     return value <= 0;
@@ -31,8 +37,8 @@ void PetrolEngine::changeGear(int gear) {
         if (correctnessOfTheGearChange(gear)) {
             currentGear_ = gear;
         }
-    } catch(InvalidGear inv) {
-        std::cout<<inv.what()<<std::endl;
+    } catch (const InvalidGear& inv) {
+        std::cout << inv.what() << std::endl;
     }
 }
 

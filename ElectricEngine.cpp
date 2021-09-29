@@ -8,7 +8,7 @@ ElectricEngine::ElectricEngine(int power, int batteryCapacity) {
             std::cout << __FUNCTION__ << std::endl;
         power_ = power;
         batteryCapacity_ = batteryCapacity;
-    } catch (std::invalid_argument arg) {
+    } catch (const std::invalid_argument& arg) {
         std::cout << arg.what() << std::endl;
     }
 }
