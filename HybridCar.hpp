@@ -1,19 +1,26 @@
+#pragma once
 #include "ElectricEngine.hpp"
 #include "PetrolEngine.hpp"
+#include "PetrolCar.hpp"
+#include "ElectricCar.hpp"
 
-class HybridCar
+class HybridCar : public PetrolCar, public ElectricCar
 {
 public:
-    HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng);
+    // HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng);
+    HybridCar(Engine* petrolEng, Engine* electricEng);
     ~HybridCar();
-    void turnLeft();
-    void turnRight();
-    void brake();
-    void accelerate(int speed);
-    void charge();
-    void refuel();
+    // void turnLeft();
+    // void turnRight();
+    // void brake();
+    // void accelerate(int speed);
+    // void charge();
+    // void refuel();
+    void refill() override;
 
-    PetrolEngine* petrolEngine_;
-    ElectricEngine* electricEngine_;
+
+private:
+    // PetrolEngine* petrolEngine_;
+    // ElectricEngine* electricEngine_;
 };
 

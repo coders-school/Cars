@@ -6,12 +6,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 project(Cars)
 
 set(SRC_LIST
-    ElectricCar.cpp
+    Car.cpp
+    Engine.cpp
+    PetrolEngine.cpp
     ElectricEngine.cpp
+    PetrolCar.cpp
+    ElectricCar.cpp
     HybridCar.cpp
     main.cpp
-    PetrolCar.cpp
-    PetrolEngine.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})
