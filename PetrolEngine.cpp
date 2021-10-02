@@ -2,7 +2,7 @@
 #include <iostream>
 
 PetrolEngine::PetrolEngine(int power, float capacity, int gears)
-    : power_(power)
+    : Engine(power)
     , capacity_(capacity)
     , gears_(gears)
     , currentGear_(0)
