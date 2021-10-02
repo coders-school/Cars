@@ -10,26 +10,21 @@
 int main() {
     std::cout << std::endl
               << "OPEL" << std::endl;
-    PetrolCar opel(std::make_unique<PetrolEngine>(120_hp, 1800.0_ccm, 6));
+    PetrolCar opel(std::make_unique<PetrolEngine>(120_hp, 1800.0_ccm, ManualGear::g_6th));
     opel.accelerate(50_km_h);
     opel.brake();
-    // try {
-    //     opel.accelerate(-900_mile_h);
-    // } catch (const std::logic_error& err) {
-    //     std::cout << err.what() << '\n';
-    // }
     opel.refuel();
-    opel.changeGear(3);
-    //opel.changeGear(-1);
+    opel.changeGear(ManualGear::g_3th);
+    //opel.changeGear(ManualGear::reverse);
 
     std::cout << std::endl
               << "NISSAN" << std::endl;
     ElectricCar nissan(std::make_unique<ElectricEngine>(130_hp, 650_Ah));
     nissan.charge();
-    nissan.accelerate(80_mile_h);
+    nissan.accelerate(50_km_h);
     
     auto newEngine = std::make_unique<ElectricEngine>( 150_hp, 700_Ah);  // Changing an engine during driving is not safe
-    //auto newEngine = std::make_unique<ElectricEngine>( Power::powerHp(150), ElectricCapacity::capacityAh(700));  // Changing an engine during driving is not safe
+    //auto newEngine = std::make_unique<ElectricEngine>( Power::powerHp(150), ElectricCapacity::capacityAh(700));
     std::cout << newEngine.get() << '\n';
     nissan.engineSwap(newEngine);
     std::cout << newEngine.get() << '\n';
@@ -40,7 +35,7 @@ int main() {
 
     std::cout << std::endl
               << "TOYOTA" << std::endl;
-    HybridCar toyota(std::make_unique<PetrolEngine>(80_hp, 1400.0_ccm, 5),
+    HybridCar toyota(std::make_unique<PetrolEngine>(80_hp, 1400.0_ccm, ManualGear::g_5th),
                      std::make_unique<ElectricEngine>(100_hp, 540_Ah));
     toyota.accelerate(100_km_h);
     toyota.brake();
@@ -48,15 +43,15 @@ int main() {
     toyota.refuel();
 
     try {
-        toyota.changeGear(3);
-        toyota.changeGear(-1);
+        toyota.changeGear(ManualGear::g_3th);
+        toyota.changeGear(ManualGear::reverse);
     } catch (const InvalidGear& err) {
         std::cout << err.what() << '\n';
     }
-    toyota.changeGear(0);
+    toyota.changeGear(ManualGear::neutral);
     try {
-        toyota.changeGear(-1);
-        toyota.changeGear(5);
+        toyota.changeGear(ManualGear::reverse);
+        toyota.changeGear(ManualGear::g_5th);
     } catch (const InvalidGear& err) {
         std::cout << err.what() << '\n';
     }

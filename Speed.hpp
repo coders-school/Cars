@@ -1,12 +1,11 @@
 #pragma once
 
 struct Speed {
-    using Type = int; 
+    using Type = int;
 
     Speed() = default;
-
+    static constexpr Type limit = 350;
     static Speed speedKmph(unsigned long long int kmph);
-    static Speed speedMph(unsigned long long int mph);
 
     operator Type() const;
 
@@ -16,4 +15,3 @@ private:
 };
 
 Speed operator""_km_h (unsigned long long int kmph);
-Speed operator""_mile_h (unsigned long long int mph);

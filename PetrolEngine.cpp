@@ -2,7 +2,7 @@
 #include "InvalidGear.hpp"
 #include <iostream>
 
-PetrolEngine::PetrolEngine(Power power, PetrolCapacity capacity, int gears)
+PetrolEngine::PetrolEngine(Power power, PetrolCapacity capacity, ManualGear gears)
     : Engine(power)
     , capacity_(capacity)
     , gears_(gears)
@@ -14,11 +14,11 @@ PetrolEngine::~PetrolEngine() {
     std::cout << __FUNCTION__ << std::endl;
 }
 
-void PetrolEngine::changeGear(int gear){
-    if(currentGear_ < 0 && gear > 0){
+void PetrolEngine::changeGear(ManualGear gear){
+    if(currentGear_ < ManualGear::neutral && gear > ManualGear::neutral){
         throw InvalidGear("InvalidGear error: change from R to gear");
     }
-    if(currentGear_ > 0 && gear < 0){
+    if(currentGear_ > ManualGear::neutral && gear < ManualGear::neutral){
         throw InvalidGear("InvalidGear error: change from gear to R");
     }
     if(gear > gears_) {
