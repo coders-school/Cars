@@ -18,6 +18,10 @@ int main()
     car->brake();
     car->accelerate(-900);
     car->refill();
+    opel.changeGear(5);
+    opel.changeGear(-1);
+
+
 
     std::cout << std::endl << "NISSAN" << std::endl;
     ElectricCar nissan(new ElectricEngine(130, 650));
@@ -26,18 +30,19 @@ int main()
     // // nissan.engine_ = new ElectricEngine(150, 700);  // Changing an engine during driving is not safe
     // nissan.turnLeft();
     car = &nissan;
-    nissan.refill();
-    nissan.accelerate(80);
-    nissan.turnLeft();
+    car->refill();
+    car->accelerate(80);
+    car->turnLeft();
 
-
-    
+  
 
     std::cout << std::endl << "TOYOTA" << std::endl;
     HybridCar toyota(new PetrolEngine(80, 1400, 5), new ElectricEngine(100, 540));
-    toyota.accelerate(100);
-    toyota.brake();
-    // toyota.charge();
-    // toyota.refuel();
-    toyota.refill();
+    car = &toyota;
+    // toyota.accelerate(100);
+    // toyota.brake();
+    // toyota.refill();
+    car->accelerate(100);
+    car->brake();
+    car->refill();
 }
