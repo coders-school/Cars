@@ -20,5 +20,4 @@ public:
 private:
     void refuel();
     PetrolEngine* engine_;
-    // Engine* engine_;
 };

@@ -6,7 +6,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 project(Cars)
 
 set(SRC_LIST
-   Engine.cpp
    Car.cpp
    PetrolEngine.cpp
    ElectricEngine.cpp
@@ -15,16 +14,6 @@ set(SRC_LIST
    HybridCar.cpp
    main.cpp
 )
-# set(SRC_LIST
-#     main.cpp
-#     HybridCar.cpp
-#     ElectricCar.cpp
-#     PetrolCar.cpp
-#     ElectricEngine.cpp
-#     PetrolEngine.cpp
-#     Engine.cpp
-#     Car.cpp
-# )
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})
 target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Wpedantic -Wextra)

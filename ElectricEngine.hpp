@@ -1,8 +1,7 @@
 #pragma once
-#include "Engine.hpp"
 #include <iostream>
 
-class ElectricEngine : public Engine
+class ElectricEngine
 {
 public:
     ElectricEngine(int power, int batteryCapacity);
