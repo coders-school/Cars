@@ -19,3 +19,11 @@ void ElectricCar::charge()        { std::cout << __FUNCTION__ << std::endl; }
 void ElectricCar::refill() {
     charge();
 }
+
+
+// void ElectricCar::changeEngine(Engine* engine) {
+//     if (engine) {
+//         delete engine_;
+//         engine_ = engine;
+//     }
+// }

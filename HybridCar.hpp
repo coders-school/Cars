@@ -10,7 +10,7 @@ class HybridCar : public PetrolCar, public ElectricCar
 public:
     // HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng);
     // HybridCar(Engine* petrolEng, Engine* electricEng);
-    HybridCar(PetrolEngine* petrolEng, Engine* electricEng);
+    HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng);
     ~HybridCar();
     // void turnLeft();
     // void turnRight();

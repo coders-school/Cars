@@ -4,7 +4,7 @@
 
 // HybridCar::HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng)
 // HybridCar::HybridCar(Engine* petrolEng, Engine* electricEng)
-HybridCar::HybridCar(PetrolEngine* petrolEng, Engine* electricEng)
+HybridCar::HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng)
     : PetrolCar(petrolEng)
     , ElectricCar(electricEng)
     // , electricEngine_(electricEng)

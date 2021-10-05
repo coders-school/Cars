@@ -2,7 +2,8 @@
 #include <iostream>
 
 ElectricEngine::ElectricEngine(int power, int batteryCapacity)
-    : Engine(power)
+    // : Engine(power)
+    : power_(power)
     , batteryCapacity_(batteryCapacity)
 {
     std::cout << __FUNCTION__ << std::endl;

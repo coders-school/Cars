@@ -3,7 +3,8 @@
 #include "Exceptions.hpp"
 
 PetrolEngine::PetrolEngine(int power, float capacity, int gears)
-    : Engine(power)
+    // : Engine(power)
+    : power_(power)
     , capacity_(capacity)
     , gears_(gears)
     , currentGear_(0)
@@ -29,7 +30,7 @@ void PetrolEngine::changeGear(int gear)
         } else {
             throw InvalidGear("Invalid gear.");
         }
-    } catch(InvalidGear exptIG) {
+    } catch(InvalidGear& exptIG) {
         std::cout << exptIG.what() << '\n';
     }
     std::cout << __FUNCTION__ << std::endl;

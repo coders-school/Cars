@@ -1,20 +1,30 @@
 cmake_minimum_required(VERSION 3.2)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(Cars)
 
 set(SRC_LIST
-    Car.cpp
-    Engine.cpp
-    PetrolEngine.cpp
-    ElectricEngine.cpp
-    PetrolCar.cpp
-    ElectricCar.cpp
-    HybridCar.cpp
-    main.cpp
+   Engine.cpp
+   Car.cpp
+   PetrolEngine.cpp
+   ElectricEngine.cpp
+   PetrolCar.cpp
+   ElectricCar.cpp
+   HybridCar.cpp
+   main.cpp
 )
+# set(SRC_LIST
+#     main.cpp
+#     HybridCar.cpp
+#     ElectricCar.cpp
+#     PetrolCar.cpp
+#     ElectricEngine.cpp
+#     PetrolEngine.cpp
+#     Engine.cpp
+#     Car.cpp
+# )
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})
 target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Wpedantic -Wextra)

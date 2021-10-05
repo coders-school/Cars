@@ -4,7 +4,7 @@
 class Car {
 public:
     // Car(Engine* engine);
-    Car();
+    // Car();
     virtual ~Car();
     void turnLeft();
     void turnRight();
@@ -13,7 +13,7 @@ public:
     // void charge();
     virtual void refill() = 0;
 
-    // virtual void changeEngine();
+    // virtual void changeEngine(Engine* engine) = 0;
 
 private:
     // Engine* engine_;
