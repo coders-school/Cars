@@ -30,8 +30,8 @@ void PetrolEngine::changeGear(int gear)
         } else {
             throw InvalidGear("Invalid gear.");
         }
-    } catch(InvalidGear& exptIG) {
-        std::cout << exptIG.what() << '\n';
+    } catch(InvalidGear& excpt) {
+        std::cout << excpt.what() << '\n';
     }
     std::cout << __FUNCTION__ << std::endl;
 }

@@ -1,20 +1,20 @@
 #pragma once
-#include "Engine.hpp"
 
 class Car {
 public:
-    // Car(Engine* engine);
-    // Car();
+
+    Car();
     virtual ~Car();
     void turnLeft();
     void turnRight();
     void brake();
     void accelerate(int speed);
+    bool isStopped();
+    int getSpeed();
     // void charge();
     virtual void refill() = 0;
 
-    // virtual void changeEngine(Engine* engine) = 0;
-
 private:
-    // Engine* engine_;
+    const int MAX_SPEED_ = 240;
+    int currentSpeed_ = 0;
 };
