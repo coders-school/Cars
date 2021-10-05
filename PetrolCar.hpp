@@ -1,13 +1,11 @@
 #pragma once
 #include "Car.hpp"
-#include "Engine.hpp"
 #include "PetrolEngine.hpp"
 
 class PetrolCar : virtual public Car
 {
 public:
     PetrolCar(PetrolEngine* engine);
-    // PetrolCar(Engine* engine);
     ~PetrolCar();
     // void turnLeft();
     // void turnRight();
@@ -15,7 +13,7 @@ public:
     // void accelerate(int speed);
     void refill() override;
     void changeGear(const int& gear);
-    // void changeEngine(Engine* engine) override;
+    void changeEngine(PetrolEngine* engine);
 
 private:
     void refuel();

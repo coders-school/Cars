@@ -5,7 +5,7 @@ class ElectricEngine
 {
 public:
     ElectricEngine(int power, int batteryCapacity);
-    // ~ElectricEngine() {}
+    ~ElectricEngine();
     // ~ElectricEngine() override {}
     // void start() override {std::cout << "Engine started.\n";}
 

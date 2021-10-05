@@ -14,7 +14,7 @@ public:
     // void accelerate(int speed);
     void refill() override;
 
-    // void changeEngine(Engine* engine) override;
+    void changeEngine(ElectricEngine* engine);
     
 // 
 private:

@@ -1,8 +1,7 @@
 #include "Car.hpp"
-#include "Engine.hpp"
 #include "ElectricCar.hpp"
-#include "HybridCar.hpp"
 #include "PetrolCar.hpp"
+#include "HybridCar.hpp"
 #include <iostream>
 
 int main()
@@ -22,6 +21,7 @@ int main()
     // (*car).changeGear(5);
     // opel.changeGear(5);
     // opel.changeGear(-1);
+    opel.changeEngine(new PetrolEngine(90, 1500, 4));
 
 
 
@@ -35,6 +35,7 @@ int main()
     car->refill();
     car->accelerate(80);
     car->turnLeft();
+    // nissan.changeEngine(new ElectricEngine(150, 700));
 
   
 
@@ -47,4 +48,5 @@ int main()
     car->accelerate(100);
     car->brake();
     car->refill();
+    // toyota.changeEngine(new PetrolEngine(90, 1500, 4));
 }
