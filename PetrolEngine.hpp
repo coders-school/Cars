@@ -9,8 +9,6 @@ public:
     int getCurrentGear();
     void changeGear(int gear);
 
-    // void start() override {std::cout << "Engine started.\n";}
-
 private:
     int power_;         // in HP
     float capacity_;    // in ccm

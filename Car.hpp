@@ -2,7 +2,6 @@
 
 class Car {
 public:
-
     Car();
     virtual ~Car();
     void turnLeft();
@@ -11,7 +10,6 @@ public:
     void accelerate(int speed);
     bool isStopped();
     int getSpeed();
-    // void charge();
     virtual void refill() = 0;
 
 private:
