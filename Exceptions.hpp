@@ -5,7 +5,7 @@ public:
     InvalidGear(std::string msg) : std::logic_error(msg) {}    
 };
 
-class InvalidSpeedRange : public std::range_error {
+class InvalidSpeed : public std::range_error {
 public:
-    InvalidSpeedRange(std::string msg) : std::range_error(msg) {}
+    InvalidSpeed(std::string msg) : std::range_error(msg) {}
 };

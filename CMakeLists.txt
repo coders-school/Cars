@@ -26,12 +26,22 @@ set(SRC_LIST
    main.cpp
 )
 
+set(TEST_SRC_LIST
+  Car.cpp
+  PetrolEngine.cpp
+  ElectricEngine.cpp
+  PetrolCar.cpp
+  ElectricCar.cpp
+  HybridCar.cpp
+  tests.cpp
+)
+
 add_executable(${PROJECT_NAME} ${SRC_LIST})
 target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Wpedantic -Wextra)
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR})
 
 # Now simply link against gtest or gtest_main as needed. Eg
-add_executable(${PROJECT_NAME}-ut tests.cpp)
+add_executable(${PROJECT_NAME}-ut ${TEST_SRC_LIST})
 target_link_libraries(${PROJECT_NAME}-ut gtest_main)
 enable_testing()
 

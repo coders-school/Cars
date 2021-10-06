@@ -16,6 +16,10 @@ PetrolEngine::~PetrolEngine() {
     std::cout << __FUNCTION__ << std::endl;
 }
 
+int PetrolEngine::getCurrentGear() {
+    return currentGear_;
+}
+
 void PetrolEngine::changeGear(int gear)
 {
     // TODO: Add checking if gear is between -1 and gears_
@@ -23,7 +27,7 @@ void PetrolEngine::changeGear(int gear)
     // 0 is for NEUTRAL
     constexpr int maxGearToR = 2;
 
-    try {
+    // try {
         std::cout << "petrolengine: " << gear <<  '\n';
         if (gear >= -1 && gear <= gears_) {
             if ((gear == -1) && currentGear_ > maxGearToR) {
@@ -34,8 +38,8 @@ void PetrolEngine::changeGear(int gear)
         } else {
             throw InvalidGear("Invalid gear.");
         }
-    } catch(InvalidGear& excpt) {
-        std::cout << excpt.what() << '\n';
-    }
+    // } catch(InvalidGear& excpt) {
+    //     std::cout << excpt.what() << '\n';
+    // }
     std::cout << __FUNCTION__ << std::endl;
 }

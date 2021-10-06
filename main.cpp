@@ -15,8 +15,8 @@ int main()
     // opel.refill();
     car = &opel;
     car->accelerate(50);
-    car->brake();
-    car->accelerate(-900);
+    // car->brake();
+    // car->accelerate(-900);
     car->refill();
     // (*car).changeGear(5);
     // opel.changeGear(5);
@@ -35,7 +35,7 @@ int main()
     car->refill();
     car->accelerate(80);
     car->turnLeft();
-    // nissan.changeEngine(new ElectricEngine(150, 700));
+    nissan.changeEngine(new ElectricEngine(150, 700));
 
   
 
@@ -48,5 +48,6 @@ int main()
     car->accelerate(100);
     car->brake();
     car->refill();
-    // toyota.changeEngine(new PetrolEngine(90, 1500, 4));
+    toyota.changeEngine(new PetrolEngine(90, 1500, 4));
+    toyota.changeEngine(new ElectricEngine(120, 600));
 }

@@ -19,6 +19,8 @@ public:
     // void charge();
     // void refuel();
     void refill() override;
+    void changeEngine(ElectricEngine* engine);
+    void changeEngine(PetrolEngine* engine);
 
 
 private:

@@ -12,6 +12,7 @@ public:
     // void brake();
     // void accelerate(int speed);
     void refill() override;
+    // int getCurrentGear();
     void changeGear(const int& gear);
     void changeEngine(PetrolEngine* engine);
 

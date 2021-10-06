@@ -17,15 +17,15 @@ void Car::brake() {
 
 void Car::accelerate(int speed) {
     std::cout << __FUNCTION__ << std::endl;
-    try {
+    // try {
         if (speed >= 0 && speed < MAX_SPEED_) {
             currentSpeed_ = speed;
         } else {
-            throw InvalidSpeedRange("Invalid speed range.");
+            throw InvalidSpeed("Speed is out of possible range.");
         }
-    } catch(InvalidSpeedRange& excpt) {
-        std::cout << excpt.what() << '\n';
-    }
+    // } catch(InvalidSpeed& excpt) {
+    //     std::cout << excpt.what() << '\n';
+    // }
 }
 
 bool Car::isStopped() {
