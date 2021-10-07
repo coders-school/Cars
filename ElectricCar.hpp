@@ -2,16 +2,17 @@
 #include "Car.hpp"
 #include "ElectricEngine.hpp"
 
-class ElectricCar : public virtual Car
-{
+class ElectricCar : public Car {
 public:
-    ElectricCar(ElectricEngine* engine);
-    ~ElectricCar();
+    ElectricCar(std::unique_ptr<ElectricEngine> engine);
+    virtual ~ElectricCar();
 
-    void changeEngine(ElectricEngine* ee);
-    void refill() override;
+    void powerSuply() override;
+    void changeEngine(int, float, int = 0, int = 0, int = 0) override;
+
+    const std::unique_ptr<ElectricEngine>& getElectricEngine();
 
 private:
+    std::unique_ptr<ElectricEngine> electricEngine_;
     void charge();
-    ElectricEngine* engine_;
 };
