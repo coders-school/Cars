@@ -1,7 +1,7 @@
 #include "PetrolEngine.hpp"
 #include <iostream>
 
-const char* InvalidGear::what() const
+const char* InvalidGear::what() const noexcept
 {
     return std::logic_error::what();
 }

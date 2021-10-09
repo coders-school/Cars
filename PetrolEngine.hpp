@@ -9,7 +9,7 @@ public:
     : std::logic_error{ what_str }
     {}
 
-    const char* what() const override;
+    const char* what() const noexcept override;
 };
 
 
