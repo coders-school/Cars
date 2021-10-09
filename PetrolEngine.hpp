@@ -1,4 +1,17 @@
 #pragma once
+#include <stdexcept>
+#include <string>
+
+class InvalidGear : public std::logic_error
+{
+public:
+    InvalidGear(const std::string& what_str)
+    : std::logic_error{ what_str }
+    {}
+
+    const char* what() const override;
+};
+
 
 class PetrolEngine
 {

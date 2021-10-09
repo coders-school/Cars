@@ -1,6 +1,11 @@
 #include "PetrolEngine.hpp"
 #include <iostream>
 
+const char* InvalidGear::what() const
+{
+    return std::logic_error::what();
+}
+
 PetrolEngine::PetrolEngine(int power, float capacity, int gears)
     : power_(power)
     , capacity_(capacity)
