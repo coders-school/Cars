@@ -5,7 +5,7 @@
 class InvalidGear : public std::logic_error
 {
 public:
-    InvalidGear(const std::string& what_str)
+    InvalidGear(const std::string& what_str = "invalid_gear")
     : std::logic_error{ what_str }
     {}
 
