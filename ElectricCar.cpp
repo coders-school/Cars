@@ -12,3 +12,12 @@ ElectricCar::~ElectricCar() {
 void ElectricCar::charge() {
     std::cout << __FUNCTION__ << std::endl;
 }
+
+void ElectricCar::changeEngine(std::unique_ptr<ElectricEngine> engine)  { 
+    if(this->getSpeed() == 0) {
+        engine_ = std::move(engine);
+    }
+    else {
+        std::cout<<"You cannot change engine while driving!!!";
+    };
+}

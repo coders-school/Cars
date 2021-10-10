@@ -8,7 +8,7 @@ public:
     ElectricCar(std::unique_ptr<ElectricEngine> engine);
     ~ElectricCar();
     void reFill() override { charge(); };
-    void changeEngine(std::unique_ptr<ElectricEngine> engine) override { if(getSpeed() == 0) engine_ = std::move(engine); };
+    void changeEngine(std::unique_ptr<ElectricEngine> engine) override ;
     ElectricEngine* getEngine() const {return engine_.get();};
 
 protected:

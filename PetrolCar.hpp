@@ -10,7 +10,7 @@ public:
     PetrolCar(std::unique_ptr<PetrolEngine> petrolEngine);
     ~PetrolCar();
     void reFill() override {refuel();};
-    void changeEngine(std::unique_ptr<PetrolEngine> engine) override {engine_ = std::move(engine);};
+    void changeEngine(std::unique_ptr<PetrolEngine> engine) override;
     PetrolEngine* getEngine() const {return engine_.get();};
 protected:
     std::unique_ptr<PetrolEngine> engine_;   
