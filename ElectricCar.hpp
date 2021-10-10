@@ -7,7 +7,8 @@ public:
     ElectricCar(ElectricEngine* engine);
     ~ElectricCar();
     void reFill() override { charge(); };
-    virtual void changeEngine(ElectricEngine* engine) override { engine_ = engine; };
+    void changeEngine(ElectricEngine* engine) override { engine_ = engine; };
+    ElectricEngine* getEngine() const {return engine_;};
 
 protected:
     ElectricEngine* engine_;

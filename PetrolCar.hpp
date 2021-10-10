@@ -8,7 +8,8 @@ public:
     PetrolCar(PetrolEngine* petrolEngine);
     ~PetrolCar();
     void reFill() override {refuel();};
-    virtual void changeEngine(PetrolEngine* engine) override {engine_ = engine;};
+    void changeEngine(PetrolEngine* engine) override {engine_ = engine;};
+    PetrolEngine* getEngine() const {return engine_;};
 protected:
     PetrolEngine* engine_;   
 private:

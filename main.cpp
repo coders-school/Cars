@@ -30,7 +30,6 @@ int main() {
     car->changeEngine(new ElectricEngine(100, 600));
     car->changeEngine(new PetrolEngine(90, 1600, 6));
     car->accelerate(100);
-    car->accelerate(-1100);
     car->brake();
     car->reFill();
 }
