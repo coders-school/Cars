@@ -7,7 +7,7 @@
 
 class PetrolCarTestFixture : public ::testing::Test {
  protected:
-    PetrolCar opel{new PetrolEngine(120, 1800, 6)};
+    PetrolCar opel{std::make_unique<PetrolEngine>(120, 1800, 6)};
 };
 
 TEST_F(PetrolCarTestFixture, AccelerationTest)

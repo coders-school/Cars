@@ -23,10 +23,10 @@ bool Car::speedIsValid(const int& speed) {
     return speed >= 0 && speed <= 200;
 }
 
-void Car::changeEngine(PetrolEngine* petrolEngine) {
+void Car::changeEngine(std::unique_ptr<PetrolEngine> petrolEngine) {
     throw WrongEngine("It is not a petrol car!!!");
 }
 
-void Car::changeEngine(ElectricEngine* electricEngine) {
+void Car::changeEngine(std::unique_ptr<ElectricEngine> electricEngine) {
     throw WrongEngine("It is not an electric car!!!");
 }

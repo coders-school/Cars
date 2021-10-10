@@ -1,6 +1,7 @@
 #pragma once
 
 #include <stdexcept>
+#include <memory>
 #include "ElectricEngine.hpp"
 #include "PetrolEngine.hpp"
 
@@ -13,8 +14,8 @@ public:
     void accelerate(int speed);
     int getSpeed() const { return speed_; }
     virtual void reFill() = 0;
-    virtual void changeEngine(PetrolEngine* engine);
-    virtual void changeEngine(ElectricEngine* engine);
+    virtual void changeEngine(std::unique_ptr<PetrolEngine> engine);
+    virtual void changeEngine(std::unique_ptr<ElectricEngine> engine);
 
     class InvalidSpeed : public std::range_error {
     public:
