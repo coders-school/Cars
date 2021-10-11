@@ -16,7 +16,7 @@ public:
     virtual void reFill() = 0;
     virtual void changeEngine(std::unique_ptr<PetrolEngine> engine);
     virtual void changeEngine(std::unique_ptr<ElectricEngine> engine);
-    
+
     class InvalidSpeed : public std::range_error {
     public:
         InvalidSpeed(const std::string& msg)
@@ -27,6 +27,12 @@ public:
     public:
         WrongEngine(const std::string& msg)
             : std::invalid_argument(msg) {}
+    };
+
+    class CarMoving : public std::logic_error {
+    public:
+        CarMoving(const std::string& msg)
+            : std::logic_error(msg) {}
     };
 
 private:

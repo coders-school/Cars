@@ -22,7 +22,7 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 enable_testing()
-add_executable(${PROJECT_NAME}-ut main-ut.cpp)
+add_executable(${PROJECT_NAME}-ut PetrolCar-ut.cpp ElectricCar-ut.cpp HybridCar-ut.cpp)
 target_link_libraries(${PROJECT_NAME}-ut ${PROJECT_NAME}-lib gtest_main)
-add_test(NAME ${PROJECT_NAME}_test COMMAND ${PROJECT_NAME}-ut)
+add_test(NAME ${PROJECT_NAME}-ut COMMAND ${PROJECT_NAME}-ut)
 

@@ -3,6 +3,7 @@
 class ElectricEngine {
 public:
     ElectricEngine(int power, int batteryCapacity);
+    ~ElectricEngine();
     void setBatteryCapacity(int batteryCapacity) { batteryCapacity_ = batteryCapacity; };
     int getBatteryCapacity() const { return batteryCapacity_; };
     void setPower(int power) { power_ = power; };

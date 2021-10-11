@@ -9,4 +9,10 @@ public:
         PetrolCar::reFill();
         ElectricCar::reFill();
     };
+    void changeEngine(std::unique_ptr<PetrolEngine> engine) override {
+        PetrolCar::changeEngine(std::move(engine));
+    };
+    void changeEngine(std::unique_ptr<ElectricEngine> engine) override {
+        ElectricCar::changeEngine(std::move(engine));
+    };
 };
