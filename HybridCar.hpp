@@ -15,4 +15,4 @@ public:
     void changeEngine(std::unique_ptr<ElectricEngine> engine) override {
         ElectricCar::changeEngine(std::move(engine));
     };
-}
+};
