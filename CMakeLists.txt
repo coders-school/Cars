@@ -7,7 +7,6 @@ project(Cars)
 
 set(SRC_LIST
     Car.cpp
-    Engine.cpp
     ElectricCar.cpp
     ElectricEngine.cpp
     HybridCar.cpp

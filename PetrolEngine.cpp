@@ -2,7 +2,7 @@
 #include <iostream>
 
 PetrolEngine::PetrolEngine(int power, float capacity, int gears)
-    : Engine(power)
+    : power_(power)
     , capacity_(capacity)
     , gears_(gears)
     , currentGear_(0)
@@ -18,3 +18,4 @@ void PetrolEngine::changeGear(int gear)
     currentGear_ = gear;
     std::cout << __FUNCTION__ << std::endl;
 }
+

@@ -8,9 +8,11 @@ PetrolCar::PetrolCar(PetrolEngine* engine)
 }
 
 PetrolCar::~PetrolCar()         { std::cout << __FUNCTION__ << std::endl; }
-// void PetrolCar::turnLeft()      { std::cout << __FUNCTION__ << std::endl; }
-// void PetrolCar::turnRight()     { std::cout << __FUNCTION__ << std::endl; }
-// void PetrolCar::brake()         { std::cout << __FUNCTION__ << std::endl; }
-// void PetrolCar::accelerate(int) { std::cout << __FUNCTION__ << std::endl; }
 void PetrolCar::refuel()        { std::cout << __FUNCTION__ << std::endl; }
-
+void PetrolCar::changeEngine(PetrolEngine* engine) {
+    delete engine_;
+    engine_ = engine;
+}
+void PetrolCar::refill() {
+    refuel();
+}
