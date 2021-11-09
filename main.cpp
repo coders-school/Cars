@@ -31,4 +31,15 @@ int main()
     car->accelerate(100);
     car->brake();
     car->refill();
+
+    PetrolEngine pt(100, 2.0, 5);
+    
+    pt.changeGear(1);
+    pt.changeGear(2);
+    try {
+        pt.changeGear(0);
+    } catch(InvalidGear const& ig) {
+        std::cout << ig.what() << '\n';
+    }
+
 }
