@@ -15,6 +15,17 @@ void PetrolEngine::changeGear(int gear)
     // TODO: Add checking if gear is between -1 and gears_
     // -1 is for REAR
     // 0 is for NEUTRAL
+    if(gear>0 && currentGear_ == -1){
+        throw InvalidGear ("You can't go forward when you have REAR on!");
+    }
+    if(gear == -1 && currentGear_ != 0){
+        throw InvalidGear ("You can't turn on REAR while driving!");
+    }
+    if(gear < -1 || gear > 5){
+        throw InvalidGear ("There is no such option!");
+    }
+
     currentGear_ = gear;
     std::cout << __FUNCTION__ << std::endl;
 }
+

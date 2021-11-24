@@ -1,4 +1,5 @@
 #pragma once
+#include <stdexcept>
 
 class PetrolEngine
 {
@@ -11,4 +12,11 @@ private:
     float capacity_;    // in ccm
     int gears_;
     int currentGear_;
+
+    class InvalidGear : public std::logic_error {
+        public:
+            InvalidGear(const std::string& msg)
+            : std::logic_error(msg) {}
+    }
 };
+
