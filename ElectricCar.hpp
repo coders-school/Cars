@@ -8,8 +8,8 @@ public:
     ElectricCar(ElectricEngine* engine);
     ~ElectricCar();
     void refill() override;
-    void charge();
 
 protected:
+    void charge();
     ElectricEngine* engine_;
 };
