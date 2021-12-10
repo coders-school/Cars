@@ -10,9 +10,12 @@ PetrolCar::PetrolCar(std::unique_ptr<PetrolEngine> engine)
 PetrolCar::~PetrolCar()         { std::cout << __FUNCTION__ << std::endl; }
 void PetrolCar::refuel()        { std::cout << __FUNCTION__ << std::endl; }
 
-void PetrolCar::changeEngine(std::unique_ptr<PetrolEngine> engine) {
+void PetrolCar::changeGear(int gear) {
+    engine_->changeGear(gear);
+}
+void PetrolCar::changeEngine(std::unique_ptr<PetrolEngine> petrolEngine) {
     if(this->getSpeed() != 0.0) {
-        engine_ = std::move(engine);
+        engine_ = std::move(petrolEngine);
         return;
     }
     throw Car::CarMoving{"Can't change an engine when car is moving!"};

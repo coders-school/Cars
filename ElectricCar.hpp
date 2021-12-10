@@ -8,7 +8,7 @@ public:
     ElectricCar(std::unique_ptr<ElectricEngine> engine);
     ~ElectricCar();
 
-    void changeEngine(std::unique_ptr<ElectricEngine> ee);
+    void changeEngine(std::unique_ptr<ElectricEngine> electricEngine);
     void refill() override;
 
 private:

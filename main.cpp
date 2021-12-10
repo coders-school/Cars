@@ -9,25 +9,27 @@ int main()
     // Petrol Car
     std::cout << std::endl << "OPEL" << std::endl;
     PetrolCar opel(std::make_unique<PetrolEngine>(120, 1800, 6));
-    Car* car = &opel;
-    //car->accelerate(50);
-    car->brake();
-    //car->accelerate(-900);
-    //car->accelerate(900);
-    car->refill();
-    std::cout << "Speed = " << car->getSpeed();
-    car->changeEngine(std::make_unique<PetrolEngine>(150, 700, 7));
+    // Car* car = &opel;
+    // //car->accelerate(50);
+    // car->brake();
+    // //car->accelerate(-900);
+    // //car->accelerate(900);
+    // car->refill();
+    // std::cout << "Speed = " << car->getSpeed();
+    // car->changeEngine(std::make_unique<PetrolEngine>(150, 700, 7));
+    opel.changeGear(-1);
+
     //car->changeEngine(std::make_unique<ElectricEngine>(150, 700));
 
     // Electric Car
     // std::cout << std::endl << "NISSAN" << std::endl;
     // ElectricCar nissan(std::make_unique<ElectricEngine>(130, 650));
-    // car = &nissan;
+    // Car* car = &nissan;
     // car->refill();
     // car->accelerate(80);
     // // nissan.engine_ = new ElectricEngine(150, 700);  // Changing an engine during driving is not safe
-    // car->changeEngine(std::make_unique<ElectricEngine>(150, 700));
-    // //car->changeEngine(std::make_unique<PetrolEngine>(150, 700, 7));
+    // //car->changeEngine(std::make_unique<ElectricEngine>(150, 700));
+    // car->changeEngine(std::make_unique<PetrolEngine>(150, 700, 7));
     // car->turnLeft();
 
     // Hybrid Car

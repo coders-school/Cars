@@ -11,11 +11,11 @@ public:
     PetrolCar(std::unique_ptr<PetrolEngine> petrolEngine);
     ~PetrolCar();
 
+    void changeGear(int gear);
     void changeEngine(std::unique_ptr<PetrolEngine> petrolEngine);
     void refill() override;
 
 private:
     void refuel();
-    //PetrolEngine* engine_;
     std::unique_ptr<PetrolEngine> engine_;
 };
