@@ -1,5 +1,10 @@
 #include "PetrolEngine.hpp"
+
 #include <iostream>
+#include <string>
+
+constexpr int rearGear = -1;
+constexpr int neutralGear = 0;
 
 PetrolEngine::PetrolEngine(int power, float capacity, int gears)
     : power_(power)
@@ -12,9 +17,16 @@ PetrolEngine::PetrolEngine(int power, float capacity, int gears)
 
 void PetrolEngine::changeGear(int gear)
 {
-    // TODO: Add checking if gear is between -1 and gears_
-    // -1 is for REAR
-    // 0 is for NEUTRAL
+    if (gear < -1 || gear > gears_) {
+        auto throwMessage = "Cannot shift to " + std::to_string(gear)
+            + " you are limited to gears from " + std::to_string(rearGear)
+            + " to " + std::to_string(gears_);
+        throw InvalidGear { throwMessage };
+    } else if (gear == rearGear && currentGear_ != neutralGear) {
+        auto throwMessage = "Rear gear can be shift only from neutral gear";
+        throw InvalidGear { throwMessage };
+    }
+
     currentGear_ = gear;
     std::cout << __FUNCTION__ << std::endl;
 }
