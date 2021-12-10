@@ -15,4 +15,10 @@ ElectricCar::~ElectricCar()
 
 void ElectricCar::refill() { charge(); }
 void ElectricCar::charge() { std::cout << __FUNCTION__ << std::endl; }
-
+void ElectricCar::changeEngine(std::unique_ptr<ElectricEngine> engine)
+{
+    std::cout << __FUNCTION__ << std::endl;
+    if (getSpeed() == 0) {
+        engine_ = std::move(engine);
+    }
+}

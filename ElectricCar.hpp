@@ -10,7 +10,7 @@ public:
     ElectricCar(std::unique_ptr<ElectricEngine> engine);
     ~ElectricCar();
     void refill() override;
-
+    void changeEngine(std::unique_ptr<ElectricEngine> engine);
 protected:
     void charge();
     std::unique_ptr<ElectricEngine> engine_;

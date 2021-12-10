@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 
 #include "PetrolCar.hpp"
 #include "ElectricCar.hpp"
@@ -18,8 +19,9 @@ int main()
               << "NISSAN" << std::endl;
     car.reset(new ElectricCar(std::make_unique<ElectricEngine>(130, 650)));
     car->refill();
+    dynamic_cast<ElectricCar*>(car.get())->changeEngine(std::make_unique<ElectricEngine>(150, 700));
     car->accelerate(80);
-    // nissan.engine_ = new ElectricEngine(150, 700);  // Changing an engine during driving is not safe
+    dynamic_cast<ElectricCar*>(car.get())->changeEngine(std::make_unique<ElectricEngine>(150, 500));
     car->turnLeft();
 
     std::cout << std::endl
