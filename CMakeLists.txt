@@ -24,6 +24,7 @@ set(SRC_LIST
     HybridCar.cpp
     PetrolCar.cpp
     PetrolEngine.cpp
+    Car.cpp
 )
 
 set(SRC_TESTS
