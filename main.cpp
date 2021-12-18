@@ -1,34 +1,58 @@
-#include "Car.hpp"
-#include "PetrolCar.hpp"
-#include "ElectricCar.hpp"
-#include "HybridCar.hpp"
 #include <iostream>
+#include "ElectricCar.hpp"
+#include "ElectricEngine.hpp"
+#include "PetrolCar.hpp"
+#include "PetrolEngine.hpp"
+#include "HybridCar.hpp"
+#include "InvalidGear.hpp"
+#include "PetrolCapacity.hpp"
 
-int main()
-{
+int main() {
+    std::cout << std::endl
+              << "OPEL" << std::endl;
+    PetrolCar opel(std::make_unique<PetrolEngine>(120_hp, 1800.0_ccm, ManualGear::g_6th));
+    opel.accelerate(50_km_h);
+    opel.brake();
+    opel.refuel();
+    opel.changeGear(ManualGear::g_3th);
+    //opel.changeGear(ManualGear::reverse);
 
-    std::cout << std::endl << "OPEL" << std::endl;
-    PetrolCar opel(new PetrolEngine(120, 1800, 6));
-    Car* car = &opel;
-    car->accelerate(50);
-    car->brake();
-    car->accelerate(-900);
-    car->refill();
-    // car->changeEngine(new PetrolEngine(150, 700, 7));
+    std::cout << std::endl
+              << "NISSAN" << std::endl;
+    ElectricCar nissan(std::make_unique<ElectricEngine>(130_hp, 650_Ah));
+    nissan.charge();
+    nissan.accelerate(50_km_h);
+    
+    auto newEngine = std::make_unique<ElectricEngine>( 150_hp, 700_Ah);  // Changing an engine during driving is not safe
+    //auto newEngine = std::make_unique<ElectricEngine>( Power::powerHp(150), ElectricCapacity::capacityAh(700));
+    std::cout << newEngine.get() << '\n';
+    nissan.engineSwap(newEngine);
+    std::cout << newEngine.get() << '\n';
+    nissan.engineSwap(newEngine);
+    std::cout << newEngine.get() << '\n';
 
-    std::cout << std::endl << "NISSAN" << std::endl;
-    ElectricCar nissan(new ElectricEngine(130, 650));
-    car = &nissan;
-    car->refill();
-    car->accelerate(80);
-    // nissan.engine_ = new ElectricEngine(150, 700);  // Changing an engine during driving is not safe
-    // car->changeEngine(new ElectricEngine(150, 700));
-    car->turnLeft();
+    nissan.turnLeft();
 
-    std::cout << std::endl << "TOYOTA" << std::endl;
-    HybridCar toyota(new PetrolEngine(80, 1400, 5), new ElectricEngine(100, 540));
-    car = &toyota;
-    car->accelerate(100);
-    car->brake();
-    car->refill();
+    std::cout << std::endl
+              << "TOYOTA" << std::endl;
+    HybridCar toyota(std::make_unique<PetrolEngine>(80_hp, 1400.0_ccm, ManualGear::g_5th),
+                     std::make_unique<ElectricEngine>(100_hp, 540_Ah));
+    toyota.accelerate(100_km_h);
+    toyota.brake();
+    toyota.charge();
+    toyota.refuel();
+
+    try {
+        toyota.changeGear(ManualGear::g_3th);
+        toyota.changeGear(ManualGear::reverse);
+    } catch (const InvalidGear& err) {
+        std::cout << err.what() << '\n';
+    }
+    toyota.changeGear(ManualGear::neutral);
+    try {
+        toyota.changeGear(ManualGear::reverse);
+        toyota.changeGear(ManualGear::g_5th);
+    } catch (const InvalidGear& err) {
+        std::cout << err.what() << '\n';
+    }
 }

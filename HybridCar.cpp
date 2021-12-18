@@ -1,15 +1,16 @@
 #include "HybridCar.hpp"
 #include <iostream>
+#include "PetrolEngine.hpp"
+#include "ElectricEngine.hpp"
 
-HybridCar::HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng)
-    : ElectricCar(electricEng)
-    , PetrolCar(petrolEng)
+HybridCar::HybridCar(std::unique_ptr<PetrolEngine> petrolEngine,
+                     std::unique_ptr<ElectricEngine> electricEngine)
+    : ElectricCar(std::move(electricEngine))
+    , PetrolCar(std::move(petrolEngine))
 {
     std::cout << __FUNCTION__ << std::endl;
 }
 
-HybridCar::~HybridCar()       { std::cout << __FUNCTION__ << std::endl; }
-void HybridCar::refill() {
-    ElectricCar::refill();
-    PetrolCar::refill();
+HybridCar::~HybridCar() {
+    std::cout << __FUNCTION__ << std::endl;
 }
