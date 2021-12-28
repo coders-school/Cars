@@ -1,8 +1,8 @@
 #include "PetrolCar.hpp"
 #include <iostream>
 
-PetrolCar::PetrolCar(PetrolEngine* engine)
-    : petrolEngine_(engine) {
+PetrolCar::PetrolCar(PetrolEngine* petrolEngine)
+    : petrolEngine_(petrolEngine) {
     std::cout << __FUNCTION__ << std::endl;
 }
 
@@ -10,27 +10,20 @@ PetrolCar::~PetrolCar() {
     std::cout << __FUNCTION__ << std::endl;
 }
 
-void PetrolCar::turnLeft() {
-    std::cout << __FUNCTION__ << std::endl;
-}
-
-void PetrolCar::turnRight() {
-    std::cout << __FUNCTION__ << std::endl;
-}
-
-void PetrolCar::brake() {
-    std::cout << __FUNCTION__ << std::endl;
-}
-
-void PetrolCar::accelerate(int) {
-    std::cout << __FUNCTION__ << std::endl;
-}
-
 void PetrolCar::refuel() {
     std::cout << __FUNCTION__ << std::endl;
 }
 
-void PetrolCar::changeGear(int gear) {
+void PetrolCar::changeEngine(PetrolEngine* petrolEngine) {
     std::cout << __FUNCTION__ << std::endl;
+    delete petrolEngine_;
+    petrolEngine_ = petrolEngine;
+}
+
+void PetrolCar::refill() {
+    refuel();
+}
+
+void PetrolCar::changeGear(int gear) {
     petrolEngine_->changeGear(gear);
 }

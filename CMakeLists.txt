@@ -20,6 +20,7 @@ set(SOURCES
     HybridCar.cpp
     PetrolCar.cpp
     PetrolEngine.cpp
+    Car.cpp
 )
 
 set(FLAGS -Wall -Werror -Wpedantic -Wextra)

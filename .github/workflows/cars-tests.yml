@@ -1,0 +1,25 @@
+name: cars-tests
+
+on: [pull_request, push, workflow_dispatch]
+
+jobs:
+  cars-tests:
+    runs-on: ubuntu-latest
+    env:
+      path: build
+    steps:
+    - name: Check out code
+      uses: actions/checkout@master
+    - name: Create build directory
+      run: mkdir ${{ env.path }}
+    - name: Compile
+      working-directory: ${{ env.path }}
+      run: |
+        cmake ..
+        make
+    - name: Run tests
+      working-directory: ${{ env.path }}
+      run: |
+        chmod +x ../.github/workflows/check-tests.sh
+        ../.github/workflows/check-tests.sh ../CMakeLists.txt
+        ctest -V
