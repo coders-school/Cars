@@ -25,4 +25,5 @@ int main()
     toyota.brake();
     toyota.charge();
     toyota.refuel();
+    toyota.changeGear(10);
 }

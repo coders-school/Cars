@@ -15,5 +15,7 @@ void HybridCar::brake()         { std::cout << __FUNCTION__ << std::endl; }
 void HybridCar::accelerate(int) { std::cout << __FUNCTION__ << std::endl; }
 void HybridCar::charge()        { std::cout << __FUNCTION__ << std::endl; }
 void HybridCar::refuel()        { std::cout << __FUNCTION__ << std::endl; }
- 
-
+void HybridCar::changeGear(int gear) {
+    std::cout << __FUNCTION__ << std::endl;
+    petrolEngine_->changeGear(gear);
+}
