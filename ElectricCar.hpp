@@ -11,6 +11,6 @@ public:
     void accelerate(int speed);
     void charge();
 
-    ElectricEngine* engine_;
+    ElectricEngine* electricEngine_;
 };
 

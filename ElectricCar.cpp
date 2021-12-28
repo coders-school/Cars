@@ -2,7 +2,7 @@
 #include <iostream>
 
 ElectricCar::ElectricCar(ElectricEngine* engine)
-    : engine_(engine)
+    : electricEngine_(engine)
 {
     std::cout << __FUNCTION__ << std::endl;
 }

@@ -10,7 +10,8 @@ public:
     void brake();
     void accelerate(int speed);
     void refuel();
+    void changeGear(int);
 
-    PetrolEngine* engine_;
+    PetrolEngine* petrolEngine_;
 };
 
