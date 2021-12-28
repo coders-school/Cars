@@ -3,6 +3,8 @@
 #include "PetrolCar.hpp"
 #include "ElectricCar.hpp"
 #include "HybridCar.hpp"
+#include "InvalidGear.hpp""
+
 
 // Tests throwing std::range_error when accelerate to speed = -999 or speed > maxSpeed is invoked
 TEST(PetrolCarClassTest, ShouldThrowRangeError) {

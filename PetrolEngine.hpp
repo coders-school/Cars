@@ -1,9 +1,7 @@
 #pragma once
-#include <stdexcept>
+#include "InvalidGear.hpp"
 
-struct InvalidGear : public std::logic_error {
-    InvalidGear(std::string msg) : std::logic_error(msg) {}
-};
+
 
 class PetrolEngine
 {

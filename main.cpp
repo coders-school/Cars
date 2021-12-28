@@ -45,7 +45,7 @@ int main()
     // pt.changeGear(1);
     // pt.changeGear(2);
     // try {
-    //     pt.changeGear(0);
+    //     pt.changeGear(-1);
     // } catch(InvalidGear const& ig) {
     //     std::cout << ig.what() << '\n';
     // }
