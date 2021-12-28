@@ -10,12 +10,12 @@ TEST(ExceptionTest, ThrowsInvalidGearException) {
         EXPECT_THROW({
             try {
                 opel.changeGear(testedGears[i]);
-                FAIL() << "this should throw an error\n";
+                FAIL() << "ERROR: function changeGear() should throw an error\n";
             } catch (const InvalidGear& exception) {
                 EXPECT_STREQ(exception.what(), "Invalid gear");
                 throw;
             } catch (const std::logic_error& exception) {
-                FAIL() << "ERROR: Was expecting InvalidGear exception: " << std::current_exception << std::endl;
+                FAIL() << "ERROR: Was expecting InvalidGear exception: " << exception.what() << std::endl;
             } catch (...) {
                 FAIL() << "ERROR: Unexpected exception thrown: " << std::current_exception << std::endl;
             }
