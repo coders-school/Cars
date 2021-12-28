@@ -4,7 +4,7 @@
 #include "gtest/gtest.h"
 
 TEST(ExceptionTest, ThrowsInvalidGearException) {
-    PetrolCar opel(new PetrolEngine(120, 1800, 6));
+    PetrolCar opel(std::make_unique<PetrolEngine>(120, 1800, 6));
     auto testedGears = std::vector<int>{-2, 7};
     for (size_t i = 0; i < testedGears.size(); i++) {
         EXPECT_THROW({
@@ -19,6 +19,7 @@ TEST(ExceptionTest, ThrowsInvalidGearException) {
             } catch (...) {
                 FAIL() << "ERROR: Unexpected exception thrown: " << std::current_exception << std::endl;
             }
-        }, InvalidGear);
+        },
+                     InvalidGear);
     }
 }

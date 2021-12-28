@@ -1,8 +1,8 @@
 #include "PetrolCar.hpp"
 #include <iostream>
 
-PetrolCar::PetrolCar(PetrolEngine* petrolEngine)
-    : petrolEngine_(petrolEngine) {
+PetrolCar::PetrolCar(std::unique_ptr<PetrolEngine> petrolEngine)
+    : petrolEngine_(std::move(petrolEngine)) {
     std::cout << __FUNCTION__ << std::endl;
 }
 
@@ -14,10 +14,9 @@ void PetrolCar::refuel() {
     std::cout << __FUNCTION__ << std::endl;
 }
 
-void PetrolCar::changeEngine(PetrolEngine* petrolEngine) {
+void PetrolCar::changeEngine(std::unique_ptr<PetrolEngine> petrolEngine) {
     std::cout << __FUNCTION__ << std::endl;
-    delete petrolEngine_;
-    petrolEngine_ = petrolEngine;
+    petrolEngine_ = std::move(petrolEngine);
 }
 
 void PetrolCar::refill() {

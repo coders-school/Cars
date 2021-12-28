@@ -7,6 +7,6 @@ public:
     void brake();
     void accelerate(int);
     virtual void refill() = 0;
-    // virtual void changeGear(int) = 0;
+    // virtual void changeGear(int) = 0;  // consider throwing exception when trying to change gear to car or electric car
     virtual ~Car() {}
 };
