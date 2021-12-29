@@ -16,6 +16,10 @@ void PetrolCar::refuel() {
 
 void PetrolCar::changeEngine(std::unique_ptr<PetrolEngine> petrolEngine) {
     std::cout << __FUNCTION__ << std::endl;
+    if (getSpeed() != 0) {
+        std::cout << "Changing engine during movement not allowed!" << std::endl;
+        return;
+    }
     petrolEngine_ = std::move(petrolEngine);
 }
 

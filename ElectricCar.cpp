@@ -17,6 +17,10 @@ void ElectricCar::charge() {
 
 void ElectricCar::changeEngine(std::unique_ptr<ElectricEngine> electricEngine) {
     std::cout << __FUNCTION__ << std::endl;
+    if (getSpeed() != 0) {
+        std::cout << "Changing engine during movement not allowed!" << std::endl;
+        return;
+    }
     electricEngine_ = std::move(electricEngine);
 }
 

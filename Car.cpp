@@ -26,6 +26,10 @@ void Car::setSpeed(const int speed) {
     }
 }
 
+size_t Car::getSpeed() {
+    return speed_;
+}
+
 void Car::changeEngine(std::unique_ptr<PetrolEngine>) {
     std::cout << "Engine change is not allowed for generic car object" << std::endl;
 }
