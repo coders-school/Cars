@@ -24,3 +24,10 @@ TEST(ExceptionTest, ThrowsInvalidGearException) {
                      InvalidGear);
     }
 }
+
+TEST(BreakTest, SetsSpeedTo0AfterBreak) {
+    PetrolCar opel(std::make_unique<PetrolEngine>(120, 1800, 6));
+    opel.setSpeed(50);
+    opel.brake();
+    EXPECT_EQ(opel.getSpeed(), 0);
+}
