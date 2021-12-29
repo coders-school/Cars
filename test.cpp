@@ -4,8 +4,9 @@
 #include "gtest/gtest.h"
 
 TEST(ExceptionTest, ThrowsInvalidGearException) {
-    PetrolCar opel(std::make_unique<PetrolEngine>(120, 1800, 6));
-    auto testedGears = std::vector<int>{-2, 7};
+    int maxGears = 6;
+    PetrolCar opel(std::make_unique<PetrolEngine>(120, 1800, maxGears));
+    auto testedGears = std::vector<int>{-2, maxGears + 1};
     for (size_t i = 0; i < testedGears.size(); i++) {
         EXPECT_THROW({
             try {

@@ -15,6 +15,7 @@ int main() {
     car->setSpeed(-900);
     car->refill();
     // car->changeEngine(new PetrolEngine(150, 700, 7));
+    opel.changeGear(2);
 
     std::cout << std::endl
               << "NISSAN" << std::endl;
@@ -33,6 +34,7 @@ int main() {
     car->setSpeed(100);
     car->brake();
     car->refill();
+    toyota.changeGear(2);
 
     std::cout << std::endl;
 }
