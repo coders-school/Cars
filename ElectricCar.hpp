@@ -5,9 +5,9 @@
 
 class ElectricCar : public virtual Car {
 public:
-    ElectricCar(std::unique_ptr<ElectricEngine> electricEngine);
+    ElectricCar(std::unique_ptr<ElectricEngine>);
     ~ElectricCar();
-    void changeEngine(std::unique_ptr<ElectricEngine> electricEngine);
+    void changeEngine(std::unique_ptr<ElectricEngine>) override;
     void refill() override;
 
 private:

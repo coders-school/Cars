@@ -1,9 +1,9 @@
 #include <iostream>
+#include <memory>
 #include "Car.hpp"
 #include "ElectricCar.hpp"
 #include "HybridCar.hpp"
 #include "PetrolCar.hpp"
-#include <memory>
 
 int main() {
     std::cout << std::endl
@@ -14,7 +14,7 @@ int main() {
     car->brake();
     car->setSpeed(-900);
     car->refill();
-    // car->changeEngine(new PetrolEngine(150, 700, 7));
+    car->changeEngine(std::make_unique<PetrolEngine>(150, 700, 7));
     opel.changeGear(2);
 
     std::cout << std::endl
@@ -23,8 +23,7 @@ int main() {
     car = &nissan;
     car->refill();
     car->setSpeed(80);
-    // nissan.engine_ = new ElectricEngine(150, 700);  // Changing an engine during driving is not safe
-    // car->changeEngine(new ElectricEngine(150, 700));
+    car->changeEngine(std::make_unique<ElectricEngine>(150, 700));
     car->turnLeft();
 
     std::cout << std::endl

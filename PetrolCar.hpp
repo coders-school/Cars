@@ -5,10 +5,10 @@
 
 class PetrolCar : virtual public Car {
 public:
-    PetrolCar(std::unique_ptr<PetrolEngine> petrolEngine);
+    PetrolCar(std::unique_ptr<PetrolEngine>);
     ~PetrolCar();
 
-    void changeEngine(std::unique_ptr<PetrolEngine> petrolEngine);
+    void changeEngine(std::unique_ptr<PetrolEngine>) override;
     void refill() override;
     void changeGear(int);
 
