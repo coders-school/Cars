@@ -9,12 +9,17 @@ set(SRC_LIST
     ElectricCar.cpp
     ElectricEngine.cpp
     HybridCar.cpp
-    main.cpp
     PetrolCar.cpp
     PetrolEngine.cpp
     Car.cpp
 )
+set(testFile ../test/test.cpp ../test/catch_amalgamated.cpp)
 
-add_executable(${PROJECT_NAME} ${SRC_LIST})
+add_executable(${PROJECT_NAME} ${SRC_LIST} main.cpp)
+add_executable(${PROJECT_NAME}-ut ${testFile} ${SRC_LIST})
+
 target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Wpedantic -Wextra)
+target_compile_options(${PROJECT_NAME}-ut PUBLIC -Wall -Wpedantic -Wextra)
+
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR})
+
