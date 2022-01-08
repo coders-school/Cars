@@ -1,4 +1,5 @@
 #pragma once
+#include <stdexcept>
 
 class Car
 {
@@ -9,4 +10,15 @@ public:
     void accelerate(int speed);
     virtual void refill() = 0;
     virtual ~Car(){}
+
+    class InvalidSpeed : public std::logic_error {
+        public:
+            InvalidSpeed(const std::string& msg)
+            : std::logic_error(msg) {}
+    };
+
+private:
+    int speed_ = 0;
+    int maxSpeed_ = 260;
+    std::string direction_ = "straight";
 };
