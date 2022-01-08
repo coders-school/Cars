@@ -10,6 +10,12 @@ public:
     PetrolCar(std::unique_ptr<PetrolEngine> engine);
     ~PetrolCar();
 
+    int GetFuelLvl(){return fuelLevel_;}
+    void changeGear(int gear){
+        auto newGear = gear;
+        engine_->changeGear(newGear);
+    }
+
     void changeEngine(std::unique_ptr<PetrolEngine> pe);
     void refill() override;
 
