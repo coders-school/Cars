@@ -6,6 +6,7 @@
 #include "../HybridCar.hpp"
 #include "../PetrolCar.hpp"
 #include "../PetrolEngine.hpp"
+#include <iostream>
 
 SCENARIO("Testing Electric car")
 {
@@ -102,25 +103,18 @@ SCENARIO("Testing Petrol car")
     }
 }
 
-// SCENARIO("Testing Hybrid car")
-// {
-//     GIVEN("Two scenarios")
-//     {
-//         WHEN("Checking if it is possible to copy by copy constructor")
-//         {
-//             auto copy = std::is_copy_constructible<unique_ptr<int>>::value;
-//             THEN("Result should be false")
-//             {
-//                 REQUIRE_FALSE(copy);
-//             }
-//         }
-//         WHEN("Checking if it is possible to copy by copy assignment operator")
-//         {
-//             auto copy2 = std::is_copy_assignable<unique_ptr<int>>::value;
-//             THEN("Result should be false")
-//             {
-//                 REQUIRE_FALSE(copy2);
-//             }
-//         }
-//     }
-// }
+SCENARIO("Testing Hybrid car")
+{
+    GIVEN("Brand new Toyota")
+    {
+        HybridCar toyota(std::make_unique<PetrolEngine>(80, 1400, 5), std::make_unique<ElectricEngine>(100, 540));
+
+        WHEN("Checking if we can refill our Toyota")
+        {
+            THEN("Refill should be success")
+            {
+                REQUIRE_NOTHROW(toyota.refill());
+            }
+        }
+    }
+}
