@@ -15,7 +15,7 @@ public:
         auto newGear = gear;
         engine_->changeGear(newGear);
     }
-
+    
     void changeEngine(std::unique_ptr<PetrolEngine> pe);
     void refill() override;
 
