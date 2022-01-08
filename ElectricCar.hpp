@@ -14,5 +14,6 @@ public:
 
 private:
     void charge();
+    int energyLevel_ = 10;
     std::unique_ptr<ElectricEngine> engine_;
 };

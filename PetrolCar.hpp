@@ -15,5 +15,6 @@ public:
 
 private:
     void refuel();
+    int fuelLevel_ = 15;
     std::unique_ptr<PetrolEngine> engine_;
 };

@@ -8,7 +8,10 @@ ElectricCar::ElectricCar(std::unique_ptr<ElectricEngine> engine)
 }
 
 ElectricCar::~ElectricCar()       { std::cout << __FUNCTION__ << std::endl; }
-void ElectricCar::charge()        { std::cout << __FUNCTION__ << std::endl; }
+void ElectricCar::charge(){ 
+    energyLevel_ = 100;
+    std::cout << __FUNCTION__ << std::endl; 
+}
 void ElectricCar::changeEngine(std::unique_ptr<ElectricEngine> ee) {
     
     engine_ = std::move(ee);
