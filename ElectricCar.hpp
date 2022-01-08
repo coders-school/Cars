@@ -9,6 +9,8 @@ public:
     ElectricCar(std::unique_ptr<ElectricEngine> engine);
     ~ElectricCar();
 
+    int GetBatteryLvl() {return energyLevel_;}
+
     void changeEngine(std::unique_ptr<ElectricEngine> ee);
     void refill() override;
 

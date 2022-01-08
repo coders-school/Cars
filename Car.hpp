@@ -8,6 +8,10 @@ public:
     void turnRight();
     void brake();
     void accelerate(int speed);
+
+    std::string GetDirection() { return direction_;}
+    int GetSpeed() {return speed_;}
+
     virtual void refill() = 0;
     virtual ~Car(){}
 
