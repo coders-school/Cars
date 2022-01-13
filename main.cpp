@@ -6,14 +6,18 @@
 int main()
 {   try
     {
-        std::cout << "\tPetrol ************************************************************\n";
         
+        std::cout << "\tPetrol ************************************************************\n";
+
         PetrolCar opel(new PetrolEngine(120, 1800, 6));
+
+        Car * car = &opel;
+        car->accelerate(10);
 
         std::cout << " Current gear: " << opel.getPetrolEngine().getCurrentGear() << '\n';
         opel.getPetrolEngine().changeGear(2);
         std::cout << " Current gear: " << opel.getPetrolEngine().getCurrentGear() << '\n';
-        opel.getPetrolEngine().changeGear(8);
+        opel.getPetrolEngine().changeGear(8); // throwig exception
         std::cout << " Current gear: " << opel.getPetrolEngine().getCurrentGear() << '\n';
 
         // std::cout << "Show opel: " << opel << '\n';
