@@ -12,3 +12,11 @@ ElectricEngine::~ElectricEngine()
 {
     std::cout << __FUNCTION__ << std::endl;
 }
+
+std::ostream & operator<<(std::ostream & out, ElectricEngine const & engine)
+{
+    out << "Electric engine::  power: "<< engine.getPower() 
+        << "\tCapacity: " << engine.getBatteryCapacity();
+
+    return out;
+}  
