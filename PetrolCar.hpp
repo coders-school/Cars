@@ -16,9 +16,11 @@ public:
     ~PetrolCar() override;
 
     void setEngine(PetrolEngine * engine);
+    //const PetrolEngine* getPetrolEngine() const;
+    PetrolEngine & getPetrolEngine();
 
     friend std::ostream & operator<<(std::ostream & out, PetrolCar const & car);
-    
+
 private:
     PetrolEngine* engine_;
 };

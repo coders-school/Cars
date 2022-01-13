@@ -61,6 +61,16 @@ void PetrolCar::setEngine(PetrolEngine * engine)
     { std::cout << __FUNCTION__ << std::endl; }
 }
 
+// const PetrolEngine* PetrolCar::getPetrolEngine() const
+// {
+//     return engine_;
+// }
+
+PetrolEngine& PetrolCar::getPetrolEngine()
+{
+    return *engine_;
+}
+
 std::ostream & operator<<(std::ostream & out, PetrolCar const & car)
 {
     out << "Petrol car\t" << *car.engine_ << '\n';
