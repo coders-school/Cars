@@ -19,4 +19,3 @@ private:
     void refuel();
     std::unique_ptr<PetrolEngine> engine_;
 };
-

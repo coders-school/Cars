@@ -12,4 +12,3 @@ public:
     ~HybridCar();
     void refill() override;
 };
-

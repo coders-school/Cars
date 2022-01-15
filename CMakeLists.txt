@@ -22,6 +22,7 @@ set(SRC_LIST
     HybridCar.cpp
     PetrolCar.cpp
     PetrolEngine.cpp
+    Car.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SRC_LIST} main.cpp)

@@ -19,4 +19,3 @@ void ElectricCar::changeEngine(std::unique_ptr<ElectricEngine> electricEngine) {
 void ElectricCar::refill() {
     charge();
 }
-

@@ -15,4 +15,3 @@ private:
     void charge();
     std::unique_ptr<ElectricEngine> engine_;
 };
-
