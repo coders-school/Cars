@@ -1,8 +1,10 @@
 #pragma once
+#include "InvalidGear.hpp"
 
 class PetrolEngine
 {
 public:
+
     PetrolEngine(int power, float capacity, int gears);
     void changeGear(int gear);
 
