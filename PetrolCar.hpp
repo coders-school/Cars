@@ -1,16 +1,22 @@
+#pragma once
+#include <memory>
+#include <utility>
 #include "PetrolEngine.hpp"
+#include "Car.hpp"
 
-class PetrolCar
+
+class PetrolCar : virtual public Car
 {
 public:
-    PetrolCar(PetrolEngine* engine);
+    PetrolCar(std::unique_ptr<PetrolEngine> petrolEngine);
     ~PetrolCar();
-    void turnLeft();
-    void turnRight();
-    void brake();
-    void accelerate(int speed);
-    void refuel();
 
-    PetrolEngine* engine_;
+    void changeGear(int gear);
+    void changeEngine(std::unique_ptr<PetrolEngine> petrolEngine);
+    void refill() override;
+
+private:
+    void refuel();
+    std::unique_ptr<PetrolEngine> engine_;
 };
 
