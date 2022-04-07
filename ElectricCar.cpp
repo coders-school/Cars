@@ -1,8 +1,8 @@
 #include <iostream>
 #include "ElectricCar.hpp"
 
-ElectricCar::ElectricCar(ElectricEngine *engine)
-    : engine_(engine)
+ElectricCar::ElectricCar(std::unique_ptr<Engine> engine)
+    : engine_(std::move(engine))
 {
     std::cout << __FUNCTION__ << std::endl;
 }
@@ -10,10 +10,9 @@ ElectricCar::ElectricCar(ElectricEngine *engine)
 ElectricCar::~ElectricCar() { std::cout << __FUNCTION__ << std::endl; }
 void ElectricCar::charge() { std::cout << __FUNCTION__ << std::endl; }
 
-void ElectricCar::changeEngine(Engine* engine)
+void ElectricCar::changeEngine(std::unique_ptr<Engine> engine)
 {
-    delete engine_;
-    engine_ = engine;
+    engine_ = std::move(engine);
     std::cout << __FUNCTION__ << std::endl;
 }
 
