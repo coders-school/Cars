@@ -16,6 +16,11 @@ void ElectricCar::changeEngine(std::unique_ptr<ElectricEngine> engine)
     std::cout << __FUNCTION__ << std::endl;
 }
 
+void ElectricCar::changeEngine(std::unique_ptr<PetrolEngine> engine)
+{
+    throw std::invalid_argument("This is not Petrol Car");
+}
+
 void ElectricCar::refill()
 {
     charge();

@@ -2,13 +2,22 @@
 
 void Car::turnLeft() { std::cout << __FUNCTION__ << std::endl; }
 void Car::turnRight() { std::cout << __FUNCTION__ << std::endl; }
-void Car::brake() { std::cout << __FUNCTION__ << std::endl; }
-void Car::accelerate(int) { std::cout << __FUNCTION__ << std::endl; }
-void Car::changeEngine(std::unique_ptr<ElectricEngine> engine)
+void Car::brake() 
 {
-    throw std::invalid_argument("This is not Electric Car");
+    if(currentSpeed_ == 0)
+    {
+        throw std::invalid_argument("Current speed is already 0");
+    }
+    currentSpeed_ = 0;
 }
-void Car::changeEngine(std::unique_ptr<PetrolEngine> engine)
-{
-    throw std::invalid_argument("This is not Petrol Car");
+void Car::accelerate(int speed) 
+{ 
+    if(speed < 0)
+    {
+        throw std::invalid_argument("Speed cannot be below 0");
+    }
+    if(speed > 200)
+    {
+        throw std::invalid_argument("Speed cannot be higher than 200");
+    }
 }

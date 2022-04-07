@@ -1,3 +1,4 @@
+#pragma once
 #include <stdexcept>
 
 struct InvalidGear : public std::logic_error
