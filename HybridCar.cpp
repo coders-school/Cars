@@ -1,7 +1,7 @@
 #include "HybridCar.hpp"
 #include <iostream>
 
-HybridCar::HybridCar(std::unique_ptr<Engine> petrolEng, std::unique_ptr<Engine> electricEng)
+HybridCar::HybridCar(std::unique_ptr<PetrolEngine> petrolEng, std::unique_ptr<ElectricEngine> electricEng)
     : ElectricCar(std::move(electricEng)), PetrolCar(std::move(petrolEng))
 {
     std::cout << __FUNCTION__ << std::endl;
@@ -16,22 +16,12 @@ void HybridCar::refill()
     std::cout << __FUNCTION__ << std::endl;
 }
 
-void HybridCar::changeEngine(std::unique_ptr<Engine> engine)
+void HybridCar::changeEngine(std::unique_ptr<PetrolEngine> engine)
 {
-    ElectricEngine *ee{nullptr};
-    PetrolEngine *pe{nullptr};
+    PetrolCar::engine_ = std::move(engine);
+}
 
-    ee = dynamic_cast<ElectricEngine *>(engine.get());
-    pe = dynamic_cast<PetrolEngine *>(engine.get());
-
-    if (ee != nullptr)
-    {
-        ElectricCar::engine_ = std::move(engine);
-        std::cout << __FUNCTION__ << std::endl;
-    }
-    else if (pe != nullptr)
-    {
-        PetrolCar::engine_ = std::move(engine);
-        std::cout << __FUNCTION__ << std::endl;
-    }
+void HybridCar::changeEngine(std::unique_ptr<ElectricEngine> engine)
+{
+    ElectricCar::engine_ = std::move(engine);
 }

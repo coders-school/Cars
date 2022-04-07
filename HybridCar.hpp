@@ -8,8 +8,9 @@
 class HybridCar : public ElectricCar, public PetrolCar
 {
 public:
-    HybridCar(std::unique_ptr<Engine> petrolEng, std::unique_ptr<Engine> electricEng);
+    HybridCar(std::unique_ptr<PetrolEngine> petrolEng, std::unique_ptr<ElectricEngine> electricEng);
     ~HybridCar();
     void refill() override;
-    void changeEngine(std::unique_ptr<Engine> engine) override;
+    void changeEngine(std::unique_ptr<PetrolEngine> engine) override;
+    void changeEngine(std::unique_ptr<ElectricEngine> engine) override;
 };

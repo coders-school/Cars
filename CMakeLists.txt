@@ -13,7 +13,6 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(googletest)
 
 set(SRC_LIST
-    Engine.cpp
     Car.cpp
     ElectricCar.cpp
     ElectricEngine.cpp
@@ -25,7 +24,6 @@ set(SRC_LIST
 )
 
 set(SRC_LIST_UT
-    Engine.cpp
     Car.cpp
     ElectricCar.cpp
     ElectricEngine.cpp
