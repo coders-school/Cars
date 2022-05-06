@@ -20,7 +20,6 @@ set(SRC_LIST
     main.cpp
     PetrolCar.cpp
     PetrolEngine.cpp
-    InvalidGear.cpp
 )
 
 set(SRC_LIST_UT
@@ -30,7 +29,9 @@ set(SRC_LIST_UT
     HybridCar.cpp
     PetrolCar.cpp
     PetrolEngine.cpp
-    InvalidGear.cpp
+    ./gtest/PetrolCarTest.cpp
+    ./gtest/ElectricCarTest.cpp
+    ./gtest/HybridCarTest.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})
@@ -39,6 +40,6 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR})
 
 enable_testing()
 include(GoogleTest)
-add_executable(${PROJECT_NAME}-ut ${SRC_LIST_UT} CarsTest.cpp)
+add_executable(${PROJECT_NAME}-ut ${SRC_LIST_UT})
 target_link_libraries(${PROJECT_NAME}-ut gtest_main)
 add_test(NAME tests COMMAND ${PROJECT_NAME}-ut)

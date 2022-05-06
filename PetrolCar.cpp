@@ -28,12 +28,5 @@ void PetrolCar::refill()
 
 void PetrolCar::changeGear(int gear)
 {
-    try
-    {
-        engine_->changeGear(gear);
-    }
-    catch(const InvalidGear& e)
-    {
-        throw e;
-    }
+    engine_->changeGear(gear);
 }

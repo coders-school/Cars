@@ -13,15 +13,14 @@ void PetrolEngine::changeGear(int gear)
     // TODO: Add checking if gear is between -1 and gears_
     // -1 is for REAR
     // 0 is for NEUTRAL
-    if(currentGear_ > 0 && gear == -1)
+    if (currentGear_ > 0 && gear == -1)
     {
-        InvalidGear exception("It is not possible to change gear from higher than 0 to R");
-        throw exception;
+        throw InvalidGear{"It is not possible to change gear from higher than 0 to R"};
     }
     if (gear > -1 && gear < gears_)
     {
         currentGear_ = gear;
     }
-    
+
     std::cout << __FUNCTION__ << std::endl;
 }
