@@ -1,0 +1,110 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/aleksander/Workspace/OOP Coders School/Cars/Car.cpp
+Car.hpp
+/home/aleksander/Workspace/OOP Coders School/Cars/Car.hpp
+
+/home/aleksander/Workspace/OOP Coders School/Cars/Car.hpp
+iostream
+-
+memory
+-
+exception
+-
+ElectricEngine.hpp
+/home/aleksander/Workspace/OOP Coders School/Cars/ElectricEngine.hpp
+PetrolEngine.hpp
+/home/aleksander/Workspace/OOP Coders School/Cars/PetrolEngine.hpp
+
+/home/aleksander/Workspace/OOP Coders School/Cars/ElectricCar.cpp
+iostream
+-
+ElectricCar.hpp
+/home/aleksander/Workspace/OOP Coders School/Cars/ElectricCar.hpp
+
+/home/aleksander/Workspace/OOP Coders School/Cars/ElectricCar.hpp
+memory
+-
+Car.hpp
+/home/aleksander/Workspace/OOP Coders School/Cars/Car.hpp
+ElectricEngine.hpp
+/home/aleksander/Workspace/OOP Coders School/Cars/ElectricEngine.hpp
+PetrolEngine.hpp
+/home/aleksander/Workspace/OOP Coders School/Cars/PetrolEngine.hpp
+
+/home/aleksander/Workspace/OOP Coders School/Cars/ElectricEngine.cpp
+ElectricEngine.hpp
+/home/aleksander/Workspace/OOP Coders School/Cars/ElectricEngine.hpp
+iostream
+-
+
+/home/aleksander/Workspace/OOP Coders School/Cars/ElectricEngine.hpp
+
+/home/aleksander/Workspace/OOP Coders School/Cars/HybridCar.cpp
+HybridCar.hpp
+/home/aleksander/Workspace/OOP Coders School/Cars/HybridCar.hpp
+iostream
+-
+
+/home/aleksander/Workspace/OOP Coders School/Cars/HybridCar.hpp
+memory
+-
+ElectricEngine.hpp
+/home/aleksander/Workspace/OOP Coders School/Cars/ElectricEngine.hpp
+ElectricCar.hpp
+/home/aleksander/Workspace/OOP Coders School/Cars/ElectricCar.hpp
+PetrolCar.hpp
+/home/aleksander/Workspace/OOP Coders School/Cars/PetrolCar.hpp
+PetrolEngine.hpp
+/home/aleksander/Workspace/OOP Coders School/Cars/PetrolEngine.hpp
+
+/home/aleksander/Workspace/OOP Coders School/Cars/InvalidGear.hpp
+stdexcept
+-
+
+/home/aleksander/Workspace/OOP Coders School/Cars/PetrolCar.cpp
+PetrolCar.hpp
+/home/aleksander/Workspace/OOP Coders School/Cars/PetrolCar.hpp
+
+/home/aleksander/Workspace/OOP Coders School/Cars/PetrolCar.hpp
+iostream
+-
+memory
+-
+Car.hpp
+/home/aleksander/Workspace/OOP Coders School/Cars/Car.hpp
+ElectricEngine.hpp
+/home/aleksander/Workspace/OOP Coders School/Cars/ElectricEngine.hpp
+PetrolEngine.hpp
+/home/aleksander/Workspace/OOP Coders School/Cars/PetrolEngine.hpp
+InvalidGear.hpp
+/home/aleksander/Workspace/OOP Coders School/Cars/InvalidGear.hpp
+
+/home/aleksander/Workspace/OOP Coders School/Cars/PetrolEngine.cpp
+iostream
+-
+PetrolEngine.hpp
+/home/aleksander/Workspace/OOP Coders School/Cars/PetrolEngine.hpp
+InvalidGear.hpp
+/home/aleksander/Workspace/OOP Coders School/Cars/InvalidGear.hpp
+
+/home/aleksander/Workspace/OOP Coders School/Cars/PetrolEngine.hpp
+
+/home/aleksander/Workspace/OOP Coders School/Cars/main.cpp
+iostream
+-
+memory
+-
+PetrolCar.hpp
+/home/aleksander/Workspace/OOP Coders School/Cars/PetrolCar.hpp
+ElectricCar.hpp
+/home/aleksander/Workspace/OOP Coders School/Cars/ElectricCar.hpp
+HybridCar.hpp
+/home/aleksander/Workspace/OOP Coders School/Cars/HybridCar.hpp
+
