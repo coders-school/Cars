@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/aleksander/Workspace/OOP Coders School/Cars/InvalidGear.hpp
+stdexcept
+-
+
+/home/aleksander/Workspace/OOP Coders School/Cars/PetrolEngine.cpp
+iostream
+-
+PetrolEngine.hpp
+/home/aleksander/Workspace/OOP Coders School/Cars/PetrolEngine.hpp
+InvalidGear.hpp
+/home/aleksander/Workspace/OOP Coders School/Cars/InvalidGear.hpp
+
+/home/aleksander/Workspace/OOP Coders School/Cars/PetrolEngine.hpp
+

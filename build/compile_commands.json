@@ -1,0 +1,102 @@
+[
+{
+  "directory": "/home/aleksander/Workspace/OOP Coders School/Cars/build",
+  "command": "/usr/bin/c++   -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest/include\" -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest\"  -g   -std=gnu++17 -o CMakeFiles/Cars-ut.dir/Car.cpp.o -c \"/home/aleksander/Workspace/OOP Coders School/Cars/Car.cpp\"",
+  "file": "/home/aleksander/Workspace/OOP Coders School/Cars/Car.cpp"
+},
+{
+  "directory": "/home/aleksander/Workspace/OOP Coders School/Cars/build",
+  "command": "/usr/bin/c++   -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest/include\" -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest\"  -g   -std=gnu++17 -o CMakeFiles/Cars-ut.dir/ElectricCar.cpp.o -c \"/home/aleksander/Workspace/OOP Coders School/Cars/ElectricCar.cpp\"",
+  "file": "/home/aleksander/Workspace/OOP Coders School/Cars/ElectricCar.cpp"
+},
+{
+  "directory": "/home/aleksander/Workspace/OOP Coders School/Cars/build",
+  "command": "/usr/bin/c++   -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest/include\" -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest\"  -g   -std=gnu++17 -o CMakeFiles/Cars-ut.dir/ElectricEngine.cpp.o -c \"/home/aleksander/Workspace/OOP Coders School/Cars/ElectricEngine.cpp\"",
+  "file": "/home/aleksander/Workspace/OOP Coders School/Cars/ElectricEngine.cpp"
+},
+{
+  "directory": "/home/aleksander/Workspace/OOP Coders School/Cars/build",
+  "command": "/usr/bin/c++   -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest/include\" -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest\"  -g   -std=gnu++17 -o CMakeFiles/Cars-ut.dir/HybridCar.cpp.o -c \"/home/aleksander/Workspace/OOP Coders School/Cars/HybridCar.cpp\"",
+  "file": "/home/aleksander/Workspace/OOP Coders School/Cars/HybridCar.cpp"
+},
+{
+  "directory": "/home/aleksander/Workspace/OOP Coders School/Cars/build",
+  "command": "/usr/bin/c++   -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest/include\" -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest\"  -g   -std=gnu++17 -o CMakeFiles/Cars-ut.dir/PetrolCar.cpp.o -c \"/home/aleksander/Workspace/OOP Coders School/Cars/PetrolCar.cpp\"",
+  "file": "/home/aleksander/Workspace/OOP Coders School/Cars/PetrolCar.cpp"
+},
+{
+  "directory": "/home/aleksander/Workspace/OOP Coders School/Cars/build",
+  "command": "/usr/bin/c++   -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest/include\" -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest\"  -g   -std=gnu++17 -o CMakeFiles/Cars-ut.dir/PetrolEngine.cpp.o -c \"/home/aleksander/Workspace/OOP Coders School/Cars/PetrolEngine.cpp\"",
+  "file": "/home/aleksander/Workspace/OOP Coders School/Cars/PetrolEngine.cpp"
+},
+{
+  "directory": "/home/aleksander/Workspace/OOP Coders School/Cars/build",
+  "command": "/usr/bin/c++   -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest/include\" -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest\"  -g   -std=gnu++17 -o CMakeFiles/Cars-ut.dir/gtest/PetrolCarTest.cpp.o -c \"/home/aleksander/Workspace/OOP Coders School/Cars/gtest/PetrolCarTest.cpp\"",
+  "file": "/home/aleksander/Workspace/OOP Coders School/Cars/gtest/PetrolCarTest.cpp"
+},
+{
+  "directory": "/home/aleksander/Workspace/OOP Coders School/Cars/build",
+  "command": "/usr/bin/c++   -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest/include\" -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest\"  -g   -std=gnu++17 -o CMakeFiles/Cars-ut.dir/gtest/ElectricCarTest.cpp.o -c \"/home/aleksander/Workspace/OOP Coders School/Cars/gtest/ElectricCarTest.cpp\"",
+  "file": "/home/aleksander/Workspace/OOP Coders School/Cars/gtest/ElectricCarTest.cpp"
+},
+{
+  "directory": "/home/aleksander/Workspace/OOP Coders School/Cars/build",
+  "command": "/usr/bin/c++   -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest/include\" -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest\"  -g   -std=gnu++17 -o CMakeFiles/Cars-ut.dir/gtest/HybridCarTest.cpp.o -c \"/home/aleksander/Workspace/OOP Coders School/Cars/gtest/HybridCarTest.cpp\"",
+  "file": "/home/aleksander/Workspace/OOP Coders School/Cars/gtest/HybridCarTest.cpp"
+},
+{
+  "directory": "/home/aleksander/Workspace/OOP Coders School/Cars/build",
+  "command": "/usr/bin/c++   -I\"/home/aleksander/Workspace/OOP Coders School/Cars\"  -g   -Wall -Wpedantic -Wextra -std=gnu++17 -o CMakeFiles/Cars.dir/Car.cpp.o -c \"/home/aleksander/Workspace/OOP Coders School/Cars/Car.cpp\"",
+  "file": "/home/aleksander/Workspace/OOP Coders School/Cars/Car.cpp"
+},
+{
+  "directory": "/home/aleksander/Workspace/OOP Coders School/Cars/build",
+  "command": "/usr/bin/c++   -I\"/home/aleksander/Workspace/OOP Coders School/Cars\"  -g   -Wall -Wpedantic -Wextra -std=gnu++17 -o CMakeFiles/Cars.dir/ElectricCar.cpp.o -c \"/home/aleksander/Workspace/OOP Coders School/Cars/ElectricCar.cpp\"",
+  "file": "/home/aleksander/Workspace/OOP Coders School/Cars/ElectricCar.cpp"
+},
+{
+  "directory": "/home/aleksander/Workspace/OOP Coders School/Cars/build",
+  "command": "/usr/bin/c++   -I\"/home/aleksander/Workspace/OOP Coders School/Cars\"  -g   -Wall -Wpedantic -Wextra -std=gnu++17 -o CMakeFiles/Cars.dir/ElectricEngine.cpp.o -c \"/home/aleksander/Workspace/OOP Coders School/Cars/ElectricEngine.cpp\"",
+  "file": "/home/aleksander/Workspace/OOP Coders School/Cars/ElectricEngine.cpp"
+},
+{
+  "directory": "/home/aleksander/Workspace/OOP Coders School/Cars/build",
+  "command": "/usr/bin/c++   -I\"/home/aleksander/Workspace/OOP Coders School/Cars\"  -g   -Wall -Wpedantic -Wextra -std=gnu++17 -o CMakeFiles/Cars.dir/HybridCar.cpp.o -c \"/home/aleksander/Workspace/OOP Coders School/Cars/HybridCar.cpp\"",
+  "file": "/home/aleksander/Workspace/OOP Coders School/Cars/HybridCar.cpp"
+},
+{
+  "directory": "/home/aleksander/Workspace/OOP Coders School/Cars/build",
+  "command": "/usr/bin/c++   -I\"/home/aleksander/Workspace/OOP Coders School/Cars\"  -g   -Wall -Wpedantic -Wextra -std=gnu++17 -o CMakeFiles/Cars.dir/main.cpp.o -c \"/home/aleksander/Workspace/OOP Coders School/Cars/main.cpp\"",
+  "file": "/home/aleksander/Workspace/OOP Coders School/Cars/main.cpp"
+},
+{
+  "directory": "/home/aleksander/Workspace/OOP Coders School/Cars/build",
+  "command": "/usr/bin/c++   -I\"/home/aleksander/Workspace/OOP Coders School/Cars\"  -g   -Wall -Wpedantic -Wextra -std=gnu++17 -o CMakeFiles/Cars.dir/PetrolCar.cpp.o -c \"/home/aleksander/Workspace/OOP Coders School/Cars/PetrolCar.cpp\"",
+  "file": "/home/aleksander/Workspace/OOP Coders School/Cars/PetrolCar.cpp"
+},
+{
+  "directory": "/home/aleksander/Workspace/OOP Coders School/Cars/build",
+  "command": "/usr/bin/c++   -I\"/home/aleksander/Workspace/OOP Coders School/Cars\"  -g   -Wall -Wpedantic -Wextra -std=gnu++17 -o CMakeFiles/Cars.dir/PetrolEngine.cpp.o -c \"/home/aleksander/Workspace/OOP Coders School/Cars/PetrolEngine.cpp\"",
+  "file": "/home/aleksander/Workspace/OOP Coders School/Cars/PetrolEngine.cpp"
+},
+{
+  "directory": "/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/c++   -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googlemock/include\" -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googlemock\" -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest/include\" -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest\"  -g   -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++17 -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googlemock/src/gmock_main.cc\"",
+  "file": "/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googlemock/src/gmock_main.cc"
+},
+{
+  "directory": "/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/c++   -I\"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googlemock/include\" -I\"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googlemock\" -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest/include\" -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest\"  -g   -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++17 -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googlemock/src/gmock-all.cc\"",
+  "file": "/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googlemock/src/gmock-all.cc"
+},
+{
+  "directory": "/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-build/googletest",
+  "command": "/usr/bin/c++   -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest/include\" -isystem \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest\"  -g   -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++17 -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest/src/gtest_main.cc\"",
+  "file": "/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest/src/gtest_main.cc"
+},
+{
+  "directory": "/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-build/googletest",
+  "command": "/usr/bin/c++   -I\"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest/include\" -I\"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest\"  -g   -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++17 -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c \"/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest/src/gtest-all.cc\"",
+  "file": "/home/aleksander/Workspace/OOP Coders School/Cars/build/_deps/googletest-src/googletest/src/gtest-all.cc"
+}
+]

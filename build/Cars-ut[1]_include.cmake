@@ -1,0 +1,5 @@
+if(EXISTS "/home/aleksander/Workspace/OOP Coders School/Cars/build/Cars-ut[1]_tests.cmake")
+  include("/home/aleksander/Workspace/OOP Coders School/Cars/build/Cars-ut[1]_tests.cmake")
+else()
+  add_test(Cars-ut_NOT_BUILT Cars-ut_NOT_BUILT)
+endif()
