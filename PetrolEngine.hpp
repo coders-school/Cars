@@ -7,8 +7,8 @@ public:
     void changeGear(int gear);
 
 private:
-    int power_;         // in HP
-    float capacity_;    // in ccm
+    int power_;      // in HP
+    float capacity_; // in ccm
     int gears_;
     int currentGear_;
 };
