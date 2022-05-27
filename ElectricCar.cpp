@@ -1,5 +1,5 @@
-#include "ElectricCar.hpp"
 #include <iostream>
+#include "ElectricCar.hpp"
 
 ElectricCar::ElectricCar(ElectricEngine* engine)
     : engine_(engine)
