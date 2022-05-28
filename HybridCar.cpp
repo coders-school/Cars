@@ -1,7 +1,6 @@
-#include <iostream>
 #include "HybridCar.hpp"
 
-HybridCar::HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng)
+HybridCar::HybridCar(std::shared_ptr<PetrolEngine> petrolEng, std::shared_ptr<ElectricEngine> electricEng)
     : ElectricCar(electricEng)
     , PetrolCar(petrolEng)
 {
