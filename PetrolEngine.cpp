@@ -18,3 +18,7 @@ void PetrolEngine::changeGear(int gear)
     } else {currentGear_ = gear;}
     std::cout << __FUNCTION__ << std::endl;
 }
+
+bool PetrolEngine::isRunning() {
+    return (currentGear_ != 0);
+}

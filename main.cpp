@@ -12,17 +12,17 @@ int main()
     std::shared_ptr<Car> car = std::make_shared<PetrolCar>(opel);
     car->accelerate(50);
     car->brake();
-    car->accelerate(-900);
+    // car->accelerate(-900);   // Throws an exception now
     car->refill();
-    // car->changeEngine(new PetrolEngine(150, 700, 7));
+    // car->changeEngine(std::make_shared<PetrolEngine>(PetrolEngine(150, 700, 7)));
 
     std::cout << std::endl << "NISSAN" << std::endl;
     ElectricCar nissan(std::make_shared<ElectricEngine>(ElectricEngine(130, 650)));
     car = std::make_shared<ElectricCar>(nissan);
     car->refill();
     car->accelerate(80);
-    // nissan.engine_ = new ElectricEngine(150, 700);  // Changing an engine during driving is not safe
-    // car->changeEngine(new ElectricEngine(150, 700));
+    // nissan.changeEngine(std::make_shared<ElectricEngine>(ElectricEngine(150, 700)));  // Changing an engine during driving is not safe
+    // car->changeEngine(std::make_shared<ElectricEngine>(ElectricEngine(150, 700)));
     car->turnLeft();
 
     std::cout << std::endl << "TOYOTA" << std::endl;
