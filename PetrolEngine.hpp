@@ -5,8 +5,9 @@ class PetrolEngine
 {
 public:
     PetrolEngine(int power, float capacity, int gears);
-    void changeGear(int gear);
+    void setCurrentGear(int gear);
     bool isRunning();
+    bool hasGear(int gear);
 private:
     int power_;         // in HP
     float capacity_;    // in ccm

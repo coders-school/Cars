@@ -13,9 +13,10 @@ public:
     ~PetrolCar();
 
     void changeEngine(std::shared_ptr<PetrolEngine> pe);
+    void changeGear(int gear);
     void refill() override;
 
-private:
+protected:
     void refuel();
     std::shared_ptr<PetrolEngine> engine_;
 };
