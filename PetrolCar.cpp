@@ -1,16 +1,31 @@
 #include "PetrolCar.hpp"
+
 #include <iostream>
- 
-PetrolCar::PetrolCar(PetrolEngine* engine)
+
+PetrolCar::PetrolCar(const PetrolEngine& engine)
     : engine_(engine)
 {
-    std::cout << __FUNCTION__ << std::endl;
+    std::cout << "PetrolCar::" << __FUNCTION__ << " (copying engine)" << std::endl;
 }
 
-PetrolCar::~PetrolCar()         { std::cout << __FUNCTION__ << std::endl; }
-void PetrolCar::turnLeft()      { std::cout << __FUNCTION__ << std::endl; }
-void PetrolCar::turnRight()     { std::cout << __FUNCTION__ << std::endl; }
-void PetrolCar::brake()         { std::cout << __FUNCTION__ << std::endl; }
-void PetrolCar::accelerate(int) { std::cout << __FUNCTION__ << std::endl; }
-void PetrolCar::refuel()        { std::cout << __FUNCTION__ << std::endl; }
+PetrolCar::PetrolCar(PetrolEngine&& engine)
+    : engine_(engine)
+{
+    std::cout << "PetrolCar::" << __FUNCTION__ << " (moving engine)" << std::endl;
+}
 
+PetrolCar::~PetrolCar()
+{
+    std::cout << "PetrolCar::" << __FUNCTION__ << std::endl;
+}
+
+void PetrolCar::refill()
+{
+    std::cout << "PetrolCar::" << __FUNCTION__ << std::endl;
+    refuel();
+}
+
+void PetrolCar::refuel()
+{
+    std::cout << "PetrolCar::" << __FUNCTION__ << std::endl;
+}
