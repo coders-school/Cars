@@ -19,3 +19,6 @@ add_executable(${PROJECT_NAME} ${SRC_LIST})
 target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Werror -Wpedantic -Wextra)
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR})
 
+enable_testing()
+
+add_subdirectory(tests)

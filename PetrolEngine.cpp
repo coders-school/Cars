@@ -1,5 +1,7 @@
 #include "PetrolEngine.hpp"
 
+#include "CarExceptions.hpp"
+
 #include <iostream>
 
 PetrolEngine::PetrolEngine(int power, float capacity, int gears)
@@ -11,10 +13,36 @@ PetrolEngine::PetrolEngine(int power, float capacity, int gears)
     std::cout << "PetrolEngine::" << __FUNCTION__ << std::endl;
 }
 
-void PetrolEngine::changeGear(int gear)
+void PetrolEngine::changeGear(int gear) noexcept(false)
 {
-    if (gear >= -1 && gear <= gears_) {
-        currentGear_ = gear;
+    throwOnUnallowedGearChange(gear);
+
+    std::cout << "PetrolEngine::" << __FUNCTION__
+              << " switching from " << currentGear_
+              << " to " << gear << std::endl;
+
+    currentGear_ = gear;
+}
+
+void PetrolEngine::throwOnUnallowedGearChange(int gear) const noexcept(false)
+{
+    if (gear < -1 || gear > gears_) {
+        throw InvalidGear("Attempt to switch to gear out of possible range");
     }
-    std::cout << "PetrolEngine::" << __FUNCTION__ << std::endl;
+    else if (gear == -1 && currentGear_ > 0) {
+        throw InvalidGear("Attempt to switch to reverse from other than neutral");
+    }
+    else if (currentGear_ == -1 && gear > 0) {
+        throw InvalidGear("Attempt to switch from reverse to other than neutral");
+    }
+}
+
+int PetrolEngine::power() const
+{
+    return power_;
+}
+
+int PetrolEngine::capacity() const
+{
+    return capacity_;
 }

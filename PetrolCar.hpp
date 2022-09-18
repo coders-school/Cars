@@ -6,12 +6,13 @@
 class PetrolCar : virtual public Car
 {
   public:
-    PetrolCar(const PetrolEngine& engine);
-    PetrolCar(PetrolEngine&& engine);
+    PetrolCar(int maxSpeed, int maxReverseSpeed, const PetrolEngine& engine);
+    PetrolCar(int maxSpeed, int maxReverseSpeed, PetrolEngine&& engine);
     ~PetrolCar() override;
     void refill() override;
+    void replaceEngine(PetrolEngine&& newEngine);
 
-  private:
+  protected:
     void refuel();
 
     PetrolEngine engine_;

@@ -9,8 +9,16 @@ class HybridCar : public ElectricCar,
                   public PetrolCar
 {
   public:
-    HybridCar(const PetrolEngine& petrolEng, ElectricEngine& electricEng);
-    HybridCar(PetrolEngine&& petrolEng, ElectricEngine&& electricEng);
+    HybridCar(int maxSpeed,
+              int maxReverseSpeed,
+              const PetrolEngine& petrolEng,
+              const ElectricEngine& electricEng);
+    HybridCar(int maxSpeed,
+              int maxReverseSpeed,
+              PetrolEngine&& petrolEng,
+              ElectricEngine&& electricEng);
     ~HybridCar() override;
-    void refill()override;
+    void refill() override;
+    void replaceElectricEngine(ElectricEngine&& newEngine);
+    void replacePetrolEngine(PetrolEngine&& newEngine);
 };

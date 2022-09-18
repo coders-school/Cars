@@ -5,12 +5,13 @@
 class ElectricCar : virtual public Car
 {
   public:
-    ElectricCar(const ElectricEngine& engine);
-    ElectricCar(ElectricEngine&& engine);
+    ElectricCar(int maxSpeed, int maxReverseSpeed, const ElectricEngine& engine);
+    ElectricCar(int maxSpeed, int maxReverseSpeed, ElectricEngine&& engine);
     ~ElectricCar() override;
     void refill() override;
+    void replaceEngine(ElectricEngine&& newEngine);
 
-  private:
+  protected:
     void charge();
 
     ElectricEngine engine_;
