@@ -1,12 +1,5 @@
 #include "PetrolEngine.hpp"
 #include <iostream>
-#include <stdexcept>
-
-struct InvalidGear : public std::logic_error {
-    [[maybe_unused]] InvalidGear() : std::logic_error("Invalid gear") {}
-
-    [[maybe_unused]] InvalidGear(std::string message) : std::logic_error(message) {}
-};
 
 PetrolEngine::PetrolEngine(int power, float capacity, int gears)
         : Engine(power), capacity_(capacity), gears_(gears), currentGear_(0) {
