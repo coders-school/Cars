@@ -4,9 +4,7 @@
 #include "HybridCar.hpp"
 #include <iostream>
 
-int main()
-{
-
+int main() {
     std::cout << std::endl << "OPEL" << std::endl;
     PetrolCar opel(new PetrolEngine(120, 1800, 6));
     Car* car = &opel;
