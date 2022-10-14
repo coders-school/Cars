@@ -1,6 +1,8 @@
 #pragma once
 
-class Car {
+#include "CarBehaviors.hpp"
+
+class Car : public virtual ChangeEngine {
 public:
     void turnLeft();
 
@@ -9,6 +11,12 @@ public:
     void brake();
 
     void accelerate(int speed);
+
+    virtual void changeEngine(ElectricEngine* engine);
+
+    virtual void changeEngine(PetrolEngine* engine);
+
+public:
 
     virtual void refill() = 0;
 

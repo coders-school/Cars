@@ -10,7 +10,7 @@ public:
 
     ~PetrolCar() override;
 
-    void changeEngine(PetrolEngine* pe);
+    void changeEngine(PetrolEngine* pe) override;
 
     void refill() override;
 

@@ -8,3 +8,11 @@ void Car::turnRight() { std::cout << __FUNCTION__ << std::endl; }
 void Car::brake() { std::cout << __FUNCTION__ << std::endl; }
 
 void Car::accelerate(int) { std::cout << __FUNCTION__ << std::endl; }
+
+void Car::changeEngine(ElectricEngine* engine) {
+
+}
+
+void Car::changeEngine(PetrolEngine* engine) {
+
+}

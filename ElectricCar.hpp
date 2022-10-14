@@ -9,7 +9,7 @@ public:
 
     ~ElectricCar() override;
 
-    void changeEngine(ElectricEngine* ee);
+    void changeEngine(ElectricEngine* ee) override;
 
     void refill() override;
 
