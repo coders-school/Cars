@@ -8,7 +8,7 @@ class PetrolCar : virtual public Car {
 public:
     PetrolCar(PetrolEngine* engine);
 
-    ~PetrolCar();
+    ~PetrolCar() override;
 
     void changeEngine(PetrolEngine* pe);
 
