@@ -1,13 +1,12 @@
 #pragma once
-
-class PetrolEngine
+#include "Engine.hpp"
+class PetrolEngine : Engine
 {
 public:
     PetrolEngine(int power, float capacity, int gears);
-    ~PetrolEngine();
+    ~PetrolEngine()override;
     void changeGear(int gear);
 private:
-    int power_;         // in HP
     float capacity_;    // in ccm
     int gears_;
     int currentGear_;
