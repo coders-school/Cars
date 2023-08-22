@@ -17,13 +17,20 @@ void PetrolEngine::changeGear(int gear)
     // -1 is for REAR
     // 0 is for NEUTRAL
 
-    if (gear <= -1 || gear >= gears_) {
+    if (gear < -1 || gear >= gears_) {
+        std::cout << gear << std::endl;
         throw InvalidGear("Incorrect gear change");
     }
-    if(std::abs(gear - gears_) != 1){
+    if(std::abs(gear - currentGear_) != 1 && std::abs(abs(gear) - abs(currentGear_)) != 0){
+        std::cout << std::abs(gear - currentGear_) << std::endl;
         throw InvalidGear("Incorrect gear change");
     }
 
     currentGear_ = gear;
     std::cout << __FUNCTION__ << std::endl;
+}
+
+int PetrolEngine::getCurrentGear()
+{
+    return currentGear_;
 }
