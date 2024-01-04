@@ -12,7 +12,7 @@ public:
     void changeEngine(PetrolEngine* pe);
     void refill() override;
 
-private:
+
     void refuel();
     PetrolEngine* engine_;
 };
