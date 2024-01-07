@@ -1,16 +1,17 @@
+#pragma once
+#include "Car.hpp"
 #include "ElectricEngine.hpp"
 
-class ElectricCar
+class ElectricCar : public virtual Car
 {
 public:
     ElectricCar(ElectricEngine* engine);
     ~ElectricCar();
-    void turnLeft();
-    void turnRight();
-    void brake();
-    void accelerate(int speed);
-    void charge();
 
+    void changeEngine(ElectricEngine* ee);
+    void refill() override;
+
+private:
+    void charge();
     ElectricEngine* engine_;
 };
-
